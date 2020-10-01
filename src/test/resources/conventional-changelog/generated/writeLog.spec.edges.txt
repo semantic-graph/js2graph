@@ -1,0 +1,8 @@
+global require-[DATAFLOW]->require
+global __WALA__int3rnal__global-[DATAFLOW]->require
+writeLog-[DATAFLOW]->describe
+describe-[DATAFLOW]->describe
+global __WALA__int3rnal__global-[DATAFLOW]->describe
+require-[DATAFLOW]->require
+../lib/writeLog-[DATAFLOW]->require
+global describe-[DATAFLOW]->describe

@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+set -x
+
+SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+jspath=$(realpath $1)
+outputpath=$(realpath $2)
+JAR=target/js2graph-1.0-SNAPSHOT-jar-with-dependencies.jar
+cd $SCRIPTDIR
+if [ -z "$BATCH_RUN" ]; then
+    make jar
+fi
+
+gitver=$(cat $JAR.gitver)
+echo "Running js2graph (Git hash: $gitver)"
+
+tmpfile=$(mktemp /tmp/abc-script.XXXXXX)
+tmpfile2=$(mktemp /tmp/abc-script.XXXXXX)
+java -jar $JAR --js $jspath --mode entrypoints -outputPath $tmpfile
+cat $jspath $tmpfile > $tmpfile2
+java -jar $JAR --js $tmpfile2 --mode core -outputPath $outputpath

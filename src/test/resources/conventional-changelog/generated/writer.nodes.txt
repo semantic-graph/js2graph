@@ -1,0 +1,69 @@
+"prototype"
+section
+2.0
+global Function
+prototype
+breaks
+global __WALA__int3rnal__global
+getVersionLink
+Features
+global currentDate
+
+global getIssueLink
+lodash.assign
+format
+LObject
+getIssueLink
+module
+%d-%s-%s
+global getPatchVersionLink
+require
+repository
+minus
+"version"
+util
+Breaking Changes
+0.0
+event-stream
+Writer
+global Date
+global $$undefined
+fix
+getCommitLink
+bind
+8.0
+global require
+global writeLog
+"fix"
+forEach
+getDate
+Lwriter.js
+version
+global getVersionLink
+through
+writeLog
+Object
+global Writer
+"breaks"
+Date_prototype_getMonth
+$$undefined
+1.0
+substr
+global getCommitLink
+feat
+"feat"
+0
+Date_prototype_getFullYear
+Date
+header
+end
+global Object
+substring
+getMonth
+getPatchVersionLink
+getFullYear
+Bug Fixes
+add
+Date_prototype_getDate
+currentDate
+"repository"

@@ -1,0 +1,7 @@
+global console
+2.0
+$$undefined
+1.0
+log
+add
+console

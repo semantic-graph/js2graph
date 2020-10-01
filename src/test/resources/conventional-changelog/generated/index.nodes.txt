@@ -1,0 +1,58 @@
+spread
+url
+includeDetails
+pkg
+github|bitbucket|gitlab
+2
+prototype
+catch
+objectMode
+global __WALA__int3rnal__global
+preset
+LObject
+module
+conventional-changelog-writer
+" does not exist
+require
+get-pkg-repo
+path
+warn
+"preset"
+global RegExp
+conventionalChangelog
+git-semver-tags
+allSettled
+./presets/
+LArray
+global require
+Array
+git-raw-commits
+i
+readFile
+conventional-commits-parser
+dateformat
+merge
+utf8
+q
+"readFile"
+Readable
+Object
+gi
+Preset: "
+"includeDetails"
+$$undefined
+stream
+global conventionalChangelog
+global Array
+through2
+global Object
+tag:\s*[v=]?(.+?)[,\)]
+RegExp
+"path"
+nfcall
+add
+transform
+fs
+Lindex.js
+lodash
+"pkg"

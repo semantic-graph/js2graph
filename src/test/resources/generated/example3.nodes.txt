@@ -1,0 +1,19 @@
+require
+"prototype"
+global $$undefined
+global require
+execSync
+sfdx
+child_process
+$$undefined
+Lexample3.js
+global __WALA__int3rnal__global
+$SfdxUtils$
+execSfdx
+global Function
+toString
+--targetusername
+ne
+add
+undefined
+$SfdxUtils$execSfdx$

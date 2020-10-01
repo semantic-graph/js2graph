@@ -1,0 +1,37 @@
+require
+path
+global RegExp
+obj
+Array
+semver
+$$undefined
+global Array
+2
+prototype
+RegExp
+fs
+presetOpts
+global __WALA__int3rnal__global
+
+LObject
+module
+spread
+^(\w*)\: (.*)$
+Ljquery.js
+all
+LArray
+global require
+denodeify
+readFile
+global presetOpts
+dateformat
+q
+"readFile"
+global Function
+Object
+gi
+resolve
+__dirname
+through2
+global Object
+tag:\s*[v=]?(.+?)[,\)]

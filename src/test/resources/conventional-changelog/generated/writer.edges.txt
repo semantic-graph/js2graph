@@ -1,0 +1,141 @@
+1.0-[DATAFLOW]->add
+Date-[DATAFLOW]->getFullYear
+"prototype"-[DATAFLOW]->repository
+"repository"-[DATAFLOW]->bind
+global __WALA__int3rnal__global-[DATAFLOW]->end
+"fix"-[DATAFLOW]->section
+global __WALA__int3rnal__global-[DATAFLOW]->getIssueLink
+feat-[DATAFLOW]->section
+lodash.assign-[DATAFLOW]->require
+currentDate-[CALL]->Date_prototype_getMonth
+global getPatchVersionLink-[DATAFLOW]->getPatchVersionLink
+"prototype"-[DATAFLOW]->getFullYear
+global __WALA__int3rnal__global-[DATAFLOW]->getVersionLink
+Writer-[DATAFLOW]->end
+Lwriter.js-[CALL]->writeLog
+event-stream-[DATAFLOW]->require
+"version"-[DATAFLOW]->header
+global writeLog-[DATAFLOW]->section
+breaks-[DATAFLOW]->section
+Date-[DATAFLOW]->Date
+writeLog-[DATAFLOW]->writeLog
+through-[DATAFLOW]->through
+getFullYear-[DATAFLOW]->format
+"repository"-[DATAFLOW]->format
+getMonth-[DATAFLOW]->format
+minus-[DATAFLOW]->substr
+substr-[DATAFLOW]->add
+Writer-[DATAFLOW]->Writer
+substr-[DATAFLOW]->substr
+-[DATAFLOW]->add
+global getPatchVersionLink-[DATAFLOW]->bind
+global currentDate-[DATAFLOW]->currentDate
+"prototype"-[DATAFLOW]->minus
+global getVersionLink-[DATAFLOW]->getVersionLink
+global Object-[DATAFLOW]->minus
+0-[DATAFLOW]->substr
+repository-[DATAFLOW]->bind
+global __WALA__int3rnal__global-[DATAFLOW]->format
+global require-[DATAFLOW]->require
+global $$undefined-[DATAFLOW]->getFullYear
+through-[DATAFLOW]->Writer
+getFullYear-[DATAFLOW]->getFullYear
+global getIssueLink-[DATAFLOW]->bind
+getMonth-[DATAFLOW]->getMonth
+version-[DATAFLOW]->header
+bind-[DATAFLOW]->bind
+global __WALA__int3rnal__global-[DATAFLOW]->substr
+2.0-[DATAFLOW]->minus
+global __WALA__int3rnal__global-[DATAFLOW]->forEach
+Writer-[DATAFLOW]->header
+add-[DATAFLOW]->substr
+global Function-[DATAFLOW]->bind
+global getVersionLink-[DATAFLOW]->bind
+section-[DATAFLOW]->section
+8.0-[DATAFLOW]->substring
+writeLog-[CALL]->LObject
+Date-[CALL]->Date
+Lwriter.js-[CALL]->LObject
+global getVersionLink-[DATAFLOW]->format
+Lwriter.js-[CALL]->getVersionLink
+global __WALA__int3rnal__global-[DATAFLOW]->require
+global getIssueLink-[DATAFLOW]->format
+Date-[DATAFLOW]->getDate
+global getCommitLink-[DATAFLOW]->bind
+global __WALA__int3rnal__global-[DATAFLOW]->getPatchVersionLink
+Breaking Changes-[DATAFLOW]->section
+Bug Fixes-[DATAFLOW]->section
+global $$undefined-[DATAFLOW]->minus
+Writer-[DATAFLOW]->section
+global getCommitLink-[DATAFLOW]->header
+global __WALA__int3rnal__global-[DATAFLOW]->getCommitLink
+global Date-[DATAFLOW]->Date
+substring-[DATAFLOW]->format
+global $$undefined-[DATAFLOW]->getDate
+getIssueLink-[DATAFLOW]->bind
+getCommitLink-[DATAFLOW]->getCommitLink
+currentDate-[CALL]->Date_prototype_getFullYear
+global Writer-[DATAFLOW]->fix
+getDate-[DATAFLOW]->getDate
+"feat"-[DATAFLOW]->section
+global $$undefined-[DATAFLOW]->substring
+global Writer-[DATAFLOW]->breaks
+global Object-[DATAFLOW]->Object
+substring-[DATAFLOW]->substring
+"breaks"-[DATAFLOW]->section
+"prototype"-[DATAFLOW]->substring
+global __WALA__int3rnal__global-[DATAFLOW]->add
+global __WALA__int3rnal__global-[DATAFLOW]->through
+getDate-[DATAFLOW]->format
+global Function-[DATAFLOW]->format
+Lwriter.js-[CALL]->currentDate
+format-[DATAFLOW]->format
+global Writer-[DATAFLOW]->feat
+getPatchVersionLink-[DATAFLOW]->bind
+%d-%s-%s-[DATAFLOW]->format
+global __WALA__int3rnal__global-[DATAFLOW]->bind
+Lwriter.js-[CALL]->getCommitLink
+currentDate-[DATAFLOW]->currentDate
+getVersionLink-[DATAFLOW]->getVersionLink
+Date-[DATAFLOW]->getMonth
+global $$undefined-[DATAFLOW]->forEach
+global Function-[DATAFLOW]->version
+global Writer-[DATAFLOW]->Writer
+Object-[DATAFLOW]->Object
+Lwriter.js-[CALL]->getIssueLink
+global getCommitLink-[DATAFLOW]->getCommitLink
+2.0-[DATAFLOW]->substr
+global Function-[DATAFLOW]->Writer
+global getIssueLink-[DATAFLOW]->getIssueLink
+global $$undefined-[DATAFLOW]->format
+global __WALA__int3rnal__global-[DATAFLOW]->Writer
+global writeLog-[DATAFLOW]->writeLog
+global Writer-[DATAFLOW]->add
+getMonth-[DATAFLOW]->add
+global $$undefined-[DATAFLOW]->getMonth
+global $$undefined-[DATAFLOW]->add
+util-[DATAFLOW]->require
+require-[DATAFLOW]->require
+currentDate-[CALL]->Date_prototype_getDate
+global $$undefined-[DATAFLOW]->substr
+0.0-[DATAFLOW]->substring
+Features-[DATAFLOW]->section
+global $$undefined-[DATAFLOW]->bind
+global __WALA__int3rnal__global-[DATAFLOW]->writeLog
+getVersionLink-[DATAFLOW]->bind
+fix-[DATAFLOW]->section
+0-[DATAFLOW]->add
+getIssueLink-[DATAFLOW]->getIssueLink
+Writer-[CALL]->LObject
+"prototype"-[DATAFLOW]->format
+global Object-[DATAFLOW]->format
+forEach-[DATAFLOW]->forEach
+global __WALA__int3rnal__global-[DATAFLOW]->currentDate
+getPatchVersionLink-[DATAFLOW]->getPatchVersionLink
+end-[DATAFLOW]->end
+Lwriter.js-[CALL]->getPatchVersionLink
+global getPatchVersionLink-[DATAFLOW]->format
+Lwriter.js-[CALL]->Writer
+header-[DATAFLOW]->header
+currentDate-[CALL]->Date
+getCommitLink-[DATAFLOW]->bind

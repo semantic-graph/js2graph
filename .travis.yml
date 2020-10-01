@@ -1,0 +1,16 @@
+language: scala
+scala:
+  - 2.13.1
+jdk:
+  - openjdk8
+env:
+  global:
+    - TIMEOUT_SEC=720
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.sbt
+script:
+  - make init
+  - make
+  - make test

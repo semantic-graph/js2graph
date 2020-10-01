@@ -1,0 +1,8 @@
+global __WALA__int3rnal__global
+require
+describe
+global describe
+writeLog
+$$undefined
+../lib/writeLog
+global require

@@ -1,0 +1,23 @@
+global require-[DATAFLOW]->require
+sfdx-[DATAFLOW]->add
+undefined-[DATAFLOW]->ne
+global __WALA__int3rnal__global-[DATAFLOW]->require
+execSync-[DATAFLOW]->execSync
+execSfdx-[DATAFLOW]->execSfdx
+child_process-[DATAFLOW]->require
+global Function-[DATAFLOW]->execSync
+require-[DATAFLOW]->require
+global $$undefined-[DATAFLOW]->execSync
+Lexample3.js-[CALL]->$SfdxUtils$execSfdx$
+toString-[DATAFLOW]->toString
+global require-[DATAFLOW]->ne
+add-[DATAFLOW]->add
+--targetusername-[DATAFLOW]->execSync
+sfdx-[DATAFLOW]->execSync
+execSync-[DATAFLOW]->toString
+Lexample3.js-[CALL]->$SfdxUtils$
+add-[DATAFLOW]->execSync
+--targetusername-[DATAFLOW]->add
+global $$undefined-[DATAFLOW]->add
+"prototype"-[DATAFLOW]->add
+"prototype"-[DATAFLOW]->execSync

@@ -1,0 +1,15 @@
+global __WALA__int3rnal__global
+writeFileSync
+require
+global require
+describe
+chai
+../
+child_process
+through2
+fs
+shelljs
+presets
+global describe
+$$undefined
+expect
