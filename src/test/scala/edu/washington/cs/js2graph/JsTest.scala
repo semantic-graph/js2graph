@@ -67,27 +67,6 @@ class JsTest {
     labels
   }
 
-  @Test def testExampleJS1(): Unit = {
-    testExampleJS("src/test/resources/js/example.js")
-  }
-
-  /**
-   * See https://github.com/semantic-graph/seguard-java/issues/2 for some related issue
-   * FIXME: The current edges list is not perfect since the new object-access-path based node is not connected to other
-   *        nodes. It should be able to find their replacements.
-   *
-   */
-  @Test
-  def testEventStreamJS(): Unit = {
-    val labels = testExampleJS("src/test/resources/eventstream.js")
-    assertTrue(labels.contains("process[env][npm_package_description]"))
-  }
-
-  @Test
-  def testExampleJS2(): Unit = {
-    testExampleJS("src/test/resources/js/example2.js")
-  }
-
   private def testJSWithEntrypoints(jsPath: String): Unit = {
     val jsPathFile = new File(jsPath)
     val jsDir = jsPathFile.getParentFile
@@ -104,11 +83,51 @@ class JsTest {
     testExampleJS(newJsPath)
   }
 
+  /**
+   * Type: small e2e test
+   * Source: a snippet that test inter-procedural data-flow
+   */
+  @Test def testExampleJS1(): Unit = {
+    testExampleJS("src/test/resources/js/example.js")
+  }
+
+  /**
+   * Type: e2e test
+   * Source: a vulnerable snippet from event-stream package
+   *
+   * See https://github.com/semantic-graph/seguard-java/issues/2 for some related issue
+   * FIXME: The current edges list is not perfect since the new object-access-path based node is not connected to other
+   *        nodes. It should be able to find their replacements.
+   *
+   */
+  @Test
+  def testEventStreamJS(): Unit = {
+    val labels = testExampleJS("src/test/resources/eventstream.js")
+    assertTrue(labels.contains("process[env][npm_package_description]"))
+  }
+
+  /**
+   * Type: small e2e test
+   * Source: a snippet that uses binary arithmetic op for testing data-flow deps
+   */
+  @Test
+  def testExampleJS2(): Unit = {
+    testExampleJS("src/test/resources/js/example2.js")
+  }
+
+  /**
+   * Type: e2e test
+   * Source: a snippet that uses execSync
+   */
   @Test
   def testExampleJS3(): Unit = {
     testJSWithEntrypoints("src/test/resources/js/example3.js")
   }
 
+  /**
+   * Type: Regression test
+   * Source: conventional-changelog package from NPM
+   */
   @Test
   def testConventionalExamples(): Unit = {
     val dir = "src"/"test"/"resources"/"conventional-changelog"/"js"
