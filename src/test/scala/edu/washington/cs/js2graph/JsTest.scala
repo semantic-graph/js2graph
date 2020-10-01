@@ -52,18 +52,24 @@ class JsTest {
     }
   }
 
-  private def testExampleJS(jsPath: String): Set[String] = {
+  private def testExampleJSAndReturnNodeLabels(jsPath: String, isJsGenerated: Boolean = false): Set[String] = {
     val g = new GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]()
     val cg = JSFlowGraph.addCallGraph(g, jsPath)
     JSFlowGraph.addDataFlowGraph(g, cg)
+    val jsPathFile = new File(jsPath)
+    val jsDir = jsPathFile.getParentFile
+    val jsName = jsPathFile.getName
+    var jsGeneratedDir = jsDir.getAbsolutePath
+    if (!isJsGenerated) {
+      jsGeneratedDir = jsDir + "/generated"
+    }
     val labels = g.getNodes.map(i => g.getNodeLabel(i))
-    compareSetOfStrings(jsPath.replace(".js", ".nodes.txt"), labels.toList)
-    compareSetOfStrings(jsPath.replace(".js", ".edges.txt"), g.getEdges.map { case (u, v) =>
+    compareSetOfStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".nodes.txt"), labels.toList)
+    compareSetOfStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".edges.txt"), g.getEdges.map { case (u, v) =>
       val lu = g.getNodeLabel(u)
       val lv = g.getNodeLabel(v)
       lu + "-[" + g.getEdgeAttrs(u, v)(JsEdgeAttr.TYPE) + "]->" + lv
     }.toList)
-    g.write(jsPath.replace(".js", ".gexf"))
     labels
   }
 
@@ -71,7 +77,7 @@ class JsTest {
     val jsPathFile = new File(jsPath)
     val jsDir = jsPathFile.getParentFile
     val jsName = jsPathFile.getName
-    val jsGeneratedDir = jsDir.getParent + "/generated"
+    val jsGeneratedDir = jsDir + "/generated"
     val entrypointsJsPath = jsGeneratedDir + "/" + jsName.replace(".js", ".entrypoints.js")
     val entrypoints = JSFlowGraph.getAllMethods(jsPath)
     compareSetOfStrings(entrypointsJsPath, entrypoints)
@@ -80,7 +86,7 @@ class JsTest {
       new File(newJsPath),
       new File(jsPath),
       new File(entrypointsJsPath))
-    testExampleJS(newJsPath)
+    testExampleJSAndReturnNodeLabels(newJsPath, isJsGenerated = true)
   }
 
   /**
@@ -88,11 +94,11 @@ class JsTest {
    * Source: a snippet that test inter-procedural data-flow
    */
   @Test def testExampleJS1(): Unit = {
-    testExampleJS("src/test/resources/js/example.js")
+    testExampleJSAndReturnNodeLabels("src/test/resources/small/example.js")
   }
 
   /**
-   * Type: e2e test
+   * Type: large e2e test
    * Source: a vulnerable snippet from event-stream package
    *
    * See https://github.com/semantic-graph/seguard-java/issues/2 for some related issue
@@ -102,7 +108,7 @@ class JsTest {
    */
   @Test
   def testEventStreamJS(): Unit = {
-    val labels = testExampleJS("src/test/resources/eventstream.js")
+    val labels = testExampleJSAndReturnNodeLabels("src/test/resources/large/eventstream.js")
     assertTrue(labels.contains("process[env][npm_package_description]"))
   }
 
@@ -112,16 +118,16 @@ class JsTest {
    */
   @Test
   def testExampleJS2(): Unit = {
-    testExampleJS("src/test/resources/js/example2.js")
+    testExampleJSAndReturnNodeLabels("src/test/resources/small/example2.js")
   }
 
   /**
-   * Type: e2e test
+   * Type: large e2e test
    * Source: a snippet that uses execSync
    */
   @Test
   def testExampleJS3(): Unit = {
-    testJSWithEntrypoints("src/test/resources/js/example3.js")
+    testJSWithEntrypoints("src/test/resources/large/example3.js")
   }
 
   /**
@@ -130,7 +136,7 @@ class JsTest {
    */
   @Test
   def testConventionalExamples(): Unit = {
-    val dir = "src"/"test"/"resources"/"conventional-changelog"/"js"
+    val dir = "src"/"test"/"resources"/"regression"/"conventional-changelog"
     for (jsFile <- dir.glob("*.js")) {
       testJSWithEntrypoints(jsFile.toString)
     }

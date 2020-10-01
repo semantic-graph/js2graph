@@ -1,6 +1,5 @@
 global require-[DATAFLOW]->require
 sfdx-[DATAFLOW]->add
-undefined-[DATAFLOW]->ne
 global __WALA__int3rnal__global-[DATAFLOW]->require
 execSync-[DATAFLOW]->execSync
 execSfdx-[DATAFLOW]->execSfdx
@@ -13,6 +12,8 @@ toString-[DATAFLOW]->toString
 global require-[DATAFLOW]->ne
 add-[DATAFLOW]->add
 --targetusername-[DATAFLOW]->execSync
+undefined-[DATAFLOW]->ne
+global $$undefined-[DATAFLOW]->execSfdx
 sfdx-[DATAFLOW]->execSync
 execSync-[DATAFLOW]->toString
 Lexample3.js-[CALL]->$SfdxUtils$

@@ -1,2 +1,0 @@
-SfdxUtils.execSfdx();
-SfdxUtils();
