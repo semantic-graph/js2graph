@@ -32,7 +32,7 @@ test: test-js-e2e
 	mvn -q test
 
 test-js-e2e: regtest-not-record jar
-	timeout 300 ./js2graph tests/tmpoc4jukbq.js tests/tmpoc4jukbq.js.gexf src/test/resources/config.yaml
+	timeout 300 ./js2graph tests/tmpoc4jukbq.js tests/tmpoc4jukbq.js.gexf
 
 clean:
 	rm -r target

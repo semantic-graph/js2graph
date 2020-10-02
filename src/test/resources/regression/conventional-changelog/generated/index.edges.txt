@@ -1,76 +1,9 @@
-" does not exist-[DATAFLOW]->add
-./presets/-[DATAFLOW]->add
-spread-[DATAFLOW]->spread
-global Array-[DATAFLOW]->Array
-fs-[DATAFLOW]->require
-Object-[DATAFLOW]->Object
-readFile-[DATAFLOW]->nfcall
-"pkg"-[DATAFLOW]->path
-" does not exist-[DATAFLOW]->warn
-gi-[DATAFLOW]->RegExp
-"preset"-[DATAFLOW]->warn
-global __WALA__int3rnal__global-[DATAFLOW]->warn
-objectMode-[DATAFLOW]->Readable
-"preset"-[DATAFLOW]->add
-Readable-[DATAFLOW]->Readable
-url-[DATAFLOW]->require
-Lindex.js-[CALL]->conventionalChangelog
-RegExp-[DATAFLOW]->RegExp
-add-[DATAFLOW]->add
-through2-[DATAFLOW]->require
-transform-[DATAFLOW]->merge
-Object-[DATAFLOW]->Readable
-dateformat-[DATAFLOW]->require
-global require-[DATAFLOW]->require
-q-[DATAFLOW]->require
-add-[DATAFLOW]->warn
-Preset: "-[DATAFLOW]->warn
-warn-[DATAFLOW]->warn
-git-semver-tags-[DATAFLOW]->require
-conventional-commits-parser-[DATAFLOW]->require
-./presets/-[DATAFLOW]->require
-catch-[DATAFLOW]->catch
-global __WALA__int3rnal__global-[DATAFLOW]->require
-get-pkg-repo-[DATAFLOW]->require
-global __WALA__int3rnal__global-[DATAFLOW]->conventionalChangelog
-global RegExp-[DATAFLOW]->RegExp
-"readFile"-[DATAFLOW]->nfcall
-i-[DATAFLOW]->RegExp
-Array-[DATAFLOW]->Array
-conventional-changelog-writer-[DATAFLOW]->require
-global __WALA__int3rnal__global-[DATAFLOW]->readFile
-Array-[DATAFLOW]->allSettled
-global __WALA__int3rnal__global-[DATAFLOW]->nfcall
-allSettled-[DATAFLOW]->spread
-require-[DATAFLOW]->nfcall
-"preset"-[DATAFLOW]->require
-utf8-[DATAFLOW]->nfcall
-global require-[DATAFLOW]->warn
-stream-[DATAFLOW]->require
-preset-[DATAFLOW]->preset
-Object-[DATAFLOW]->merge
-global Object-[DATAFLOW]->Object
-conventionalChangelog-[CALL]->LObject
-"path"-[DATAFLOW]->nfcall
-global conventionalChangelog-[DATAFLOW]->nfcall
-git-raw-commits-[DATAFLOW]->require
-global __WALA__int3rnal__global-[DATAFLOW]->add
-global require-[DATAFLOW]->merge
-conventionalChangelog-[DATAFLOW]->conventionalChangelog
-global conventionalChangelog-[DATAFLOW]->conventionalChangelog
-global conventionalChangelog-[DATAFLOW]->preset
-github|bitbucket|gitlab-[DATAFLOW]->RegExp
-allSettled-[DATAFLOW]->allSettled
-lodash-[DATAFLOW]->require
-conventionalChangelog-[CALL]->LArray
-"includeDetails"-[DATAFLOW]->Readable
-2-[DATAFLOW]->allSettled
-spread-[DATAFLOW]->catch
-Preset: "-[DATAFLOW]->add
-require-[DATAFLOW]->require
-preset-[DATAFLOW]->add
-tag:\s*[v=]?(.+?)[,\)]-[DATAFLOW]->RegExp
-path-[DATAFLOW]->nfcall
-nfcall-[DATAFLOW]->nfcall
-add-[DATAFLOW]->require
-merge-[DATAFLOW]->merge
+[Call]require(lodash).merge:INSTANCE -[DATAFLOW]-> [Call]require(q).nfcall:INSTANCE
+github|bitbucket|gitlab:CONSTANT -[DATAFLOW]-> [Construct]global RegExp:INSTANCE
+require(git-semver-tags):GLOBAL -[DATAFLOW]-> [Call]require(q).nfcall:INSTANCE
+require(fs).readFile:GLOBAL -[DATAFLOW]-> [Call]require(q).nfcall:INSTANCE
+" does not exist:CONSTANT -[DATAFLOW]-> [Call]require(lodash).merge.warn:INSTANCE
+utf8:CONSTANT -[DATAFLOW]-> [Call]require(q).nfcall:INSTANCE
+[Call]require(lodash).merge:INSTANCE -[DATAFLOW]-> [Call]require(lodash).merge.warn:INSTANCE
+tag:\s*[v=]?(.+?)[,\)]:CONSTANT -[DATAFLOW]-> [Construct]global RegExp:INSTANCE
+Preset: ":CONSTANT -[DATAFLOW]-> [Call]require(lodash).merge.warn:INSTANCE
