@@ -12,7 +12,7 @@ import org.junit.Assert._
 
 
 class JsTest {
-  private val record = true
+  private val record = false
 
   def compareSetOfStrings(expectedFile: String, actual: List[String]): Unit = {
     if (record) {

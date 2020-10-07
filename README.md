@@ -25,3 +25,14 @@ Test files:
 ```
 make test-java-e2e
 ```
+
+### Code formatting
+
+Install `scalafmt` (version 2.7.4): https://scalameta.org/scalafmt/docs/installation.html#cli. Then
+
+```
+# Format code
+make format
+# Check format
+make check-format
+```
