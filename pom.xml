@@ -31,11 +31,17 @@
           <artifactId>com.ibm.wala.core</artifactId>
           <version>1.5.4</version>
       </dependency>
+
       <!-- https://mvnrepository.com/artifact/com.ibm.wala/com.ibm.wala.cast.js -->
       <dependency>
           <groupId>com.ibm.wala</groupId>
           <artifactId>com.ibm.wala.cast.js</artifactId>
           <version>1.5.4</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mozilla</groupId>
+          <artifactId>rhino</artifactId>
+          <version>1.7.10</version>
       </dependency>
       <!-- https://mvnrepository.com/artifact/com.ibm.wala/com.ibm.wala.cast -->
       <dependency>

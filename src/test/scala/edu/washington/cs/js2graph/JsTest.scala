@@ -12,7 +12,7 @@ import org.junit.Assert._
 
 
 class JsTest {
-  private val record = false
+  private val record = true
 
   def compareSetOfStrings(expectedFile: String, actual: List[String]): Unit = {
     if (record) {
@@ -70,7 +70,7 @@ class JsTest {
 
   private def testExampleJSAndReturnNodeStrs(jsPath: String, isJsGenerated: Boolean = false): List[String] = {
     val g = new GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]()
-    val cg = JSFlowGraph.addCallGraph(g, jsPath)
+    val cg = JSFlowGraph.addCallGraph(jsPath)
     JSFlowGraph.addDataFlowGraph(g, cg)
     val jsPathFile = new File(jsPath)
     val jsDir = jsPathFile.getParentFile
@@ -137,7 +137,6 @@ class JsTest {
     testExampleJSAndReturnNodeStrs("src/test/resources/large/angular-location-update.js")
   }
 
-
   /**
    * Type: large e2e test
    * Source: a vulnerable snippet from conventional-changelog package
@@ -146,6 +145,16 @@ class JsTest {
   @Test
   def testConventionalChangelogIndexJS(): Unit = {
     testExampleJSAndReturnNodeStrs("src/test/resources/large/conventional-changelog-index.js")
+  }
+
+  /**
+   * Type: large e2e test
+   * Source: a vulnerable snippet from eslint-config-airbnb-standard package
+   *
+   */
+  @Test
+  def testEslintConfigAirbnbStandard(): Unit = {
+    testExampleJSAndReturnNodeStrs("src/test/resources/large/eslint-config-build.js")
   }
 
   /**

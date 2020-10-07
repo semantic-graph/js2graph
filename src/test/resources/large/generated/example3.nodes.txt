@@ -1,4 +1,4 @@
  --targetusername :CONSTANT
-[Call]require(child_process).execSync.toString:INSTANCE
-[Call]require(child_process).execSync:INSTANCE
+[Call]require(child_process).execSync.toString:GLOBAL
+[Call]require(child_process).execSync:GLOBAL
 sfdx :CONSTANT

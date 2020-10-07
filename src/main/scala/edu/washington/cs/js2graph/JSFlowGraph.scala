@@ -5,7 +5,7 @@ import java.nio.file.Paths
 
 import com.ibm.wala.cast.js.ipa.callgraph.JSCallGraphUtil
 import com.ibm.wala.cast.js.ssa._
-import com.ibm.wala.cast.js.translator.CAstRhinoTranslatorFactory
+import com.ibm.wala.cast.js.translator.PatchedCAstRhinoTranslatorFactory
 import com.ibm.wala.cast.js.types.JavaScriptMethods
 import com.ibm.wala.examples.analysis.js.JSCallGraphBuilderUtil
 import com.ibm.wala.ipa.callgraph.{CGNode, CallGraph}
@@ -70,9 +70,7 @@ object JSFlowGraph {
   }
 
   def getAllMethods(jsPath: String): List[String] = {
-    val path = Paths.get(jsPath)
-    JSCallGraphUtil.setTranslatorFactory(new CAstRhinoTranslatorFactory)
-    val cg = JSCallGraphBuilderUtil.makeScriptCG(path.getParent.toString, path.getFileName.toString)
+    val cg = addCallGraph(jsPath)
     val cha = cg.getClassHierarchy
     val methods = cha.asScala.filter(!_.getName.toString.contains("prologue.js")).flatMap(_.getAllMethods.asScala).toList
     val lines = methods.map(_.getDeclaringClass.getName.toString.split("/")).filter(_.length > 1).map(xs => toFunctionCall(xs(1)))
@@ -96,19 +94,20 @@ object JSFlowGraph {
 
   /**
    * Add the callgraph to semantic graph
-   * @param g Semantic graph writer
    * @param jsPath Path to the analyzed JS file
    * @return The constructed call-graph (for later use in other analysis)
    */
-  def addCallGraph(g: GraphWriter[JsNodeAttr.Value, JsEdgeAttr], jsPath: String) : CallGraph = {
+  def addCallGraph(jsPath: String) : CallGraph = {
     val path = Paths.get(jsPath)
-    JSCallGraphUtil.setTranslatorFactory(new CAstRhinoTranslatorFactory)
+    JSCallGraphUtil.setTranslatorFactory(new PatchedCAstRhinoTranslatorFactory)
     val cg = JSCallGraphBuilderUtil.makeScriptCG(path.getParent.toString, path.getFileName.toString)
-        cg.stream().filter(isApplicationNode)
-          .forEach(node => {
-//            println("------------------------------------------------")
-//            println(node.getIR)
-          })
+    if (Constants.debug.nonEmpty) {
+      cg.stream().filter(isApplicationNode)
+        .forEach(node => {
+          println("------------------------------------------------")
+          println(node.getIR)
+        })
+    }
     cg
   }
 
@@ -150,7 +149,7 @@ object JSFlowGraph {
               case Some(fromValues) =>
                 return fromValues.flatMap {
                   case AbsVal.Global(name) =>
-                    if (name == "global console" || name == "require(child_process)") {
+                    if (Constants.isLibraryGlobalName(name)) {
                       Some(g.createNode(name + "." + dispatchFunc,
                         Map(JsNodeAttr.TYPE -> NodeType.GLOBAL.toString,
                             JsNodeAttr.TAG -> Tag.Call.toString)))
