@@ -1,7 +1,7 @@
 package edu.washington.cs.js2graph
 
 object Constants {
-  val nodeJsBuiltInGlobalNames = Set("process", "console", "document")
+  val nodeJsBuiltInGlobalNames = Set("process", "console", "document", "Buffer")
 
   def isLibraryGlobalName(name: String): Boolean = {
     if (name.startsWith("global ")) {
@@ -29,4 +29,6 @@ object Constants {
    * FIXME: Consider other APIs as well as the base namespace
    */
   def isConstructorAPI(funcName: String): Boolean = constructorAPINames.contains(funcName)
+
+  val debug: Option[String] = sys.env.get("DEBUG")
 }

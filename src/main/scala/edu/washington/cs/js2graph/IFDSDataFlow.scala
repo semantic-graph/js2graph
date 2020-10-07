@@ -1,6 +1,6 @@
 package edu.washington.cs.js2graph
 
-import java.util.{Collection, HashSet}
+import java.util
 
 import com.ibm.wala.cast.ir.ssa.{AstGlobalRead, AstGlobalWrite, AstLexicalRead, AstLexicalWrite, EachElementGetInstruction}
 import com.ibm.wala.cast.js.ssa._
@@ -135,6 +135,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                 // Case 1: API invocation on global object
                 // If it is and contains "global", we will check if the argument is a constant representing the name of
                 // required package.
+                // Case 1.1: var x = require(pkg_name);
                 if (fact.fst == AbsPath.Local(invokeInstruction.getReceiver) && fact.snd == AbsVal.Global("global require")) {
                   if (symTable.isConstant(invokeInstruction.getUse(2))) {
                     val requiredPkgName = symTable.getConstantValue(invokeInstruction.getUse(2)).toString
@@ -159,17 +160,19 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                      */
                     if (fact.fst == AbsPath.Local(dispatchBaseIndex)) {
                       val dispatchFunc = symTable.getConstantValue(dispatchFuncIndex).toString
+                      // TODO: if there is a callback in the API invocation's arguments, add a edge from *after* the
+                      //    invocation to the entry of the callback function, and try to connect the "dispatchFunc"
+                      //    fact to the AbsPath.Global("__context__")
                       fact.snd match {
                         case AbsVal.Global(globalBaseName) =>
-                          val apiTag = if (Constants.isConstructorAPI(dispatchFunc)) {
-                            Tag.Construct
-                          } else {
-                            Tag.Call
-                          }
                           val apiName = globalBaseName + "." + dispatchFunc
-                          postApiInvocation.addOne(invokeInstruction, (apiName, apiTag))
-                          result.add(domain.add(Pair.make(AbsPath.Local(invokeInstruction.getDef(0)),
-                                                          AbsVal.Instance(apiName, invokeInstruction))))
+                          val absVal = if (Constants.isConstructorAPI(dispatchFunc)) {
+                            postApiInvocation.addOne(invokeInstruction, (apiName, Tag.Construct))
+                            AbsVal.Instance(apiName, invokeInstruction)
+                          } else {
+                            AbsVal.Global(apiName)
+                          }
+                          result.add(domain.add(Pair.make(AbsPath.Local(invokeInstruction.getDef(0)), absVal)))
                         case AbsVal.Instance(apiName, _) =>
                           val newApiName = apiName + "." + dispatchFunc
                           postApiInvocation.addOne(invokeInstruction, (newApiName, Tag.Call))
@@ -192,8 +195,6 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
      * flow out of the callee
      */
     override def getCallToReturnFlowFunction(src: Block, dest: Block): IUnaryFlowFunction = {
-      val instr = src.getDelegate.getInstruction
-      val symTable = src.getNode.getIR.getSymbolTable
       KillEverything.singleton
     }
 
@@ -370,28 +371,25 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
    * the flow functions.
    *
    */
-  class ReachingDefsProblem extends PartiallyBalancedTabulationProblem[Block, CGNode, AbsDomain] {
+  class DataFlowProblem extends PartiallyBalancedTabulationProblem[Block, CGNode, AbsDomain] {
     private val flowFunctions = new DataFlowFunctions(domain)
     /**
      * path edges corresponding to all putstatic instructions, used as seeds for the analysis
      */
-    private val initialSeedsVal: Collection[PathEdge[Block]] = collectInitialSeeds
+    private val initialSeedsVal: util.Collection[PathEdge[Block]] = collectInitialSeeds
 
     /**
-     * collect the putstatic instructions in the call graph as {@link PathEdge} seeds for the analysis
+     * Collect the initial seeds for the analysis
      */
-    private def collectInitialSeeds: Collection[PathEdge[Block]] = {
-      val result:Collection[PathEdge[Block]] = new HashSet[PathEdge[Block]]()
+    private def collectInitialSeeds: util.Collection[PathEdge[Block]] = {
+      val result: util.Collection[PathEdge[Block]] = new util.HashSet[PathEdge[Block]]()
       val itr = supergraph.getProcedureGraph.iterator
       while (itr.hasNext) {
         val cgNode = itr.next()
-        val fakeEntry = getFakeEntry(cgNode)
+        val fakeEntry: Block = getFakeEntry(cgNode)
         val factNum = domain.add(Pair.make(zeroTainted, zeroTaint))
         icfg.getSuccNodes(fakeEntry).forEachRemaining((succ: Block) => {
-          def foo(succ: Block) = {
-            result.add(PathEdge.createPathEdge(fakeEntry, factNum, succ, factNum))
-          }
-          foo(succ)
+          result.add(PathEdge.createPathEdge(fakeEntry, factNum, succ, factNum))
         })
       }
       result
@@ -408,7 +406,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
     /**
      * we use the entry block of the CGNode as the "fake" entry when propagating from callee to caller with unbalanced parens
      */
-    private def getFakeEntry(cgNode: CGNode) = {
+    private def getFakeEntry(cgNode: CGNode): Block = {
       val entriesForProcedure = supergraph.getEntriesForProcedure(cgNode)
       assert(entriesForProcedure.length == 1)
       entriesForProcedure(0)
@@ -425,13 +423,15 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
 
     override def getSupergraph: ISupergraph[Block, CGNode] = supergraph
 
-    override def initialSeeds: Collection[PathEdge[Block]] = initialSeedsVal
+    override def initialSeeds: util.Collection[PathEdge[Block]] = initialSeedsVal
   }
 
-  val problem = new ReachingDefsProblem
+  val problem = new DataFlowProblem
+  private var solver: TabulationSolver[Block, CGNode, AbsDomain] = _
 
   def solve: TabulationResult[BasicBlockInContext[IExplodedBasicBlock], CGNode, AbsDomain] = {
-    PartiallyBalancedTabulationSolver.createPartiallyBalancedTabulationSolver(problem, null).solve()
+    solver = PartiallyBalancedTabulationSolver.createPartiallyBalancedTabulationSolver(problem, null)
+    solver.solve()
   }
 
   /**

@@ -1,8 +1,8 @@
 (?:^|; ):CONSTANT
 ([\.$?*|{}\(\)\[\]\\\/\+^]):CONSTANT
 0.0:CONSTANT
-[Call]global document.cookie.match:INSTANCE
-[Call]global document.head.appendChild:INSTANCE
+[Call]global document.cookie.match:GLOBAL
+[Call]global document.head.appendChild:GLOBAL
 [Construct]global RegExp:INSTANCE
 [Construct]global document.createElement:INSTANCE
 [FieldRef]global document.createElement.href:INSTANCE

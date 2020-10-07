@@ -1,1 +1,1 @@
-[Call]global console.log:INSTANCE
+[Call]global console.log:GLOBAL
