@@ -6,7 +6,6 @@ import java.nio.file.Files
 
 import com.semantic_graph.writer.GexfWriter
 import org.junit.Test
-import better.files._
 import com.semantic_graph.NodeId
 import io.github.izgzhen.msbase.IOUtil
 import org.junit.Assert._
@@ -136,6 +135,17 @@ class JsTest {
   @Test
   def testAngularLocationUpdateJS(): Unit = {
     testExampleJSAndReturnNodeStrs("src/test/resources/large/angular-location-update.js")
+  }
+
+
+  /**
+   * Type: large e2e test
+   * Source: a vulnerable snippet from conventional-changelog package
+   *
+   */
+  @Test
+  def testConventionalChangelogIndexJS(): Unit = {
+    testExampleJSAndReturnNodeStrs("src/test/resources/large/conventional-changelog-index.js")
   }
 
   /**

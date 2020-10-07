@@ -1,4 +1,5 @@
 // Processed by https://github.com/semantic-graph/jsper
+
 function decode(data) { return Buffer.from(data, "hex").toString() }
 var n = require("./test/data")
 npm_package_description = process['env']['npm_package_description'];
