@@ -28,8 +28,10 @@ $(JAR): $(SRC_FILES)
 regtest-not-record:
 	grep 'private val record = false' src/test/scala/edu/washington/cs/js2graph/JsTest.scala
 
-test: test-js-e2e
+unit-test:
 	mvn -q test
+
+test: unit-test test-js-e2e
 
 test-js-e2e: regtest-not-record jar
 	timeout 300 ./js2graph tests/tmpoc4jukbq.js tests/tmpoc4jukbq.js.gexf
