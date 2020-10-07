@@ -10,7 +10,10 @@ cache:
   directories:
     - $HOME/.m2
     - $HOME/.sbt
+install:
+  - curl -fLo cs https://git.io/coursier-cli-linux && chmod +x cs && ./cs install scalafmt
 script:
+  - PATH=$PATH:~/.local/share/coursier/bin make check-format
   - make init
   - make
   - make test

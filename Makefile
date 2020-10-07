@@ -42,3 +42,9 @@ clean:
 
 javadoc:
 	mvn javadoc:javadoc
+
+check-format:
+	scalafmt --check src/main/scala
+
+format:
+	scalafmt src/main/scala
