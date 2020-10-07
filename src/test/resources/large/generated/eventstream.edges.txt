@@ -1,62 +1,11 @@
-global __WALA__int3rnal__global-[DATAFLOW]->decode
-toString-[DATAFLOW]->toString
-constructor-[DATAFLOW]->_compile
-hex-[DATAFLOW]->update
-createDecipher-[DATAFLOW]->createDecipher
-e-[DATAFLOW]->e
-global __WALA__int3rnal__global-[DATAFLOW]->e
-utf8-[DATAFLOW]->final
-utf8-[DATAFLOW]->update
-global decode-[DATAFLOW]->decode
-constructor-[DATAFLOW]->constructor
-from-[DATAFLOW]->from
-"constructor"-[DATAFLOW]->constructor
--[DATAFLOW]->_compile
-global Buffer-[DATAFLOW]->from
-global require-[DATAFLOW]->require
-final-[DATAFLOW]->add
-2e2f746573742f64617461-[DATAFLOW]->decode
-Leventstream.js-[CALL]->decode
-createDecipher-[DATAFLOW]->update
-global module-[DATAFLOW]->module[constructor]
-1.0-[DATAFLOW]->exports
-aes256-[DATAFLOW]->createDecipher
-global __WALA__int3rnal__global-[DATAFLOW]->require
-constructor-[DATAFLOW]->exports
-global e-[DATAFLOW]->e
-global f-[DATAFLOW]->e
-global f-[DATAFLOW]->exports
-from-[DATAFLOW]->toString
-paths-[DATAFLOW]->_compile
-hex-[DATAFLOW]->from
-global a-[DATAFLOW]->e
-crypto-[DATAFLOW]->require
-exports-[DATAFLOW]->exports
-global $$undefined-[DATAFLOW]->from
-decoded-[DATAFLOW]->add
-decode-[DATAFLOW]->require
-global process-[DATAFLOW]->process[env]
-decoded-[DATAFLOW]->_compile
-require-[DATAFLOW]->createDecipher
-Buffer-[DATAFLOW]->from
-0.0-[DATAFLOW]->update
-global decoded-[DATAFLOW]->_compile
-_compile-[DATAFLOW]->_compile
-"paths"-[DATAFLOW]->_compile
-global decoded-[DATAFLOW]->add
-7.0-[DATAFLOW]->e
-paths-[DATAFLOW]->exports
-"paths"-[DATAFLOW]->exports
-f-[DATAFLOW]->exports
-global module-[DATAFLOW]->module[paths]
--[DATAFLOW]->e
-final-[DATAFLOW]->final
-update-[DATAFLOW]->update
-f-[DATAFLOW]->e
-require-[DATAFLOW]->require
-global npm_package_description-[DATAFLOW]->createDecipher
-decode-[DATAFLOW]->decode
-"env"-[DATAFLOW]->process[env][npm_package_description]
-npm_package_description-[DATAFLOW]->createDecipher
-a-[DATAFLOW]->e
-createDecipher-[DATAFLOW]->final
+1.0:CONSTANT -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
+hex:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
+[Call]require(crypto).createDecipher.final:INSTANCE -[DATAFLOW]-> [Call]global module.constructor._compile:INSTANCE
+require(./test/data):GLOBAL -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
+utf8:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
+global process.env.npm_package_description:GLOBAL -[DATAFLOW]-> [Construct]require(crypto).createDecipher:INSTANCE
+0.0:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
+:CONSTANT -[DATAFLOW]-> [Call]global module.constructor._compile:INSTANCE
+aes256:CONSTANT -[DATAFLOW]-> [Construct]require(crypto).createDecipher:INSTANCE
+require(./test/data):GLOBAL -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
+utf8:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.final:INSTANCE

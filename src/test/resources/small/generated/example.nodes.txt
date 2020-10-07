@@ -1,10 +1,1 @@
-global __WALA__int3rnal__global
-global h
-f
-g
-$$undefined
-1.0
-add
-global f
-h
-Lexample.js
+[Call]global console.log:INSTANCE

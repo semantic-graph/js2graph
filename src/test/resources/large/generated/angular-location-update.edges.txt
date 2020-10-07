@@ -1,0 +1,7 @@
+0.0:CONSTANT -[DATAFLOW]-> [FieldRef]global document.createElement.href:INSTANCE
+prefetch:CONSTANT -[DATAFLOW]-> [FieldRef]global document.createElement.rel:INSTANCE
+[Construct]global document.createElement:INSTANCE -[DATAFLOW]-> [Call]global document.head.appendChild:INSTANCE
+([\.$?*|{}\(\)\[\]\\\/\+^]):CONSTANT -[DATAFLOW]-> [Construct]global RegExp:INSTANCE
+link:CONSTANT -[DATAFLOW]-> [Construct]global document.createElement:INSTANCE
+[Construct]global RegExp:INSTANCE -[DATAFLOW]-> [Call]global document.cookie.match:INSTANCE
+(?:^|; ):CONSTANT -[DATAFLOW]-> [Call]global document.head.appendChild:INSTANCE

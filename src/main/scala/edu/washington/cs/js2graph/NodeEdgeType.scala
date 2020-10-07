@@ -1,17 +1,26 @@
 package edu.washington.cs.js2graph
 
 object NodeType extends Enumeration {
-    val METHOD,
-    SENSITIVE_PARENT,
-    SENSITIVE_METHOD,
-    STMT,
-    CONST_STRING,
-    CONST_INT,
-    CONSTANT = Value
+    val METHOD, STMT, CONSTANT,
+
+    /**
+     * With Tag = Call: Call of API on *some* global thing (similar to static function)
+     */
+    GLOBAL,
+
+    /**
+     * With Tag = Call: Call of API on *some* instance
+     * With Tag = Construct: Call of constructor API that returns *some* instance
+     */
+    INSTANCE = Value
 }
 
 object EdgeType extends Enumeration {
-    val FROM_SENSITIVE_PARENT_TO_SENSITIVE_API, CALL, DATAFLOW, DOMINATE = Value
+    val DATAFLOW, DOMINATE = Value
+}
+
+object Tag extends Enumeration {
+    val Construct, Call, FieldRef = Value
 }
 
 object JsNodeAttr extends Enumeration with Serializable {

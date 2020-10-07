@@ -1,9 +1,2 @@
-1.0-[DATAFLOW]->add
-add-[DATAFLOW]->add
-add-[DATAFLOW]->log
-log-[DATAFLOW]->log
-1.0-[DATAFLOW]->log
-console-[DATAFLOW]->log
-global console-[DATAFLOW]->log
-2.0-[DATAFLOW]->add
-2.0-[DATAFLOW]->log
+1.0:CONSTANT -[DATAFLOW]-> [Call]global console.log:INSTANCE
+2.0:CONSTANT -[DATAFLOW]-> [Call]global console.log:INSTANCE

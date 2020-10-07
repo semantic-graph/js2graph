@@ -1,36 +1,3 @@
-global Function-[DATAFLOW]->RegExp
-RegExp-[DATAFLOW]->RegExp
-through2-[DATAFLOW]->require
-spread-[DATAFLOW]->spread
-"readFile"-[DATAFLOW]->denodeify
-^(\w*)\: (.*)$-[DATAFLOW]->RegExp
-global Object-[DATAFLOW]->Object
-fs-[DATAFLOW]->require
-Object-[DATAFLOW]->Object
-denodeify-[DATAFLOW]->denodeify
-require-[DATAFLOW]->require
-tag:\s*[v=]?(.+?)[,\)]-[DATAFLOW]->RegExp
-obj-[DATAFLOW]->obj
-presetOpts-[CALL]->LObject
-gi-[DATAFLOW]->RegExp
-path-[DATAFLOW]->require
-global __WALA__int3rnal__global-[DATAFLOW]->presetOpts
-presetOpts-[DATAFLOW]->presetOpts
-readFile-[DATAFLOW]->denodeify
-dateformat-[DATAFLOW]->require
-global require-[DATAFLOW]->require
-q-[DATAFLOW]->require
-global __WALA__int3rnal__global-[DATAFLOW]->require
-global RegExp-[DATAFLOW]->RegExp
-Array-[DATAFLOW]->all
-presetOpts-[CALL]->LArray
-Array-[DATAFLOW]->Array
-all-[DATAFLOW]->all
-semver-[DATAFLOW]->require
-2-[DATAFLOW]->all
-Ljquery.js-[CALL]->presetOpts
-all-[DATAFLOW]->spread
-global Array-[DATAFLOW]->Array
-global presetOpts-[DATAFLOW]->presetOpts
--[DATAFLOW]->RegExp
-global presetOpts-[DATAFLOW]->all
+^(\w*)\: (.*)$:CONSTANT -[DATAFLOW]-> [Construct]global RegExp:INSTANCE
+require(fs).readFile:GLOBAL -[DATAFLOW]-> [Call]require(q).denodeify:INSTANCE
+tag:\s*[v=]?(.+?)[,\)]:CONSTANT -[DATAFLOW]-> [Construct]global RegExp:INSTANCE
