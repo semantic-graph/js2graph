@@ -6,14 +6,12 @@ import java.nio.file.Paths
 import com.ibm.wala.cast.js.ipa.callgraph.JSCallGraphUtil
 import com.ibm.wala.cast.js.ssa._
 import com.ibm.wala.cast.js.translator.PatchedCAstRhinoTranslatorFactory
-import com.ibm.wala.cast.js.types.JavaScriptMethods
 import com.ibm.wala.examples.analysis.js.JSCallGraphBuilderUtil
 import com.ibm.wala.ipa.callgraph.{CGNode, CallGraph}
 import com.ibm.wala.ipa.cfg.ExplodedInterproceduralCFG
 import com.ibm.wala.ssa._
 import com.semantic_graph.NodeId
 import com.semantic_graph.writer.GraphWriter
-import edu.washington.cs.js2graph.JsEdgeAttr.JsEdgeAttr
 
 import scala.collection.mutable
 import scala.jdk.CollectionConverters._
@@ -101,12 +99,7 @@ object JSFlowGraph {
     JSCallGraphUtil.setTranslatorFactory(new PatchedCAstRhinoTranslatorFactory)
     val cg = JSCallGraphBuilderUtil.makeScriptCG(path.getParent.toString, path.getFileName.toString)
     if (Constants.debug.nonEmpty) {
-      cg.stream()
-        .filter(Constants.isApplicationNode)
-        .forEach(node => {
-          println("------------------------------------------------")
-          println(node.getIR)
-        })
+      println(Constants.getIRofCG(cg))
     }
     cg
   }
@@ -122,7 +115,7 @@ object JSFlowGraph {
                     dataDeps: Map[AbsPath, Set[AbsVal]]): Set[NodeId] = {
     instruction match {
       case invokeInstruction: JavaScriptInvoke =>
-        // Case 1: Call an API
+        // Case 1: Call an API node from data-flow (TODO: need more elaboration of the mechanism here)
         dataFlow.getApiNameAndTag(invokeInstruction) match {
           case Some((name, tag)) =>
             return Set(getPostApiInvocationNode(g, invokeInstruction, name, tag))
@@ -132,20 +125,22 @@ object JSFlowGraph {
         if (invokeInstruction.getNumberOfUses >= 2) {
           val dispatchFuncIndex = invokeInstruction.getUse(0)
           val dispatchBaseIndex = invokeInstruction.getUse(1)
-          if (symTable.isConstant(dispatchFuncIndex)) {
-            val dispatchFunc = symTable.getConstantValue(dispatchFuncIndex).toString
+          val dispatchFuncs: Set[String] = if (symTable.isConstant(dispatchFuncIndex)) {
+            Set(symTable.getConstantValue(dispatchFuncIndex).toString)
+          } else if (dataDeps.contains(AbsPath.Local(dispatchFuncIndex))) {
+            dataDeps(AbsPath.Local(dispatchFuncIndex)).collect { case AbsVal.Global(g) => g.stripPrefix("global ") }
+          } else { Set() }
+          for (dispatchFunc <- dispatchFuncs) {
+            // Base is a global variable
             dataDeps.get(AbsPath.Local(dispatchBaseIndex)) match {
               case None =>
               case Some(fromValues) =>
                 return fromValues.flatMap {
-                  case AbsVal.Global(name) =>
-                    if (Constants.isLibraryGlobalName(name)) {
-                      Some(
-                        g.createNode(
-                          name + "." + dispatchFunc,
-                          Map(JsNodeAttr.TYPE -> NodeType.GLOBAL.toString, JsNodeAttr.TAG -> Tag.Call.toString)))
-                    } else {
-                      None
+                  case AbsVal.Global(globalBaseName) =>
+                    Constants.asLibraryAPIName(globalBaseName, dispatchFunc) match {
+                      case Some(apiName) =>
+                        Some(g.createNode(apiName, Map(JsNodeAttr.TYPE -> NodeType.GLOBAL.toString, JsNodeAttr.TAG -> Tag.Call.toString)))
+                      case _ => None
                     }
                   case _ => None
                 }

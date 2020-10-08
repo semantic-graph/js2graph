@@ -20,3 +20,5 @@ try{
 
     }).on('error',()=>{});
 }catch(e){}
+
+// TODO: check out https://github.com/wala/WALA/blob/master/com.ibm.wala.cast.js/src/main/resources/prologue.js

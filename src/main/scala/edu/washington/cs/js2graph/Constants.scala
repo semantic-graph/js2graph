@@ -1,10 +1,12 @@
 package edu.washington.cs.js2graph
 
 import com.ibm.wala.cast.js.ipa.summaries.JavaScriptConstructorFunctions
-import com.ibm.wala.ipa.callgraph.CGNode
+import com.ibm.wala.ipa.callgraph.{CGNode, CallGraph}
+
+import scala.jdk.CollectionConverters._
 
 object Constants {
-  val nodeJsBuiltInGlobalNames = Set("process", "console", "document", "Buffer", "eval")
+  val nodeJsBuiltInGlobalNames = Set("process", "console", "document", "Buffer", "eval", "Buffer")
 
   def isLibraryGlobalName(name: String): Boolean = {
     if (name.startsWith("global ")) {
@@ -16,6 +18,18 @@ object Constants {
     } else {
       false
     }
+  }
+
+  def asLibraryAPIName(globalBaseName: String, dispatchFuncName: String): Option[String] = {
+    if (globalBaseName == "global " + WALAGlobalContext) {
+      if (nodeJsBuiltInGlobalNames.contains(dispatchFuncName)) {
+        return Some("global " + dispatchFuncName)
+      }
+    }
+    if (isLibraryGlobalName(globalBaseName)) {
+      return Some(globalBaseName + "." + dispatchFuncName)
+    }
+    None
   }
 
   /** Point to global context https://sourceforge.net/p/wala/mailman/message/32491808/
@@ -58,5 +72,11 @@ object Constants {
       case _ =>
     }
     Constants.isApplicationClassName(node.getMethod.getDeclaringClass.getName.toString)
+  }
+
+  def getIRofCG(cg: CallGraph): String = {
+    val appNodes = cg.stream().filter(isApplicationNode).iterator().asScala.toList
+    val appNodeSuccs = appNodes.flatMap(n => cg.getSuccNodes(n).asScala.filterNot(Constants.isApplicationNode))
+    (appNodes ++ appNodeSuccs).map(_.getIR.toString).mkString("\n\n")
   }
 }

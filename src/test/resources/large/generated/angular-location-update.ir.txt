@@ -790,3 +790,123 @@ BB8
 BB9
 
 
+<ctor for <JavaScriptLoader,LArray>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..2]
+    -> BB2
+    -> BB4
+BB2[3..4]
+    -> BB3
+BB3[5..5]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = fieldref v1.v3:#prototype           
+2   v5 = new <JavaScriptLoader,LArray>@2     
+BB2
+3   set_prototype(v5, v4)                    
+4   putfield v5.< JavaScriptLoader, LRoot, length, <JavaScriptLoader,LRoot> > = v7:#0
+BB3
+5   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,Lprologue.js/Date>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..4]
+    -> BB4
+    -> BB7
+BB4[5..5]
+    -> BB6
+    -> BB5
+BB5[6..6]
+    -> BB7
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   v7 = invoke v1@4 v5 exception:v8         
+BB4
+5   conditional branch(eq, to iindex=7) v7,v9
+BB5
+6   return v7                                
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,Lprologue.js/Date>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..4]
+    -> BB4
+    -> BB7
+BB4[5..5]
+    -> BB6
+    -> BB5
+BB5[6..6]
+    -> BB7
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v3 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v5 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v6 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v6, v5)                    
+4   v8 = invoke v1@4 v6,v2 exception:v9      
+BB4
+5   conditional branch(eq, to iindex=7) v8,v10
+BB5
+6   return v8                                
+BB6
+7   return v6                                
+BB7
+
+
+<Code body of function Lprologue.js/Date_prototype_getTime>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..2]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     prologue.js [16331->16413] (line 662) [3=[arguments]]
+2   return v6:#null                          prologue.js [16370->16408] (line 663)
+BB2
