@@ -22,5 +22,3 @@ BB1
 BB2
 18   v19 = dispatch v18:#log@18 v17,v11 exception:v20example2.js [41->55] (line 4) [18=[$$destructure$elt1]17=[$$destructure$rcvr1]11=[c]]
 BB3
-
-

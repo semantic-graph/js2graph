@@ -447,3 +447,120 @@ BB1
 BB2
 
 
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<Code body of function Lprologue.js/eval>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..2]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     prologue.js [840->899] (line 27) [4=[arguments]]
+2   return v7:#null                          prologue.js [862->896] (line 28)
+BB2

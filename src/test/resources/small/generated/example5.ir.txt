@@ -1,0 +1,35 @@
+<Code body of function Lexample5.js>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..2]
+    -> BB2
+    -> BB3
+BB2[3..4]
+    -> BB3
+BB3[-1..-2]
+Instructions:
+BB0
+BB1
+0   v1 = new <JavaScriptLoader,LArray>@0     example5.js [0->10] (line 1) [1=[arguments]]
+1   v4 = global:global eval                  example5.js [0->4] (line 1)
+2   check v4                                 example5.js [0->4] (line 1)
+BB2
+3   v6 = global:global __WALA__int3rnal__globalexample5.js [0->9] (line 1)
+4   v2 = invoke v4@4 v6,v7:#1 exception:v8   example5.js [0->9] (line 1)
+BB3
+
+
+<Code body of function Lprologue.js/eval>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..2]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     prologue.js [840->899] (line 27) [4=[arguments]]
+2   return v7:#null                          prologue.js [862->896] (line 28)
+BB2

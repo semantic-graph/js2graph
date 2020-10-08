@@ -10,7 +10,6 @@ import com.semantic_graph.NodeId
 import io.github.izgzhen.msbase.IOUtil
 import org.junit.Assert._
 
-
 class JsTest {
   private val record = false
 
@@ -93,8 +92,7 @@ class JsTest {
 
     // Record basic facts about WALA
     compareString(jsGeneratedDir + "/" + jsName.replace(".js", ".cg.txt"), cg.toString)
-    var ir = ""
-    cg.stream().filter(Constants.isApplicationNode).forEach(node => ir = ir + node.getIR.toString + "\n\n")
+    val ir = Constants.getIRofCG(cg)
     compareString(jsGeneratedDir + "/" + jsName.replace(".js", ".ir.txt"), ir)
 
     val nodeStrs = getNodeStrings(g)
@@ -200,6 +198,15 @@ class JsTest {
   @Test
   def testExampleJS4(): Unit = {
     testJS("src/test/resources/small/example4.js")
+  }
+
+  /**
+   * Type: small e2e test
+   * Source: a snippet that uses eval
+   */
+  @Test
+  def testExampleJS5(): Unit = {
+    testJS("src/test/resources/small/example5.js")
   }
 
 // FIXME: flaky

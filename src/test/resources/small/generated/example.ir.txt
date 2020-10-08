@@ -241,5 +241,3 @@ BB3
 5   v4 = binaryop(add) v5 , v11:#1.0         example.js [99->106] (line 13)
 6   return v4                                example.js [92->107] (line 13)
 BB4
-
-
