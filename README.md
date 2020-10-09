@@ -36,3 +36,15 @@ make format
 # Check format
 make check-format
 ```
+
+## Visualize the output
+
+Transform the output to dot graph first ():
+
+```
+# https://github.com/semantic-graph/semantic-graph.py/blob/master/render-gexf.py
+python render-gexf.py path/to/example2.gexf
+# Find output in path/to/example2.dot
+```
+
+Then use `dot` or https://dreampuf.github.io/GraphvizOnline for visualize.
