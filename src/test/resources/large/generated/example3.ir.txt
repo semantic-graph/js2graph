@@ -1,0 +1,204 @@
+<Code body of function Lexample3.js>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..6]
+    -> BB2
+    -> BB6
+BB2[7..8]
+    -> BB3
+    -> BB6
+BB3[9..15]
+    -> BB4
+    -> BB6
+BB4[16..20]
+    -> BB5
+    -> BB6
+BB5[21..22]
+    -> BB6
+BB6[-1..-2]
+Instructions:
+BB0
+BB1
+0   v1 = new <JavaScriptLoader,LArray>@0     example3.js [0->2825] (line 1) [1=[arguments]]
+1   v3 = global:global $$undefined           example3.js [0->47] (line 1)
+2   lexical:child_process_1@Lexample3.js = v3example3.js [0->47] (line 1)
+3   v5 = global:global $$undefined           example3.js [48->91] (line 2) [5=[SfdxUtils, $$destructure$rcvr6]]
+5   v9 = global:global require               example3.js [22->29] (line 1)
+6   check v9                                 example3.js [22->29] (line 1)
+BB2
+7   v11 = global:global __WALA__int3rnal__globalexample3.js [22->46] (line 1)
+8   v7 = invoke v9@8 v11,v12:#child_process exception:v13example3.js [22->46] (line 1)
+BB3
+9   lexical:child_process_1@Lexample3.js = v7example3.js [0->47] (line 1)
+10   v17 = global:global Function            example3.js [48->91] (line 2)
+11   v14 = construct v17@11 v16:#Lexample3.js/$SfdxUtils$ exception:v15example3.js [48->91] (line 2) [14=[SfdxUtils, $$destructure$rcvr6]]
+13   v21 = global:global Function            example3.js [92->390] (line 4)
+14   v18 = construct v21@14 v20:#Lexample3.js/$SfdxUtils$execSfdx$ exception:v19example3.js [92->390] (line 4)
+15   fieldref v14.v22:#execSfdx = v18 = v18  example3.js [92->390] (line 4) [14=[SfdxUtils, $$destructure$rcvr6]22=[$$destructure$elt6]]
+BB4
+20   v26 = dispatch v22:#execSfdx@20 v14 exception:v27example3.js [2791->2811] (line 48) [22=[$$destructure$elt6]14=[SfdxUtils, $$destructure$rcvr6]]
+BB5
+21   v29 = global:global __WALA__int3rnal__globalexample3.js [2813->2824] (line 49)
+22   v28 = invoke v14@22 v29 exception:v30   example3.js [2813->2824] (line 49) [14=[SfdxUtils, $$destructure$rcvr6]]
+BB6
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lexample3.js/$SfdxUtils$execSfdx$)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lexample3.js/$SfdxUtils$execSfdx$>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lexample3.js/$SfdxUtils$)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lexample3.js/$SfdxUtils$>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Lexample3.js/$SfdxUtils$>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     example3.js [64->90] (line 2) [3=[arguments]]
+BB2
+
+
+<Code body of function Lexample3.js/$SfdxUtils$execSfdx$>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..3]
+    -> BB6
+    -> BB2
+BB2[4..9]
+    -> BB3
+    -> BB11
+BB3[10..15]
+    -> BB4
+    -> BB11
+BB4[16..18]
+    -> BB5
+    -> BB11
+BB5[19..20]
+    -> BB10
+BB6[21..26]
+    -> BB7
+    -> BB11
+BB7[27..30]
+    -> BB8
+    -> BB11
+BB8[31..33]
+    -> BB9
+    -> BB11
+BB9[34..34]
+    -> BB10
+BB10[35..35]
+    -> BB11
+BB11[-1..-2]
+Instructions:
+BB0
+BB1
+0   v5 = new <JavaScriptLoader,LArray>@0     example3.js [113->390] (line 4) [5=[arguments]]
+1   v9 = typeof(v4)                          example3.js [200->224] (line 5) [4=[$targetusername$$]]
+2   v7 = binaryop(ne) v8:#undefined , v9     example3.js [185->224] (line 5)
+3   conditional branch(eq, to iindex=21) v7,v10:#0example3.js [185->387] (line 5)
+BB2
+8   v17 = lexical:child_process_1@Lexample3.jsexample3.js [227->242] (line 5) [17=[$$destructure$rcvr3]]
+9   check v17                                example3.js [227->242] (line 5) [17=[$$destructure$rcvr3]]
+BB3
+12   v22 = binaryop(add) v23:#sfdx  , v3     example3.js [252->272] (line 5) [3=[$command$$]]
+13   v21 = binaryop(add) v22 , v24:# --targetusername example3.js [252->295] (line 5)
+14   v20 = binaryop(add) v21 , v4            example3.js [252->315] (line 5) [4=[$targetusername$$]]
+15   v19 = dispatch v18:#execSync@15 v17,v20 exception:v25example3.js [227->316] (line 5) [19=[$$destructure$rcvr2]18=[$$destructure$elt5]17=[$$destructure$rcvr3]]
+BB4
+18   v27 = dispatch v26:#toString@18 v19 exception:v28example3.js [227->327] (line 5) [26=[$$destructure$elt4]19=[$$destructure$rcvr2]]
+BB5
+20   goto (from iindex= 20 to iindex = 35)   example3.js [185->387] (line 5)
+BB6
+25   v33 = lexical:child_process_1@Lexample3.jsexample3.js [330->345] (line 5) [33=[$$destructure$rcvr5]]
+26   check v33                               example3.js [330->345] (line 5) [33=[$$destructure$rcvr5]]
+BB7
+29   v35 = binaryop(add) v23:#sfdx  , v3     example3.js [355->375] (line 5) [3=[$command$$]]
+30   v34 = dispatch v18:#execSync@30 v33,v35 exception:v36example3.js [330->376] (line 5) [34=[$$destructure$rcvr4]18=[$$destructure$elt5]33=[$$destructure$rcvr5]]
+BB8
+33   v37 = dispatch v26:#toString@33 v34 exception:v38example3.js [330->387] (line 5) [26=[$$destructure$elt4]34=[$$destructure$rcvr4]]
+BB9
+BB10
+           v6 = phi  v27,v37
+35   return v6                               example3.js [178->388] (line 5)
+BB11
+
+

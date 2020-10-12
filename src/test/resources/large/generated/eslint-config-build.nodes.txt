@@ -1,3 +1,0 @@
-[Call]require(https).get.on:GLOBAL
-[Call]require(https).get:GLOBAL
-error:CONSTANT
