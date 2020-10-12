@@ -1,2 +1,0 @@
-sfdx :CONSTANT -[DATAFLOW]-> [Call]require(child_process).execSync:GLOBAL
- --targetusername :CONSTANT -[DATAFLOW]-> [Call]require(child_process).execSync:GLOBAL

@@ -1,1 +1,4 @@
+1.0:CONSTANT
+2.0:CONSTANT
+3.0:CONSTANT
 [Call]global console.log:GLOBAL
