@@ -1,11 +1,11 @@
-1.0:CONSTANT -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
-hex:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
-[Call]require(crypto).createDecipher.final:INSTANCE -[DATAFLOW]-> [Call]global module.constructor._compile:INSTANCE
-require(./test/data):GLOBAL -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
-utf8:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
-global process.env.npm_package_description:GLOBAL -[DATAFLOW]-> [Construct]require(crypto).createDecipher:INSTANCE
 0.0:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
+1.0:CONSTANT -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
 :CONSTANT -[DATAFLOW]-> [Call]global module.constructor._compile:INSTANCE
+[Call]require(crypto).createDecipher.final:INSTANCE -[DATAFLOW]-> [Call]global module.constructor._compile:INSTANCE
 aes256:CONSTANT -[DATAFLOW]-> [Construct]require(crypto).createDecipher:INSTANCE
+global process.env.npm_package_description:GLOBAL -[DATAFLOW]-> [Construct]require(crypto).createDecipher:INSTANCE
+hex:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
 require(./test/data):GLOBAL -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
+require(./test/data):GLOBAL -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
 utf8:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.final:INSTANCE
+utf8:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE

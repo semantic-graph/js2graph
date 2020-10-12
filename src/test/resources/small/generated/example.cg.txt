@@ -6,31 +6,37 @@ Node: synthetic < JavaScriptLoader, LFakeRoot, fakeRootMethod()V > Context: Ever
 
 Node: <Code body of function Lexample.js> Context: Everywhere
  - JSCall@2
-     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/f)> Context: CallStringContext: [ example.js.do()LRoot;@2 ]
- - JSCall@5
-     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/g)> Context: CallStringContext: [ example.js.do()LRoot;@5 ]
- - JSCall@8
-     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/h)> Context: CallStringContext: [ example.js.do()LRoot;@8 ]
- - JSCall@19
-     -> Node: <Code body of function Lexample.js/h> Context: Everywhere
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/main)> Context: CallStringContext: [ example.js.do()LRoot;@2 ]
+ - JSCall@7
+     -> Node: <Code body of function Lexample.js/main> Context: Everywhere
 
-Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/h)> Context: CallStringContext: [ example.js.do()LRoot;@8 ]
+Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/main)> Context: CallStringContext: [ example.js.do()LRoot;@2 ]
 
-Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/g)> Context: CallStringContext: [ example.js.do()LRoot;@5 ]
-
-Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/f)> Context: CallStringContext: [ example.js.do()LRoot;@2 ]
-
-Node: <Code body of function Lexample.js/h> Context: Everywhere
- - JSCall@10
-     -> Node: <Code body of function Lexample.js/f> Context: Everywhere
- - JSCall@15
-     -> Node: <Code body of function Lexample.js/g> Context: Everywhere
-
-Node: <Code body of function Lexample.js/f> Context: Everywhere
-
-Node: <Code body of function Lexample.js/g> Context: Everywhere
+Node: <Code body of function Lexample.js/main> Context: Everywhere
+ - JSCall@2
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/main/f)> Context: Caller: Node: <Code body of function Lexample.js/main> Context: Everywhere@2
  - JSCall@4
-     -> Node: <Code body of function Lexample.js/f> Context: Everywhere
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/main/g)> Context: Caller: Node: <Code body of function Lexample.js/main> Context: Everywhere@4
+ - JSCall@6
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/main/h)> Context: Caller: Node: <Code body of function Lexample.js/main> Context: Everywhere@6
+ - JSCall@14
+     -> Node: <Code body of function Lexample.js/main/h> Context: Everywhere
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/main/f)> Context: Caller: Node: <Code body of function Lexample.js/main> Context: Everywhere@2
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/main/g)> Context: Caller: Node: <Code body of function Lexample.js/main> Context: Everywhere@4
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lexample.js/main/h)> Context: Caller: Node: <Code body of function Lexample.js/main> Context: Everywhere@6
+
+Node: <Code body of function Lexample.js/main/h> Context: Everywhere
+ - JSCall@8
+     -> Node: <Code body of function Lexample.js/main/f> Context: Everywhere
+ - JSCall@13
+     -> Node: <Code body of function Lexample.js/main/g> Context: Everywhere
+
+Node: <Code body of function Lexample.js/main/f> Context: Everywhere
+
+Node: <Code body of function Lexample.js/main/g> Context: Everywhere
 
 Node: <Code body of function Lprologue.js> Context: Everywhere
  - JSCall@12
@@ -278,9 +284,9 @@ Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_prototype_getFull
 
 Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Date_now)> Context: CallStringContext: [ prologue.js.do()LRoot;@496 ]
 
-Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/EvalError)> Context: CallStringContext: [ prologue.js.do()LRoot;@15 ]
-
 Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/Error)> Context: CallStringContext: [ prologue.js.do()LRoot;@12 ]
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/EvalError)> Context: CallStringContext: [ prologue.js.do()LRoot;@15 ]
 
 Node: <ctor for <JavaScriptLoader,LFunction>(Lprologue.js/eval)> Context: CallStringContext: [ prologue.js.do()LRoot;@48 ]
 

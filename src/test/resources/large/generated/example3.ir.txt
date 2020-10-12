@@ -11,19 +11,19 @@ BB2[7..8]
 BB3[9..15]
     -> BB4
     -> BB6
-BB4[16..20]
+BB4[16..17]
     -> BB5
     -> BB6
-BB5[21..22]
+BB5[18..22]
     -> BB6
 BB6[-1..-2]
 Instructions:
 BB0
 BB1
-0   v1 = new <JavaScriptLoader,LArray>@0     example3.js [0->2825] (line 1) [1=[arguments]]
+0   v1 = new <JavaScriptLoader,LArray>@0     example3.js [0->426] (line 1) [1=[arguments]]
 1   v3 = global:global $$undefined           example3.js [0->47] (line 1)
 2   lexical:child_process_1@Lexample3.js = v3example3.js [0->47] (line 1)
-3   v5 = global:global $$undefined           example3.js [48->91] (line 2) [5=[SfdxUtils, $$destructure$rcvr6]]
+3   v5 = global:global $$undefined           example3.js [48->91] (line 2) [5=[SfdxUtils, $$destructure$rcvr7]]
 5   v9 = global:global require               example3.js [22->29] (line 1)
 6   check v9                                 example3.js [22->29] (line 1)
 BB2
@@ -32,15 +32,15 @@ BB2
 BB3
 9   lexical:child_process_1@Lexample3.js = v7example3.js [0->47] (line 1)
 10   v17 = global:global Function            example3.js [48->91] (line 2)
-11   v14 = construct v17@11 v16:#Lexample3.js/$SfdxUtils$ exception:v15example3.js [48->91] (line 2) [14=[SfdxUtils, $$destructure$rcvr6]]
+11   v14 = construct v17@11 v16:#Lexample3.js/$SfdxUtils$ exception:v15example3.js [48->91] (line 2) [14=[SfdxUtils, $$destructure$rcvr7]]
 13   v21 = global:global Function            example3.js [92->390] (line 4)
 14   v18 = construct v21@14 v20:#Lexample3.js/$SfdxUtils$execSfdx$ exception:v19example3.js [92->390] (line 4)
-15   fieldref v14.v22:#execSfdx = v18 = v18  example3.js [92->390] (line 4) [14=[SfdxUtils, $$destructure$rcvr6]22=[$$destructure$elt6]]
+15   fieldref v14.v22:#execSfdx = v18 = v18  example3.js [92->390] (line 4) [14=[SfdxUtils, $$destructure$rcvr7]22=[$$destructure$elt7]]
 BB4
-20   v26 = dispatch v22:#execSfdx@20 v14 exception:v27example3.js [2791->2811] (line 48) [22=[$$destructure$elt6]14=[SfdxUtils, $$destructure$rcvr6]]
+16   v24 = global:global __WALA__int3rnal__globalexample3.js [392->403] (line 7)
+17   v23 = invoke v14@17 v24 exception:v25   example3.js [392->403] (line 7) [14=[SfdxUtils, $$destructure$rcvr7]]
 BB5
-21   v29 = global:global __WALA__int3rnal__globalexample3.js [2813->2824] (line 49)
-22   v28 = invoke v14@22 v29 exception:v30   example3.js [2813->2824] (line 49) [14=[SfdxUtils, $$destructure$rcvr6]]
+22   v29 = dispatch v22:#execSfdx@22 v14 exception:v30example3.js [405->425] (line 8) [22=[$$destructure$elt7]14=[SfdxUtils, $$destructure$rcvr7]]
 BB6
 
 
@@ -122,20 +122,6 @@ BB6
 BB7
 
 
-<Code body of function Lexample3.js/$SfdxUtils$>
-CFG:
-BB0[-1..-2]
-    -> BB1
-BB1[0..0]
-    -> BB2
-BB2[-1..-2]
-Instructions:
-BB0
-BB1
-0   v3 = new <JavaScriptLoader,LArray>@0     example3.js [64->90] (line 2) [3=[arguments]]
-BB2
-
-
 <Code body of function Lexample3.js/$SfdxUtils$execSfdx$>
 CFG:
 BB0[-1..-2]
@@ -200,3 +186,17 @@ BB10
            v6 = phi  v27,v37
 35   return v6                               example3.js [178->388] (line 5)
 BB11
+
+
+<Code body of function Lexample3.js/$SfdxUtils$>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     example3.js [64->90] (line 2) [3=[arguments]]
+BB2

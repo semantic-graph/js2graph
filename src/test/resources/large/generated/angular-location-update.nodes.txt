@@ -1,4 +1,3 @@
-(?:^|; ):CONSTANT
 ([\.$?*|{}\(\)\[\]\\\/\+^]):CONSTANT
 0.0:CONSTANT
 [Call]global document.cookie.match:GLOBAL

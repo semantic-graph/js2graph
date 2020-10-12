@@ -23,15 +23,16 @@ class JsTest {
     assertEquals(msg, expected, actual)
   }
 
-  def compareSetOfStrings(expectedFile: String, actual: List[String]): Unit = {
+  def compareSetOfSortedStrings(expectedFile: String, actual: List[String]): Unit = {
+    val actualSortedSet = actual.toSet.toList.sorted
     if (record) {
-      IOUtil.writeLines(actual, expectedFile)
+      IOUtil.writeLines(actualSortedSet, expectedFile)
       return
     }
     val expected: List[String] = IOUtil.readLines(expectedFile)
     val msg = String.format("===== Expected: %s =====\n\n===== Actual =====\n%s\n\n===== Diff =====\n%s\n\n",
-      expectedFile, actual.mkString("\n"), expected.toSet.diff(actual.toSet).mkString("\n"))
-    assertEquals(msg, expected, actual)
+      expectedFile, actualSortedSet.mkString("\n"), expected.toSet.diff(actualSortedSet.toSet).mkString("\n"))
+    assertEquals(msg, expected, actualSortedSet)
   }
 
   private def transfer(source: Reader, destination: Writer): Unit = {
@@ -96,8 +97,8 @@ class JsTest {
     compareString(jsGeneratedDir + "/" + jsName.replace(".js", ".ir.txt"), ir)
 
     val nodeStrs = getNodeStrings(g)
-    compareSetOfStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".nodes.txt"), nodeStrs)
-    compareSetOfStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".edges.txt"), g.getEdges.map { case (u, v) =>
+    compareSetOfSortedStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".nodes.txt"), nodeStrs)
+    compareSetOfSortedStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".edges.txt"), g.getEdges.map { case (u, v) =>
       val lu = getNodeStr(g, u)
       val lv = getNodeStr(g, v)
       lu + " -[" + g.getEdgeAttrs(u, v)(JsEdgeAttr.TYPE) + "]-> " + lv
@@ -112,7 +113,7 @@ class JsTest {
     val jsGeneratedDir = jsDir + "/generated"
     val entrypointsJsPath = jsGeneratedDir + "/" + jsName.replace(".js", ".entrypoints.js")
     val entrypoints = JSFlowGraph.getAllMethods(jsPath)
-    compareSetOfStrings(entrypointsJsPath, entrypoints)
+    compareSetOfSortedStrings(entrypointsJsPath, entrypoints)
     val newJsPath = jsGeneratedDir + "/" + jsName
     mergeFiles(
       new File(newJsPath),
