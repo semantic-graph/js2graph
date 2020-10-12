@@ -36,9 +36,13 @@ sealed abstract class AbsPath extends Product with Serializable
 object AbsPath {
   final case class Global(name: String) extends AbsPath
 
+  final case class Lexical(name: String) extends AbsPath
+
   /** @param idx SSA index for any intermediate variable
     */
   final case class Local(idx: Int) extends AbsPath
+
+  final case class Ret() extends AbsPath
 }
 
 object InvokeType extends Enumeration {
@@ -78,9 +82,46 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
       */
     override def getUnbalancedReturnFlowFunction(src: Block, dest: Block): IFlowFunction = IdentityFlowFunction.identity
 
-    /** flow function from caller to callee; just the identity function
+    /** Flow function from caller to callee; just the identity function
+      *
+      * @param src Call-site
+      * @param dest the entry of the callee
+      * @param ret the block that will be returned to, in the caller. This can be null .. signifying
+      *     that facts can flow into the callee but not return
+      * @return the flow function for a "call" edge in the supergraph from src to desc
       */
-    override def getCallFlowFunction(src: Block, dest: Block, ret: Block): IUnaryFlowFunction = IdentityFlowFunction.identity
+    override def getCallFlowFunction(src: Block, dest: Block, ret: Block): IUnaryFlowFunction = {
+      val invokeInstruction = src.getDelegate.getInstruction.asInstanceOf[JavaScriptInvoke]
+      val symTable = src.getNode.getIR.getSymbolTable
+      // Inside dest block, v3 corresponds to invokeInstruction.getUse(2)
+      // v4 corresponds to invokeInstruction.getUse(2) ...
+      getInvokeInstructionType(invokeInstruction) match {
+        case InvokeType.INVOKE | InvokeType.DISPATCH =>
+          inputDomain: Int => {
+            val result = MutableSparseIntSet.makeEmpty
+            val fact = domain.getMappedObject(inputDomain)
+            for (paramIdx <- 2 until invokeInstruction.getNumberOfPositionalParameters) {
+              // If passing from data-flow
+              val param = invokeInstruction.getUse(paramIdx)
+              if (fact.fst == AbsPath.Local(param)) {
+                result.add(domain.add(Pair.make(AbsPath.Local(1 + paramIdx), fact.snd)))
+              }
+              // If passing from constant
+              if (symTable.isConstant(param)) {
+                val paramVal = symTable.getConstantValue(param).toString
+                result.add(domain.add(Pair.make(AbsPath.Local(1 + paramIdx), AbsVal.Constant(paramVal))))
+              }
+            }
+            fact.fst match {
+              case _: AbsPath.Global  => result.add(inputDomain)
+              case _: AbsPath.Lexical => result.add(inputDomain)
+              case _                  =>
+            }
+            result
+          }
+        case _ => KillEverything.singleton()
+      }
+    }
 
     private def getInvokeInstructionType(javaScriptInvoke: JavaScriptInvoke): InvokeType.Value = {
       javaScriptInvoke.getCallSite.getDeclaredTarget match {
@@ -241,8 +282,11 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
         override def getTargets(inputDomain: Int): IntSet = {
           val instr = src.getDelegate.getInstruction
           val result = MutableSparseIntSet.makeEmpty
-          if (instr == null
-            || instr.isInstanceOf[JavaScriptCheckReference] || instr.isInstanceOf[SetPrototype]
+          result.add(inputDomain)
+          if (instr == null) {
+            return result
+          }
+          if (instr.isInstanceOf[JavaScriptCheckReference] || instr.isInstanceOf[SetPrototype]
             || instr.isInstanceOf[SSAConditionalBranchInstruction]
             || instr.isInstanceOf[JavaScriptTypeOfInstruction]
             || instr.isInstanceOf[
@@ -263,7 +307,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                   ret = ret.union(
                     flow(
                       inputDomain,
-                      AbsPath.Global(access.getName.fst + "@" + access.getName.snd),
+                      AbsPath.Lexical(access.getName.fst + "@" + access.getName.snd),
                       Set(AbsPath.Local(astLexicalWrite.getUse(0))),
                       Set()))
                 }
@@ -282,7 +326,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                     flow(
                       inputDomain,
                       AbsPath.Local(astLexicalRead.getDef(0)),
-                      Set(AbsPath.Global(access.getName.fst + "@" + access.getName.snd)),
+                      Set(AbsPath.Lexical(access.getName.fst + "@" + access.getName.snd)),
                       Set()))
                 }
                 return ret
@@ -349,20 +393,52 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                   rhs.add(AbsPath.Local(lhs))
                 }
                 return flow(inputDomain, AbsPath.Local(lhs), rhs.toSet, newConstants.toSet)
+              case returnInstruction: SSAReturnInstruction =>
+                val newConstants = mutable.Set[AbsVal]()
+                val rhs = mutable.Set[AbsPath]()
+                val from1 = returnInstruction.getResult
+                if (from1 >= 0) {
+                  if (symTable.isConstant(from1) && symTable.getConstantValue(from1) != null) {
+                    newConstants.add(AbsVal.Constant(symTable.getConstantValue(from1).toString))
+                  } else {
+                    rhs.add(AbsPath.Local(from1))
+                  }
+                  return flow(inputDomain, AbsPath.Ret(), rhs.toSet, newConstants.toSet)
+                }
               case _ =>
             }
-          // we need to kill at assignment
-          if (!instr.isInstanceOf[SSAReturnInstruction]) {
-            result.add(inputDomain)
-          }
           result
         }
       }
     }
 
-    /** standard flow function from callee to caller; just identity
+    /** @param call supergraph node of the call instruction for this return edge.
+      * @param src exit node of the callee
+      * @return the flow function for a "return" edge in the supergraph from src to dest
       */
-    override def getReturnFlowFunction(call: Block, src: Block, dest: Block): IFlowFunction = IdentityFlowFunction.identity
+    override def getReturnFlowFunction(call: Block, src: Block, dest: Block): IFlowFunction = {
+      val invokeInstruction = call.getDelegate.getInstruction.asInstanceOf[JavaScriptInvoke]
+      // Inside dest block, v3 corresponds to invokeInstruction.getUse(1)
+      // v4 corresponds to invokeInstruction.getUse(2) ...
+      if (invokeInstruction == null) {
+        return IdentityFlowFunction.identity()
+      }
+      getInvokeInstructionType(invokeInstruction) match {
+        case InvokeType.INVOKE =>
+          new IUnaryFlowFunction {
+            override def getTargets(inputDomain: Int): IntSet = {
+              val result = MutableSparseIntSet.makeEmpty
+              val fact = domain.getMappedObject(inputDomain)
+              if (fact.fst.isInstanceOf[AbsPath.Ret] && fact.snd != AbsVal.Global("global " + Constants.WALAGlobalContext)) {
+                val lhs = invokeInstruction.getDef
+                result.add(domain.add(Pair.make(AbsPath.Local(lhs), fact.snd)))
+              }
+              result
+            }
+          }
+        case _ => IdentityFlowFunction.identity()
+      }
+    }
   }
 
   private val zeroTainted = AbsPath.Local(0)

@@ -1,0 +1,3 @@
+1.0:CONSTANT -[DATAFLOW]-> [Call]global console.log:GLOBAL
+2.0:CONSTANT -[DATAFLOW]-> [Call]global console.log:GLOBAL
+3.0:CONSTANT -[DATAFLOW]-> [Call]global console.log:GLOBAL
