@@ -14,6 +14,16 @@ import org.junit.Assert._
 class JsTest {
   private val record = false
 
+  def compareString(expectedFile: String, actual: String): Unit = {
+    if (record) {
+      IOUtil.write(actual, expectedFile)
+      return
+    }
+    val expected: String = IOUtil.readLines(expectedFile).mkString("\n") + "\n";
+    val msg = String.format("===== Expected: %s =====\n\n===== Actual =====\n%s\n", expectedFile, actual)
+    assertEquals(msg, expected, actual)
+  }
+
   def compareSetOfStrings(expectedFile: String, actual: List[String]): Unit = {
     if (record) {
       IOUtil.writeLines(actual, expectedFile)
@@ -68,9 +78,10 @@ class JsTest {
     g.getNodes.map(getNodeStr(g, _)).toList.sorted
   }
 
-  private def testExampleJSAndReturnNodeStrs(jsPath: String, isJsGenerated: Boolean = false): List[String] = {
+  private def testJS(jsPath: String, isJsGenerated: Boolean = false): List[String] = {
     val g = new GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]()
     val cg = JSFlowGraph.addCallGraph(jsPath)
+
     JSFlowGraph.addDataFlowGraph(g, cg)
     val jsPathFile = new File(jsPath)
     val jsDir = jsPathFile.getParentFile
@@ -79,6 +90,13 @@ class JsTest {
     if (!isJsGenerated) {
       jsGeneratedDir = jsDir + "/generated"
     }
+
+    // Record basic facts about WALA
+    compareString(jsGeneratedDir + "/" + jsName.replace(".js", ".cg.txt"), cg.toString)
+    var ir = ""
+    cg.stream().filter(Constants.isApplicationNode).forEach(node => ir = ir + node.getIR.toString + "\n\n")
+    compareString(jsGeneratedDir + "/" + jsName.replace(".js", ".ir.txt"), ir)
+
     val nodeStrs = getNodeStrings(g)
     compareSetOfStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".nodes.txt"), nodeStrs)
     compareSetOfStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".edges.txt"), g.getEdges.map { case (u, v) =>
@@ -102,7 +120,7 @@ class JsTest {
       new File(newJsPath),
       new File(jsPath),
       new File(entrypointsJsPath))
-    testExampleJSAndReturnNodeStrs(newJsPath, isJsGenerated = true)
+    testJS(newJsPath, isJsGenerated = true)
   }
 
   /**
@@ -110,7 +128,7 @@ class JsTest {
    * Source: a snippet that test inter-procedural data-flow
    */
   @Test def testExampleJS1(): Unit = {
-    testExampleJSAndReturnNodeStrs("src/test/resources/small/example.js")
+    testJS("src/test/resources/small/example.js")
   }
 
   /**
@@ -124,7 +142,7 @@ class JsTest {
    */
   @Test
   def testEventStreamJS(): Unit = {
-    testExampleJSAndReturnNodeStrs("src/test/resources/large/eventstream.js")
+    testJS("src/test/resources/large/eventstream.js")
   }
 
   /**
@@ -134,7 +152,7 @@ class JsTest {
    */
   @Test
   def testAngularLocationUpdateJS(): Unit = {
-    testExampleJSAndReturnNodeStrs("src/test/resources/large/angular-location-update.js")
+    testJS("src/test/resources/large/angular-location-update.js")
   }
 
   /**
@@ -144,7 +162,7 @@ class JsTest {
    */
   @Test
   def testConventionalChangelogIndexJS(): Unit = {
-    testExampleJSAndReturnNodeStrs("src/test/resources/large/conventional-changelog-index.js")
+    testJS("src/test/resources/large/conventional-changelog-index.js")
   }
 
   /**
@@ -154,7 +172,7 @@ class JsTest {
    */
   @Test
   def testEslintConfigAirbnbStandard(): Unit = {
-    testExampleJSAndReturnNodeStrs("src/test/resources/large/eslint-config-build.js")
+    testJS("src/test/resources/large/eslint-config-build.js")
   }
 
   /**
@@ -163,7 +181,7 @@ class JsTest {
    */
   @Test
   def testExampleJS2(): Unit = {
-    testExampleJSAndReturnNodeStrs("src/test/resources/small/example2.js")
+    testJS("src/test/resources/small/example2.js")
   }
 
   /**
@@ -173,6 +191,15 @@ class JsTest {
   @Test
   def testExampleJS3(): Unit = {
     testJSWithEntrypoints("src/test/resources/large/example3.js")
+  }
+
+  /**
+   * Type: small e2e test
+   * Source: a snippet that uses callback
+   */
+  @Test
+  def testExampleJS4(): Unit = {
+    testJS("src/test/resources/small/example4.js")
   }
 
 // FIXME: flaky

@@ -1,0 +1,264 @@
+<Code body of function Lexample4.js>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..4]
+    -> BB2
+    -> BB7
+BB2[5..5]
+    -> BB3
+    -> BB7
+BB3[6..9]
+    -> BB4
+    -> BB7
+BB4[10..12]
+    -> BB5
+    -> BB7
+BB5[13..19]
+    -> BB6
+    -> BB7
+BB6[20..26]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+BB1
+0   v1 = new <JavaScriptLoader,LArray>@0     example4.js [0->254] (line 1) [1=[arguments]]
+1   v3 = global:global $$undefined           example4.js [37->52] (line 3) [3=[https, $$destructure$rcvr5]]
+3   v7 = global:global Object                example4.js [49->51] (line 3)
+4   check v7                                 example4.js [49->51] (line 3)
+BB2
+5   v5 = construct v7@5 exception:v8         example4.js [49->51] (line 3) [5=[https, $$destructure$rcvr5]]
+BB3
+7   v12 = global:global Function             example4.js [53->107] (line 4)
+8   v9 = construct v12@8 v11:#Lexample4.js/example4.js@65 exception:v10example4.js [53->107] (line 4)
+9   fieldref v5.v14:#run = v9 = v9           example4.js [53->107] (line 4) [5=[https, $$destructure$rcvr5]14=[$$destructure$elt4]]
+BB4
+10   v18 = global:global Function            example4.js [109->158] (line 7)
+11   v15 = construct v18@11 v17:#Lexample4.js/example4.js@122 exception:v16example4.js [109->158] (line 7)
+12   fieldref v5.v20:#run2 = v15 = v15       example4.js [109->158] (line 7) [5=[https, $$destructure$rcvr5]20=[$$destructure$elt5]]
+BB5
+17   v28 = global:global Function            example4.js [161->181] (line 11)
+18   v25 = construct v28@18 v27:#Lexample4.js/example4.js@172 exception:v26example4.js [161->181] (line 11)
+19   v24 = dispatch v14:#run@19 v5,v25 exception:v29example4.js [161->181] (line 11) [14=[$$destructure$elt4]5=[https, $$destructure$rcvr5]]
+BB6
+24   v36 = global:global Function            example4.js [232->253] (line 12)
+25   v33 = construct v36@25 v35:#Lexample4.js/example4.js@244 exception:v34example4.js [232->253] (line 12)
+26   v32 = dispatch v20:#run2@26 v5,v33 exception:v37example4.js [232->253] (line 12) [20=[$$destructure$elt5]5=[https, $$destructure$rcvr5]]
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lexample4.js/example4.js@244)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lexample4.js/example4.js@244>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lexample4.js/example4.js@172)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lexample4.js/example4.js@172>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lexample4.js/example4.js@122)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lexample4.js/example4.js@122>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lexample4.js/example4.js@65)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lexample4.js/example4.js@65>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Lexample4.js/example4.js@122>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..3]
+    -> BB2
+    -> BB4
+BB2[4..5]
+    -> BB3
+    -> BB4
+BB3[6..6]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     example4.js [122->158] (line 7) [4=[arguments]]
+1   v7 = global:global __WALA__int3rnal__globalexample4.js [142->155] (line 8)
+2   v10 = global:global unknown              example4.js [145->152] (line 8)
+3   check v10                                example4.js [145->152] (line 8)
+BB2
+4   v11 = global:global __WALA__int3rnal__globalexample4.js [145->154] (line 8)
+5   v8 = invoke v10@5 v11 exception:v12      example4.js [145->154] (line 8)
+BB3
+6   v5 = invoke v3@6 v7,v8 exception:v13     example4.js [142->155] (line 8) [3=[cb]]
+BB4
+
+
+<Code body of function Lexample4.js/example4.js@65>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..2]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     example4.js [65->107] (line 4) [4=[arguments]]
+1   v7 = global:global __WALA__int3rnal__globalexample4.js [85->104] (line 5)
+2   v5 = invoke v3@2 v7,v8:#hello, world! exception:v9example4.js [85->104] (line 5) [3=[cb]]
+BB2
+
+
+<Code body of function Lexample4.js/example4.js@172>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     example4.js [172->180] (line 11) [4=[arguments]]
+BB2
+
+

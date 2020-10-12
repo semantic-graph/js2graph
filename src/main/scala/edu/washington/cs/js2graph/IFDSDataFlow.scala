@@ -129,7 +129,9 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                 // If it is and contains "global", we will check if the argument is a constant representing the name of
                 // required package.
                 // Case 1.1: var x = require(pkg_name);
-                if (fact.fst == AbsPath.Local(invokeInstruction.getReceiver) && fact.snd == AbsVal.Global("global require")) {
+                if (!symTable.isConstant(invokeInstruction.getReceiver) &&
+                  fact.fst == AbsPath.Local(invokeInstruction.getReceiver) &&
+                  fact.snd == AbsVal.Global("global require")) {
                   if (symTable.isConstant(invokeInstruction.getUse(2))) {
                     val requiredPkgName = symTable.getConstantValue(invokeInstruction.getUse(2)).toString
                     val lhs = AbsPath.Local(instr.getDef(0))
@@ -153,9 +155,6 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                      */
                     if (fact.fst == AbsPath.Local(dispatchBaseIndex)) {
                       val dispatchFunc = symTable.getConstantValue(dispatchFuncIndex).toString
-                      // TODO: if there is a callback in the API invocation's arguments, add a edge from *after* the
-                      //    invocation to the entry of the callback function, and try to connect the "dispatchFunc"
-                      //    fact to the AbsPath.Global("__context__")
                       fact.snd match {
                         case AbsVal.Global(globalBaseName) =>
                           val apiName = globalBaseName + "." + dispatchFunc
@@ -188,7 +187,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
       * flow out of the callee
       */
     override def getCallToReturnFlowFunction(src: Block, dest: Block): IUnaryFlowFunction = {
-      KillEverything.singleton
+      IdentityFlowFunction.identity()
     }
 
     /** @param withRhsTaint update the taint from RHS for new state
