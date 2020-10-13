@@ -11,7 +11,7 @@ import io.github.izgzhen.msbase.IOUtil
 import org.junit.Assert._
 
 class JsTest {
-  private val record = false
+  private val record = sys.env.contains("RECORD")
 
   def compareString(expectedFile: String, actual: String): Unit = {
     if (record) {
@@ -23,16 +23,16 @@ class JsTest {
     assertEquals(msg, expected, actual)
   }
 
-  def compareSetOfSortedStrings(expectedFile: String, actual: List[String]): Unit = {
-    val actualSortedSet = actual.toSet.toList.sorted
+  private def compareSortedStrings(expectedFile: String, actual: List[String]): Unit = {
+    val actualSorted = actual.sorted
     if (record) {
-      IOUtil.writeLines(actualSortedSet, expectedFile)
+      IOUtil.writeLines(actualSorted, expectedFile)
       return
     }
     val expected: List[String] = IOUtil.readLines(expectedFile)
     val msg = String.format("===== Expected: %s =====\n\n===== Actual =====\n%s\n\n===== Diff =====\n%s\n\n",
-      expectedFile, actualSortedSet.mkString("\n"), expected.toSet.diff(actualSortedSet.toSet).mkString("\n"))
-    assertEquals(msg, expected, actualSortedSet)
+      expectedFile, actualSorted.mkString("\n"), expected.toSet.diff(actualSorted.toSet).mkString("\n"))
+    assertEquals(msg, expected, actualSorted)
   }
 
   private def transfer(source: Reader, destination: Writer): Unit = {
@@ -60,7 +60,9 @@ class JsTest {
     }
   }
 
-  private def getNodeStr(g: GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value], node: NodeId): String = {
+  type GW = GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]
+
+  private def getNodeStr(g: GW, node: NodeId): String = {
     var nodeStr = g.getNodeLabel(node)
     val nodeAttrs = g.getNodeAttrs(node)
     nodeAttrs.get(JsNodeAttr.TAG) match {
@@ -74,11 +76,19 @@ class JsTest {
     nodeStr
   }
 
-  private def getNodeStrings(g: GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]): List[String] = {
-    g.getNodes.map(getNodeStr(g, _)).toList.sorted
+  private def getNodeStrings(g: GW): List[String] = {
+    g.getNodes.toList.map(getNodeStr(g, _))
   }
 
-  private def testJS(jsPath: String, isJsGenerated: Boolean = false): List[String] = {
+  private def getEdgeStrings(g: GW): List[String] = {
+    g.getEdges.toList.map { case (u, v) =>
+      val lu = getNodeStr(g, u)
+      val lv = getNodeStr(g, v)
+      lu + " -[" + g.getEdgeAttrs(u, v)(JsEdgeAttr.TYPE) + "]-> " + lv
+    }
+  }
+
+  private def testJS(jsPath: String, isJsGenerated: Boolean = false): Unit = {
     val g = new GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]()
     val cg = JSFlowGraph.addCallGraph(jsPath)
 
@@ -97,13 +107,9 @@ class JsTest {
     compareString(jsGeneratedDir + "/" + jsName.replace(".js", ".ir.txt"), ir)
 
     val nodeStrs = getNodeStrings(g)
-    compareSetOfSortedStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".nodes.txt"), nodeStrs)
-    compareSetOfSortedStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".edges.txt"), g.getEdges.map { case (u, v) =>
-      val lu = getNodeStr(g, u)
-      val lv = getNodeStr(g, v)
-      lu + " -[" + g.getEdgeAttrs(u, v)(JsEdgeAttr.TYPE) + "]-> " + lv
-    }.toList)
-    nodeStrs
+    val edgeStrs = getEdgeStrings(g)
+    compareSortedStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".nodes.txt"), nodeStrs)
+    compareSortedStrings(jsGeneratedDir + "/" + jsName.replace(".js", ".edges.txt"), edgeStrs)
   }
 
   private def testJSWithEntrypoints(jsPath: String): Unit = {
@@ -113,7 +119,7 @@ class JsTest {
     val jsGeneratedDir = jsDir + "/generated"
     val entrypointsJsPath = jsGeneratedDir + "/" + jsName.replace(".js", ".entrypoints.js")
     val entrypoints = JSFlowGraph.getAllMethods(jsPath)
-    compareSetOfSortedStrings(entrypointsJsPath, entrypoints)
+    compareSortedStrings(entrypointsJsPath, entrypoints)
     val newJsPath = jsGeneratedDir + "/" + jsName
     mergeFiles(
       new File(newJsPath),

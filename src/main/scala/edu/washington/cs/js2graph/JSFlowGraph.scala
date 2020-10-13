@@ -18,14 +18,13 @@ import scala.jdk.CollectionConverters._
 
 object JSFlowGraph {
   private val postApiInvocationNodes = mutable.Map[JavaScriptInvoke, NodeId]()
+
   def getPostApiInvocationNode(g: GraphWriter[JsNodeAttr.Value, JsEdgeAttr.Value],
                                invoke: JavaScriptInvoke,
                                apiName: String,
-                               tag: Tag.Value): NodeId = {
+                               attrs: Constants.NodeAttrs): NodeId = {
     if (!postApiInvocationNodes.contains(invoke)) {
-      postApiInvocationNodes.addOne(
-        invoke,
-        g.createNode(apiName, Map(JsNodeAttr.TYPE -> NodeType.INSTANCE.toString, JsNodeAttr.TAG -> tag.toString)))
+      postApiInvocationNodes.addOne(invoke, g.createNode(apiName, attrs))
     }
     postApiInvocationNodes(invoke)
   }
@@ -104,42 +103,44 @@ object JSFlowGraph {
     cg
   }
 
-  /** Get abstract node for a [[SSAInstruction]]
+  /** Get possible opNodes for a [[SSAInstruction]]
     *
     * FIXME: defUse and symTable should be an attribute of some processor class
     */
-  def getSinkSNodes(dataFlow: IFDSDataFlow,
-                    g: GraphWriter[JsNodeAttr.Value, JsEdgeAttr.Value],
-                    symTable: SymbolTable,
-                    instruction: SSAInstruction,
-                    dataDeps: Map[AbsPath, Set[AbsVal]]): Set[NodeId] = {
+  def getPossibleOpNodes(dataFlow: IFDSDataFlow,
+                         g: GraphWriter[JsNodeAttr.Value, JsEdgeAttr.Value],
+                         symTable: SymbolTable,
+                         instruction: SSAInstruction,
+                         dataDeps: Map[AbsPath, Set[AbsVal]]): Set[NodeId] = {
     instruction match {
       case invokeInstruction: JavaScriptInvoke =>
-        // Case 1: Call an API node from data-flow (TODO: need more elaboration of the mechanism here)
-        dataFlow.getApiNameAndTag(invokeInstruction) match {
-          case Some((name, tag)) =>
-            return Set(getPostApiInvocationNode(g, invokeInstruction, name, tag))
+        // Case 1: Data-flow analysis has defined some intermediate API name already (as well as tag), use this directly
+        dataFlow.getOpNodeNameAndAttrs(invokeInstruction) match {
+          case Some((name, attrs)) =>
+            return Set(getPostApiInvocationNode(g, invokeInstruction, name, attrs))
           case None =>
         }
-        // Case 2: Call an API (not constructor)
+        // Otherwise -- Case 2: Post-analyze used API here
         if (invokeInstruction.getNumberOfUses >= 2) {
           val dispatchFuncIndex = invokeInstruction.getUse(0)
           val dispatchBaseIndex = invokeInstruction.getUse(1)
-          val dispatchFuncs: Set[String] = if (symTable.isConstant(dispatchFuncIndex)) {
-            Set(symTable.getConstantValue(dispatchFuncIndex).toString)
-          } else if (dataDeps.contains(AbsPath.Local(dispatchFuncIndex))) {
-            dataDeps(AbsPath.Local(dispatchFuncIndex)).collect { case AbsVal.Global(g) => g.stripPrefix("global ") }
-          } else { Set() }
-          for (dispatchFunc <- dispatchFuncs) {
+          // Focus on the case which can't be handled within IFDS: both base and receiver are non-constant (propagated)
+          val receiverFuncNames: Set[String] = dataDeps.get(AbsPath.Local(dispatchFuncIndex)) match {
+            case None             => Set()
+            case Some(fromValues) => fromValues.collect { case AbsVal.Global(g) => g.stripPrefix("global ") }
+          }
+          for (receiverFuncName <- receiverFuncNames) {
             // Base is a global variable
+            // FIXME: this part can be lifted out to do a more elegant cross-product with the receiverFuncNames
             dataDeps.get(AbsPath.Local(dispatchBaseIndex)) match {
               case None =>
               case Some(fromValues) =>
                 return fromValues.flatMap {
                   case AbsVal.Global(globalBaseName) =>
-                    Constants.asLibraryAPIName(globalBaseName, dispatchFunc) match {
+                    Constants.asLibraryAPIName(globalBaseName, receiverFuncName) match {
                       case Some(apiName) =>
-                        Some(g.createNode(apiName, Map(JsNodeAttr.TYPE -> NodeType.GLOBAL.toString, JsNodeAttr.TAG -> Tag.Call.toString)))
+                        Some(
+                          g.createNode(apiName, Map(JsNodeAttr.TYPE -> NodeType.SINGLETON.toString, JsNodeAttr.TAG -> Tag.Call.toString)))
                       case _ => None
                     }
                   case _ => None
@@ -209,6 +210,12 @@ object JSFlowGraph {
     For more: https://sourceforge.net/p/wala/mailman/message/30369613/
      */
 
+    // Scan the method and find invocation of standard APIs
+    // Each instruction might correspond to multiple operation nodes (opNodes), since there could be more than one
+    // possible base classes (which depends on the result of the DFA).
+    // The opNode might have in-flow from constant nodes or other opNode, it might flow to other opNode.
+    // Some opNode can have no in-flow or out-flow.
+    // The edge is called "dependency edge" (or depEdge)
     for (block <- superGraph.asScala) {
       if (Constants.isApplicationNode(block.getNode)) {
         val symTable = block.getNode.getIR.getSymbolTable
@@ -217,41 +224,47 @@ object JSFlowGraph {
         if (instruction != null) {
           val dataFlowDeps = dataflow.getFacts(results, block)
 
-          for (toSNode <- getSinkSNodes(dataflow, g, symTable, instruction, dataFlowDeps)) {
-            // Build semantic graph of SNode and SEdge
+          for (opNode <- getPossibleOpNodes(dataflow, g, symTable, instruction, dataFlowDeps)) {
+            // Build semantic graph of opNode and depEdge
             val firstUseIdx = instruction match {
-              case _: JavaScriptInvoke        => 2
+              case _: JavaScriptInvoke        => 1 // from base
               case _: JavaScriptPropertyWrite => 2
               case _                          => 0
             }
             for (iu <- firstUseIdx until instruction.getNumberOfUses) {
+              val isInvokeBase = instruction.isInstanceOf[JavaScriptInvoke] && iu == 1
               val use = instruction.getUse(iu)
               // If the use is a constant
               if (symTable.isConstant(use) && symTable.getConstantValue(use) != null) {
                 val v = symTable.getConstantValue(use).toString
                 g.addEdge(
                   g.createNode(v, Map(JsNodeAttr.TYPE -> NodeType.CONSTANT.toString)),
-                  toSNode,
+                  opNode,
                   Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
               } else {
                 for (absVal <- resolveDataDeps(dataFlowDeps, AbsPath.Local(use))) {
                   absVal match {
                     case AbsVal.Global(name) =>
-                      if (Constants.isLibraryGlobalName(name)) {
+                      // The information of invocation base API is already in the current opNode
+                      if (Constants.isLibraryGlobalName(name) && !isInvokeBase) {
                         g.addEdge(
-                          g.createNode(name, Map(JsNodeAttr.TYPE -> NodeType.GLOBAL.toString)),
-                          toSNode,
+                          g.createNode(name, Map(JsNodeAttr.TYPE -> NodeType.SINGLETON.toString)),
+                          opNode,
                           Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
                       }
                     case AbsVal.Constant(v) =>
                       g.addEdge(
                         g.createNode(v, Map(JsNodeAttr.TYPE -> NodeType.CONSTANT.toString)),
-                        toSNode,
+                        opNode,
                         Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
-                    case AbsVal.Instance(name, invoke) =>
-                      val fromSNode = getPostApiInvocationNode(g, invoke, name, Tag.Construct)
-                      if (!g.getEdges.contains(fromSNode, toSNode)) {
-                        g.addEdge(fromSNode, toSNode, Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
+                    case AbsVal.Instance(className, invoke) =>
+                      val fromOpNode = getPostApiInvocationNode(
+                        g,
+                        invoke,
+                        className,
+                        Map(JsNodeAttr.TYPE -> NodeType.INSTANCE.toString, JsNodeAttr.TAG -> Tag.Construct.toString))
+                      if (!g.getEdges.contains(fromOpNode, opNode)) {
+                        g.addEdge(fromOpNode, opNode, Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
                       }
                     case _ =>
                   }

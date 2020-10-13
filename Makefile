@@ -25,15 +25,15 @@ update-gitver:
 $(JAR): $(SRC_FILES)
 	mvn -q -B compile assembly:single -o
 
-regtest-not-record:
-	grep 'private val record = false' src/test/scala/edu/washington/cs/js2graph/JsTest.scala
+record-junit:
+	RECORD=1 mvn -q test
 
-unit-test:
+junit:
 	mvn -q test
 
-test: unit-test test-js-e2e
+test: junit test-js-e2e
 
-test-js-e2e: regtest-not-record jar
+test-js-e2e: jar
 	timeout 300 ./js2graph tests/tmpoc4jukbq.js tests/tmpoc4jukbq.js.gexf
 
 clean:

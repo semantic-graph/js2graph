@@ -1,10 +1,14 @@
+(?:^|; ):CONSTANT
 ([\.$?*|{}\(\)\[\]\\\/\+^]):CONSTANT
 0.0:CONSTANT
-[Call]global document.cookie.match:GLOBAL
-[Call]global document.head.appendChild:GLOBAL
-[Construct]global RegExp:INSTANCE
-[Construct]global document.createElement:INSTANCE
-[FieldRef]global document.createElement.href:INSTANCE
-[FieldRef]global document.createElement.rel:INSTANCE
+=([^;]*):CONSTANT
+[Call]global document.cookie.match:SINGLETON
+[Call]global document.head.appendChild:SINGLETON
+[Construct]global RegExp:SINGLETON
+[Construct]global RegExp:SINGLETON
+[Construct]global document.createElement:SINGLETON
+[FieldRef]HTMLElement.href:INSTANCE
+[FieldRef]HTMLElement.rel:INSTANCE
+g:CONSTANT
 link:CONSTANT
 prefetch:CONSTANT

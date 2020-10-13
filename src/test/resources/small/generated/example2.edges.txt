@@ -1,2 +1,2 @@
-1.0:CONSTANT -[DATAFLOW]-> [Call]global console.log:GLOBAL
-2.0:CONSTANT -[DATAFLOW]-> [Call]global console.log:GLOBAL
+1.0:CONSTANT -[DATAFLOW]-> [Call]global console.log:SINGLETON
+2.0:CONSTANT -[DATAFLOW]-> [Call]global console.log:SINGLETON

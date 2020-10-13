@@ -1,22 +1,24 @@
 package edu.washington.cs.js2graph
 
 object NodeType extends Enumeration {
-  val METHOD, STMT, CONSTANT,
-  /** With Tag = Call: Call of API on *some* global thing (similar to static function)
-    */
-  GLOBAL,
-  /** With Tag = Call: Call of API on *some* instance
-    * With Tag = Construct: Call of constructor API that returns *some* instance
-    */
-  INSTANCE = Value
+  val CONSTANT, SINGLETON, INSTANCE = Value
 }
 
 object EdgeType extends Enumeration {
-  val DATAFLOW, DOMINATE = Value
+  val DATAFLOW = Value
 }
 
 object Tag extends Enumeration {
-  val Construct, Call, FieldRef = Value
+  val
+  /** Call of constructor API that returns *some* instance
+    */
+  Construct,
+  /** Call of API on *some* instance
+    */
+  Call,
+  /** Field reference of some instance
+    */
+  FieldRef = Value
 }
 
 object JsNodeAttr extends Enumeration with Serializable {
