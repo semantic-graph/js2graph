@@ -1,14 +1,14 @@
-0.0:CONSTANT -[DATAFLOW]-> [Call]CryptoDecipher.update:INSTANCE
-1.0:CONSTANT -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
-:CONSTANT -[DATAFLOW]-> [Call]global module.constructor._compile:INSTANCE
-[Construct]global module.constructor:SINGLETON -[DATAFLOW]-> [Call]global module.constructor._compile:INSTANCE
-[Construct]global module.constructor:SINGLETON -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
-[Construct]require(crypto).createDecipher:SINGLETON -[DATAFLOW]-> [Call]CryptoDecipher.final:INSTANCE
-[Construct]require(crypto).createDecipher:SINGLETON -[DATAFLOW]-> [Call]CryptoDecipher.update:INSTANCE
-aes256:CONSTANT -[DATAFLOW]-> [Construct]require(crypto).createDecipher:SINGLETON
-global process.env.npm_package_description:SINGLETON -[DATAFLOW]-> [Construct]require(crypto).createDecipher:SINGLETON
-hex:CONSTANT -[DATAFLOW]-> [Call]CryptoDecipher.update:INSTANCE
-require(./test/data):SINGLETON -[DATAFLOW]-> [Call]CryptoDecipher.update:INSTANCE
-require(./test/data):SINGLETON -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
-utf8:CONSTANT -[DATAFLOW]-> [Call]CryptoDecipher.final:INSTANCE
-utf8:CONSTANT -[DATAFLOW]-> [Call]CryptoDecipher.update:INSTANCE
+0.0:Constant -[DATAFLOW]-> CryptoDecipher.update:Call
+1.0:Constant -[DATAFLOW]-> module.constructor.exports:Call
+:Constant -[DATAFLOW]-> module.constructor._compile:Call
+__unknownModule(./test/data) -[DATAFLOW]-> CryptoDecipher.update:Call
+__unknownModule(./test/data) -[DATAFLOW]-> module.constructor.exports:Call
+aes256:Constant -[DATAFLOW]-> crypto.createDecipher:Construct
+crypto.createDecipher:Construct -[DATAFLOW]-> CryptoDecipher.final:Call
+crypto.createDecipher:Construct -[DATAFLOW]-> CryptoDecipher.update:Call
+hex:Constant -[DATAFLOW]-> CryptoDecipher.update:Call
+module.constructor:Construct -[DATAFLOW]-> module.constructor._compile:Call
+module.constructor:Construct -[DATAFLOW]-> module.constructor.exports:Call
+process.env.npm_package_description -[DATAFLOW]-> crypto.createDecipher:Construct
+utf8:Constant -[DATAFLOW]-> CryptoDecipher.final:Call
+utf8:Constant -[DATAFLOW]-> CryptoDecipher.update:Call

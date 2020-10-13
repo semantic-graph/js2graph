@@ -11,7 +11,7 @@ import com.ibm.wala.ipa.callgraph.{CGNode, CallGraph}
 import com.ibm.wala.ipa.cfg.ExplodedInterproceduralCFG
 import com.ibm.wala.ssa._
 import com.semantic_graph.NodeId
-import com.semantic_graph.writer.GraphWriter
+import edu.washington.cs.js2graph.Constants.GW
 
 import scala.collection.mutable
 import scala.jdk.CollectionConverters._
@@ -19,10 +19,7 @@ import scala.jdk.CollectionConverters._
 object JSFlowGraph {
   private val postApiInvocationNodes = mutable.Map[JavaScriptInvoke, NodeId]()
 
-  def getPostApiInvocationNode(g: GraphWriter[JsNodeAttr.Value, JsEdgeAttr.Value],
-                               invoke: JavaScriptInvoke,
-                               apiName: String,
-                               attrs: Constants.NodeAttrs): NodeId = {
+  def getPostApiInvocationNode(g: GW, invoke: JavaScriptInvoke, apiName: String, attrs: Constants.NodeAttrs): NodeId = {
     if (!postApiInvocationNodes.contains(invoke)) {
       postApiInvocationNodes.addOne(invoke, g.createNode(apiName, attrs))
     }
@@ -108,7 +105,7 @@ object JSFlowGraph {
     * FIXME: defUse and symTable should be an attribute of some processor class
     */
   def getPossibleOpNodes(dataFlow: IFDSDataFlow,
-                         g: GraphWriter[JsNodeAttr.Value, JsEdgeAttr.Value],
+                         g: GW,
                          symTable: SymbolTable,
                          instruction: SSAInstruction,
                          dataDeps: Map[AbsPath, Set[AbsVal]]): Set[NodeId] = {
@@ -127,7 +124,7 @@ object JSFlowGraph {
           // Focus on the case which can't be handled within IFDS: both base and receiver are non-constant (propagated)
           val receiverFuncNames: Set[String] = dataDeps.get(AbsPath.Local(dispatchFuncIndex)) match {
             case None             => Set()
-            case Some(fromValues) => fromValues.collect { case AbsVal.Global(g) => g.stripPrefix("global ") }
+            case Some(fromValues) => fromValues.collect { case AbsVal.Global(g) => g }
           }
           for (receiverFuncName <- receiverFuncNames) {
             // Base is a global variable
@@ -140,7 +137,7 @@ object JSFlowGraph {
                     Constants.asLibraryAPIName(globalBaseName, receiverFuncName) match {
                       case Some(apiName) =>
                         Some(
-                          g.createNode(apiName, Map(JsNodeAttr.TYPE -> NodeType.SINGLETON.toString, JsNodeAttr.TAG -> Tag.Call.toString)))
+                          g.createNode(apiName, Map(JsNodeAttr.TYPE -> NodeType.Call.toString, JsNodeAttr.TAG -> Tag.Singleton.toString)))
                       case _ => None
                     }
                   case _ => None
@@ -161,7 +158,7 @@ object JSFlowGraph {
                   Some(
                     g.createNode(
                       apiName + "." + memberName,
-                      Map(JsNodeAttr.TYPE -> NodeType.INSTANCE.toString, JsNodeAttr.TAG -> Tag.FieldRef.toString)))
+                      Map(JsNodeAttr.TYPE -> NodeType.FieldRef.toString, JsNodeAttr.TAG -> Tag.Instance.toString)))
                 } else {
                   None
                 }
@@ -188,7 +185,7 @@ object JSFlowGraph {
     * @param g Semantic graph writer
     * @param cg Call graph
     */
-  def addDataFlowGraph(g: GraphWriter[JsNodeAttr.Value, JsEdgeAttr.Value], cg: CallGraph): Unit = {
+  def addDataFlowGraph(g: GW, cg: CallGraph): Unit = {
     val icfg = ExplodedInterproceduralCFG.make(cg)
     val dataflow = new IFDSDataFlow(icfg)
     val results = dataflow.solve
@@ -238,7 +235,7 @@ object JSFlowGraph {
               if (symTable.isConstant(use) && symTable.getConstantValue(use) != null) {
                 val v = symTable.getConstantValue(use).toString
                 g.addEdge(
-                  g.createNode(v, Map(JsNodeAttr.TYPE -> NodeType.CONSTANT.toString)),
+                  g.createNode(v, Map(JsNodeAttr.TYPE -> NodeType.Constant.toString)),
                   opNode,
                   Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
               } else {
@@ -248,13 +245,13 @@ object JSFlowGraph {
                       // The information of invocation base API is already in the current opNode
                       if (Constants.isLibraryGlobalName(name) && !isInvokeBase) {
                         g.addEdge(
-                          g.createNode(name, Map(JsNodeAttr.TYPE -> NodeType.SINGLETON.toString)),
+                          g.createNode(name, Map(JsNodeAttr.TAG -> Tag.Singleton.toString)),
                           opNode,
                           Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
                       }
                     case AbsVal.Constant(v) =>
                       g.addEdge(
-                        g.createNode(v, Map(JsNodeAttr.TYPE -> NodeType.CONSTANT.toString)),
+                        g.createNode(v, Map(JsNodeAttr.TYPE -> NodeType.Constant.toString)),
                         opNode,
                         Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
                     case AbsVal.Instance(className, invoke) =>
@@ -262,7 +259,7 @@ object JSFlowGraph {
                         g,
                         invoke,
                         className,
-                        Map(JsNodeAttr.TYPE -> NodeType.INSTANCE.toString, JsNodeAttr.TAG -> Tag.Construct.toString))
+                        Map(JsNodeAttr.TYPE -> NodeType.Constant.toString, JsNodeAttr.TAG -> Tag.Instance.toString))
                       if (!g.getEdges.contains(fromOpNode, opNode)) {
                         g.addEdge(fromOpNode, opNode, Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
                       }

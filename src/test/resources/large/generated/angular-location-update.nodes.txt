@@ -1,14 +1,14 @@
-(?:^|; ):CONSTANT
-([\.$?*|{}\(\)\[\]\\\/\+^]):CONSTANT
-0.0:CONSTANT
-=([^;]*):CONSTANT
-[Call]global document.cookie.match:SINGLETON
-[Call]global document.head.appendChild:SINGLETON
-[Construct]global RegExp:SINGLETON
-[Construct]global RegExp:SINGLETON
-[Construct]global document.createElement:SINGLETON
-[FieldRef]HTMLElement.href:INSTANCE
-[FieldRef]HTMLElement.rel:INSTANCE
-g:CONSTANT
-link:CONSTANT
-prefetch:CONSTANT
+(?:^|; ):Constant
+([\.$?*|{}\(\)\[\]\\\/\+^]):Constant
+0.0:Constant
+=([^;]*):Constant
+HTMLElement.href:FieldRef
+HTMLElement.rel:FieldRef
+RegExp:Construct
+RegExp:Construct
+document.cookie.match:Call
+document.createElement:Construct
+document.head.appendChild:Call
+g:Constant
+link:Constant
+prefetch:Constant

@@ -7,6 +7,7 @@ import java.nio.file.Files
 import com.semantic_graph.writer.GexfWriter
 import org.junit.Test
 import com.semantic_graph.NodeId
+import edu.washington.cs.js2graph.Constants.GW
 import io.github.izgzhen.msbase.IOUtil
 import org.junit.Assert._
 
@@ -60,15 +61,10 @@ class JsTest {
     }
   }
 
-  type GW = GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]
-
   private def getNodeStr(g: GW, node: NodeId): String = {
     var nodeStr = g.getNodeLabel(node)
     val nodeAttrs = g.getNodeAttrs(node)
-    nodeAttrs.get(JsNodeAttr.TAG) match {
-      case Some(tag) => nodeStr = "[" + tag + "]" + nodeStr
-      case _ =>
-    }
+    // Tag is hidden in this representation
     nodeAttrs.get(JsNodeAttr.TYPE) match {
       case Some(typeName) => nodeStr = nodeStr + ":" + typeName
       case _ =>
@@ -167,7 +163,7 @@ class JsTest {
    */
   @Test
   def testConventionalChangelogIndexJS(): Unit = {
-    testJS("src/test/resources/large/conventional-changelog-index.js")
+    testJSWithEntrypoints("src/test/resources/large/conventional-changelog-index.js")
   }
 
   /**

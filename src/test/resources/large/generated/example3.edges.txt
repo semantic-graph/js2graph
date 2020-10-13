@@ -1,5 +1,5 @@
- --targetusername :CONSTANT -[DATAFLOW]-> [Construct]require(child_process).execSync:SINGLETON
-[Construct]require(child_process).execSync:SINGLETON -[DATAFLOW]-> [Construct]Byte[].toString:INSTANCE
-[Construct]require(child_process).execSync:SINGLETON -[DATAFLOW]-> [Construct]Byte[].toString:INSTANCE
-sfdx :CONSTANT -[DATAFLOW]-> [Construct]require(child_process).execSync:SINGLETON
-sfdx :CONSTANT -[DATAFLOW]-> [Construct]require(child_process).execSync:SINGLETON
+ --targetusername :Constant -[DATAFLOW]-> child_process.execSync:Construct
+child_process.execSync:Construct -[DATAFLOW]-> Byte[].toString:Construct
+child_process.execSync:Construct -[DATAFLOW]-> Byte[].toString:Construct
+sfdx :Constant -[DATAFLOW]-> child_process.execSync:Construct
+sfdx :Constant -[DATAFLOW]-> child_process.execSync:Construct

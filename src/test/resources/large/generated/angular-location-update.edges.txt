@@ -1,9 +1,9 @@
-(?:^|; ):CONSTANT -[DATAFLOW]-> [Construct]global RegExp:SINGLETON
-([\.$?*|{}\(\)\[\]\\\/\+^]):CONSTANT -[DATAFLOW]-> [Construct]global RegExp:SINGLETON
-0.0:CONSTANT -[DATAFLOW]-> [FieldRef]HTMLElement.href:INSTANCE
-=([^;]*):CONSTANT -[DATAFLOW]-> [Construct]global RegExp:SINGLETON
-[Construct]global RegExp:SINGLETON -[DATAFLOW]-> [Call]global document.cookie.match:SINGLETON
-[Construct]global document.createElement:SINGLETON -[DATAFLOW]-> [Call]global document.head.appendChild:SINGLETON
-g:CONSTANT -[DATAFLOW]-> [Construct]global RegExp:SINGLETON
-link:CONSTANT -[DATAFLOW]-> [Construct]global document.createElement:SINGLETON
-prefetch:CONSTANT -[DATAFLOW]-> [FieldRef]HTMLElement.rel:INSTANCE
+(?:^|; ):Constant -[DATAFLOW]-> RegExp:Construct
+([\.$?*|{}\(\)\[\]\\\/\+^]):Constant -[DATAFLOW]-> RegExp:Construct
+0.0:Constant -[DATAFLOW]-> HTMLElement.href:FieldRef
+=([^;]*):Constant -[DATAFLOW]-> RegExp:Construct
+RegExp:Construct -[DATAFLOW]-> document.cookie.match:Call
+document.createElement:Construct -[DATAFLOW]-> document.head.appendChild:Call
+g:Constant -[DATAFLOW]-> RegExp:Construct
+link:Constant -[DATAFLOW]-> document.createElement:Construct
+prefetch:Constant -[DATAFLOW]-> HTMLElement.rel:FieldRef

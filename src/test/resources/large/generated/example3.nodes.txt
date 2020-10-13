@@ -1,7 +1,7 @@
- --targetusername :CONSTANT
-[Construct]Byte[].toString:INSTANCE
-[Construct]Byte[].toString:INSTANCE
-[Construct]require(child_process).execSync:SINGLETON
-[Construct]require(child_process).execSync:SINGLETON
-sfdx :CONSTANT
-sfdx :CONSTANT
+ --targetusername :Constant
+Byte[].toString:Construct
+Byte[].toString:Construct
+child_process.execSync:Construct
+child_process.execSync:Construct
+sfdx :Constant
+sfdx :Constant

@@ -21,3 +21,5 @@ function conventionalChangelog(options, context, gitRawCommitsOpts, parserOpts, 
 }
 
 module.exports = conventionalChangelog;
+conventionalChangelog();
+conventionalChangelog();

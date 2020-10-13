@@ -1,16 +1,16 @@
-0.0:CONSTANT
-1.0:CONSTANT
-:CONSTANT
-[Call]CryptoDecipher.final:INSTANCE
-[Call]CryptoDecipher.update:INSTANCE
-[Call]global module.constructor._compile:INSTANCE
-[Call]global module.constructor.exports:INSTANCE
-[Construct]global module.constructor:SINGLETON
-[Construct]require(crypto).createDecipher:SINGLETON
-aes256:CONSTANT
-global process.env.npm_package_description:SINGLETON
-hex:CONSTANT
-require(./test/data):SINGLETON
-require(./test/data):SINGLETON
-utf8:CONSTANT
-utf8:CONSTANT
+0.0:Constant
+1.0:Constant
+:Constant
+CryptoDecipher.final:Call
+CryptoDecipher.update:Call
+__unknownModule(./test/data)
+__unknownModule(./test/data)
+aes256:Constant
+crypto.createDecipher:Construct
+hex:Constant
+module.constructor._compile:Call
+module.constructor.exports:Call
+module.constructor:Construct
+process.env.npm_package_description
+utf8:Constant
+utf8:Constant

@@ -1,1 +1,1 @@
-__SOURCE_INTERNET:CONSTANT -[DATAFLOW]-> [Call]global eval:SINGLETON
+__SOURCE_INTERNET:Constant -[DATAFLOW]-> eval:Call
