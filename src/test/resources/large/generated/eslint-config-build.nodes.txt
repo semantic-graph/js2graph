@@ -1,2 +1,2 @@
-[Call]global eval:SINGLETON
-__SOURCE_INTERNET:CONSTANT
+__SOURCE_INTERNET:Constant
+eval:Call

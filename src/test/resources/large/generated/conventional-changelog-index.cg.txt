@@ -5,10 +5,28 @@ Node: synthetic < JavaScriptLoader, LFakeRoot, fakeRootMethod()V > Context: Ever
      -> Node: <Code body of function Lprologue.js> Context: Everywhere
 
 Node: <Code body of function Lconventional-changelog-index.js> Context: Everywhere
- - JSCall@12
-     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lconventional-changelog-index.js/conventionalChangelog)> Context: Caller: Node: <Code body of function Lconventional-changelog-index.js> Context: Everywhere@12
+ - JSCall@10
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lconventional-changelog-index.js/conventionalChangelog)> Context: Caller: Node: <Code body of function Lconventional-changelog-index.js> Context: Everywhere@10
+ - JSCall@39
+     -> Node: <Code body of function Lconventional-changelog-index.js/conventionalChangelog> Context: Everywhere
+ - JSCall@43
+     -> Node: <Code body of function Lconventional-changelog-index.js/conventionalChangelog> Context: Everywhere
 
-Node: <ctor for <JavaScriptLoader,LFunction>(Lconventional-changelog-index.js/conventionalChangelog)> Context: Caller: Node: <Code body of function Lconventional-changelog-index.js> Context: Everywhere@12
+Node: <ctor for <JavaScriptLoader,LFunction>(Lconventional-changelog-index.js/conventionalChangelog)> Context: Caller: Node: <Code body of function Lconventional-changelog-index.js> Context: Everywhere@10
+
+Node: <Code body of function Lconventional-changelog-index.js/conventionalChangelog> Context: Everywhere
+ - JSCall@10
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lconventional-changelog-index.js/conventionalChangelog/conventional-changelog-index.js@878)> Context: Caller: Node: <Code body of function Lconventional-changelog-index.js/conventionalChangelog> Context: Everywhere@10
+ - JSCall@22
+     -> Node: <ctor for <JavaScriptLoader,LArray>> Context: Caller: Node: <Code body of function Lconventional-changelog-index.js/conventionalChangelog> Context: Everywhere@22
+ - JSCall@25
+     -> Node: <ctor for <JavaScriptLoader,LObject>> Context: Caller: Node: <Code body of function Lconventional-changelog-index.js/conventionalChangelog> Context: Everywhere@25
+
+Node: <ctor for <JavaScriptLoader,LFunction>(Lconventional-changelog-index.js/conventionalChangelog/conventional-changelog-index.js@878)> Context: Caller: Node: <Code body of function Lconventional-changelog-index.js/conventionalChangelog> Context: Everywhere@10
+
+Node: <ctor for <JavaScriptLoader,LArray>> Context: Caller: Node: <Code body of function Lconventional-changelog-index.js/conventionalChangelog> Context: Everywhere@22
+
+Node: <ctor for <JavaScriptLoader,LObject>> Context: Caller: Node: <Code body of function Lconventional-changelog-index.js/conventionalChangelog> Context: Everywhere@25
 
 Node: <Code body of function Lprologue.js> Context: Everywhere
  - JSCall@12

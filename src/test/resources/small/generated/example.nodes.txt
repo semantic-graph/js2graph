@@ -1,4 +1,4 @@
-1.0:CONSTANT
-2.0:CONSTANT
-3.0:CONSTANT
-[Call]global console.log:SINGLETON
+1.0:Constant
+2.0:Constant
+3.0:Constant
+console.log:Call

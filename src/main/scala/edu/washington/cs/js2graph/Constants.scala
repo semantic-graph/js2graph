@@ -2,28 +2,22 @@ package edu.washington.cs.js2graph
 
 import com.ibm.wala.cast.js.ipa.summaries.JavaScriptConstructorFunctions
 import com.ibm.wala.ipa.callgraph.{CGNode, CallGraph}
+import com.semantic_graph.writer.GexfWriter
 
 import scala.jdk.CollectionConverters._
 
 object Constants {
-  val nodeJsBuiltInGlobalNames = Set("process", "console", "document", "Buffer", "eval", "Buffer")
+  val unknownModule = "__unknownModule"
+  val nodeJsBuiltInGlobalNames = Set("process", "console", "document", "Buffer", "eval", "Buffer", "child_process", unknownModule, "crypto")
 
   def isLibraryGlobalName(name: String): Boolean = {
-    if (name.startsWith("global ")) {
-      val s = name.stripPrefix("global ")
-      // FIXME: prefix is not a good heuristic
-      nodeJsBuiltInGlobalNames.exists(name => s.startsWith(name))
-    } else if (name.startsWith("require(")) {
-      true
-    } else {
-      false
-    }
+    nodeJsBuiltInGlobalNames.exists(globalName => name.startsWith(globalName))
   }
 
   def asLibraryAPIName(globalBaseName: String, receiverFuncName: String): Option[String] = {
-    if (globalBaseName == "global " + WALAGlobalContext) {
+    if (globalBaseName == WALAGlobalContext) {
       if (nodeJsBuiltInGlobalNames.contains(receiverFuncName)) {
-        return Some("global " + receiverFuncName)
+        return Some(receiverFuncName)
       }
     }
     if (isLibraryGlobalName(globalBaseName)) {
@@ -84,4 +78,5 @@ object Constants {
   }
 
   type NodeAttrs = Map[JsNodeAttr.Value, String]
+  type GW = GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]
 }

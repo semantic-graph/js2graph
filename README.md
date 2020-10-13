@@ -49,6 +49,12 @@ python render-gexf.py path/to/example2.gexf
 
 Then use `dot` or https://dreampuf.github.io/GraphvizOnline for visualize.
 
+**UPDATE**: You can also use this script for an end-to-end PDF rendering:
+
+```
+scripts/viz path/to/js
+```
+
 ## Useful WALA resources
 
 - [prologue.js](https://github.com/wala/WALA/blob/master/com.ibm.wala.cast.js/src/main/resources/prologue.js)
