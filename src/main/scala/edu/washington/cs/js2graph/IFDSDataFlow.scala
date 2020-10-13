@@ -28,7 +28,7 @@ object AbsVal {
 
   /** Use instruction to track API instance constructed by the instruction
     */
-  final case class Instance(apiName: String, instruction: JavaScriptInvoke) extends AbsVal
+  final case class Instance(className: String, instruction: JavaScriptInvoke) extends AbsVal
 }
 
 sealed abstract class AbsPath extends Product with Serializable
@@ -60,8 +60,8 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
     *
     * FIXME: maybe multiple values?
     */
-  private val postApiInvocation = mutable.Map[JavaScriptInvoke, (String, Tag.Value)]()
-  def getApiNameAndTag(javaScriptInvoke: JavaScriptInvoke): Option[(String, Tag.Value)] =
+  private val postApiInvocation = mutable.Map[JavaScriptInvoke, (String, Constants.NodeAttrs)]()
+  def getOpNodeNameAndAttrs(javaScriptInvoke: JavaScriptInvoke): Option[(String, Constants.NodeAttrs)] =
     postApiInvocation.get(javaScriptInvoke)
 
   /** controls numbering of putstatic instructions for use in tabulation
@@ -82,7 +82,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
       */
     override def getUnbalancedReturnFlowFunction(src: Block, dest: Block): IFlowFunction = IdentityFlowFunction.identity
 
-    /** Flow function from caller to callee; just the identity function
+    /** Flow function from caller to callee
       *
       * @param src Call-site
       * @param dest the entry of the callee
@@ -132,8 +132,8 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
     }
 
     /** Flow function from call node to return node when there are no targets for the call site
-      * FIXME: not a case we are expecting
-      * if we're missing callees, just keep what information we have
+      *
+      * Here we define the semantics of various types of "built-in" library API.
       */
     override def getCallNoneToReturnFlowFunction(src: Block, dest: Block): IUnaryFlowFunction = {
       val instr = src.getDelegate.getInstruction
@@ -150,7 +150,9 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                   // Create a new instance type node here with type information
                   fact.snd match {
                     case AbsVal.Global(globalName) =>
-                      postApiInvocation.addOne(invokeInstruction, (globalName, Tag.Construct))
+                      postApiInvocation.addOne(
+                        invokeInstruction,
+                        (globalName, Map(JsNodeAttr.TYPE -> NodeType.SINGLETON.toString, JsNodeAttr.TAG -> Tag.Construct.toString)))
                       result.add(
                         domain.add(Pair.make(AbsPath.Local(invokeInstruction.getDef(0)), AbsVal.Instance(globalName, invokeInstruction))))
                     case _ =>
@@ -196,23 +198,31 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                      */
                     if (fact.fst == AbsPath.Local(dispatchBaseIndex)) {
                       val dispatchFunc = symTable.getConstantValue(dispatchFuncIndex).toString
-                      fact.snd match {
-                        case AbsVal.Global(globalBaseName) =>
-                          val apiName = globalBaseName + "." + dispatchFunc
-                          val absVal = if (Constants.isConstructorAPI(dispatchFunc)) {
-                            postApiInvocation.addOne(invokeInstruction, (apiName, Tag.Construct))
-                            AbsVal.Instance(apiName, invokeInstruction)
-                          } else {
+                      val apiNameSpaceAndType = fact.snd match {
+                        case AbsVal.Global(globalBaseName) => Some((globalBaseName, NodeType.SINGLETON))
+                        case AbsVal.Instance(className, _) => Some((className, NodeType.INSTANCE))
+                        case _                             => None
+                      }
+                      if (apiNameSpaceAndType.nonEmpty) {
+                        val (apiNameSpace, nodeType) = apiNameSpaceAndType.get
+                        val apiName = apiNameSpace + "." + dispatchFunc
+                        val absVal = Constants.getConstructorAPI(dispatchFunc) match {
+                          case Some(constructedClassName) =>
+                            // 1) LHS value is considered an instance returned from "built-in" API, which
+                            //    can function as the parent of some other node in the dependency graph as well.
+                            postApiInvocation.addOne(
+                              invokeInstruction,
+                              (apiName, Map(JsNodeAttr.TYPE -> nodeType.toString, JsNodeAttr.TAG -> Tag.Construct.toString)))
+                            AbsVal.Instance(constructedClassName, invokeInstruction)
+                          case None =>
+                            postApiInvocation.addOne(
+                              invokeInstruction,
+                              (apiName, Map(JsNodeAttr.TYPE -> nodeType.toString, JsNodeAttr.TAG -> Tag.Call.toString)))
+                            // 2) LHS value is still a global object, derived from the base global object.
+                            //    In this case, we use the global object as its "source"
                             AbsVal.Global(apiName)
-                          }
-                          result.add(domain.add(Pair.make(AbsPath.Local(invokeInstruction.getDef(0)), absVal)))
-                        case AbsVal.Instance(apiName, _) =>
-                          val newApiName = apiName + "." + dispatchFunc
-                          postApiInvocation.addOne(invokeInstruction, (newApiName, Tag.Call))
-                          result.add(
-                            domain.add(
-                              Pair.make(AbsPath.Local(invokeInstruction.getDef(0)), AbsVal.Instance(newApiName, invokeInstruction))))
-                        case _ =>
+                        }
+                        result.add(domain.add(Pair.make(AbsPath.Local(invokeInstruction.getDef(0)), absVal)))
                       }
                     }
                   }

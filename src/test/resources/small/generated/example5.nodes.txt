@@ -1,2 +1,2 @@
 1:CONSTANT
-[Call]global eval:GLOBAL
+[Call]global eval:SINGLETON

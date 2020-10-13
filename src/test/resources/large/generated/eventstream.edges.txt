@@ -1,11 +1,14 @@
-0.0:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
+0.0:CONSTANT -[DATAFLOW]-> [Call]CryptoDecipher.update:INSTANCE
 1.0:CONSTANT -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
 :CONSTANT -[DATAFLOW]-> [Call]global module.constructor._compile:INSTANCE
-[Call]require(crypto).createDecipher.final:INSTANCE -[DATAFLOW]-> [Call]global module.constructor._compile:INSTANCE
-aes256:CONSTANT -[DATAFLOW]-> [Construct]require(crypto).createDecipher:INSTANCE
-global process.env.npm_package_description:GLOBAL -[DATAFLOW]-> [Construct]require(crypto).createDecipher:INSTANCE
-hex:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
-require(./test/data):GLOBAL -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
-require(./test/data):GLOBAL -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
-utf8:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.final:INSTANCE
-utf8:CONSTANT -[DATAFLOW]-> [Call]require(crypto).createDecipher.update:INSTANCE
+[Construct]global module.constructor:SINGLETON -[DATAFLOW]-> [Call]global module.constructor._compile:INSTANCE
+[Construct]global module.constructor:SINGLETON -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
+[Construct]require(crypto).createDecipher:SINGLETON -[DATAFLOW]-> [Call]CryptoDecipher.final:INSTANCE
+[Construct]require(crypto).createDecipher:SINGLETON -[DATAFLOW]-> [Call]CryptoDecipher.update:INSTANCE
+aes256:CONSTANT -[DATAFLOW]-> [Construct]require(crypto).createDecipher:SINGLETON
+global process.env.npm_package_description:SINGLETON -[DATAFLOW]-> [Construct]require(crypto).createDecipher:SINGLETON
+hex:CONSTANT -[DATAFLOW]-> [Call]CryptoDecipher.update:INSTANCE
+require(./test/data):SINGLETON -[DATAFLOW]-> [Call]CryptoDecipher.update:INSTANCE
+require(./test/data):SINGLETON -[DATAFLOW]-> [Call]global module.constructor.exports:INSTANCE
+utf8:CONSTANT -[DATAFLOW]-> [Call]CryptoDecipher.final:INSTANCE
+utf8:CONSTANT -[DATAFLOW]-> [Call]CryptoDecipher.update:INSTANCE

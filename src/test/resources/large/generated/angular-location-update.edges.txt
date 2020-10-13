@@ -1,6 +1,9 @@
-([\.$?*|{}\(\)\[\]\\\/\+^]):CONSTANT -[DATAFLOW]-> [Construct]global RegExp:INSTANCE
-0.0:CONSTANT -[DATAFLOW]-> [FieldRef]global document.createElement.href:INSTANCE
-[Construct]global RegExp:INSTANCE -[DATAFLOW]-> [Call]global document.cookie.match:GLOBAL
-[Construct]global document.createElement:INSTANCE -[DATAFLOW]-> [Call]global document.head.appendChild:GLOBAL
-link:CONSTANT -[DATAFLOW]-> [Construct]global document.createElement:INSTANCE
-prefetch:CONSTANT -[DATAFLOW]-> [FieldRef]global document.createElement.rel:INSTANCE
+(?:^|; ):CONSTANT -[DATAFLOW]-> [Construct]global RegExp:SINGLETON
+([\.$?*|{}\(\)\[\]\\\/\+^]):CONSTANT -[DATAFLOW]-> [Construct]global RegExp:SINGLETON
+0.0:CONSTANT -[DATAFLOW]-> [FieldRef]HTMLElement.href:INSTANCE
+=([^;]*):CONSTANT -[DATAFLOW]-> [Construct]global RegExp:SINGLETON
+[Construct]global RegExp:SINGLETON -[DATAFLOW]-> [Call]global document.cookie.match:SINGLETON
+[Construct]global document.createElement:SINGLETON -[DATAFLOW]-> [Call]global document.head.appendChild:SINGLETON
+g:CONSTANT -[DATAFLOW]-> [Construct]global RegExp:SINGLETON
+link:CONSTANT -[DATAFLOW]-> [Construct]global document.createElement:SINGLETON
+prefetch:CONSTANT -[DATAFLOW]-> [FieldRef]HTMLElement.rel:INSTANCE

@@ -20,14 +20,14 @@ object Constants {
     }
   }
 
-  def asLibraryAPIName(globalBaseName: String, dispatchFuncName: String): Option[String] = {
+  def asLibraryAPIName(globalBaseName: String, receiverFuncName: String): Option[String] = {
     if (globalBaseName == "global " + WALAGlobalContext) {
-      if (nodeJsBuiltInGlobalNames.contains(dispatchFuncName)) {
-        return Some("global " + dispatchFuncName)
+      if (nodeJsBuiltInGlobalNames.contains(receiverFuncName)) {
+        return Some("global " + receiverFuncName)
       }
     }
     if (isLibraryGlobalName(globalBaseName)) {
-      return Some(globalBaseName + "." + dispatchFuncName)
+      return Some(globalBaseName + "." + receiverFuncName)
     }
     None
   }
@@ -36,15 +36,18 @@ object Constants {
     */
   val WALAGlobalContext = "__WALA__int3rnal__global"
 
-  val constructorAPINames = Set("createElement", "createDecipher")
+  private val constructorAPIs =
+    Map("createElement" -> "HTMLElement", "createDecipher" -> "CryptoDecipher", "toString" -> "String", "execSync" -> "Byte[]")
 
   /** Whether a function is a API that is essentially an instance constructor
     *
     * If so, we will construct a API instance node during DFA for its return value.
     *
     * FIXME: Consider other APIs as well as the base namespace
+    *
+    * @return class name
     */
-  def isConstructorAPI(funcName: String): Boolean = constructorAPINames.contains(funcName)
+  def getConstructorAPI(funcName: String): Option[String] = constructorAPIs.get(funcName)
 
   val debug: Option[String] = sys.env.get("DEBUG")
 
@@ -79,4 +82,6 @@ object Constants {
     val appNodeSuccs = appNodes.flatMap(n => cg.getSuccNodes(n).asScala.filterNot(Constants.isApplicationNode))
     (appNodes ++ appNodeSuccs).map(_.getIR.toString).mkString("\n\n")
   }
+
+  type NodeAttrs = Map[JsNodeAttr.Value, String]
 }

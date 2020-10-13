@@ -1,1 +1,1 @@
-1:CONSTANT -[DATAFLOW]-> [Call]global eval:GLOBAL
+1:CONSTANT -[DATAFLOW]-> [Call]global eval:SINGLETON
