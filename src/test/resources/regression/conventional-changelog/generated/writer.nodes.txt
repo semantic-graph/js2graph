@@ -1,29 +1,38 @@
-%d-%s-%s:CONSTANT
-1.0:CONSTANT
-2.0:CONSTANT
-Breaking Changes:CONSTANT
-Bug Fixes:CONSTANT
-Features:CONSTANT
-[Call]global $$undefined.forEach:INSTANCE
-[Call]global $$undefined.substr:INSTANCE
-[Call]global Writer.end:INSTANCE
-[Call]global Writer.header:INSTANCE
-[Call]global Writer.section:INSTANCE
-[Call]global getCommitLink.bind:INSTANCE
-[Call]global getIssueLink.bind:INSTANCE
-[Call]global getPatchVersionLink.bind:INSTANCE
-[Call]global getVersionLink.bind:INSTANCE
-[Call]require(event-stream).through:INSTANCE
-[Call]require(util).format:INSTANCE
-[Construct]global Writer:INSTANCE
-[Construct]require(util).format:INSTANCE
-[FieldRef]global $$undefined.substr.commitLink:INSTANCE
-[FieldRef]global $$undefined.substr.issueLink:INSTANCE
-[FieldRef]global $$undefined.substr.patchVersionLink:INSTANCE
-[FieldRef]global $$undefined.substr.versionLink:INSTANCE
-[FieldRef]require(util).format.commitLink:INSTANCE
-[FieldRef]require(util).format.issueLink:INSTANCE
-[FieldRef]require(util).format.patchVersionLink:INSTANCE
-[FieldRef]require(util).format.versionLink:INSTANCE
-require(lodash.assign):GLOBAL
-require(util):GLOBAL
+## %s %s:Constant
+### %s %s:Constant
+%d-%s-%s:Constant
+(#%s):Constant
+(%s):Constant
+Breaking Changes:Constant
+Bug Fixes:Constant
+Features:Constant
+Writer.end:Call
+Writer.header:Call
+Writer.section:Call
+Writer.section:Call
+Writer.section:Call
+Writer:Construct
+[## %s%s](%s/releases/tag/%s):Constant
+[### %s%s](%s/releases/tag/%s):Constant
+[#%s](%s/issues/%s):Constant
+[%s](%s/commit/%s):Constant
+__unknownModule(event-stream).through:Call
+__unknownModule(lodash.assign)
+__unknownModule(lodash.assign).version
+__unknownModule(lodash.assign):Call
+__unknownModule(lodash.assign):Call
+__unknownModule(util).format:Call
+__unknownModule(util).format:Call
+__unknownModule(util).format:Call
+__unknownModule(util).format:Call
+__unknownModule(util).format:Call
+__unknownModule(util).format:Call
+__unknownModule(util).format:Call
+getCommitLink.bind:Call
+getCommitLink.bind:Call
+getIssueLink.bind:Call
+getIssueLink.bind:Call
+getPatchVersionLink.bind:Call
+getPatchVersionLink.bind:Call
+getVersionLink.bind:Call
+getVersionLink.bind:Call

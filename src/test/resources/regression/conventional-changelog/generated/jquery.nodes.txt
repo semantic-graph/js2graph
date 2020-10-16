@@ -1,8 +1,26 @@
-[Call]require(q).all.spread:INSTANCE
-[Call]require(q).all:INSTANCE
-[Call]require(q).denodeify:INSTANCE
-[Call]require(through2).obj:INSTANCE
-[Construct]global RegExp:INSTANCE
-^(\w*)\: (.*)$:CONSTANT
-require(fs).readFile:GLOBAL
-tag:\s*[v=]?(.+?)[,\)]:CONSTANT
+../templates/jquery/commit.hbs:Constant
+../templates/jquery/header.hbs:Constant
+../templates/jquery/template.hbs:Constant
+:Constant
+RegExp:Construct
+RegExp:Construct
+^(\w*)\: (.*)$:Constant
+__unknownModule(fs).readFile
+__unknownModule(path).resolve
+__unknownModule(path).resolve
+__unknownModule(path).resolve
+__unknownModule(path).resolve:Call
+__unknownModule(path).resolve:Call
+__unknownModule(path).resolve:Call
+__unknownModule(q).all.spread:Call
+__unknownModule(q).all:Call
+__unknownModule(q).denodeify:Call
+__unknownModule(q).denodeify:Call
+__unknownModule(q).denodeify:Call
+__unknownModule(q).denodeify:Call
+__unknownModule(through2).obj:Call
+gi:Constant
+tag:\s*[v=]?(.+?)[,\)]:Constant
+utf-8:Constant
+utf-8:Constant
+utf-8:Constant

@@ -1,0 +1,148 @@
+<Code body of function Ltest.js>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..12]
+    -> BB2
+    -> BB15
+BB2[13..14]
+    -> BB3
+    -> BB15
+BB3[15..17]
+    -> BB4
+    -> BB15
+BB4[18..19]
+    -> BB5
+    -> BB15
+BB5[20..22]
+    -> BB6
+    -> BB15
+BB6[23..25]
+    -> BB7
+    -> BB15
+BB7[26..27]
+    -> BB8
+    -> BB15
+BB8[28..30]
+    -> BB9
+    -> BB15
+BB9[31..32]
+    -> BB10
+    -> BB15
+BB10[33..35]
+    -> BB11
+    -> BB15
+BB11[36..37]
+    -> BB12
+    -> BB15
+BB12[38..40]
+    -> BB13
+    -> BB15
+BB13[41..43]
+    -> BB14
+    -> BB15
+BB14[44..47]
+    -> BB15
+BB15[-1..-2]
+Instructions:
+BB0
+BB1
+0   v1 = new <JavaScriptLoader,LArray>@0     test.js [0->8109] (line 1) [1=[arguments]]
+1   v3 = global:global $$undefined           test.js [14->57] (line 2)
+2   lexical:conventionalChangelog@Ltest.js = v3test.js [14->57] (line 2)
+3   v5 = global:global $$undefined           test.js [58->94] (line 3)
+4   lexical:expect@Ltest.js = v5             test.js [58->94] (line 3)
+5   v7 = global:global $$undefined           test.js [95->126] (line 4)
+6   lexical:shell@Ltest.js = v7              test.js [95->126] (line 4)
+7   v9 = global:global $$undefined           test.js [127->161] (line 5)
+8   lexical:through@Ltest.js = v9            test.js [127->161] (line 5)
+9   v11 = global:global $$undefined          test.js [162->210] (line 6)
+10   lexical:writeFileSync@Ltest.js = v11    test.js [162->210] (line 6)
+11   v16 = global:global require             test.js [42->49] (line 2)
+12   check v16                               test.js [42->49] (line 2)
+BB2
+13   v18 = global:global __WALA__int3rnal__globaltest.js [42->56] (line 2)
+14   v14 = invoke v16@14 v18,v19:#../ exception:v20test.js [42->56] (line 2)
+BB3
+15   lexical:conventionalChangelog@Ltest.js = v14test.js [14->57] (line 2)
+16   v23 = global:global require             test.js [71->78] (line 3)
+17   check v23                               test.js [71->78] (line 3)
+BB4
+18   v24 = global:global __WALA__int3rnal__globaltest.js [71->86] (line 3)
+19   v22 = invoke v23@19 v24,v25:#chai exception:v26test.js [71->86] (line 3)
+BB5
+21   v28 = prototype_values(v22)             test.js [71->93] (line 3)
+22   v21 = getfield < JavaScriptLoader, LRoot, expect, <JavaScriptLoader,LRoot> > v28test.js [71->93] (line 3)
+BB6
+23   lexical:expect@Ltest.js = v21           test.js [58->94] (line 3)
+24   v30 = global:global require             test.js [107->114] (line 4)
+25   check v30                               test.js [107->114] (line 4)
+BB7
+26   v31 = global:global __WALA__int3rnal__globaltest.js [107->125] (line 4)
+27   v29 = invoke v30@27 v31,v32:#shelljs exception:v33test.js [107->125] (line 4)
+BB8
+28   lexical:shell@Ltest.js = v29            test.js [95->126] (line 4)
+29   v35 = global:global require             test.js [141->148] (line 5)
+30   check v35                               test.js [141->148] (line 5)
+BB9
+31   v36 = global:global __WALA__int3rnal__globaltest.js [141->160] (line 5)
+32   v34 = invoke v35@32 v36,v37:#through2 exception:v38test.js [141->160] (line 5)
+BB10
+33   lexical:through@Ltest.js = v34          test.js [127->161] (line 5)
+34   v41 = global:global require             test.js [182->189] (line 6)
+35   check v41                               test.js [182->189] (line 6)
+BB11
+36   v42 = global:global __WALA__int3rnal__globaltest.js [182->195] (line 6)
+37   v40 = invoke v41@37 v42,v43:#fs exception:v44test.js [182->195] (line 6)
+BB12
+39   v46 = prototype_values(v40)             test.js [182->209] (line 6)
+40   v39 = getfield < JavaScriptLoader, LRoot, writeFileSync, <JavaScriptLoader,LRoot> > v46test.js [182->209] (line 6)
+BB13
+41   lexical:writeFileSync@Ltest.js = v39    test.js [162->210] (line 6)
+42   v49 = global:global describe            test.js [212->220] (line 8)
+43   check v49                               test.js [212->220] (line 8)
+BB14
+44   v50 = global:global __WALA__int3rnal__globaltest.js [212->8108] (line 8)
+45   v55 = global:global Function            test.js [212->8108] (line 8)
+46   v52 = construct v55@46 v54:#Ltest.js/test.js@246 exception:v53test.js [212->8108] (line 8)
+47   v47 = invoke v49@47 v50,v51:#conventionalChangelog,v52 exception:v62test.js [212->8108] (line 8)
+BB15
+
+
+<ctor for <JavaScriptLoader,LFunction>(Ltest.js/test.js@246)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Ltest.js/test.js@246>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
