@@ -1,9 +1,11 @@
 (?:^|; ):Constant -[DATAFLOW]-> RegExp:Construct
+(?:^|; ):Constant -[DATAFLOW]-> RegExp:Construct
 ([\.$?*|{}\(\)\[\]\\\/\+^]):Constant -[DATAFLOW]-> RegExp:Construct
-0.0:Constant -[DATAFLOW]-> HTMLElement.href:FieldRef
+([\.$?*|{}\(\)\[\]\\\/\+^]):Constant -[DATAFLOW]-> RegExp:Construct
+=([^;]*):Constant -[DATAFLOW]-> RegExp:Construct
 =([^;]*):Constant -[DATAFLOW]-> RegExp:Construct
 RegExp:Construct -[DATAFLOW]-> document.cookie.match:Call
-document.createElement:Construct -[DATAFLOW]-> document.head.appendChild:Call
+g:Constant -[DATAFLOW]-> RegExp:Construct
 g:Constant -[DATAFLOW]-> RegExp:Construct
 link:Constant -[DATAFLOW]-> document.createElement:Construct
 prefetch:Constant -[DATAFLOW]-> HTMLElement.rel:FieldRef

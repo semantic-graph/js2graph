@@ -25,3 +25,4 @@ describe('writeLog', function() {
     });
   });
 });
+module.exports();

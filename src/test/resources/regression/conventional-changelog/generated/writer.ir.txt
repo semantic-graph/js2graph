@@ -1,378 +1,347 @@
-<Code body of function Lwriter.js>
+<Code body of function Lwriter>
 CFG:
 BB0[-1..-2]
     -> BB1
-BB1[0..51]
+BB1[0..4]
     -> BB2
-    -> BB51
-BB2[52..53]
-    -> BB3
-    -> BB51
-BB3[54..56]
-    -> BB4
-    -> BB51
-BB4[57..58]
-    -> BB5
-    -> BB51
-BB5[59..61]
-    -> BB6
-    -> BB51
-BB6[62..63]
-    -> BB7
-    -> BB51
-BB7[64..74]
-    -> BB8
-    -> BB51
-BB8[75..75]
-    -> BB9
-    -> BB51
-BB9[76..77]
-    -> BB10
-    -> BB51
-BB10[78..78]
-    -> BB11
-    -> BB51
-BB11[79..80]
-    -> BB12
-    -> BB51
-BB12[81..81]
-    -> BB13
-    -> BB51
-BB13[82..83]
-    -> BB14
-    -> BB51
-BB14[84..84]
-    -> BB15
-    -> BB51
-BB15[85..89]
-    -> BB16
-    -> BB51
-BB16[90..91]
-    -> BB17
-    -> BB51
-BB17[92..93]
-    -> BB18
-    -> BB51
-BB18[94..95]
-    -> BB19
-    -> BB51
-BB19[96..97]
-    -> BB20
-    -> BB51
-BB20[98..99]
-    -> BB21
-    -> BB51
-BB21[100..101]
-    -> BB22
-    -> BB51
-BB22[102..103]
-    -> BB23
-    -> BB51
-BB23[104..105]
-    -> BB24
-    -> BB51
-BB24[106..107]
-    -> BB25
-    -> BB51
-BB25[108..109]
-    -> BB26
-    -> BB51
-BB26[110..111]
-    -> BB27
-    -> BB51
-BB27[112..113]
-    -> BB28
-    -> BB51
-BB28[114..115]
-    -> BB29
-    -> BB51
-BB29[116..117]
-    -> BB30
-    -> BB51
-BB30[118..119]
-    -> BB31
-    -> BB51
-BB31[120..121]
-    -> BB32
-    -> BB51
-BB32[122..123]
-    -> BB33
-    -> BB51
-BB33[124..125]
-    -> BB34
-    -> BB51
-BB34[126..127]
-    -> BB35
-    -> BB51
-BB35[128..129]
-    -> BB36
-    -> BB51
-BB36[130..131]
-    -> BB37
-    -> BB51
-BB37[132..133]
-    -> BB38
-    -> BB51
-BB38[134..135]
-    -> BB39
-    -> BB51
-BB39[136..137]
-    -> BB40
-    -> BB51
-BB40[138..139]
-    -> BB41
-    -> BB51
-BB41[140..141]
-    -> BB42
-    -> BB51
-BB42[142..143]
-    -> BB43
-    -> BB51
-BB43[144..145]
-    -> BB44
-    -> BB51
-BB44[146..147]
-    -> BB45
-    -> BB51
-BB45[148..149]
-    -> BB46
-    -> BB51
-BB46[150..151]
-    -> BB47
-    -> BB51
-BB47[152..153]
-    -> BB48
-    -> BB51
-BB48[154..155]
-    -> BB49
-    -> BB51
-BB49[156..157]
-    -> BB50
-    -> BB51
-BB50[158..159]
-    -> BB51
-BB51[-1..-2]
+BB2[-1..-2]
 Instructions:
 BB0
 BB1
-0   v1 = new <JavaScriptLoader,LArray>@0     writer.js [0->5054] (line 1) [1=[arguments]]
-1   v3 = global:global $$undefined           writer.js [0->33] (line 1)
-2   lexical:es@Lwriter.js = v3               writer.js [0->33] (line 1)
-3   v5 = global:global $$undefined           writer.js [34->61] (line 2)
-4   lexical:util@Lwriter.js = v5             writer.js [34->61] (line 2)
-5   v7 = global:global $$undefined           writer.js [62->100] (line 3)
-6   lexical:extend@Lwriter.js = v7           writer.js [62->100] (line 3)
-7   v9 = global:global $$undefined           writer.js [102->153] (line 5)
-8   lexical:LINK_VERSION@Lwriter.js = v9     writer.js [102->153] (line 5)
-9   v11 = global:global $$undefined          writer.js [154->179] (line 6)
-10   lexical:VERSION@Lwriter.js = v11        writer.js [154->179] (line 6)
-11   v13 = global:global $$undefined         writer.js [180->238] (line 7)
-12   lexical:LINK_PATCH_VERSION@Lwriter.js = v13writer.js [180->238] (line 7)
-13   v15 = global:global $$undefined         writer.js [239->271] (line 8)
-14   lexical:PATCH_VERSION@Lwriter.js = v15  writer.js [239->271] (line 8)
-15   v17 = global:global $$undefined         writer.js [272->311] (line 9)
-16   lexical:LINK_ISSUE@Lwriter.js = v17     writer.js [272->311] (line 9)
-17   v19 = global:global $$undefined         writer.js [312->332] (line 10)
-18   lexical:ISSUE@Lwriter.js = v19          writer.js [312->332] (line 10)
-19   v21 = global:global $$undefined         writer.js [333->372] (line 11)
-20   lexical:LINK_COMMIT@Lwriter.js = v21    writer.js [333->372] (line 11)
-21   v23 = global:global $$undefined         writer.js [373->393] (line 12)
-22   lexical:COMMIT@Lwriter.js = v23         writer.js [373->393] (line 12)
-23   v28 = global:global Function            writer.js [0->5054] (line 1)
-24   v25 = construct v28@24 v27:#Lwriter.js/getVersionLink exception:v26writer.js [0->5054] (line 1)
-25   global:global getVersionLink = v25      writer.js [0->5054] (line 1)
-26   v33 = global:global Function            writer.js [0->5054] (line 1)
-27   v30 = construct v33@27 v32:#Lwriter.js/getPatchVersionLink exception:v31writer.js [0->5054] (line 1)
-28   global:global getPatchVersionLink = v30 writer.js [0->5054] (line 1)
-29   v38 = global:global Function            writer.js [0->5054] (line 1)
-30   v35 = construct v38@30 v37:#Lwriter.js/getIssueLink exception:v36writer.js [0->5054] (line 1)
-31   global:global getIssueLink = v35        writer.js [0->5054] (line 1)
-32   v43 = global:global Function            writer.js [0->5054] (line 1)
-33   v40 = construct v43@33 v42:#Lwriter.js/getCommitLink exception:v41writer.js [0->5054] (line 1)
-34   global:global getCommitLink = v40       writer.js [0->5054] (line 1)
-35   v48 = global:global Function            writer.js [0->5054] (line 1)
-36   v45 = construct v48@36 v47:#Lwriter.js/writeLog exception:v46writer.js [0->5054] (line 1)
-37   global:global writeLog = v45            writer.js [0->5054] (line 1)
-38   v50 = global:global $$undefined         writer.js [2685->2721] (line 92)
-39   lexical:LINK_HEADER_TPL@Lwriter.js = v50writer.js [2685->2721] (line 92)
-40   v52 = global:global $$undefined         writer.js [2722->2778] (line 93)
-41   lexical:PLAIN_HEADER_TPL@Lwriter.js = v52writer.js [2722->2778] (line 93)
-42   v54 = global:global $$undefined         writer.js [2779->2806] (line 94)
-43   lexical:EMPTY_COMPONENT@Lwriter.js = v54writer.js [2779->2806] (line 94)
-44   v59 = global:global Function            writer.js [0->5054] (line 1)
-45   v56 = construct v59@45 v58:#Lwriter.js/Writer exception:v57writer.js [0->5054] (line 1)
-46   global:global Writer = v56              writer.js [0->5054] (line 1)
-47   v64 = global:global Function            writer.js [0->5054] (line 1)
-48   v61 = construct v64@48 v63:#Lwriter.js/currentDate exception:v62writer.js [0->5054] (line 1)
-49   global:global currentDate = v61         writer.js [0->5054] (line 1)
-50   v68 = global:global require             writer.js [9->16] (line 1)
-51   check v68                               writer.js [9->16] (line 1)
+0   v1 = new <JavaScriptLoader,LArray>@0     writer.js [0->5246] (line 1) [1=[arguments]]
+1   v6 = global:global Function              writer.js [1->5245] (line 179)
+2   v3 = construct v6@2 v5:#Lwriter/nodejsModule exception:v4writer.js [1->5245] (line 179)
+3   v12 = global:global __WALA__int3rnal__globalwriter.js [1->5245] (line 179)
+4   v2 = invoke v3@4 v12 exception:v13       writer.js [1->5245] (line 179)
 BB2
-52   v70 = global:global __WALA__int3rnal__globalwriter.js [9->32] (line 1)
-53   v66 = invoke v68@53 v70,v71:#event-stream exception:v72writer.js [9->32] (line 1)
-BB3
-54   lexical:es@Lwriter.js = v66             writer.js [0->33] (line 1)
-55   v74 = global:global require             writer.js [45->52] (line 2)
-56   check v74                               writer.js [45->52] (line 2)
-BB4
-57   v75 = global:global __WALA__int3rnal__globalwriter.js [45->60] (line 2)
-58   v73 = invoke v74@58 v75,v76:#util exception:v77writer.js [45->60] (line 2)
-BB5
-59   lexical:util@Lwriter.js = v73           writer.js [34->61] (line 2)
-60   v79 = global:global require             writer.js [75->82] (line 3)
-61   check v79                               writer.js [75->82] (line 3)
-BB6
-62   v80 = global:global __WALA__int3rnal__globalwriter.js [75->99] (line 3)
-63   v78 = invoke v79@63 v80,v81:#lodash.assign exception:v82writer.js [75->99] (line 3)
-BB7
-64   lexical:extend@Lwriter.js = v78         writer.js [62->100] (line 3)
-65   lexical:LINK_VERSION@Lwriter.js = v83:#[## %s%s](%s/releases/tag/%s)writer.js [102->153] (line 5)
-66   lexical:VERSION@Lwriter.js = v84:### %s %swriter.js [154->179] (line 6)
-67   lexical:LINK_PATCH_VERSION@Lwriter.js = v85:#[### %s%s](%s/releases/tag/%s)writer.js [180->238] (line 7)
-68   lexical:PATCH_VERSION@Lwriter.js = v86:#### %s %swriter.js [239->271] (line 8)
-69   lexical:LINK_ISSUE@Lwriter.js = v87:#[#%s](%s/issues/%s)writer.js [272->311] (line 9)
-70   lexical:ISSUE@Lwriter.js = v88:#(#%s)   writer.js [312->332] (line 10)
-71   lexical:LINK_COMMIT@Lwriter.js = v89:#[%s](%s/commit/%s)writer.js [333->372] (line 11)
-72   lexical:COMMIT@Lwriter.js = v90:#(%s)   writer.js [373->393] (line 12)
-73   v93 = global:global Object              writer.js [412->454] (line 14)
-74   check v93                               writer.js [412->454] (line 14)
-BB8
-75   v91 = construct v93@75 exception:v94    writer.js [412->454] (line 14)
-BB9
-76   v96 = global:global writeLog            writer.js [426->434] (line 15)
-77   check v96                               writer.js [426->434] (line 15)
-BB10
-78   fieldref v91.v95:#writeLog = v96 = v96  writer.js [412->454] (line 14)
-BB11
-79   v98 = global:global Writer              writer.js [446->452] (line 16)
-80   check v98                               writer.js [446->452] (line 16)
-BB12
-81   fieldref v91.v97:#Writer = v98 = v98    writer.js [412->454] (line 14)
-BB13
-82   v100 = global:global module             writer.js [395->401] (line 14)
-83   check v100                              writer.js [395->401] (line 14)
-BB14
-84   fieldref v100.v101:#exports = v91 = v91 writer.js [395->454] (line 14)
-BB15
-85   lexical:LINK_HEADER_TPL@Lwriter.js = v103:#%s (%s)
 
-writer.js [2685->2721] (line 92)
-86   lexical:PLAIN_HEADER_TPL@Lwriter.js = v104:#<a name="%s"></a>
+
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Lwriter/nodejsModule>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..4]
+    -> BB2
+    -> BB12
+BB2[5..5]
+    -> BB3
+    -> BB12
+BB3[6..8]
+    -> BB4
+    -> BB12
+BB4[9..10]
+    -> BB5
+    -> BB12
+BB5[11..11]
+    -> BB6
+    -> BB12
+BB6[12..12]
+    -> BB7
+    -> BB12
+BB7[13..19]
+    -> BB8
+    -> BB12
+BB8[20..22]
+    -> BB9
+    -> BB12
+BB9[23..23]
+    -> BB10
+    -> BB12
+BB10[24..26]
+    -> BB11
+    -> BB12
+BB11[27..27]
+    -> BB12
+BB12[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     writer.js [1->5242] (line 1) [3=[arguments]]
+1   v5 = global:global $$undefined           writer.js [28->104] (line 2) [5=[module]]
+3   v9 = global:global Object                writer.js [41->103] (line 2)
+4   check v9                                 writer.js [41->103] (line 2)
+BB2
+5   v7 = construct v9@5 exception:v10        writer.js [41->103] (line 2) [7=[module]]
+BB3
+6   v15 = global:global Function             writer.js [41->103] (line 2)
+7   v12 = construct v15@7 v14:#Lwriter/nodejsModule/__WALA__require exception:v13writer.js [41->103] (line 2)
+8   fieldref v7.v11:#require = v12 = v12     writer.js [41->103] (line 2) [7=[module]]
+BB4
+9   v18 = global:global Object               writer.js [98->100] (line 4)
+10   check v18                               writer.js [98->100] (line 4)
+BB5
+11   v17 = construct v18@11 exception:v19    writer.js [98->100] (line 4)
+BB6
+12   fieldref v7.v16:#exports = v17 = v17    writer.js [41->103] (line 2) [7=[module]]
+BB7
+14   v24 = global:global Function            writer.js [109->5213] (line 176)
+15   v21 = construct v24@15 v23:#Lwriter/nodejsModule/moduleSource exception:v22writer.js [109->5213] (line 176)
+16   v28 = global:global __WALA__int3rnal__globalwriter.js [109->5213] (line 176)
+18   v6 = prototype_values(v7)               writer.js [5050->5064] (line 176) [7=[module]]
+19   v29 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v6writer.js [5050->5064] (line 176)
+BB8
+21   v30 = prototype_values(v7)              writer.js [5066->5080] (line 176) [7=[module]]
+22   v31 = getfield < JavaScriptLoader, LRoot, require, <JavaScriptLoader,LRoot> > v30writer.js [5066->5080] (line 176)
+BB9
+23   v20 = invoke v21@23 v28,v29,v31,v7,v33:#writer.js,v34:#/Users/zhen/projects/semantic-graph/js2graph/src/test/resources/regression/conventional-changelog/generated exception:v35writer.js [109->5213] (line 176) [7=[module]]
+BB10
+25   v32 = prototype_values(v7)              writer.js [5225->5239] (line 178) [7=[module]]
+26   v36 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v32writer.js [5225->5239] (line 178)
+BB11
+27   return v36                              writer.js [5218->5240] (line 178)
+BB12
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/__WALA__require)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/__WALA__require>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/moduleSource)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/moduleSource>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Lwriter/nodejsModule/moduleSource>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..44]
+    -> BB2
+    -> BB12
+BB2[45..47]
+    -> BB3
+    -> BB12
+BB3[48..50]
+    -> BB4
+    -> BB12
+BB4[51..61]
+    -> BB5
+    -> BB12
+BB5[62..62]
+    -> BB6
+    -> BB12
+BB6[63..63]
+    -> BB7
+    -> BB12
+BB7[64..65]
+    -> BB8
+    -> BB12
+BB8[66..66]
+    -> BB9
+    -> BB12
+BB9[67..74]
+    -> BB10
+    -> BB12
+BB10[75..79]
+    -> BB11
+    -> BB12
+BB11[80..82]
+    -> BB12
+BB12[-1..-2]
+Instructions:
+BB0
+BB1
+0   v8 = new <JavaScriptLoader,LArray>@0     writer.js [109->5048] (line 7) [8=[arguments]]
+1   v10 = global:global $$undefined          writer.js [184->217] (line 8)
+2   lexical:es@Lwriter/nodejsModule/moduleSource = v10writer.js [184->217] (line 8)
+3   v12 = global:global $$undefined          writer.js [218->245] (line 9)
+4   lexical:util@Lwriter/nodejsModule/moduleSource = v12writer.js [218->245] (line 9)
+5   v14 = global:global $$undefined          writer.js [246->284] (line 10)
+6   lexical:extend@Lwriter/nodejsModule/moduleSource = v14writer.js [246->284] (line 10)
+7   v16 = global:global $$undefined          writer.js [286->337] (line 12)
+8   lexical:LINK_VERSION@Lwriter/nodejsModule/moduleSource = v16writer.js [286->337] (line 12)
+9   v18 = global:global $$undefined          writer.js [338->363] (line 13)
+10   lexical:VERSION@Lwriter/nodejsModule/moduleSource = v18writer.js [338->363] (line 13)
+11   v20 = global:global $$undefined         writer.js [364->422] (line 14)
+12   lexical:LINK_PATCH_VERSION@Lwriter/nodejsModule/moduleSource = v20writer.js [364->422] (line 14)
+13   v22 = global:global $$undefined         writer.js [423->455] (line 15)
+14   lexical:PATCH_VERSION@Lwriter/nodejsModule/moduleSource = v22writer.js [423->455] (line 15)
+15   v24 = global:global $$undefined         writer.js [456->495] (line 16)
+16   lexical:LINK_ISSUE@Lwriter/nodejsModule/moduleSource = v24writer.js [456->495] (line 16)
+17   v26 = global:global $$undefined         writer.js [496->516] (line 17)
+18   lexical:ISSUE@Lwriter/nodejsModule/moduleSource = v26writer.js [496->516] (line 17)
+19   v28 = global:global $$undefined         writer.js [517->556] (line 18)
+20   lexical:LINK_COMMIT@Lwriter/nodejsModule/moduleSource = v28writer.js [517->556] (line 18)
+21   v30 = global:global $$undefined         writer.js [557->577] (line 19)
+22   lexical:COMMIT@Lwriter/nodejsModule/moduleSource = v30writer.js [557->577] (line 19)
+23   v35 = global:global Function            writer.js [109->5048] (line 7)
+24   v32 = construct v35@24 v34:#Lwriter/nodejsModule/moduleSource/getVersionLink exception:v33writer.js [109->5048] (line 7) [32=[getVersionLink]]
+25   v39 = global:global Function            writer.js [109->5048] (line 7)
+26   v36 = construct v39@26 v38:#Lwriter/nodejsModule/moduleSource/getPatchVersionLink exception:v37writer.js [109->5048] (line 7) [36=[getPatchVersionLink]]
+27   v43 = global:global Function            writer.js [109->5048] (line 7)
+28   v40 = construct v43@28 v42:#Lwriter/nodejsModule/moduleSource/getIssueLink exception:v41writer.js [109->5048] (line 7) [40=[getIssueLink]]
+29   v47 = global:global Function            writer.js [109->5048] (line 7)
+30   v44 = construct v47@30 v46:#Lwriter/nodejsModule/moduleSource/getCommitLink exception:v45writer.js [109->5048] (line 7) [44=[getCommitLink]]
+31   v51 = global:global Function            writer.js [109->5048] (line 7)
+32   v48 = construct v51@32 v50:#Lwriter/nodejsModule/moduleSource/writeLog exception:v49writer.js [109->5048] (line 7) [48=[writeLog]]
+33   v52 = global:global $$undefined         writer.js [2869->2905] (line 99)
+34   lexical:LINK_HEADER_TPL@Lwriter/nodejsModule/moduleSource = v52writer.js [2869->2905] (line 99)
+35   v54 = global:global $$undefined         writer.js [2906->2962] (line 100)
+36   lexical:PLAIN_HEADER_TPL@Lwriter/nodejsModule/moduleSource = v54writer.js [2906->2962] (line 100)
+37   v56 = global:global $$undefined         writer.js [2963->2990] (line 101)
+38   lexical:EMPTY_COMPONENT@Lwriter/nodejsModule/moduleSource = v56writer.js [2963->2990] (line 101)
+39   v61 = global:global Function            writer.js [109->5048] (line 7)
+40   v58 = construct v61@40 v60:#Lwriter/nodejsModule/moduleSource/Writer exception:v59writer.js [109->5048] (line 7) [58=[Writer]]
+41   v65 = global:global Function            writer.js [109->5048] (line 7)
+42   v62 = construct v65@42 v64:#Lwriter/nodejsModule/moduleSource/currentDate exception:v63writer.js [109->5048] (line 7) [62=[currentDate]]
+43   v68 = global:global __WALA__int3rnal__globalwriter.js [193->216] (line 8)
+44   v66 = invoke v4@44 v68,v69:#event-stream exception:v70writer.js [193->216] (line 8) [4=[require]]
+BB2
+45   lexical:es@Lwriter/nodejsModule/moduleSource = v66writer.js [184->217] (line 8)
+46   v72 = global:global __WALA__int3rnal__globalwriter.js [229->244] (line 9)
+47   v71 = invoke v4@47 v72,v73:#util exception:v74writer.js [229->244] (line 9) [4=[require]]
+BB3
+48   lexical:util@Lwriter/nodejsModule/moduleSource = v71writer.js [218->245] (line 9)
+49   v76 = global:global __WALA__int3rnal__globalwriter.js [259->283] (line 10)
+50   v75 = invoke v4@50 v76,v77:#lodash.assign exception:v78writer.js [259->283] (line 10) [4=[require]]
+BB4
+51   lexical:extend@Lwriter/nodejsModule/moduleSource = v75writer.js [246->284] (line 10)
+52   lexical:LINK_VERSION@Lwriter/nodejsModule/moduleSource = v79:#[## %s%s](%s/releases/tag/%s)writer.js [286->337] (line 12)
+53   lexical:VERSION@Lwriter/nodejsModule/moduleSource = v80:### %s %swriter.js [338->363] (line 13)
+54   lexical:LINK_PATCH_VERSION@Lwriter/nodejsModule/moduleSource = v81:#[### %s%s](%s/releases/tag/%s)writer.js [364->422] (line 14)
+55   lexical:PATCH_VERSION@Lwriter/nodejsModule/moduleSource = v82:#### %s %swriter.js [423->455] (line 15)
+56   lexical:LINK_ISSUE@Lwriter/nodejsModule/moduleSource = v83:#[#%s](%s/issues/%s)writer.js [456->495] (line 16)
+57   lexical:ISSUE@Lwriter/nodejsModule/moduleSource = v84:#(#%s)writer.js [496->516] (line 17)
+58   lexical:LINK_COMMIT@Lwriter/nodejsModule/moduleSource = v85:#[%s](%s/commit/%s)writer.js [517->556] (line 18)
+59   lexical:COMMIT@Lwriter/nodejsModule/moduleSource = v86:#(%s)writer.js [557->577] (line 19)
+60   v89 = global:global Object              writer.js [596->638] (line 21)
+61   check v89                               writer.js [596->638] (line 21)
+BB5
+62   v87 = construct v89@62 exception:v90    writer.js [596->638] (line 21)
+BB6
+63   fieldref v87.v91:#writeLog = v48 = v48  writer.js [596->638] (line 21) [48=[writeLog]]
+BB7
+64   v93 = lexical:Writer@Lwriter/nodejsModule/moduleSourcewriter.js [630->636] (line 23)
+65   fieldref v87.v92:#Writer = v93 = v93    writer.js [596->638] (line 21) [92=[$$destructure$elt71]]
+BB8
+66   fieldref v5.v94:#exports = v87 = v87    writer.js [579->638] (line 21) [5=[module]94=[$$destructure$elt70]]
+BB9
+67   lexical:LINK_HEADER_TPL@Lwriter/nodejsModule/moduleSource = v96:#%s (%s)
+
+writer.js [2869->2905] (line 99)
+68   lexical:PLAIN_HEADER_TPL@Lwriter/nodejsModule/moduleSource = v97:#<a name="%s"></a>
 %s (%s)
 
-writer.js [2722->2778] (line 93)
-87   lexical:EMPTY_COMPONENT@Lwriter.js = v105:#$$writer.js [2779->2806] (line 94)
-88   v107 = global:global Writer             writer.js [4819->4825] (line 167)
-89   check v107                              writer.js [4819->4825] (line 167)
-BB16
-90   v108 = global:global __WALA__int3rnal__globalwriter.js [4819->4827] (line 167)
-91   v106 = invoke v107@91 v108 exception:v109writer.js [4819->4827] (line 167)
-BB17
-92   v111 = global:global Writer             writer.js [4829->4835] (line 168)
-93   check v111                              writer.js [4829->4835] (line 168)
-BB18
-94   v112 = global:global __WALA__int3rnal__globalwriter.js [4829->4837] (line 168)
-95   v110 = invoke v111@95 v112 exception:v113writer.js [4829->4837] (line 168)
-BB19
-96   v115 = global:global Writer             writer.js [4839->4845] (line 169)
-97   check v115                              writer.js [4839->4845] (line 169)
-BB20
-98   v116 = global:global __WALA__int3rnal__globalwriter.js [4839->4847] (line 169)
-99   v114 = invoke v115@99 v116 exception:v117writer.js [4839->4847] (line 169)
-BB21
-100   v119 = global:global Writer            writer.js [4849->4855] (line 170)
-101   check v119                             writer.js [4849->4855] (line 170)
-BB22
-102   v120 = global:global __WALA__int3rnal__globalwriter.js [4849->4857] (line 170)
-103   v118 = invoke v119@103 v120 exception:v121writer.js [4849->4857] (line 170)
-BB23
-104   v123 = global:global Writer            writer.js [4859->4865] (line 171)
-105   check v123                             writer.js [4859->4865] (line 171)
-BB24
-106   v124 = global:global __WALA__int3rnal__globalwriter.js [4859->4867] (line 171)
-107   v122 = invoke v123@107 v124 exception:v125writer.js [4859->4867] (line 171)
-BB25
-108   v127 = global:global Writer            writer.js [4869->4875] (line 172)
-109   check v127                             writer.js [4869->4875] (line 172)
-BB26
-110   v128 = global:global __WALA__int3rnal__globalwriter.js [4869->4877] (line 172)
-111   v126 = invoke v127@111 v128 exception:v129writer.js [4869->4877] (line 172)
-BB27
-112   v131 = global:global currentDate       writer.js [4879->4890] (line 173)
-113   check v131                             writer.js [4879->4890] (line 173)
-BB28
-114   v132 = global:global __WALA__int3rnal__globalwriter.js [4879->4892] (line 173)
-115   v130 = invoke v131@115 v132 exception:v133writer.js [4879->4892] (line 173)
-BB29
-116   v135 = global:global currentDate       writer.js [4894->4905] (line 174)
-117   check v135                             writer.js [4894->4905] (line 174)
-BB30
-118   v136 = global:global __WALA__int3rnal__globalwriter.js [4894->4907] (line 174)
-119   v134 = invoke v135@119 v136 exception:v137writer.js [4894->4907] (line 174)
-BB31
-120   v139 = global:global getCommitLink     writer.js [4909->4922] (line 175)
-121   check v139                             writer.js [4909->4922] (line 175)
-BB32
-122   v140 = global:global __WALA__int3rnal__globalwriter.js [4909->4924] (line 175)
-123   v138 = invoke v139@123 v140 exception:v141writer.js [4909->4924] (line 175)
-BB33
-124   v143 = global:global getIssueLink      writer.js [4926->4938] (line 176)
-125   check v143                             writer.js [4926->4938] (line 176)
-BB34
-126   v144 = global:global __WALA__int3rnal__globalwriter.js [4926->4940] (line 176)
-127   v142 = invoke v143@127 v144 exception:v145writer.js [4926->4940] (line 176)
-BB35
-128   v147 = global:global getPatchVersionLinkwriter.js [4942->4961] (line 177)
-129   check v147                             writer.js [4942->4961] (line 177)
-BB36
-130   v148 = global:global __WALA__int3rnal__globalwriter.js [4942->4963] (line 177)
-131   v146 = invoke v147@131 v148 exception:v149writer.js [4942->4963] (line 177)
-BB37
-132   v151 = global:global getVersionLink    writer.js [4965->4979] (line 178)
-133   check v151                             writer.js [4965->4979] (line 178)
-BB38
-134   v152 = global:global __WALA__int3rnal__globalwriter.js [4965->4981] (line 178)
-135   v150 = invoke v151@135 v152 exception:v153writer.js [4965->4981] (line 178)
-BB39
-136   v155 = global:global writeLog          writer.js [4983->4991] (line 179)
-137   check v155                             writer.js [4983->4991] (line 179)
-BB40
-138   v156 = global:global __WALA__int3rnal__globalwriter.js [4983->4993] (line 179)
-139   v154 = invoke v155@139 v156 exception:v157writer.js [4983->4993] (line 179)
-BB41
-140   v159 = global:global writeLog          writer.js [4995->5003] (line 180)
-141   check v159                             writer.js [4995->5003] (line 180)
-BB42
-142   v160 = global:global __WALA__int3rnal__globalwriter.js [4995->5005] (line 180)
-143   v158 = invoke v159@143 v160 exception:v161writer.js [4995->5005] (line 180)
-BB43
-144   v163 = global:global writeLog          writer.js [5007->5015] (line 181)
-145   check v163                             writer.js [5007->5015] (line 181)
-BB44
-146   v164 = global:global __WALA__int3rnal__globalwriter.js [5007->5017] (line 181)
-147   v162 = invoke v163@147 v164 exception:v165writer.js [5007->5017] (line 181)
-BB45
-148   v167 = global:global writeLog          writer.js [5019->5027] (line 182)
-149   check v167                             writer.js [5019->5027] (line 182)
-BB46
-150   v168 = global:global __WALA__int3rnal__globalwriter.js [5019->5029] (line 182)
-151   v166 = invoke v167@151 v168 exception:v169writer.js [5019->5029] (line 182)
-BB47
-152   v171 = global:global writeLog          writer.js [5031->5039] (line 183)
-153   check v171                             writer.js [5031->5039] (line 183)
-BB48
-154   v172 = global:global __WALA__int3rnal__globalwriter.js [5031->5041] (line 183)
-155   v170 = invoke v171@155 v172 exception:v173writer.js [5031->5041] (line 183)
-BB49
-156   v175 = global:global writeLog          writer.js [5043->5051] (line 184)
-157   check v175                             writer.js [5043->5051] (line 184)
-BB50
-158   v176 = global:global __WALA__int3rnal__globalwriter.js [5043->5053] (line 184)
-159   v174 = invoke v175@159 v176 exception:v177writer.js [5043->5053] (line 184)
-BB51
+writer.js [2906->2962] (line 100)
+69   lexical:EMPTY_COMPONENT@Lwriter/nodejsModule/moduleSource = v98:#$$writer.js [2963->2990] (line 101)
+74   v101 = dispatch v94:#exports@74 v5 exception:v102writer.js [5003->5019] (line 174) [94=[$$destructure$elt70]5=[module]]
+BB10
+78   v99 = prototype_values(v5)              writer.js [5021->5035] (line 175) [5=[module]]
+79   v105 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v99writer.js [5021->5035] (line 175) [105=[$$destructure$rcvr71]]
+BB11
+82   v107 = dispatch v92:#Writer@82 v105 exception:v108writer.js [5021->5044] (line 175) [92=[$$destructure$elt71]105=[$$destructure$rcvr71]]
+BB12
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/currentDate)>
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/moduleSource/getVersionLink)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -398,7 +367,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/currentDate>@2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/moduleSource/getVersionLink>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -411,7 +380,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/Writer)>
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/moduleSource/getPatchVersionLink)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -437,7 +406,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/Writer>@2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/moduleSource/getPatchVersionLink>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -450,7 +419,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/writeLog)>
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/moduleSource/getIssueLink)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -476,7 +445,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/writeLog>@2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/moduleSource/getIssueLink>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -489,7 +458,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/getCommitLink)>
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/moduleSource/getCommitLink)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -515,7 +484,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/getCommitLink>@2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/moduleSource/getCommitLink>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -528,7 +497,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/getIssueLink)>
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/moduleSource/writeLog)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -554,7 +523,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/getIssueLink>@2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/moduleSource/writeLog>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -567,7 +536,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/getPatchVersionLink)>
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/moduleSource/Writer)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -593,7 +562,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/getPatchVersionLink>@2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/moduleSource/Writer>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -606,7 +575,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/getVersionLink)>
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/moduleSource/currentDate)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -632,7 +601,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/getVersionLink>@2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/moduleSource/currentDate>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -645,76 +614,49 @@ BB6
 BB7
 
 
-<Code body of function Lwriter.js/currentDate>
+<Code body of function Lwriter/nodejsModule/__WALA__require>
 CFG:
 BB0[-1..-2]
     -> BB1
-BB1[0..6]
+BB1[0..0]
     -> BB2
-    -> BB11
-BB2[7..7]
-    -> BB3
-    -> BB11
-BB3[8..15]
-    -> BB4
-    -> BB11
-BB4[16..22]
-    -> BB5
-    -> BB11
-BB5[23..28]
-    -> BB6
-    -> BB11
-BB6[29..30]
-    -> BB7
-    -> BB11
-BB7[31..36]
-    -> BB8
-    -> BB11
-BB8[37..37]
-    -> BB9
-    -> BB11
-BB9[38..38]
-    -> BB10
-    -> BB11
-BB10[39..39]
-    -> BB11
-BB11[-1..-2]
+BB2[-1..-2]
 Instructions:
 BB0
 BB1
-0   v3 = new <JavaScriptLoader,LArray>@0     writer.js [4605->4818] (line 159) [3=[arguments]]
-1   v5 = global:global $$undefined           writer.js [4632->4653] (line 160) [5=[now, $$destructure$rcvr67]]
-3   v7 = global:global $$undefined           writer.js [4656->4717] (line 161) [7=[pad]]
-5   v11 = global:global Date                 writer.js [4646->4650] (line 160)
-6   check v11                                writer.js [4646->4650] (line 160)
+0   v4 = new <JavaScriptLoader,LArray>@0     writer.js [54->85] (line 3) [4=[arguments]]
 BB2
-7   v9 = construct v11@7 exception:v12       writer.js [4642->4652] (line 160) [9=[now, $$destructure$rcvr67]]
-BB3
-9   v16 = global:global Function             writer.js [4656->4717] (line 161)
-10   v13 = construct v16@10 v15:#Lwriter.js/currentDate/writer.js@4666 exception:v14writer.js [4656->4717] (line 161) [13=[pad]]
-14   v21 = lexical:util@Lwriter.js           writer.js [4728->4732] (line 165) [21=[$$destructure$rcvr62]]
-15   check v21                               writer.js [4728->4732] (line 165) [21=[$$destructure$rcvr62]]
-BB4
-22   v28 = dispatch v27:#getFullYear@22 v9 exception:v29writer.js [4752->4769] (line 165) [27=[$$destructure$elt63]9=[now, $$destructure$rcvr67]]
-BB5
-23   v32 = global:global __WALA__int3rnal__globalwriter.js [4771->4794] (line 165)
-28   v37 = dispatch v36:#getMonth@28 v9 exception:v38writer.js [4775->4789] (line 165) [36=[$$destructure$elt65]9=[now, $$destructure$rcvr67]]
-BB6
-29   v33 = binaryop(add) v37 , v39:#1.0      writer.js [4775->4793] (line 165)
-30   v30 = invoke v13@30 v32,v33 exception:v40writer.js [4771->4794] (line 165) [13=[pad]]
-BB7
-31   v42 = global:global __WALA__int3rnal__globalwriter.js [4796->4814] (line 165)
-36   v46 = dispatch v45:#getDate@36 v9 exception:v47writer.js [4800->4813] (line 165) [45=[$$destructure$elt67]9=[now, $$destructure$rcvr67]]
-BB8
-37   v41 = invoke v13@37 v42,v46 exception:v48writer.js [4796->4814] (line 165) [13=[pad]]
-BB9
-38   v23 = dispatch v22:#format@38 v21,v24:#%d-%s-%s,v28,v30,v41 exception:v49writer.js [4728->4815] (line 165) [22=[$$destructure$elt62]21=[$$destructure$rcvr62]]
-BB10
-39   return v23                              writer.js [4721->4816] (line 165)
-BB11
 
 
-<Code body of function Lwriter.js/Writer>
+<Code body of function Lwriter/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     writer.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lwriter/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     writer.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lwriter/nodejsModule/moduleSource/Writer>
 CFG:
 BB0[-1..-2]
     -> BB1
@@ -803,672 +745,92 @@ BB29[-1..-2]
 Instructions:
 BB0
 BB1
-0   lexical:stream@Lwriter.js/Writer = v3    writer.js [2808->4603] (line 96) [3=[stream]]
-1   lexical:options@Lwriter.js/Writer = v4   writer.js [2808->4603] (line 96) [4=[options]]
-2   v5 = new <JavaScriptLoader,LArray>@2     writer.js [2808->4603] (line 96) [5=[arguments]]
-3   v8 = lexical:extend@Lwriter.js           writer.js [2855->2861] (line 97)
-4   check v8                                 writer.js [2855->2861] (line 97)
+0   lexical:stream@Lwriter/nodejsModule/moduleSource/Writer = v3writer.js [2992->4787] (line 103) [3=[stream]]
+1   lexical:options@Lwriter/nodejsModule/moduleSource/Writer = v4writer.js [2992->4787] (line 103) [4=[options]]
+2   v5 = new <JavaScriptLoader,LArray>@2     writer.js [2992->4787] (line 103) [5=[arguments]]
+3   v8 = lexical:extend@Lwriter/nodejsModule/moduleSourcewriter.js [3039->3045] (line 104)
+4   check v8                                 writer.js [3039->3045] (line 104)
 BB2
-5   v10 = global:global __WALA__int3rnal__globalwriter.js [2855->3142] (line 97)
-6   v13 = global:global Object               writer.js [2862->3126] (line 97)
-7   check v13                                writer.js [2862->3126] (line 97)
+5   v10 = global:global __WALA__int3rnal__globalwriter.js [3039->3326] (line 104)
+6   v13 = global:global Object               writer.js [3046->3310] (line 104)
+7   check v13                                writer.js [3046->3310] (line 104)
 BB3
-8   v11 = construct v13@8 exception:v14      writer.js [2862->3126] (line 97)
+8   v11 = construct v13@8 exception:v14      writer.js [3046->3310] (line 104)
 BB4
-11   v20 = global:global getVersionLink      writer.js [2881->2895] (line 98) [20=[$$destructure$rcvr30]]
-12   check v20                               writer.js [2881->2895] (line 98) [20=[$$destructure$rcvr30]]
+11   v20 = lexical:getVersionLink@Lwriter/nodejsModule/moduleSourcewriter.js [3065->3079] (line 105) [20=[$$destructure$rcvr32]]
+12   check v20                               writer.js [3065->3079] (line 105) [20=[$$destructure$rcvr32]]
 BB5
-15   v24 = lexical:options@Lwriter.js/Writer writer.js [2907->2914] (line 98)
-17   v17 = prototype_values(v24)             writer.js [2907->2925] (line 98)
-18   v23 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v17writer.js [2907->2925] (line 98)
+15   v24 = lexical:options@Lwriter/nodejsModule/moduleSource/Writerwriter.js [3091->3098] (line 105)
+17   v17 = prototype_values(v24)             writer.js [3091->3109] (line 105)
+18   v23 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v17writer.js [3091->3109] (line 105)
 BB6
-19   v22 = dispatch v21:#bind@19 v20,v16:#null,v23 exception:v27writer.js [2881->2926] (line 98) [21=[$$destructure$elt33]20=[$$destructure$rcvr30]16=[$$destructure$elt33]]
+19   v22 = dispatch v21:#bind@19 v20,v16:#null,v23 exception:v27writer.js [3065->3110] (line 105) [21=[$$destructure$elt35]20=[$$destructure$rcvr32]16=[$$destructure$elt35]]
 BB7
-20   fieldref v11.v15:#versionLink = v22 = v22writer.js [2862->3126] (line 97)
+20   fieldref v11.v15:#versionLink = v22 = v22writer.js [3046->3310] (line 104)
 BB8
-23   v32 = global:global getPatchVersionLink writer.js [2950->2969] (line 99) [32=[$$destructure$rcvr31]]
-24   check v32                               writer.js [2950->2969] (line 99) [32=[$$destructure$rcvr31]]
+23   v32 = lexical:getPatchVersionLink@Lwriter/nodejsModule/moduleSourcewriter.js [3134->3153] (line 106) [32=[$$destructure$rcvr33]]
+24   check v32                               writer.js [3134->3153] (line 106) [32=[$$destructure$rcvr33]]
 BB9
-27   v35 = lexical:options@Lwriter.js/Writer writer.js [2981->2988] (line 99)
-29   v18 = prototype_values(v35)             writer.js [2981->2999] (line 99)
-30   v34 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v18writer.js [2981->2999] (line 99)
+27   v35 = lexical:options@Lwriter/nodejsModule/moduleSource/Writerwriter.js [3165->3172] (line 106)
+29   v18 = prototype_values(v35)             writer.js [3165->3183] (line 106)
+30   v34 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v18writer.js [3165->3183] (line 106)
 BB10
-31   v33 = dispatch v21:#bind@31 v32,v16:#null,v34 exception:v37writer.js [2950->3000] (line 99) [21=[$$destructure$elt33]32=[$$destructure$rcvr31]16=[$$destructure$elt33]]
+31   v33 = dispatch v21:#bind@31 v32,v16:#null,v34 exception:v37writer.js [3134->3184] (line 106) [21=[$$destructure$elt35]32=[$$destructure$rcvr33]16=[$$destructure$elt35]]
 BB11
-32   fieldref v11.v28:#patchVersionLink = v33 = v33writer.js [2862->3126] (line 97)
+32   fieldref v11.v28:#patchVersionLink = v33 = v33writer.js [3046->3310] (line 104)
 BB12
-35   v42 = global:global getIssueLink        writer.js [3017->3029] (line 100) [42=[$$destructure$rcvr32]]
-36   check v42                               writer.js [3017->3029] (line 100) [42=[$$destructure$rcvr32]]
+35   v42 = lexical:getIssueLink@Lwriter/nodejsModule/moduleSourcewriter.js [3201->3213] (line 107) [42=[$$destructure$rcvr34]]
+36   check v42                               writer.js [3201->3213] (line 107) [42=[$$destructure$rcvr34]]
 BB13
-39   v45 = lexical:options@Lwriter.js/Writer writer.js [3041->3048] (line 100)
-41   v26 = prototype_values(v45)             writer.js [3041->3059] (line 100)
-42   v44 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v26writer.js [3041->3059] (line 100)
+39   v45 = lexical:options@Lwriter/nodejsModule/moduleSource/Writerwriter.js [3225->3232] (line 107)
+41   v26 = prototype_values(v45)             writer.js [3225->3243] (line 107)
+42   v44 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v26writer.js [3225->3243] (line 107)
 BB14
-43   v43 = dispatch v21:#bind@43 v42,v16:#null,v44 exception:v47writer.js [3017->3060] (line 100) [21=[$$destructure$elt33]42=[$$destructure$rcvr32]16=[$$destructure$elt33]]
+43   v43 = dispatch v21:#bind@43 v42,v16:#null,v44 exception:v47writer.js [3201->3244] (line 107) [21=[$$destructure$elt35]42=[$$destructure$rcvr34]16=[$$destructure$elt35]]
 BB15
-44   fieldref v11.v38:#issueLink = v43 = v43 writer.js [2862->3126] (line 97)
+44   fieldref v11.v38:#issueLink = v43 = v43 writer.js [3046->3310] (line 104)
 BB16
-47   v52 = global:global getCommitLink       writer.js [3078->3091] (line 101) [52=[$$destructure$rcvr33]]
-48   check v52                               writer.js [3078->3091] (line 101) [52=[$$destructure$rcvr33]]
+47   v52 = lexical:getCommitLink@Lwriter/nodejsModule/moduleSourcewriter.js [3262->3275] (line 108) [52=[$$destructure$rcvr35]]
+48   check v52                               writer.js [3262->3275] (line 108) [52=[$$destructure$rcvr35]]
 BB17
-51   v55 = lexical:options@Lwriter.js/Writer writer.js [3103->3110] (line 101)
-53   v29 = prototype_values(v55)             writer.js [3103->3121] (line 101)
-54   v54 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v29writer.js [3103->3121] (line 101)
+51   v55 = lexical:options@Lwriter/nodejsModule/moduleSource/Writerwriter.js [3287->3294] (line 108)
+53   v29 = prototype_values(v55)             writer.js [3287->3305] (line 108)
+54   v54 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v29writer.js [3287->3305] (line 108)
 BB18
-55   v53 = dispatch v21:#bind@55 v52,v16:#null,v54 exception:v57writer.js [3078->3122] (line 101) [21=[$$destructure$elt33]52=[$$destructure$rcvr33]16=[$$destructure$elt33]]
+55   v53 = dispatch v21:#bind@55 v52,v16:#null,v54 exception:v57writer.js [3262->3306] (line 108) [21=[$$destructure$elt35]52=[$$destructure$rcvr35]16=[$$destructure$elt35]]
 BB19
-56   fieldref v11.v48:#commitLink = v53 = v53writer.js [2862->3126] (line 97)
+56   fieldref v11.v48:#commitLink = v53 = v53writer.js [3046->3310] (line 104)
 BB20
-57   v58 = lexical:options@Lwriter.js/Writer writer.js [3128->3135] (line 102)
-59   conditional branch(eq, to iindex=62) v58,v61:#0writer.js [3128->3141] (line 102)
+57   v58 = lexical:options@Lwriter/nodejsModule/moduleSource/Writerwriter.js [3312->3319] (line 109)
+59   conditional branch(eq, to iindex=62) v58,v61:#0writer.js [3312->3325] (line 109)
 BB21
-61   goto (from iindex= 61 to iindex = 66)   writer.js [3128->3141] (line 102)
+61   goto (from iindex= 61 to iindex = 66)   writer.js [3312->3325] (line 109)
 BB22
-62   v63 = global:global Object              writer.js [3139->3141] (line 102)
-63   check v63                               writer.js [3139->3141] (line 102)
+62   v63 = global:global Object              writer.js [3323->3325] (line 109)
+63   check v63                               writer.js [3323->3325] (line 109)
 BB23
-64   v62 = construct v63@64 exception:v64    writer.js [3139->3141] (line 102)
+64   v62 = construct v63@64 exception:v64    writer.js [3323->3325] (line 109)
 BB24
 BB25
            v30 = phi  v58,v62
-66   v6 = invoke v8@66 v10,v11,v30 exception:v65writer.js [2855->3142] (line 97)
+66   v6 = invoke v8@66 v10,v11,v30 exception:v65writer.js [3039->3326] (line 104)
 BB26
-67   lexical:options@Lwriter.js/Writer = v6  writer.js [2845->3142] (line 97)
-68   v69 = global:global Function            writer.js [3149->3599] (line 104)
-69   v66 = construct v69@69 v68:#Lwriter.js/Writer/writer.js@3163 exception:v67writer.js [3149->3599] (line 104)
-70   fieldref v2.v75:#header = v66 = v66     writer.js [3149->3599] (line 104) [2=[this]]
+67   lexical:options@Lwriter/nodejsModule/moduleSource/Writer = v6writer.js [3029->3326] (line 104)
+68   v69 = global:global Function            writer.js [3333->3783] (line 111)
+69   v66 = construct v69@69 v68:#Lwriter/nodejsModule/moduleSource/Writer/writer@3347 exception:v67writer.js [3333->3783] (line 111)
+70   fieldref v2.v75:#header = v66 = v66     writer.js [3333->3783] (line 111) [2=[this]]
 BB27
-71   v79 = global:global Function            writer.js [3604->4550] (line 117)
-72   v76 = construct v79@72 v78:#Lwriter.js/Writer/writer.js@3619 exception:v77writer.js [3604->4550] (line 117)
-73   fieldref v2.v81:#section = v76 = v76    writer.js [3604->4550] (line 117) [2=[this]]
+71   v79 = global:global Function            writer.js [3788->4734] (line 124)
+72   v76 = construct v79@72 v78:#Lwriter/nodejsModule/moduleSource/Writer/writer@3803 exception:v77writer.js [3788->4734] (line 124)
+73   fieldref v2.v81:#section = v76 = v76    writer.js [3788->4734] (line 124) [2=[this]]
 BB28
-74   v85 = global:global Function            writer.js [4555->4600] (line 154)
-75   v82 = construct v85@75 v84:#Lwriter.js/Writer/writer.js@4566 exception:v83writer.js [4555->4600] (line 154)
-76   fieldref v2.v86:#end = v82 = v82        writer.js [4555->4600] (line 154) [2=[this]]
+74   v85 = global:global Function            writer.js [4739->4784] (line 161)
+75   v82 = construct v85@75 v84:#Lwriter/nodejsModule/moduleSource/Writer/writer@4750 exception:v83writer.js [4739->4784] (line 161)
+76   fieldref v2.v86:#end = v82 = v82        writer.js [4739->4784] (line 161) [2=[this]]
 BB29
 
 
-<Code body of function Lwriter.js/writeLog>
-CFG:
-BB0[-1..-2]
-    -> BB1
-BB1[0..11]
-    -> BB2
-    -> BB51
-BB2[12..14]
-    -> BB3
-    -> BB51
-BB3[15..15]
-    -> BB4
-    -> BB51
-BB4[16..19]
-    -> BB5
-    -> BB51
-BB5[20..24]
-    -> BB6
-    -> BB51
-BB6[25..25]
-    -> BB7
-    -> BB51
-BB7[26..26]
-    -> BB8
-    -> BB51
-BB8[27..30]
-    -> BB9
-    -> BB51
-BB9[31..35]
-    -> BB10
-    -> BB51
-BB10[36..36]
-    -> BB11
-    -> BB51
-BB11[37..37]
-    -> BB12
-    -> BB51
-BB12[38..41]
-    -> BB13
-    -> BB51
-BB13[42..46]
-    -> BB14
-    -> BB51
-BB14[47..47]
-    -> BB15
-    -> BB51
-BB15[48..48]
-    -> BB16
-    -> BB51
-BB16[49..52]
-    -> BB17
-    -> BB51
-BB17[53..57]
-    -> BB18
-    -> BB51
-BB18[58..58]
-    -> BB19
-    -> BB51
-BB19[59..59]
-    -> BB20
-    -> BB51
-BB20[60..61]
-    -> BB22
-    -> BB21
-BB21[62..63]
-    -> BB25
-BB22[64..65]
-    -> BB23
-    -> BB51
-BB23[66..66]
-    -> BB24
-    -> BB51
-BB24[67..67]
-    -> BB25
-BB25[68..68]
-    -> BB26
-    -> BB51
-BB26[69..74]
-    -> BB27
-    -> BB51
-BB27[75..81]
-    -> BB28
-    -> BB51
-BB28[82..84]
-    -> BB29
-    -> BB51
-BB29[85..85]
-    -> BB30
-    -> BB51
-BB30[86..88]
-    -> BB31
-    -> BB51
-BB31[89..89]
-    -> BB32
-    -> BB51
-BB32[90..91]
-    -> BB33
-    -> BB51
-BB33[92..92]
-    -> BB34
-    -> BB51
-BB34[93..93]
-    -> BB35
-    -> BB51
-BB35[94..95]
-    -> BB36
-    -> BB51
-BB36[96..96]
-    -> BB37
-    -> BB51
-BB37[97..97]
-    -> BB38
-    -> BB51
-BB38[98..99]
-    -> BB39
-    -> BB51
-BB39[100..100]
-    -> BB40
-    -> BB51
-BB40[101..101]
-    -> BB41
-    -> BB51
-BB41[102..109]
-    -> BB42
-    -> BB51
-BB42[110..116]
-    -> BB43
-    -> BB51
-BB43[117..117]
-    -> BB44
-    -> BB51
-BB44[118..125]
-    -> BB45
-    -> BB51
-BB45[126..126]
-    -> BB46
-    -> BB51
-BB46[127..134]
-    -> BB47
-    -> BB51
-BB47[135..135]
-    -> BB48
-    -> BB51
-BB48[136..143]
-    -> BB49
-    -> BB51
-BB49[144..144]
-    -> BB50
-    -> BB51
-BB50[145..149]
-    -> BB51
-BB51[-1..-2]
-Instructions:
-BB0
-BB1
-0   lexical:done@Lwriter.js/writeLog = v5    writer.js [1379->2683] (line 43) [5=[done]]
-1   v6 = new <JavaScriptLoader,LArray>@1     writer.js [1379->2683] (line 43) [6=[arguments]]
-2   v8 = global:global $$undefined           writer.js [1729->1742] (line 51)
-3   lexical:log@Lwriter.js/writeLog = v8     writer.js [1729->1742] (line 51)
-4   v10 = global:global $$undefined          writer.js [1745->1847] (line 52) [10=[stream]]
-6   v12 = global:global $$undefined          writer.js [1851->1892] (line 58) [12=[writer, $$destructure$rcvr28]]
-8   v14 = global:global $$undefined          writer.js [1895->1958] (line 59)
-9   lexical:sections@Lwriter.js/writeLog = v14writer.js [1895->1958] (line 59)
-10   v18 = lexical:extend@Lwriter.js         writer.js [1435->1441] (line 44)
-11   check v18                               writer.js [1435->1441] (line 44)
-BB2
-12   v20 = global:global __WALA__int3rnal__globalwriter.js [1435->1722] (line 44)
-13   v23 = global:global Object              writer.js [1442->1706] (line 44)
-14   check v23                               writer.js [1442->1706] (line 44)
-BB3
-15   v21 = construct v23@15 exception:v24    writer.js [1442->1706] (line 44)
-BB4
-18   v30 = global:global getVersionLink      writer.js [1461->1475] (line 45) [30=[$$destructure$rcvr14]]
-19   check v30                               writer.js [1461->1475] (line 45) [30=[$$destructure$rcvr14]]
-BB5
-23   v11 = prototype_values(v4)              writer.js [1487->1505] (line 45) [4=[options]]
-24   v33 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v11writer.js [1487->1505] (line 45)
-BB6
-25   v32 = dispatch v31:#bind@25 v30,v26:#null,v33 exception:v36writer.js [1461->1506] (line 45) [31=[$$destructure$elt17]30=[$$destructure$rcvr14]26=[$$destructure$elt28]]
-BB7
-26   fieldref v21.v25:#versionLink = v32 = v32writer.js [1442->1706] (line 44)
-BB8
-29   v41 = global:global getPatchVersionLink writer.js [1530->1549] (line 46) [41=[$$destructure$rcvr15]]
-30   check v41                               writer.js [1530->1549] (line 46) [41=[$$destructure$rcvr15]]
-BB9
-34   v13 = prototype_values(v4)              writer.js [1561->1579] (line 46) [4=[options]]
-35   v43 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v13writer.js [1561->1579] (line 46)
-BB10
-36   v42 = dispatch v31:#bind@36 v41,v26:#null,v43 exception:v45writer.js [1530->1580] (line 46) [31=[$$destructure$elt17]41=[$$destructure$rcvr15]26=[$$destructure$elt28]]
-BB11
-37   fieldref v21.v37:#patchVersionLink = v42 = v42writer.js [1442->1706] (line 44)
-BB12
-40   v50 = global:global getIssueLink        writer.js [1597->1609] (line 47) [50=[$$destructure$rcvr16]]
-41   check v50                               writer.js [1597->1609] (line 47) [50=[$$destructure$rcvr16]]
-BB13
-45   v27 = prototype_values(v4)              writer.js [1621->1639] (line 47) [4=[options]]
-46   v52 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v27writer.js [1621->1639] (line 47)
-BB14
-47   v51 = dispatch v31:#bind@47 v50,v26:#null,v52 exception:v54writer.js [1597->1640] (line 47) [31=[$$destructure$elt17]50=[$$destructure$rcvr16]26=[$$destructure$elt28]]
-BB15
-48   fieldref v21.v46:#issueLink = v51 = v51 writer.js [1442->1706] (line 44)
-BB16
-51   v59 = global:global getCommitLink       writer.js [1658->1671] (line 48) [59=[$$destructure$rcvr17]]
-52   check v59                               writer.js [1658->1671] (line 48) [59=[$$destructure$rcvr17]]
-BB17
-56   v28 = prototype_values(v4)              writer.js [1683->1701] (line 48) [4=[options]]
-57   v61 = getfield < JavaScriptLoader, LRoot, repository, <JavaScriptLoader,LRoot> > v28writer.js [1683->1701] (line 48)
-BB18
-58   v60 = dispatch v31:#bind@58 v59,v26:#null,v61 exception:v63writer.js [1658->1702] (line 48) [31=[$$destructure$elt17]59=[$$destructure$rcvr17]26=[$$destructure$elt28]]
-BB19
-59   fieldref v21.v55:#commitLink = v60 = v60writer.js [1442->1706] (line 44)
-BB20
-61   conditional branch(eq, to iindex=64) v4,v66:#0writer.js [1708->1721] (line 49) [4=[options]]
-BB21
-63   goto (from iindex= 63 to iindex = 68)   writer.js [1708->1721] (line 49)
-BB22
-64   v68 = global:global Object              writer.js [1719->1721] (line 49)
-65   check v68                               writer.js [1719->1721] (line 49)
-BB23
-66   v67 = construct v68@66 exception:v69    writer.js [1719->1721] (line 49)
-BB24
-BB25
-           v35 = phi  v4,v67
-68   v16 = invoke v18@68 v20,v21,v35 exception:v70writer.js [1435->1722] (line 44) [16=[options]]
-BB26
-70   lexical:log@Lwriter.js/writeLog = v71:# writer.js [1729->1742] (line 51)
-73   v75 = lexical:es@Lwriter.js             writer.js [1758->1760] (line 52) [75=[$$destructure$rcvr18]]
-74   check v75                               writer.js [1758->1760] (line 52) [75=[$$destructure$rcvr18]]
-BB27
-77   v81 = global:global Function            writer.js [1758->1846] (line 52)
-78   v78 = construct v81@78 v80:#Lwriter.js/writeLog/writer.js@1769 exception:v79writer.js [1758->1846] (line 52)
-79   v85 = global:global Function            writer.js [1758->1846] (line 52)
-80   v82 = construct v85@80 v84:#Lwriter.js/writeLog/writer.js@1808 exception:v83writer.js [1758->1846] (line 52)
-81   v77 = dispatch v76:#through@81 v75,v78,v82 exception:v86writer.js [1758->1846] (line 52) [77=[stream]76=[$$destructure$elt18]75=[$$destructure$rcvr18]]
-BB28
-83   v89 = global:global Writer              writer.js [1868->1874] (line 58)
-84   check v89                               writer.js [1868->1874] (line 58)
-BB29
-85   v87 = construct v89@85 v77,v16 exception:v90writer.js [1864->1891] (line 58) [87=[writer, $$destructure$rcvr28]77=[stream]16=[options]]
-BB30
-87   v92 = global:global Object              writer.js [1910->1957] (line 59)
-88   check v92                               writer.js [1910->1957] (line 59)
-BB31
-89   v91 = construct v92@89 exception:v93    writer.js [1910->1957] (line 59)
-BB32
-90   v96 = global:global Object              writer.js [1921->1923] (line 60)
-91   check v96                               writer.js [1921->1923] (line 60)
-BB33
-92   v95 = construct v96@92 exception:v97    writer.js [1921->1923] (line 60)
-BB34
-93   fieldref v91.v94:#fix = v95 = v95       writer.js [1910->1957] (line 59)
-BB35
-94   v100 = global:global Object             writer.js [1935->1937] (line 61)
-95   check v100                              writer.js [1935->1937] (line 61)
-BB36
-96   v99 = construct v100@96 exception:v101  writer.js [1935->1937] (line 61)
-BB37
-97   fieldref v91.v98:#feat = v99 = v99      writer.js [1910->1957] (line 59)
-BB38
-98   v104 = global:global Object             writer.js [1951->1953] (line 62)
-99   check v104                              writer.js [1951->1953] (line 62)
-BB39
-100   v103 = construct v104@100 exception:v105writer.js [1951->1953] (line 62)
-BB40
-101   fieldref v91.v102:#breaks = v103 = v103writer.js [1910->1957] (line 59)
-BB41
-102   lexical:sections@Lwriter.js/writeLog = v91writer.js [1895->1958] (line 59)
-107   v113 = global:global Function          writer.js [1962->2484] (line 65)
-108   v110 = construct v113@108 v112:#Lwriter.js/writeLog/writer.js@1978 exception:v111writer.js [1962->2484] (line 65)
-109   v109 = dispatch v108:#forEach@109 v3,v110 exception:v116writer.js [1962->2484] (line 65) [108=[$$destructure$elt20]3=[commits, $$destructure$rcvr20]]
-BB42
-115   v38 = prototype_values(v16)            writer.js [2503->2518] (line 85) [16=[options]]
-116   v121 = getfield < JavaScriptLoader, LRoot, version, <JavaScriptLoader,LRoot> > v38writer.js [2503->2518] (line 85)
-BB43
-117   v120 = dispatch v119:#header@117 v87,v121 exception:v124writer.js [2489->2519] (line 85) [119=[$$destructure$elt24]87=[writer, $$destructure$rcvr28]]
-BB44
-122   v131 = lexical:sections@Lwriter.js/writeLogwriter.js [2551->2559] (line 86)
-124   v39 = prototype_values(v131)           writer.js [2551->2563] (line 86)
-125   v130 = getfield < JavaScriptLoader, LRoot, fix, <JavaScriptLoader,LRoot> > v39writer.js [2551->2563] (line 86)
-BB45
-126   v128 = dispatch v127:#section@126 v87,v129:#Bug Fixes,v130 exception:v133writer.js [2523->2564] (line 86) [127=[$$destructure$elt27]87=[writer, $$destructure$rcvr28]]
-BB46
-131   v139 = lexical:sections@Lwriter.js/writeLogwriter.js [2595->2603] (line 87)
-133   v44 = prototype_values(v139)           writer.js [2595->2608] (line 87)
-134   v138 = getfield < JavaScriptLoader, LRoot, feat, <JavaScriptLoader,LRoot> > v44writer.js [2595->2608] (line 87)
-BB47
-135   v136 = dispatch v127:#section@135 v87,v137:#Features,v138 exception:v141writer.js [2568->2609] (line 87) [127=[$$destructure$elt27]87=[writer, $$destructure$rcvr28]]
-BB48
-140   v147 = lexical:sections@Lwriter.js/writeLogwriter.js [2648->2656] (line 88)
-142   v47 = prototype_values(v147)           writer.js [2648->2663] (line 88)
-143   v146 = getfield < JavaScriptLoader, LRoot, breaks, <JavaScriptLoader,LRoot> > v47writer.js [2648->2663] (line 88)
-BB49
-144   v144 = dispatch v127:#section@144 v87,v145:#Breaking Changes,v146 exception:v149writer.js [2613->2664] (line 88) [127=[$$destructure$elt27]87=[writer, $$destructure$rcvr28]]
-BB50
-149   v153 = dispatch v152:#end@149 v87 exception:v154writer.js [2668->2680] (line 89) [152=[$$destructure$elt28]87=[writer, $$destructure$rcvr28]]
-BB51
-
-
-<Code body of function Lwriter.js/getCommitLink>
-CFG:
-BB0[-1..-2]
-    -> BB1
-BB1[0..7]
-    -> BB2
-    -> BB12
-BB2[8..9]
-    -> BB7
-    -> BB3
-BB3[10..13]
-    -> BB4
-    -> BB12
-BB4[14..17]
-    -> BB5
-    -> BB12
-BB5[18..18]
-    -> BB6
-    -> BB12
-BB6[19..20]
-    -> BB11
-BB7[21..24]
-    -> BB8
-    -> BB12
-BB8[25..28]
-    -> BB9
-    -> BB12
-BB9[29..29]
-    -> BB10
-    -> BB12
-BB10[30..30]
-    -> BB11
-BB11[31..31]
-    -> BB12
-BB12[-1..-2]
-Instructions:
-BB0
-BB1
-0   v5 = new <JavaScriptLoader,LArray>@0     writer.js [1134->1377] (line 36) [5=[arguments]]
-1   v7 = global:global $$undefined           writer.js [1179->1215] (line 37) [7=[shortHash]]
-7   v13 = dispatch v12:#substring@7 v4,v14:#0.0,v15:#8.0 exception:v16writer.js [1195->1214] (line 37) [13=[shortHash]12=[$$destructure$elt10]4=[hash, $$destructure$rcvr10]]
-BB2
-9   conditional branch(eq, to iindex=21) v3,v18:#0writer.js [1267->1374] (line 38) [3=[repository]]
-BB3
-12   v22 = lexical:util@Lwriter.js           writer.js [1284->1288] (line 39) [22=[$$destructure$rcvr11]]
-13   check v22                               writer.js [1284->1288] (line 39) [22=[$$destructure$rcvr11]]
-BB4
-16   v26 = lexical:LINK_COMMIT@Lwriter.js    writer.js [1296->1307] (line 39)
-17   check v26                               writer.js [1296->1307] (line 39)
-BB5
-18   v24 = dispatch v23:#format@18 v22,v26,v13,v3,v4 exception:v27writer.js [1284->1337] (line 39) [23=[$$destructure$elt12]22=[$$destructure$rcvr11]13=[shortHash]3=[repository]4=[hash, $$destructure$rcvr10]]
-BB6
-20   goto (from iindex= 20 to iindex = 31)   writer.js [1267->1374] (line 38)
-BB7
-23   v30 = lexical:util@Lwriter.js           writer.js [1344->1348] (line 40) [30=[$$destructure$rcvr12]]
-24   check v30                               writer.js [1344->1348] (line 40) [30=[$$destructure$rcvr12]]
-BB8
-27   v33 = lexical:COMMIT@Lwriter.js         writer.js [1356->1362] (line 40)
-28   check v33                               writer.js [1356->1362] (line 40)
-BB9
-29   v31 = dispatch v23:#format@29 v30,v33,v13 exception:v34writer.js [1344->1374] (line 40) [23=[$$destructure$elt12]30=[$$destructure$rcvr12]13=[shortHash]]
-BB10
-BB11
-           v8 = phi  v24,v31
-31   return v8                               writer.js [1260->1375] (line 38)
-BB12
-
-
-<Code body of function Lwriter.js/getIssueLink>
-CFG:
-BB0[-1..-2]
-    -> BB1
-BB1[0..1]
-    -> BB6
-    -> BB2
-BB2[2..5]
-    -> BB3
-    -> BB11
-BB3[6..9]
-    -> BB4
-    -> BB11
-BB4[10..10]
-    -> BB5
-    -> BB11
-BB5[11..12]
-    -> BB10
-BB6[13..16]
-    -> BB7
-    -> BB11
-BB7[17..20]
-    -> BB8
-    -> BB11
-BB8[21..21]
-    -> BB9
-    -> BB11
-BB9[22..22]
-    -> BB10
-BB10[23..23]
-    -> BB11
-BB11[-1..-2]
-Instructions:
-BB0
-BB1
-0   v5 = new <JavaScriptLoader,LArray>@0     writer.js [980->1133] (line 31) [5=[arguments]]
-1   conditional branch(eq, to iindex=13) v3,v7:#0writer.js [1032->1130] (line 32) [3=[repository]]
-BB2
-4   v12 = lexical:util@Lwriter.js            writer.js [1049->1053] (line 33) [12=[$$destructure$rcvr8]]
-5   check v12                                writer.js [1049->1053] (line 33) [12=[$$destructure$rcvr8]]
-BB3
-8   v16 = lexical:LINK_ISSUE@Lwriter.js      writer.js [1061->1071] (line 33)
-9   check v16                                writer.js [1061->1071] (line 33)
-BB4
-10   v14 = dispatch v13:#format@10 v12,v16,v4,v3,v4 exception:v17writer.js [1049->1098] (line 33) [13=[$$destructure$elt9]12=[$$destructure$rcvr8]4=[issue]3=[repository]]
-BB5
-12   goto (from iindex= 12 to iindex = 23)   writer.js [1032->1130] (line 32)
-BB6
-15   v20 = lexical:util@Lwriter.js           writer.js [1105->1109] (line 34) [20=[$$destructure$rcvr9]]
-16   check v20                               writer.js [1105->1109] (line 34) [20=[$$destructure$rcvr9]]
-BB7
-19   v23 = lexical:ISSUE@Lwriter.js          writer.js [1117->1122] (line 34)
-20   check v23                               writer.js [1117->1122] (line 34)
-BB8
-21   v21 = dispatch v13:#format@21 v20,v23,v4 exception:v24writer.js [1105->1130] (line 34) [13=[$$destructure$elt9]20=[$$destructure$rcvr9]4=[issue]]
-BB9
-BB10
-           v6 = phi  v14,v21
-23   return v6                               writer.js [1025->1131] (line 32)
-BB11
-
-
-<Code body of function Lwriter.js/getPatchVersionLink>
-CFG:
-BB0[-1..-2]
-    -> BB1
-BB1[0..1]
-    -> BB3
-    -> BB2
-BB2[2..4]
-    -> BB4
-BB3[5..5]
-    -> BB4
-BB4[6..7]
-    -> BB9
-    -> BB5
-BB5[8..11]
-    -> BB6
-    -> BB14
-BB6[12..15]
-    -> BB7
-    -> BB14
-BB7[16..16]
-    -> BB8
-    -> BB14
-BB8[17..18]
-    -> BB13
-BB9[19..22]
-    -> BB10
-    -> BB14
-BB10[23..26]
-    -> BB11
-    -> BB14
-BB11[27..27]
-    -> BB12
-    -> BB14
-BB12[28..28]
-    -> BB13
-BB13[29..29]
-    -> BB14
-BB14[-1..-2]
-Instructions:
-BB0
-BB1
-0   v6 = new <JavaScriptLoader,LArray>@0     writer.js [710->979] (line 25) [6=[arguments]]
-1   conditional branch(eq, to iindex=5) v5,v8:#0writer.js [786->816] (line 26) [5=[subtitle]]
-BB2
-2   v9 = binaryop(add) v10:#  , v5           writer.js [797->811] (line 26) [9=[subtitle]5=[subtitle]]
-4   goto (from iindex= 4 to iindex = 6)      writer.js [786->816] (line 26)
-BB3
-BB4
-           v7 = phi  v9,v11:#
-7   conditional branch(eq, to iindex=19) v3,v8:#0writer.js [827->976] (line 27) [3=[repository]]
-BB5
-10   v17 = lexical:util@Lwriter.js           writer.js [844->848] (line 28) [17=[$$destructure$rcvr6]]
-11   check v17                               writer.js [844->848] (line 28) [17=[$$destructure$rcvr6]]
-BB6
-14   v21 = lexical:LINK_PATCH_VERSION@Lwriter.jswriter.js [856->874] (line 28)
-15   check v21                               writer.js [856->874] (line 28)
-BB7
-16   v19 = dispatch v18:#format@16 v17,v21,v4,v7,v3,v4 exception:v22writer.js [844->915] (line 28) [18=[$$destructure$elt7]17=[$$destructure$rcvr6]4=[version]7=[subtitle]3=[repository]]
-BB8
-18   goto (from iindex= 18 to iindex = 29)   writer.js [827->976] (line 27)
-BB9
-21   v25 = lexical:util@Lwriter.js           writer.js [922->926] (line 29) [25=[$$destructure$rcvr7]]
-22   check v25                               writer.js [922->926] (line 29) [25=[$$destructure$rcvr7]]
-BB10
-25   v28 = lexical:PATCH_VERSION@Lwriter.js  writer.js [934->947] (line 29)
-26   check v28                               writer.js [934->947] (line 29)
-BB11
-27   v26 = dispatch v18:#format@27 v25,v28,v4,v4,v7 exception:v29writer.js [922->976] (line 29) [18=[$$destructure$elt7]25=[$$destructure$rcvr7]4=[version]7=[subtitle]]
-BB12
-BB13
-           v12 = phi  v19,v26
-29   return v12                              writer.js [820->977] (line 27)
-BB14
-
-
-<Code body of function Lwriter.js/getVersionLink>
-CFG:
-BB0[-1..-2]
-    -> BB1
-BB1[0..1]
-    -> BB3
-    -> BB2
-BB2[2..4]
-    -> BB4
-BB3[5..5]
-    -> BB4
-BB4[6..7]
-    -> BB9
-    -> BB5
-BB5[8..11]
-    -> BB6
-    -> BB14
-BB6[12..15]
-    -> BB7
-    -> BB14
-BB7[16..16]
-    -> BB8
-    -> BB14
-BB8[17..18]
-    -> BB13
-BB9[19..22]
-    -> BB10
-    -> BB14
-BB10[23..26]
-    -> BB11
-    -> BB14
-BB11[27..27]
-    -> BB12
-    -> BB14
-BB12[28..28]
-    -> BB13
-BB13[29..29]
-    -> BB14
-BB14[-1..-2]
-Instructions:
-BB0
-BB1
-0   v6 = new <JavaScriptLoader,LArray>@0     writer.js [457->709] (line 19) [6=[arguments]]
-1   conditional branch(eq, to iindex=5) v5,v8:#0writer.js [528->558] (line 20) [5=[subtitle]]
-BB2
-2   v9 = binaryop(add) v10:#  , v5           writer.js [539->553] (line 20) [9=[subtitle]5=[subtitle]]
-4   goto (from iindex= 4 to iindex = 6)      writer.js [528->558] (line 20)
-BB3
-BB4
-           v7 = phi  v9,v11:#
-7   conditional branch(eq, to iindex=19) v3,v8:#0writer.js [569->706] (line 21) [3=[repository]]
-BB5
-10   v17 = lexical:util@Lwriter.js           writer.js [586->590] (line 22) [17=[$$destructure$rcvr4]]
-11   check v17                               writer.js [586->590] (line 22) [17=[$$destructure$rcvr4]]
-BB6
-14   v21 = lexical:LINK_VERSION@Lwriter.js   writer.js [598->610] (line 22)
-15   check v21                               writer.js [598->610] (line 22)
-BB7
-16   v19 = dispatch v18:#format@16 v17,v21,v4,v7,v3,v4 exception:v22writer.js [586->651] (line 22) [18=[$$destructure$elt5]17=[$$destructure$rcvr4]4=[version]7=[subtitle]3=[repository]]
-BB8
-18   goto (from iindex= 18 to iindex = 29)   writer.js [569->706] (line 21)
-BB9
-21   v25 = lexical:util@Lwriter.js           writer.js [658->662] (line 23) [25=[$$destructure$rcvr5]]
-22   check v25                               writer.js [658->662] (line 23) [25=[$$destructure$rcvr5]]
-BB10
-25   v28 = lexical:VERSION@Lwriter.js        writer.js [670->677] (line 23)
-26   check v28                               writer.js [670->677] (line 23)
-BB11
-27   v26 = dispatch v18:#format@27 v25,v28,v4,v4,v7 exception:v29writer.js [658->706] (line 23) [18=[$$destructure$elt5]25=[$$destructure$rcvr5]4=[version]7=[subtitle]]
-BB12
-BB13
-           v12 = phi  v19,v26
-29   return v12                              writer.js [562->707] (line 21)
-BB14
-
-
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/currentDate/writer.js@4666)>
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/moduleSource/Writer/writer@3347)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -1494,7 +856,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/currentDate/writer.js@4666>@2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/moduleSource/Writer/writer@3347>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -1507,7 +869,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/Writer/writer.js@3163)>
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/moduleSource/Writer/writer@3803)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -1533,7 +895,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/Writer/writer.js@3163>@2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/moduleSource/Writer/writer@3803>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -1546,7 +908,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/Writer/writer.js@3619)>
+<ctor for <JavaScriptLoader,LFunction>(Lwriter/nodejsModule/moduleSource/Writer/writer@4750)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -1572,7 +934,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/Writer/writer.js@3619>@2
+2   v5 = new <JavaScriptLoader,Lwriter/nodejsModule/moduleSource/Writer/writer@4750>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -1583,370 +945,6 @@ BB5
 BB6
 7   return v5                                
 BB7
-
-
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/Writer/writer.js@4566)>
-CFG:
-BB0[0..0]
-    -> BB1
-    -> BB7
-BB1[1..1]
-    -> BB2
-BB2[2..2]
-    -> BB3
-    -> BB7
-BB3[3..3]
-    -> BB4
-    -> BB7
-BB4[4..5]
-    -> BB5
-BB5[6..6]
-    -> BB6
-BB6[7..7]
-    -> BB7
-BB7[-1..-2]
-Instructions:
-BB0
-0   v2 = new <JavaScriptLoader,LArray>@0     
-BB1
-1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
-BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/Writer/writer.js@4566>@2
-BB3
-3   v7 = new <JavaScriptLoader,LObject>@3    
-BB4
-4   set_prototype(v5, v4)                    
-5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
-BB5
-6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
-BB6
-7   return v5                                
-BB7
-
-
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/writeLog/writer.js@1769)>
-CFG:
-BB0[0..0]
-    -> BB1
-    -> BB7
-BB1[1..1]
-    -> BB2
-BB2[2..2]
-    -> BB3
-    -> BB7
-BB3[3..3]
-    -> BB4
-    -> BB7
-BB4[4..5]
-    -> BB5
-BB5[6..6]
-    -> BB6
-BB6[7..7]
-    -> BB7
-BB7[-1..-2]
-Instructions:
-BB0
-0   v2 = new <JavaScriptLoader,LArray>@0     
-BB1
-1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
-BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/writeLog/writer.js@1769>@2
-BB3
-3   v7 = new <JavaScriptLoader,LObject>@3    
-BB4
-4   set_prototype(v5, v4)                    
-5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
-BB5
-6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
-BB6
-7   return v5                                
-BB7
-
-
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/writeLog/writer.js@1808)>
-CFG:
-BB0[0..0]
-    -> BB1
-    -> BB7
-BB1[1..1]
-    -> BB2
-BB2[2..2]
-    -> BB3
-    -> BB7
-BB3[3..3]
-    -> BB4
-    -> BB7
-BB4[4..5]
-    -> BB5
-BB5[6..6]
-    -> BB6
-BB6[7..7]
-    -> BB7
-BB7[-1..-2]
-Instructions:
-BB0
-0   v2 = new <JavaScriptLoader,LArray>@0     
-BB1
-1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
-BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/writeLog/writer.js@1808>@2
-BB3
-3   v7 = new <JavaScriptLoader,LObject>@3    
-BB4
-4   set_prototype(v5, v4)                    
-5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
-BB5
-6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
-BB6
-7   return v5                                
-BB7
-
-
-<ctor for <JavaScriptLoader,LFunction>(Lwriter.js/writeLog/writer.js@1978)>
-CFG:
-BB0[0..0]
-    -> BB1
-    -> BB7
-BB1[1..1]
-    -> BB2
-BB2[2..2]
-    -> BB3
-    -> BB7
-BB3[3..3]
-    -> BB4
-    -> BB7
-BB4[4..5]
-    -> BB5
-BB5[6..6]
-    -> BB6
-BB6[7..7]
-    -> BB7
-BB7[-1..-2]
-Instructions:
-BB0
-0   v2 = new <JavaScriptLoader,LArray>@0     
-BB1
-1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
-BB2
-2   v5 = new <JavaScriptLoader,Lwriter.js/writeLog/writer.js@1978>@2
-BB3
-3   v7 = new <JavaScriptLoader,LObject>@3    
-BB4
-4   set_prototype(v5, v4)                    
-5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
-BB5
-6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
-BB6
-7   return v5                                
-BB7
-
-
-<Code body of function Lwriter.js/currentDate/writer.js@4666>
-CFG:
-BB0[-1..-2]
-    -> BB1
-BB1[0..7]
-    -> BB2
-    -> BB3
-BB2[8..8]
-    -> BB3
-BB3[-1..-2]
-Instructions:
-BB0
-BB1
-0   v4 = new <JavaScriptLoader,LArray>@0     writer.js [4666->4716] (line 161) [4=[arguments]]
-3   v8 = binaryop(add) v9:#0 , v3            writer.js [4692->4699] (line 162) [8=[$$destructure$rcvr61]3=[i]]
-6   v12 = minus v13:#2.0                     writer.js [4708->4710] (line 162)
-7   v11 = dispatch v10:#substr@7 v8,v12 exception:v14writer.js [4692->4711] (line 162) [10=[$$destructure$elt61]8=[$$destructure$rcvr61]]
-BB2
-8   return v11                               writer.js [4684->4712] (line 162)
-BB3
-
-
-<ctor for <JavaScriptLoader,LObject>>
-CFG:
-BB0[0..0]
-    -> BB1
-    -> BB4
-BB1[1..1]
-    -> BB2
-BB2[2..2]
-    -> BB3
-    -> BB4
-BB3[3..4]
-    -> BB4
-BB4[-1..-2]
-Instructions:
-BB0
-0   v2 = new <JavaScriptLoader,LArray>@0     
-BB1
-1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
-BB2
-2   v5 = new <JavaScriptLoader,LObject>@2    
-BB3
-3   set_prototype(v5, v4)                    
-4   return v5                                
-BB4
-
-
-<ctor for <JavaScriptLoader,Lprologue.js/Date>>
-CFG:
-BB0[0..0]
-    -> BB1
-    -> BB7
-BB1[1..1]
-    -> BB2
-BB2[2..2]
-    -> BB3
-    -> BB7
-BB3[3..4]
-    -> BB4
-    -> BB7
-BB4[5..5]
-    -> BB6
-    -> BB5
-BB5[6..6]
-    -> BB7
-BB6[7..7]
-    -> BB7
-BB7[-1..-2]
-Instructions:
-BB0
-0   v2 = new <JavaScriptLoader,LArray>@0     
-BB1
-1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
-BB2
-2   v5 = new <JavaScriptLoader,LObject>@2    
-BB3
-3   set_prototype(v5, v4)                    
-4   v7 = invoke v1@4 v5 exception:v8         
-BB4
-5   conditional branch(eq, to iindex=7) v7,v9
-BB5
-6   return v7                                
-BB6
-7   return v5                                
-BB7
-
-
-<Code body of function Lprologue.js/Date_prototype_getDate>
-CFG:
-BB0[-1..-2]
-    -> BB1
-BB1[0..0]
-    -> BB2
-BB2[-1..-2]
-Instructions:
-BB0
-BB1
-0   v3 = new <JavaScriptLoader,LArray>@0     prologue.js [16429->16489] (line 666) [3=[arguments]]
-BB2
-
-
-<Code body of function Lprologue.js/Date_prototype_getMonth>
-CFG:
-BB0[-1..-2]
-    -> BB1
-BB1[0..0]
-    -> BB2
-BB2[-1..-2]
-Instructions:
-BB0
-BB1
-0   v3 = new <JavaScriptLoader,LArray>@0     prologue.js [16730->16791] (line 682) [3=[arguments]]
-BB2
-
-
-<Code body of function Lprologue.js/Date_prototype_getFullYear>
-CFG:
-BB0[-1..-2]
-    -> BB1
-BB1[0..0]
-    -> BB2
-BB2[-1..-2]
-Instructions:
-BB0
-BB1
-0   v3 = new <JavaScriptLoader,LArray>@0     prologue.js [17557->17621] (line 722) [3=[arguments]]
-BB2
-
-
-<ctor for <JavaScriptLoader,LObject>>
-CFG:
-BB0[0..0]
-    -> BB1
-    -> BB4
-BB1[1..1]
-    -> BB2
-BB2[2..2]
-    -> BB3
-    -> BB4
-BB3[3..4]
-    -> BB4
-BB4[-1..-2]
-Instructions:
-BB0
-0   v2 = new <JavaScriptLoader,LArray>@0     
-BB1
-1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
-BB2
-2   v5 = new <JavaScriptLoader,LObject>@2    
-BB3
-3   set_prototype(v5, v4)                    
-4   return v5                                
-BB4
-
-
-<ctor for <JavaScriptLoader,LObject>>
-CFG:
-BB0[0..0]
-    -> BB1
-    -> BB4
-BB1[1..1]
-    -> BB2
-BB2[2..2]
-    -> BB3
-    -> BB4
-BB3[3..4]
-    -> BB4
-BB4[-1..-2]
-Instructions:
-BB0
-0   v2 = new <JavaScriptLoader,LArray>@0     
-BB1
-1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
-BB2
-2   v5 = new <JavaScriptLoader,LObject>@2    
-BB3
-3   set_prototype(v5, v4)                    
-4   return v5                                
-BB4
-
-
-<ctor for <JavaScriptLoader,LObject>>
-CFG:
-BB0[0..0]
-    -> BB1
-    -> BB4
-BB1[1..1]
-    -> BB2
-BB2[2..2]
-    -> BB3
-    -> BB4
-BB3[3..4]
-    -> BB4
-BB4[-1..-2]
-Instructions:
-BB0
-0   v2 = new <JavaScriptLoader,LArray>@0     
-BB1
-1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
-BB2
-2   v5 = new <JavaScriptLoader,LObject>@2    
-BB3
-3   set_prototype(v5, v4)                    
-4   return v5                                
-BB4
 
 
 <ctor for <JavaScriptLoader,LObject>>

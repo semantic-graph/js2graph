@@ -4,9 +4,10 @@ import java.io.{BufferedWriter, File, FileWriter}
 import java.nio.file.Paths
 
 import com.ibm.wala.cast.js.ipa.callgraph.JSCallGraphUtil
+import com.ibm.wala.cast.js.nodejs.PatchedNodejsCallGraphBuilderUtil
 import com.ibm.wala.cast.js.ssa._
 import com.ibm.wala.cast.js.translator.PatchedCAstRhinoTranslatorFactory
-import com.ibm.wala.examples.analysis.js.JSCallGraphBuilderUtil
+import com.ibm.wala.classLoader.IMethod
 import com.ibm.wala.ipa.callgraph.{CGNode, CallGraph}
 import com.ibm.wala.ipa.cfg.ExplodedInterproceduralCFG
 import com.ibm.wala.ssa._
@@ -55,32 +56,22 @@ object JSFlowGraph {
     }
   }
 
-  // This can't process name like $$jscomp$generator$Engine_$$throw_$ meaningfully
-  private def toFunctionCall(name: String): String = {
-    val (dollars, rest) = splitAtLast(name.stripPrefix("$").stripSuffix("$"), '$')
-    val ret = dollars + rest.replace("$$", ".prototype.").replace("$", ".") + "();"
-    assert(!ret.contains(".."))
-    ret
-  }
-
-  def getAllMethods(jsPath: String): List[String] = {
-    val cg = addCallGraph(jsPath)
-    val cha = cg.getClassHierarchy
-    val methods = cha.asScala.filter(!_.getName.toString.contains("prologue.js")).flatMap(_.getAllMethods.asScala).toList
-    val lines = methods.map(_.getDeclaringClass.getName.toString.split("/")).filter(_.length > 1).map(xs => toFunctionCall(xs(1)))
-    var ret = List[String]()
-    for (line <- lines) {
-      if (!line.contains("@")) {
-        ret :+= line
-      }
+  def getAllModuleEntrypoints(jsPath: String): List[String] = {
+    val cg = getCallGraph(jsPath)
+    val fieldNames = doEntrypointDataFlowAnalysis(cg)
+    val ret = mutable.Queue[String]()
+    for (fieldName <- fieldNames) {
+      ret.addOne("module.exports." + fieldName + "();")
     }
-    ret
+    // FIXME...
+    ret.addOne("module.exports();")
+    ret.toList
   }
 
   def writeEntrypoints(jsPath: String, outputPath: String): Unit = {
     val file = new File(outputPath)
     val bw = new BufferedWriter(new FileWriter(file))
-    for (line <- getAllMethods(jsPath)) {
+    for (line <- getAllModuleEntrypoints(jsPath)) {
       bw.write(line + "\n")
     }
     bw.close()
@@ -90,14 +81,38 @@ object JSFlowGraph {
     * @param jsPath Path to the analyzed JS file
     * @return The constructed call-graph (for later use in other analysis)
     */
-  def addCallGraph(jsPath: String): CallGraph = {
+  def getCallGraph(jsPath: String): CallGraph = {
     val path = Paths.get(jsPath)
     JSCallGraphUtil.setTranslatorFactory(new PatchedCAstRhinoTranslatorFactory)
-    val cg = JSCallGraphBuilderUtil.makeScriptCG(path.getParent.toString, path.getFileName.toString)
+    val builder = PatchedNodejsCallGraphBuilderUtil.makeCGBuilder(path.toFile)
+    val cg = builder.makeCallGraph(builder.getOptions)
     if (Constants.debug.nonEmpty) {
       println(Constants.getIRofCG(cg))
     }
     cg
+  }
+
+  def getModuleFieldNames(symTable: SymbolTable, instruction: SSAInstruction, dataDeps: Map[AbsPath, Set[AbsVal]]): Set[String] = {
+    instruction match {
+      case propertyWrite: JavaScriptPropertyWrite =>
+        // Case 3: Write to an API instance's property
+        if (symTable.isConstant(propertyWrite.getMemberRef)) {
+          val fieldName = symTable.getConstantValue(propertyWrite.getMemberRef).toString
+          if (Constants.moduleFieldNames.contains(fieldName)) {
+            dataDeps.get(AbsPath.Local(propertyWrite.getValue)) match {
+              case Some(fromValues) =>
+                return fromValues.flatMap {
+                  case AbsVal.HasField(fieldName) =>
+                    Some(fieldName)
+                  case _ => None
+                }
+              case _ =>
+            }
+          }
+        }
+      case _ =>
+    }
+    Set()
   }
 
   /** Get possible opNodes for a [[SSAInstruction]]
@@ -181,6 +196,26 @@ object JSFlowGraph {
     allDeps
   }
 
+  def doEntrypointDataFlowAnalysis(cg: CallGraph): List[String] = {
+    val icfg = ExplodedInterproceduralCFG.make(cg)
+    val dataflow = new IFDSDataFlow(icfg)
+    val results = dataflow.solve
+    val superGraph = dataflow.problem.getSupergraph
+
+    val fieldNames = mutable.Set[String]()
+    for (block <- superGraph.asScala) {
+      if (Constants.isApplicationNode(block.getNode)) {
+        val symTable = block.getNode.getIR.getSymbolTable
+        val instruction = block.getDelegate.getInstruction
+        if (instruction != null) {
+          val dataFlowDeps = dataflow.getFacts(results, block)
+          fieldNames.addAll(getModuleFieldNames(symTable, instruction, dataFlowDeps))
+        }
+      }
+    }
+    fieldNames.toList
+  }
+
   /** IFDS based data-flow analysis
     * @param g Semantic graph writer
     * @param cg Call graph
@@ -234,10 +269,15 @@ object JSFlowGraph {
               // If the use is a constant
               if (symTable.isConstant(use) && symTable.getConstantValue(use) != null) {
                 val v = symTable.getConstantValue(use).toString
-                g.addEdge(
-                  g.createNode(v, Map(JsNodeAttr.TYPE -> NodeType.Constant.toString)),
-                  opNode,
-                  Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
+                try {
+                  g.addEdge(
+                    g.createNode(v, Map(JsNodeAttr.TYPE -> NodeType.Constant.toString)),
+                    opNode,
+                    Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
+                } catch {
+                  case e: IllegalArgumentException =>
+                    println(e)
+                }
               } else {
                 for (absVal <- resolveDataDeps(dataFlowDeps, AbsPath.Local(use))) {
                   absVal match {

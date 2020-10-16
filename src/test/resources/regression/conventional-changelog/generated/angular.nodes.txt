@@ -1,0 +1,5 @@
+gi:Constant
+github|bitbucket|gitlab:Constant
+i:Constant
+module.exports:Call
+tag:\s*[v=]?(.+?)[,\)]:Constant

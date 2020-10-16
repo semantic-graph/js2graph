@@ -2,7 +2,6 @@
 Preset: ":Constant
 RegExp:Construct
 RegExp:Construct
-__unknownModule(fs).readFile
 __unknownModule(git-semver-tags)
 __unknownModule(lodash).merge.pkg.path
 __unknownModule(lodash).merge.preset
@@ -14,10 +13,11 @@ __unknownModule(q).allSettled:Call
 __unknownModule(q).nfcall:Call
 __unknownModule(q).nfcall:Call
 __unknownModule(q).nfcall:Call
-__unknownModule(stream).Readable._read:FieldRef
-__unknownModule(stream).Readable:Construct
+fs.readFile
 gi:Constant
 github|bitbucket|gitlab:Constant
 i:Constant
+stream.Readable._read:FieldRef
+stream.Readable:Construct
 tag:\s*[v=]?(.+?)[,\)]:Constant
 utf8:Constant

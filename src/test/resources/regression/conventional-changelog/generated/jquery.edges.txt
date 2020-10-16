@@ -1,13 +1,16 @@
-../templates/jquery/commit.hbs:Constant -[DATAFLOW]-> __unknownModule(path).resolve:Call
-../templates/jquery/header.hbs:Constant -[DATAFLOW]-> __unknownModule(path).resolve:Call
-../templates/jquery/template.hbs:Constant -[DATAFLOW]-> __unknownModule(path).resolve:Call
+../templates/jquery/commit.hbs:Constant -[DATAFLOW]-> path.resolve:Call
+../templates/jquery/header.hbs:Constant -[DATAFLOW]-> path.resolve:Call
+../templates/jquery/template.hbs:Constant -[DATAFLOW]-> path.resolve:Call
+/Users/zhen/projects/semantic-graph/js2graph/src/test/resources/regression/conventional-changelog/generated:Constant -[DATAFLOW]-> path.resolve:Call
+/Users/zhen/projects/semantic-graph/js2graph/src/test/resources/regression/conventional-changelog/generated:Constant -[DATAFLOW]-> path.resolve:Call
+/Users/zhen/projects/semantic-graph/js2graph/src/test/resources/regression/conventional-changelog/generated:Constant -[DATAFLOW]-> path.resolve:Call
 :Constant -[DATAFLOW]-> RegExp:Construct
 ^(\w*)\: (.*)$:Constant -[DATAFLOW]-> RegExp:Construct
-__unknownModule(fs).readFile -[DATAFLOW]-> __unknownModule(q).denodeify:Call
-__unknownModule(path).resolve -[DATAFLOW]-> __unknownModule(q).denodeify:Call
-__unknownModule(path).resolve -[DATAFLOW]-> __unknownModule(q).denodeify:Call
-__unknownModule(path).resolve -[DATAFLOW]-> __unknownModule(q).denodeify:Call
+fs.readFile -[DATAFLOW]-> __unknownModule(q).denodeify:Call
 gi:Constant -[DATAFLOW]-> RegExp:Construct
+path.resolve -[DATAFLOW]-> __unknownModule(q).denodeify:Call
+path.resolve -[DATAFLOW]-> __unknownModule(q).denodeify:Call
+path.resolve -[DATAFLOW]-> __unknownModule(q).denodeify:Call
 tag:\s*[v=]?(.+?)[,\)]:Constant -[DATAFLOW]-> RegExp:Construct
 utf-8:Constant -[DATAFLOW]-> __unknownModule(q).denodeify:Call
 utf-8:Constant -[DATAFLOW]-> __unknownModule(q).denodeify:Call

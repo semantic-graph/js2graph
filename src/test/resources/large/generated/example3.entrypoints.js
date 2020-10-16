@@ -1,2 +1,2 @@
-SfdxUtils();
-SfdxUtils.execSfdx();
+module.exports();
+module.exports.execSfdx();

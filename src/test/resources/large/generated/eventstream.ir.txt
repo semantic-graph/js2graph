@@ -1,149 +1,22 @@
-<Code body of function Leventstream.js>
+<Code body of function Leventstream>
 CFG:
 BB0[-1..-2]
     -> BB1
-BB1[0..11]
+BB1[0..4]
     -> BB2
-    -> BB23
-BB2[12..13]
-    -> BB3
-    -> BB23
-BB3[14..16]
-    -> BB4
-    -> BB23
-BB4[17..19]
-    -> BB5
-    -> BB23
-BB5[20..22]
-    -> BB6
-    -> BB23
-BB6[23..25]
-    -> BB7
-    -> BB23
-BB7[26..26]
-    -> BB8
-    -> BB23
-BB8[27..30]
-    -> BB9
-    -> BB23
-BB9[31..32]
-    -> BB10
-    -> BB23
-BB10[33..36]
-    -> BB11
-    -> BB23
-BB11[37..37]
-    -> BB12
-    -> BB23
-BB12[38..45]
-    -> BB13
-    -> BB23
-BB13[46..46]
-    -> BB14
-    -> BB23
-BB14[47..52]
-    -> BB15
-    -> BB23
-BB15[53..54]
-    -> BB16
-    -> BB23
-BB16[55..59]
-    -> BB17
-    -> BB23
-BB17[60..62]
-    -> BB18
-    -> BB23
-BB18[63..63]
-    -> BB19
-    -> BB23
-BB19[64..70]
-    -> BB20
-    -> BB23
-BB20[71..71]
-    -> BB21
-    -> BB23
-BB21[72..78]
-    -> BB22
-    -> BB23
-BB22[79..79]
-    -> BB23
-BB23[-1..-2]
+BB2[-1..-2]
 Instructions:
 BB0
 BB1
-0   v1 = new <JavaScriptLoader,LArray>@0     eventstream.js [0->832] (line 1) [1=[arguments]]
-1   v5 = global:global Function              eventstream.js [0->832] (line 1)
-2   v2 = construct v5@2 v4:#Leventstream.js/decode exception:v3eventstream.js [0->832] (line 1)
-3   global:global decode = v2                eventstream.js [0->832] (line 1)
-4   v8 = global:global $$undefined           eventstream.js [126->156] (line 4) [8=[n]]
-6   v10 = global:global $$undefined          eventstream.js [261->345] (line 7) [10=[decipher, $$destructure$rcvr7]]
-8   v12 = global:global $$undefined          eventstream.js [441->480] (line 10) [12=[newModule, $$destructure$rcvr9]]
-10   v17 = global:global require             eventstream.js [134->141] (line 4)
-11   check v17                               eventstream.js [134->141] (line 4)
+0   v1 = new <JavaScriptLoader,LArray>@0     eventstream.js [0->1142] (line 1) [1=[arguments]]
+1   v6 = global:global Function              eventstream.js [1->1141] (line 28)
+2   v3 = construct v6@2 v5:#Leventstream/nodejsModule exception:v4eventstream.js [1->1141] (line 28)
+3   v13 = global:global __WALA__int3rnal__globaleventstream.js [1->1141] (line 28)
+4   v2 = invoke v3@4 v13 exception:v14       eventstream.js [1->1141] (line 28)
 BB2
-12   v19 = global:global __WALA__int3rnal__globaleventstream.js [134->156] (line 4)
-13   v15 = invoke v17@13 v19,v20:#./test/data exception:v21eventstream.js [134->156] (line 4) [15=[n]]
-BB3
-15   v25 = global:global process             eventstream.js [183->190] (line 5)
-16   check v25                               eventstream.js [183->190] (line 5)
-BB4
-18   v9 = prototype_values(v25)              eventstream.js [183->197] (line 5)
-19   v23 = getfield < JavaScriptLoader, LRoot, env, <JavaScriptLoader,LRoot> > v9eventstream.js [183->197] (line 5)
-BB5
-21   v11 = prototype_values(v23)             eventstream.js [183->224] (line 5)
-22   v22 = getfield < JavaScriptLoader, LRoot, npm_package_description, <JavaScriptLoader,LRoot> > v11eventstream.js [183->224] (line 5)
-BB6
-23   global:global npm_package_description = v22eventstream.js [157->224] (line 5)
-24   v31 = global:global npm_package_descriptioneventstream.js [230->253] (line 6)
-25   check v31                               eventstream.js [230->253] (line 6)
-BB7
-26   conditional branch(eq, to iindex=-1) v31,v32:#0eventstream.js [226->832] (line 6)
-BB8
-29   v36 = global:global require             eventstream.js [276->283] (line 7)
-30   check v36                               eventstream.js [276->283] (line 7)
-BB9
-31   v37 = global:global __WALA__int3rnal__globaleventstream.js [276->293] (line 7)
-32   v35 = invoke v36@32 v37,v38:#crypto exception:v39eventstream.js [276->293] (line 7) [35=[$$destructure$rcvr4]]
-BB10
-35   v43 = global:global npm_package_descriptioneventstream.js [321->344] (line 7)
-36   check v43                               eventstream.js [321->344] (line 7)
-BB11
-37   v41 = dispatch v40:#createDecipher@37 v35,v42:#aes256,v43 exception:v44eventstream.js [276->345] (line 7) [41=[decipher, $$destructure$rcvr7]40=[$$destructure$elt4]35=[$$destructure$rcvr4]]
-BB12
-44   v13 = prototype_values(v15)             eventstream.js [376->380] (line 8) [15=[n]]
-45   v49 = fieldref v13.v50:#0.0             eventstream.js [376->380] (line 8)
-BB13
-46   v48 = dispatch v47:#update@46 v41,v49,v52:#hex,v53:#utf8 exception:v54eventstream.js [360->396] (line 8) [47=[$$destructure$elt6]41=[decipher, $$destructure$rcvr7]]
-BB14
-47   global:global decoded = v48             eventstream.js [350->396] (line 8)
-52   v59 = dispatch v58:#final@52 v41,v53:#utf8 exception:v60eventstream.js [413->435] (line 9) [58=[$$destructure$elt7]41=[decipher, $$destructure$rcvr7]]
-BB15
-53   v61 = global:global decoded             eventstream.js [402->435] (line 9)
-54   check v61                               eventstream.js [402->435] (line 9)
-BB16
-56   v63 = binaryop(add) v61 , v59           eventstream.js [402->435] (line 9)
-57   global:global decoded = v63             eventstream.js [402->435] (line 9)
-58   v67 = global:global module              eventstream.js [461->467] (line 10)
-59   check v67                               eventstream.js [461->467] (line 10)
-BB17
-61   v27 = prototype_values(v67)             eventstream.js [461->479] (line 10)
-62   v65 = getfield < JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > v27eventstream.js [461->479] (line 10)
-BB18
-63   v64 = construct v65@63 exception:v70    eventstream.js [457->479] (line 10) [64=[newModule, $$destructure$rcvr9]]
-BB19
-69   v75 = global:global decoded             eventstream.js [790->797] (line 15)
-70   check v75                               eventstream.js [790->797] (line 15)
-BB20
-71   v74 = dispatch v73:#_compile@71 v64,v75,v76:# exception:v77eventstream.js [768->802] (line 15) [73=[$$destructure$elt8]64=[newModule, $$destructure$rcvr9]]
-BB21
-77   v29 = prototype_values(v15)             eventstream.js [825->829] (line 16) [15=[n]]
-78   v82 = fieldref v29.v83:#1.0             eventstream.js [825->829] (line 16)
-BB22
-79   v81 = dispatch v80:#exports@79 v64,v82 exception:v85eventstream.js [807->830] (line 16) [80=[$$destructure$elt9]64=[newModule, $$destructure$rcvr9]]
-BB23
 
 
-<ctor for <JavaScriptLoader,LFunction>(Leventstream.js/decode)>
+<ctor for <JavaScriptLoader,LFunction>(Leventstream/nodejsModule)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -169,7 +42,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Leventstream.js/decode>@2
+2   v5 = new <JavaScriptLoader,Leventstream/nodejsModule>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -180,3 +53,387 @@ BB5
 BB6
 7   return v5                                
 BB7
+
+
+<Code body of function Leventstream/nodejsModule>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..4]
+    -> BB2
+    -> BB12
+BB2[5..5]
+    -> BB3
+    -> BB12
+BB3[6..8]
+    -> BB4
+    -> BB12
+BB4[9..10]
+    -> BB5
+    -> BB12
+BB5[11..11]
+    -> BB6
+    -> BB12
+BB6[12..12]
+    -> BB7
+    -> BB12
+BB7[13..19]
+    -> BB8
+    -> BB12
+BB8[20..22]
+    -> BB9
+    -> BB12
+BB9[23..23]
+    -> BB10
+    -> BB12
+BB10[24..26]
+    -> BB11
+    -> BB12
+BB11[27..27]
+    -> BB12
+BB12[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     eventstream.js [1->1138] (line 1) [3=[arguments]]
+1   v5 = global:global $$undefined           eventstream.js [28->104] (line 2) [5=[module]]
+3   v9 = global:global Object                eventstream.js [41->103] (line 2)
+4   check v9                                 eventstream.js [41->103] (line 2)
+BB2
+5   v7 = construct v9@5 exception:v10        eventstream.js [41->103] (line 2) [7=[module]]
+BB3
+6   v15 = global:global Function             eventstream.js [41->103] (line 2)
+7   v12 = construct v15@7 v14:#Leventstream/nodejsModule/__WALA__require exception:v13eventstream.js [41->103] (line 2)
+8   fieldref v7.v11:#require = v12 = v12     eventstream.js [41->103] (line 2) [7=[module]]
+BB4
+9   v18 = global:global Object               eventstream.js [98->100] (line 4)
+10   check v18                               eventstream.js [98->100] (line 4)
+BB5
+11   v17 = construct v18@11 exception:v19    eventstream.js [98->100] (line 4)
+BB6
+12   fieldref v7.v16:#exports = v17 = v17    eventstream.js [41->103] (line 2) [7=[module]]
+BB7
+14   v24 = global:global Function            eventstream.js [109->1109] (line 25)
+15   v21 = construct v24@15 v23:#Leventstream/nodejsModule/moduleSource exception:v22eventstream.js [109->1109] (line 25)
+16   v29 = global:global __WALA__int3rnal__globaleventstream.js [109->1109] (line 25)
+18   v6 = prototype_values(v7)               eventstream.js [1024->1038] (line 25) [7=[module]]
+19   v30 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v6eventstream.js [1024->1038] (line 25)
+BB8
+21   v31 = prototype_values(v7)              eventstream.js [1040->1054] (line 25) [7=[module]]
+22   v32 = getfield < JavaScriptLoader, LRoot, require, <JavaScriptLoader,LRoot> > v31eventstream.js [1040->1054] (line 25)
+BB9
+23   v20 = invoke v21@23 v29,v30,v32,v7,v34:#eventstream.js,v35:#src/test/resources/large exception:v36eventstream.js [109->1109] (line 25) [7=[module]]
+BB10
+25   v33 = prototype_values(v7)              eventstream.js [1121->1135] (line 27) [7=[module]]
+26   v37 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v33eventstream.js [1121->1135] (line 27)
+BB11
+27   return v37                              eventstream.js [1114->1136] (line 27)
+BB12
+
+
+<ctor for <JavaScriptLoader,LFunction>(Leventstream/nodejsModule/__WALA__require)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Leventstream/nodejsModule/__WALA__require>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Leventstream/nodejsModule/moduleSource)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Leventstream/nodejsModule/moduleSource>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Leventstream/nodejsModule/moduleSource>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..8]
+    -> BB2
+    -> BB20
+BB2[9..11]
+    -> BB3
+    -> BB20
+BB3[12..14]
+    -> BB4
+    -> BB20
+BB4[15..17]
+    -> BB5
+    -> BB20
+BB5[18..20]
+    -> BB6
+    -> BB20
+BB6[21..21]
+    -> BB7
+    -> BB20
+BB7[22..25]
+    -> BB8
+    -> BB20
+BB8[26..29]
+    -> BB9
+    -> BB20
+BB9[30..30]
+    -> BB10
+    -> BB20
+BB10[31..38]
+    -> BB11
+    -> BB20
+BB11[39..39]
+    -> BB12
+    -> BB20
+BB12[40..45]
+    -> BB13
+    -> BB20
+BB13[46..47]
+    -> BB14
+    -> BB20
+BB14[48..53]
+    -> BB15
+    -> BB20
+BB15[54..54]
+    -> BB16
+    -> BB20
+BB16[55..61]
+    -> BB17
+    -> BB20
+BB17[62..62]
+    -> BB18
+    -> BB20
+BB18[63..69]
+    -> BB19
+    -> BB20
+BB19[70..70]
+    -> BB20
+BB20[-1..-2]
+Instructions:
+BB0
+BB1
+0   v8 = new <JavaScriptLoader,LArray>@0     eventstream.js [109->1022] (line 7) [8=[arguments]]
+1   v10 = global:global $$undefined          eventstream.js [313->343] (line 11) [10=[n]]
+3   v12 = global:global $$undefined          eventstream.js [448->532] (line 14) [12=[decipher, $$destructure$rcvr7]]
+5   v14 = global:global $$undefined          eventstream.js [628->667] (line 17) [14=[newModule, $$destructure$rcvr9]]
+7   v18 = global:global __WALA__int3rnal__globaleventstream.js [321->343] (line 11)
+8   v16 = invoke v4@8 v18,v19:#./test/data exception:v20eventstream.js [321->343] (line 11) [16=[n]4=[require]]
+BB2
+10   v24 = global:global process             eventstream.js [370->377] (line 12)
+11   check v24                               eventstream.js [370->377] (line 12)
+BB3
+13   v11 = prototype_values(v24)             eventstream.js [370->384] (line 12)
+14   v22 = getfield < JavaScriptLoader, LRoot, env, <JavaScriptLoader,LRoot> > v11eventstream.js [370->384] (line 12)
+BB4
+16   v13 = prototype_values(v22)             eventstream.js [370->411] (line 12)
+17   v21 = getfield < JavaScriptLoader, LRoot, npm_package_description, <JavaScriptLoader,LRoot> > v13eventstream.js [370->411] (line 12)
+BB5
+18   global:global npm_package_description = v21eventstream.js [344->411] (line 12)
+19   v30 = global:global npm_package_descriptioneventstream.js [417->440] (line 13)
+20   check v30                               eventstream.js [417->440] (line 13)
+BB6
+21   conditional branch(eq, to iindex=-1) v30,v31:#0eventstream.js [413->1019] (line 13)
+BB7
+24   v36 = global:global __WALA__int3rnal__globaleventstream.js [463->480] (line 14)
+25   v35 = invoke v4@25 v36,v37:#crypto exception:v38eventstream.js [463->480] (line 14) [35=[$$destructure$rcvr4]4=[require]]
+BB8
+28   v42 = global:global npm_package_descriptioneventstream.js [508->531] (line 14)
+29   check v42                               eventstream.js [508->531] (line 14)
+BB9
+30   v40 = dispatch v39:#createDecipher@30 v35,v41:#aes256,v42 exception:v43eventstream.js [463->532] (line 14) [40=[decipher, $$destructure$rcvr7]39=[$$destructure$elt4]35=[$$destructure$rcvr4]]
+BB10
+37   v15 = prototype_values(v16)             eventstream.js [563->567] (line 15) [16=[n]]
+38   v48 = fieldref v15.v49:#0.0             eventstream.js [563->567] (line 15)
+BB11
+39   v47 = dispatch v46:#update@39 v40,v48,v51:#hex,v52:#utf8 exception:v53eventstream.js [547->583] (line 15) [46=[$$destructure$elt6]40=[decipher, $$destructure$rcvr7]]
+BB12
+40   global:global decoded = v47             eventstream.js [537->583] (line 15)
+45   v58 = dispatch v57:#final@45 v40,v52:#utf8 exception:v59eventstream.js [600->622] (line 16) [57=[$$destructure$elt7]40=[decipher, $$destructure$rcvr7]]
+BB13
+46   v60 = global:global decoded             eventstream.js [589->622] (line 16)
+47   check v60                               eventstream.js [589->622] (line 16)
+BB14
+49   v62 = binaryop(add) v60 , v58           eventstream.js [589->622] (line 16)
+50   global:global decoded = v62             eventstream.js [589->622] (line 16)
+52   v26 = prototype_values(v5)              eventstream.js [648->666] (line 17) [5=[module]]
+53   v64 = getfield < JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > v26eventstream.js [648->666] (line 17)
+BB15
+54   v63 = construct v64@54 exception:v67    eventstream.js [644->666] (line 17) [63=[newModule, $$destructure$rcvr9]]
+BB16
+60   v72 = global:global decoded             eventstream.js [977->984] (line 22)
+61   check v72                               eventstream.js [977->984] (line 22)
+BB17
+62   v71 = dispatch v70:#_compile@62 v63,v72,v73:# exception:v74eventstream.js [955->989] (line 22) [70=[$$destructure$elt8]63=[newModule, $$destructure$rcvr9]]
+BB18
+68   v28 = prototype_values(v16)             eventstream.js [1012->1016] (line 23) [16=[n]]
+69   v79 = fieldref v28.v80:#1.0             eventstream.js [1012->1016] (line 23)
+BB19
+70   v78 = dispatch v77:#exports@70 v63,v79 exception:v82eventstream.js [994->1017] (line 23) [77=[$$destructure$elt9]63=[newModule, $$destructure$rcvr9]]
+BB20
+
+
+<Code body of function Leventstream/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     eventstream.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Leventstream/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     eventstream.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4

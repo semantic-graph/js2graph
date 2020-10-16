@@ -32,6 +32,8 @@ object AbsVal {
 
   final case class Constant(v: String) extends AbsVal
 
+  final case class HasField(name: String) extends AbsVal
+
   /** Use instruction to track API instance constructed by the instruction
     */
   final case class Instance(className: String, instruction: JavaScriptInvoke) extends AbsVal
@@ -206,37 +208,42 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                         var crypto = require("crypto");
                         var cipher = crypto.createDecipher(...);
 
-                      The dispatchFunc will be "createDecipher". However, this is both a sink and an instance node.
+                      The receiverFunc will be "createDecipher". However, this is both a sink and an instance node.
                       Here, we are doing to create an instance node and point the base to it.
                      */
-                    if (fact.fst == AbsPath.Local(dispatchBaseIndex)) {
-                      val dispatchFunc = symTable.getConstantValue(receiverFuncIndex).toString
-                      val apiNameSpaceAndTag = fact.snd match {
-                        case AbsVal.Global(globalBaseName) => Some((globalBaseName, Tag.Singleton))
-                        case AbsVal.Instance(className, _) => Some((className, Tag.Instance))
-                        case _                             => None
-                      }
-                      if (apiNameSpaceAndTag.nonEmpty) {
-                        val (apiNameSpace, tag) = apiNameSpaceAndTag.get
-                        val apiName = apiNameSpace + "." + dispatchFunc
-                        val absVal = Constants.getConstructorAPI(dispatchFunc) match {
-                          case Some(constructedClassName) =>
-                            // 1) LHS value is considered an instance returned from "built-in" API, which
-                            //    can function as the parent of some other node in the dependency graph as well.
-                            postApiInvocation.addOne(
-                              invokeInstruction,
-                              (apiName, Map(JsNodeAttr.TYPE -> NodeType.Construct.toString, JsNodeAttr.TAG -> tag.toString)))
-                            AbsVal.Instance(constructedClassName, invokeInstruction)
-                          case None =>
-                            postApiInvocation.addOne(
-                              invokeInstruction,
-                              (apiName, Map(JsNodeAttr.TYPE -> NodeType.Call.toString, JsNodeAttr.TAG -> tag.toString)))
-                            // 2) LHS value is still a global object, derived from the base global object.
-                            //    In this case, we use the global object as its "source"
-                            AbsVal.Global(apiName)
+                    val receiverFunc = symTable.getConstantValue(receiverFuncIndex).toString
+                    val apiNameSpaceAndTag =
+                      if (fact.fst == AbsPath.Local(dispatchBaseIndex)) {
+                        fact.snd match {
+                          case AbsVal.Global(globalBaseName) => Some((globalBaseName, Tag.Singleton))
+                          case AbsVal.Instance(className, _) => Some((className, Tag.Instance))
+                          case _                             => None
                         }
-                        result.add(domain.add(Pair.make(AbsPath.Local(invokeInstruction.getDef(0)), absVal)))
+                      } else if (Constants.moduleFieldNames.contains(receiverFunc)) {
+                        Some(("module", Tag.Singleton))
+                      } else {
+                        None
                       }
+                    if (apiNameSpaceAndTag.nonEmpty) {
+                      val (apiNameSpace, tag) = apiNameSpaceAndTag.get
+                      val apiName = apiNameSpace + "." + receiverFunc
+                      val absVal = Constants.getConstructorAPI(receiverFunc) match {
+                        case Some(constructedClassName) =>
+                          // 1) LHS value is considered an instance returned from "built-in" API, which
+                          //    can function as the parent of some other node in the dependency graph as well.
+                          postApiInvocation.addOne(
+                            invokeInstruction,
+                            (apiName, Map(JsNodeAttr.TYPE -> NodeType.Construct.toString, JsNodeAttr.TAG -> tag.toString)))
+                          AbsVal.Instance(constructedClassName, invokeInstruction)
+                        case None =>
+                          postApiInvocation.addOne(
+                            invokeInstruction,
+                            (apiName, Map(JsNodeAttr.TYPE -> NodeType.Call.toString, JsNodeAttr.TAG -> tag.toString)))
+                          // 2) LHS value is still a global object, derived from the base global object.
+                          //    In this case, we use the global object as its "source"
+                          AbsVal.Global(apiName)
+                      }
+                      result.add(domain.add(Pair.make(AbsPath.Local(invokeInstruction.getDef(0)), absVal)))
                     }
                   } else {
                     // Dynamic receiverFunc
@@ -261,11 +268,34 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
       }
     }
 
-    /** flow function from call node to return node at a call site when callees exist. We kill everything; surviving facts should
-      * flow out of the callee
+    /** flow function from call node to return node at a call site when callees exist
       */
     override def getCallToReturnFlowFunction(src: Block, dest: Block): IUnaryFlowFunction = {
-      IdentityFlowFunction.identity()
+      val instr = src.getDelegate.getInstruction
+      val symTable = src.getNode.getIR.getSymbolTable
+      instr match {
+        case invokeInstruction: JavaScriptInvoke =>
+          inputDomain: Int => {
+            val result = MutableSparseIntSet.makeEmpty
+            result.add(inputDomain)
+            val fact = domain.getMappedObject(inputDomain)
+            if (!symTable.isConstant(invokeInstruction.getReceiver) &&
+              fact.fst == AbsPath.Local(invokeInstruction.getReceiver) &&
+              // NOTE: this variant is for com.ibm.wala.cast.js.nodejs-1.5.4-sources.jar!/module-wrapper.js
+              fact.snd == AbsVal.Global("\"prototype\".require")) {
+              if (symTable.isConstant(invokeInstruction.getUse(2))) {
+                var requiredPkgName = symTable.getConstantValue(invokeInstruction.getUse(2)).toString
+                if (!Constants.nodeJsBuiltInGlobalNames.contains(requiredPkgName)) {
+                  requiredPkgName = Constants.unknownModule + "(" + requiredPkgName + ")"
+                }
+                val lhs = AbsPath.Local(instr.getDef(0))
+                result.add(domain.add(Pair.make(lhs, AbsVal.Global(requiredPkgName))))
+              }
+            }
+            result
+          }
+        case _ => IdentityFlowFunction.identity()
+      }
     }
 
     /** @param withRhsTaint update the taint from RHS for new state
@@ -326,13 +356,16 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
           if (instr.isInstanceOf[JavaScriptCheckReference] || instr.isInstanceOf[SetPrototype]
             || instr.isInstanceOf[SSAConditionalBranchInstruction]
             || instr.isInstanceOf[JavaScriptTypeOfInstruction]
-            || instr.isInstanceOf[
-              JavaScriptPropertyWrite
-            ] // Use of flow to write the objectRef is wrong..currently we don't handle "access path" like pattern
             || instr.isInstanceOf[EachElementGetInstruction]) {
             // do nothing
           } else
             instr match {
+              case propertyWrite: JavaScriptPropertyWrite =>
+                val memberRef = propertyWrite.getMemberRef
+                if (symTable.isConstant(memberRef)) {
+                  val fieldName = symTable.getConstantValue(memberRef).toString
+                  return flow(inputDomain, AbsPath.Local(propertyWrite.getObjectRef), Set(), Set(AbsVal.HasField(fieldName)))
+                }
               case astLexicalWrite: AstLexicalWrite =>
                 // e.g.
                 //  instruction
@@ -474,14 +507,16 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
         return IdentityFlowFunction.identity()
       }
       getInvokeInstructionType(invokeInstruction) match {
-        case InvokeType.INVOKE =>
+        case InvokeType.INVOKE | InvokeType.DISPATCH =>
           new IUnaryFlowFunction {
             override def getTargets(inputDomain: Int): IntSet = {
               val result = MutableSparseIntSet.makeEmpty
               val fact = domain.getMappedObject(inputDomain)
-              if (fact.fst.isInstanceOf[AbsPath.Ret] && fact.snd != AbsVal.Global(Constants.WALAGlobalContext)) {
-                val lhs = invokeInstruction.getDef
-                result.add(domain.add(Pair.make(AbsPath.Local(lhs), fact.snd)))
+              if (fact.fst.isInstanceOf[AbsPath.Ret]) {
+                if (fact.snd != AbsVal.Global(Constants.WALAGlobalContext)) {
+                  val lhs = invokeInstruction.getDef
+                  result.add(domain.add(Pair.make(AbsPath.Local(lhs), fact.snd)))
+                }
               }
               result
             }

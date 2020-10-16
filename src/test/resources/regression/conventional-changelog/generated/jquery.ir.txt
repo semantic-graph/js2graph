@@ -1,216 +1,22 @@
-<Code body of function Ljquery.js>
+<Code body of function Ljquery>
 CFG:
 BB0[-1..-2]
     -> BB1
-BB1[0..19]
+BB1[0..4]
     -> BB2
-    -> BB31
-BB2[20..21]
-    -> BB3
-    -> BB31
-BB3[22..24]
-    -> BB4
-    -> BB31
-BB4[25..26]
-    -> BB5
-    -> BB31
-BB5[27..34]
-    -> BB6
-    -> BB31
-BB6[35..36]
-    -> BB7
-    -> BB31
-BB7[37..39]
-    -> BB8
-    -> BB31
-BB8[40..40]
-    -> BB9
-    -> BB31
-BB9[41..43]
-    -> BB10
-    -> BB31
-BB10[44..45]
-    -> BB11
-    -> BB31
-BB11[46..48]
-    -> BB12
-    -> BB31
-BB12[49..51]
-    -> BB13
-    -> BB31
-BB13[52..53]
-    -> BB14
-    -> BB31
-BB14[54..56]
-    -> BB15
-    -> BB31
-BB15[57..58]
-    -> BB16
-    -> BB31
-BB16[59..61]
-    -> BB17
-    -> BB31
-BB17[62..62]
-    -> BB18
-    -> BB31
-BB18[63..65]
-    -> BB19
-    -> BB31
-BB19[66..67]
-    -> BB20
-    -> BB31
-BB20[68..68]
-    -> BB21
-    -> BB31
-BB21[69..70]
-    -> BB22
-    -> BB31
-BB22[71..72]
-    -> BB23
-    -> BB31
-BB23[73..74]
-    -> BB24
-    -> BB31
-BB24[75..76]
-    -> BB25
-    -> BB31
-BB25[77..78]
-    -> BB26
-    -> BB31
-BB26[79..80]
-    -> BB27
-    -> BB31
-BB27[81..82]
-    -> BB28
-    -> BB31
-BB28[83..84]
-    -> BB29
-    -> BB31
-BB29[85..86]
-    -> BB30
-    -> BB31
-BB30[87..88]
-    -> BB31
-BB31[-1..-2]
+BB2[-1..-2]
 Instructions:
 BB0
 BB1
-0   v1 = new <JavaScriptLoader,LArray>@0     jquery.js [0->2202] (line 1) [1=[arguments]]
-1   v3 = global:global $$undefined           jquery.js [14->53] (line 2)
-2   lexical:dateFormat@Ljquery.js = v3       jquery.js [14->53] (line 2)
-3   v5 = global:global $$undefined           jquery.js [54->75] (line 3)
-4   lexical:Q@Ljquery.js = v5                jquery.js [54->75] (line 3)
-5   v7 = global:global $$undefined           jquery.js [76->127] (line 4)
-6   lexical:readFile@Ljquery.js = v7         jquery.js [76->127] (line 4)
-7   v9 = global:global $$undefined           jquery.js [128->166] (line 5)
-8   lexical:resolve@Ljquery.js = v9          jquery.js [128->166] (line 5)
-9   v11 = global:global $$undefined          jquery.js [167->198] (line 6)
-10   lexical:semver@Ljquery.js = v11         jquery.js [167->198] (line 6)
-11   v13 = global:global $$undefined         jquery.js [199->233] (line 7)
-12   lexical:through@Ljquery.js = v13        jquery.js [199->233] (line 7)
-13   v15 = global:global $$undefined         jquery.js [235->274] (line 9)
-14   lexical:regex@Ljquery.js = v15          jquery.js [235->274] (line 9)
-15   v20 = global:global Function            jquery.js [0->2202] (line 1)
-16   v17 = construct v20@16 v19:#Ljquery.js/presetOpts exception:v18jquery.js [0->2202] (line 1)
-17   global:global presetOpts = v17          jquery.js [0->2202] (line 1)
-18   v25 = global:global require             jquery.js [31->38] (line 2)
-19   check v25                               jquery.js [31->38] (line 2)
+0   v1 = new <JavaScriptLoader,LArray>@0     jquery.js [0->2535] (line 1) [1=[arguments]]
+1   v6 = global:global Function              jquery.js [1->2534] (line 94)
+2   v3 = construct v6@2 v5:#Ljquery/nodejsModule exception:v4jquery.js [1->2534] (line 94)
+3   v12 = global:global __WALA__int3rnal__globaljquery.js [1->2534] (line 94)
+4   v2 = invoke v3@4 v12 exception:v13       jquery.js [1->2534] (line 94)
 BB2
-20   v27 = global:global __WALA__int3rnal__globaljquery.js [31->52] (line 2)
-21   v23 = invoke v25@21 v27,v28:#dateformat exception:v29jquery.js [31->52] (line 2)
-BB3
-22   lexical:dateFormat@Ljquery.js = v23     jquery.js [14->53] (line 2)
-23   v31 = global:global require             jquery.js [62->69] (line 3)
-24   check v31                               jquery.js [62->69] (line 3)
-BB4
-25   v32 = global:global __WALA__int3rnal__globaljquery.js [62->74] (line 3)
-26   v30 = invoke v31@26 v32,v33:#q exception:v34jquery.js [62->74] (line 3)
-BB5
-27   lexical:Q@Ljquery.js = v30              jquery.js [54->75] (line 3)
-30   v38 = lexical:Q@Ljquery.js              jquery.js [91->92] (line 4) [38=[$$destructure$rcvr3]]
-33   v43 = global:global require             jquery.js [103->110] (line 4)
-34   check v43                               jquery.js [103->110] (line 4)
-BB6
-35   v44 = global:global __WALA__int3rnal__globaljquery.js [103->116] (line 4)
-36   v42 = invoke v43@36 v44,v45:#fs exception:v46jquery.js [103->116] (line 4)
-BB7
-38   v36 = prototype_values(v42)             jquery.js [103->125] (line 4)
-39   v41 = getfield < JavaScriptLoader, LRoot, readFile, <JavaScriptLoader,LRoot> > v36jquery.js [103->125] (line 4)
-BB8
-40   v40 = dispatch v39:#denodeify@40 v38,v41 exception:v49jquery.js [91->126] (line 4) [39=[$$destructure$elt3]38=[$$destructure$rcvr3]]
-BB9
-41   lexical:readFile@Ljquery.js = v40       jquery.js [76->127] (line 4)
-42   v52 = global:global require             jquery.js [142->149] (line 5)
-43   check v52                               jquery.js [142->149] (line 5)
-BB10
-44   v53 = global:global __WALA__int3rnal__globaljquery.js [142->157] (line 5)
-45   v51 = invoke v52@45 v53,v54:#path exception:v55jquery.js [142->157] (line 5)
-BB11
-47   v37 = prototype_values(v51)             jquery.js [142->165] (line 5)
-48   v50 = getfield < JavaScriptLoader, LRoot, resolve, <JavaScriptLoader,LRoot> > v37jquery.js [142->165] (line 5)
-BB12
-49   lexical:resolve@Ljquery.js = v50        jquery.js [128->166] (line 5)
-50   v59 = global:global require             jquery.js [180->187] (line 6)
-51   check v59                               jquery.js [180->187] (line 6)
-BB13
-52   v60 = global:global __WALA__int3rnal__globaljquery.js [180->197] (line 6)
-53   v58 = invoke v59@53 v60,v61:#semver exception:v62jquery.js [180->197] (line 6)
-BB14
-54   lexical:semver@Ljquery.js = v58         jquery.js [167->198] (line 6)
-55   v64 = global:global require             jquery.js [213->220] (line 7)
-56   check v64                               jquery.js [213->220] (line 7)
-BB15
-57   v65 = global:global __WALA__int3rnal__globaljquery.js [213->232] (line 7)
-58   v63 = invoke v64@58 v65,v66:#through2 exception:v67jquery.js [213->232] (line 7)
-BB16
-59   lexical:through@Ljquery.js = v63        jquery.js [199->233] (line 7)
-60   v70 = global:global RegExp              jquery.js [247->273] (line 9)
-61   check v70                               jquery.js [247->273] (line 9)
-BB17
-62   v68 = construct v70@62 v71:#gi,v72:#tag:\s*[v=]?(.+?)[,\)] exception:v73jquery.js [247->273] (line 9)
-BB18
-63   lexical:regex@Ljquery.js = v68          jquery.js [235->274] (line 9)
-64   v74 = global:global presetOpts          jquery.js [2121->2131] (line 82)
-65   check v74                               jquery.js [2121->2131] (line 82)
-BB19
-66   v76 = global:global module              jquery.js [2104->2110] (line 82)
-67   check v76                               jquery.js [2104->2110] (line 82)
-BB20
-68   fieldref v76.v77:#exports = v74 = v74   jquery.js [2104->2131] (line 82)
-BB21
-69   v79 = global:global presetOpts          jquery.js [2133->2143] (line 83)
-70   check v79                               jquery.js [2133->2143] (line 83)
-BB22
-71   v80 = global:global __WALA__int3rnal__globaljquery.js [2133->2145] (line 83)
-72   v78 = invoke v79@72 v80 exception:v81   jquery.js [2133->2145] (line 83)
-BB23
-73   v83 = global:global presetOpts          jquery.js [2147->2157] (line 84)
-74   check v83                               jquery.js [2147->2157] (line 84)
-BB24
-75   v84 = global:global __WALA__int3rnal__globaljquery.js [2147->2159] (line 84)
-76   v82 = invoke v83@76 v84 exception:v85   jquery.js [2147->2159] (line 84)
-BB25
-77   v87 = global:global presetOpts          jquery.js [2161->2171] (line 85)
-78   check v87                               jquery.js [2161->2171] (line 85)
-BB26
-79   v88 = global:global __WALA__int3rnal__globaljquery.js [2161->2173] (line 85)
-80   v86 = invoke v87@80 v88 exception:v89   jquery.js [2161->2173] (line 85)
-BB27
-81   v91 = global:global presetOpts          jquery.js [2175->2185] (line 86)
-82   check v91                               jquery.js [2175->2185] (line 86)
-BB28
-83   v92 = global:global __WALA__int3rnal__globaljquery.js [2175->2187] (line 86)
-84   v90 = invoke v91@84 v92 exception:v93   jquery.js [2175->2187] (line 86)
-BB29
-85   v95 = global:global presetOpts          jquery.js [2189->2199] (line 87)
-86   check v95                               jquery.js [2189->2199] (line 87)
-BB30
-87   v96 = global:global __WALA__int3rnal__globaljquery.js [2189->2201] (line 87)
-88   v94 = invoke v95@88 v96 exception:v97   jquery.js [2189->2201] (line 87)
-BB31
 
 
-<ctor for <JavaScriptLoader,LFunction>(Ljquery.js/presetOpts)>
+<ctor for <JavaScriptLoader,LFunction>(Ljquery/nodejsModule)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -236,7 +42,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Ljquery.js/presetOpts>@2
+2   v5 = new <JavaScriptLoader,Ljquery/nodejsModule>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -249,7 +55,393 @@ BB6
 BB7
 
 
-<Code body of function Ljquery.js/presetOpts>
+<Code body of function Ljquery/nodejsModule>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..4]
+    -> BB2
+    -> BB12
+BB2[5..5]
+    -> BB3
+    -> BB12
+BB3[6..8]
+    -> BB4
+    -> BB12
+BB4[9..10]
+    -> BB5
+    -> BB12
+BB5[11..11]
+    -> BB6
+    -> BB12
+BB6[12..12]
+    -> BB7
+    -> BB12
+BB7[13..19]
+    -> BB8
+    -> BB12
+BB8[20..22]
+    -> BB9
+    -> BB12
+BB9[23..23]
+    -> BB10
+    -> BB12
+BB10[24..26]
+    -> BB11
+    -> BB12
+BB11[27..27]
+    -> BB12
+BB12[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     jquery.js [1->2531] (line 1) [3=[arguments]]
+1   v5 = global:global $$undefined           jquery.js [28->104] (line 2) [5=[module]]
+3   v9 = global:global Object                jquery.js [41->103] (line 2)
+4   check v9                                 jquery.js [41->103] (line 2)
+BB2
+5   v7 = construct v9@5 exception:v10        jquery.js [41->103] (line 2) [7=[module]]
+BB3
+6   v15 = global:global Function             jquery.js [41->103] (line 2)
+7   v12 = construct v15@7 v14:#Ljquery/nodejsModule/__WALA__require exception:v13jquery.js [41->103] (line 2)
+8   fieldref v7.v11:#require = v12 = v12     jquery.js [41->103] (line 2) [7=[module]]
+BB4
+9   v18 = global:global Object               jquery.js [98->100] (line 4)
+10   check v18                               jquery.js [98->100] (line 4)
+BB5
+11   v17 = construct v18@11 exception:v19    jquery.js [98->100] (line 4)
+BB6
+12   fieldref v7.v16:#exports = v17 = v17    jquery.js [41->103] (line 2) [7=[module]]
+BB7
+14   v24 = global:global Function            jquery.js [109->2502] (line 91)
+15   v21 = construct v24@15 v23:#Ljquery/nodejsModule/moduleSource exception:v22jquery.js [109->2502] (line 91)
+16   v28 = global:global __WALA__int3rnal__globaljquery.js [109->2502] (line 91)
+18   v6 = prototype_values(v7)               jquery.js [2339->2353] (line 91) [7=[module]]
+19   v29 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v6jquery.js [2339->2353] (line 91)
+BB8
+21   v30 = prototype_values(v7)              jquery.js [2355->2369] (line 91) [7=[module]]
+22   v31 = getfield < JavaScriptLoader, LRoot, require, <JavaScriptLoader,LRoot> > v30jquery.js [2355->2369] (line 91)
+BB9
+23   v20 = invoke v21@23 v28,v29,v31,v7,v33:#jquery.js,v34:#/Users/zhen/projects/semantic-graph/js2graph/src/test/resources/regression/conventional-changelog/generated exception:v35jquery.js [109->2502] (line 91) [7=[module]]
+BB10
+25   v32 = prototype_values(v7)              jquery.js [2514->2528] (line 93) [7=[module]]
+26   v36 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v32jquery.js [2514->2528] (line 93)
+BB11
+27   return v36                              jquery.js [2507->2529] (line 93)
+BB12
+
+
+<ctor for <JavaScriptLoader,LFunction>(Ljquery/nodejsModule/__WALA__require)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Ljquery/nodejsModule/__WALA__require>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Ljquery/nodejsModule/moduleSource)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Ljquery/nodejsModule/moduleSource>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Ljquery/nodejsModule/moduleSource>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..19]
+    -> BB2
+    -> BB14
+BB2[20..22]
+    -> BB3
+    -> BB14
+BB3[23..30]
+    -> BB4
+    -> BB14
+BB4[31..33]
+    -> BB5
+    -> BB14
+BB5[34..34]
+    -> BB6
+    -> BB14
+BB6[35..37]
+    -> BB7
+    -> BB14
+BB7[38..40]
+    -> BB8
+    -> BB14
+BB8[41..43]
+    -> BB9
+    -> BB14
+BB9[44..46]
+    -> BB10
+    -> BB14
+BB10[47..49]
+    -> BB11
+    -> BB14
+BB11[50..50]
+    -> BB12
+    -> BB14
+BB12[51..52]
+    -> BB13
+    -> BB14
+BB13[53..57]
+    -> BB14
+BB14[-1..-2]
+Instructions:
+BB0
+BB1
+0   lexical:__dirname@Ljquery/nodejsModule/moduleSource = v7jquery.js [109->2337] (line 7) [7=[__dirname]]
+1   v8 = new <JavaScriptLoader,LArray>@1     jquery.js [109->2337] (line 7) [8=[arguments]]
+2   v10 = global:global $$undefined          jquery.js [198->237] (line 9)
+3   lexical:dateFormat@Ljquery/nodejsModule/moduleSource = v10jquery.js [198->237] (line 9)
+4   v12 = global:global $$undefined          jquery.js [238->259] (line 10)
+5   lexical:Q@Ljquery/nodejsModule/moduleSource = v12jquery.js [238->259] (line 10)
+6   v14 = global:global $$undefined          jquery.js [260->311] (line 11)
+7   lexical:readFile@Ljquery/nodejsModule/moduleSource = v14jquery.js [260->311] (line 11)
+8   v16 = global:global $$undefined          jquery.js [312->350] (line 12)
+9   lexical:resolve@Ljquery/nodejsModule/moduleSource = v16jquery.js [312->350] (line 12)
+10   v18 = global:global $$undefined         jquery.js [351->382] (line 13)
+11   lexical:semver@Ljquery/nodejsModule/moduleSource = v18jquery.js [351->382] (line 13)
+12   v20 = global:global $$undefined         jquery.js [383->417] (line 14)
+13   lexical:through@Ljquery/nodejsModule/moduleSource = v20jquery.js [383->417] (line 14)
+14   v22 = global:global $$undefined         jquery.js [419->458] (line 16)
+15   lexical:regex@Ljquery/nodejsModule/moduleSource = v22jquery.js [419->458] (line 16)
+16   v27 = global:global Function            jquery.js [109->2337] (line 7)
+17   v24 = construct v27@17 v26:#Ljquery/nodejsModule/moduleSource/presetOpts exception:v25jquery.js [109->2337] (line 7) [24=[presetOpts]]
+18   v31 = global:global __WALA__int3rnal__globaljquery.js [215->236] (line 9)
+19   v29 = invoke v4@19 v31,v32:#dateformat exception:v33jquery.js [215->236] (line 9) [4=[require]]
+BB2
+20   lexical:dateFormat@Ljquery/nodejsModule/moduleSource = v29jquery.js [198->237] (line 9)
+21   v35 = global:global __WALA__int3rnal__globaljquery.js [246->258] (line 10)
+22   v34 = invoke v4@22 v35,v36:#q exception:v37jquery.js [246->258] (line 10) [4=[require]]
+BB3
+23   lexical:Q@Ljquery/nodejsModule/moduleSource = v34jquery.js [238->259] (line 10)
+26   v41 = lexical:Q@Ljquery/nodejsModule/moduleSourcejquery.js [275->276] (line 11) [41=[$$destructure$rcvr5]]
+29   v46 = global:global __WALA__int3rnal__globaljquery.js [287->300] (line 11)
+30   v45 = invoke v4@30 v46,v47:#fs exception:v48jquery.js [287->300] (line 11) [4=[require]]
+BB4
+32   v39 = prototype_values(v45)             jquery.js [287->309] (line 11)
+33   v44 = getfield < JavaScriptLoader, LRoot, readFile, <JavaScriptLoader,LRoot> > v39jquery.js [287->309] (line 11)
+BB5
+34   v43 = dispatch v42:#denodeify@34 v41,v44 exception:v51jquery.js [275->310] (line 11) [42=[$$destructure$elt5]41=[$$destructure$rcvr5]]
+BB6
+35   lexical:readFile@Ljquery/nodejsModule/moduleSource = v43jquery.js [260->311] (line 11)
+36   v54 = global:global __WALA__int3rnal__globaljquery.js [326->341] (line 12)
+37   v53 = invoke v4@37 v54,v55:#path exception:v56jquery.js [326->341] (line 12) [4=[require]]
+BB7
+39   v40 = prototype_values(v53)             jquery.js [326->349] (line 12)
+40   v52 = getfield < JavaScriptLoader, LRoot, resolve, <JavaScriptLoader,LRoot> > v40jquery.js [326->349] (line 12)
+BB8
+41   lexical:resolve@Ljquery/nodejsModule/moduleSource = v52jquery.js [312->350] (line 12)
+42   v60 = global:global __WALA__int3rnal__globaljquery.js [364->381] (line 13)
+43   v59 = invoke v4@43 v60,v61:#semver exception:v62jquery.js [364->381] (line 13) [4=[require]]
+BB9
+44   lexical:semver@Ljquery/nodejsModule/moduleSource = v59jquery.js [351->382] (line 13)
+45   v64 = global:global __WALA__int3rnal__globaljquery.js [397->416] (line 14)
+46   v63 = invoke v4@46 v64,v65:#through2 exception:v66jquery.js [397->416] (line 14) [4=[require]]
+BB10
+47   lexical:through@Ljquery/nodejsModule/moduleSource = v63jquery.js [383->417] (line 14)
+48   v69 = global:global RegExp              jquery.js [431->457] (line 16)
+49   check v69                               jquery.js [431->457] (line 16)
+BB11
+50   v67 = construct v69@50 v70:#gi,v71:#tag:\s*[v=]?(.+?)[,\)] exception:v72jquery.js [431->457] (line 16)
+BB12
+51   lexical:regex@Ljquery/nodejsModule/moduleSource = v67jquery.js [419->458] (line 16)
+52   fieldref v5.v73:#exports = v24 = v24    jquery.js [2288->2315] (line 89) [5=[module, $$destructure$rcvr27]73=[$$destructure$elt27]24=[presetOpts]]
+BB13
+57   v76 = dispatch v73:#exports@57 v5 exception:v77jquery.js [2317->2333] (line 90) [73=[$$destructure$elt27]5=[module, $$destructure$rcvr27]]
+BB14
+
+
+<ctor for <JavaScriptLoader,LFunction>(Ljquery/nodejsModule/moduleSource/presetOpts)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Ljquery/nodejsModule/moduleSource/presetOpts>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Ljquery/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     jquery.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Ljquery/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     jquery.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Ljquery/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     jquery.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Ljquery/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     jquery.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Ljquery/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     jquery.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Ljquery/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     jquery.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Ljquery/nodejsModule/moduleSource/presetOpts>
 CFG:
 BB0[-1..-2]
     -> BB1
@@ -394,143 +586,143 @@ BB47[-1..-2]
 Instructions:
 BB0
 BB1
-0   lexical:cb@Ljquery.js/presetOpts = v3    jquery.js [276->2102] (line 11) [3=[cb]]
-1   v4 = new <JavaScriptLoader,LArray>@1     jquery.js [276->2102] (line 11) [4=[arguments]]
-2   v6 = global:global $$undefined           jquery.js [304->435] (line 12)
-3   lexical:parserOpts@Ljquery.js/presetOpts = v6jquery.js [304->435] (line 12)
-4   v8 = global:global $$undefined           jquery.js [439->797] (line 20)
-5   lexical:transform@Ljquery.js/presetOpts = v8jquery.js [439->797] (line 20)
-6   v10 = global:global $$undefined          jquery.js [801->1550] (line 35)
-7   lexical:writerOpts@Ljquery.js/presetOpts = v10jquery.js [801->1550] (line 35)
-8   v14 = global:global Object               jquery.js [321->434] (line 12)
-9   check v14                                jquery.js [321->434] (line 12)
+0   lexical:cb@Ljquery/nodejsModule/moduleSource/presetOpts = v3jquery.js [460->2286] (line 18) [3=[cb]]
+1   v4 = new <JavaScriptLoader,LArray>@1     jquery.js [460->2286] (line 18) [4=[arguments]]
+2   v6 = global:global $$undefined           jquery.js [488->619] (line 19)
+3   lexical:parserOpts@Ljquery/nodejsModule/moduleSource/presetOpts = v6jquery.js [488->619] (line 19)
+4   v8 = global:global $$undefined           jquery.js [623->981] (line 27)
+5   lexical:transform@Ljquery/nodejsModule/moduleSource/presetOpts = v8jquery.js [623->981] (line 27)
+6   v10 = global:global $$undefined          jquery.js [985->1734] (line 42)
+7   lexical:writerOpts@Ljquery/nodejsModule/moduleSource/presetOpts = v10jquery.js [985->1734] (line 42)
+8   v14 = global:global Object               jquery.js [505->618] (line 19)
+9   check v14                                jquery.js [505->618] (line 19)
 BB2
-10   v12 = construct v14@10 exception:v15    jquery.js [321->434] (line 12)
+10   v12 = construct v14@10 exception:v15    jquery.js [505->618] (line 19)
 BB3
-11   v19 = global:global RegExp              jquery.js [342->358] (line 13)
-12   check v19                               jquery.js [342->358] (line 13)
+11   v19 = global:global RegExp              jquery.js [526->542] (line 20)
+12   check v19                               jquery.js [526->542] (line 20)
 BB4
-13   v17 = construct v19@13 v20:#,v21:#^(\w*)\: (.*)$ exception:v22jquery.js [342->358] (line 13)
+13   v17 = construct v19@13 v20:#,v21:#^(\w*)\: (.*)$ exception:v22jquery.js [526->542] (line 20)
 BB5
-14   fieldref v12.v16:#headerPattern = v17 = v17jquery.js [321->434] (line 12)
+14   fieldref v12.v16:#headerPattern = v17 = v17jquery.js [505->618] (line 19)
 BB6
-15   v26 = global:global Array               jquery.js [386->430] (line 14)
-16   check v26                               jquery.js [386->430] (line 14)
+15   v26 = global:global Array               jquery.js [570->614] (line 21)
+16   check v26                               jquery.js [570->614] (line 21)
 BB7
-17   v24 = construct v26@17 exception:v27    jquery.js [386->430] (line 14)
+17   v24 = construct v26@17 exception:v27    jquery.js [570->614] (line 21)
 BB8
-18   fieldref v24.v28:#0 = v29:#component = v29:#componentjquery.js [386->430] (line 14)
+18   fieldref v24.v28:#0 = v29:#component = v29:#componentjquery.js [570->614] (line 21)
 BB9
-19   fieldref v24.v30:#1 = v31:#shortDesc = v31:#shortDescjquery.js [386->430] (line 14)
+19   fieldref v24.v30:#1 = v31:#shortDesc = v31:#shortDescjquery.js [570->614] (line 21)
 BB10
-20   fieldref v12.v23:#headerCorrespondence = v24 = v24jquery.js [321->434] (line 12)
+20   fieldref v12.v23:#headerCorrespondence = v24 = v24jquery.js [505->618] (line 19)
 BB11
-21   lexical:parserOpts@Ljquery.js/presetOpts = v12jquery.js [304->435] (line 12)
-24   v36 = lexical:through@Ljquery.js        jquery.js [455->462] (line 20) [36=[$$destructure$rcvr8]]
-25   check v36                               jquery.js [455->462] (line 20) [36=[$$destructure$rcvr8]]
+21   lexical:parserOpts@Ljquery/nodejsModule/moduleSource/presetOpts = v12jquery.js [488->619] (line 19)
+24   v36 = lexical:through@Ljquery/nodejsModule/moduleSourcejquery.js [639->646] (line 27) [36=[$$destructure$rcvr10]]
+25   check v36                               jquery.js [639->646] (line 27) [36=[$$destructure$rcvr10]]
 BB12
-28   v42 = global:global Function            jquery.js [455->796] (line 20)
-29   v39 = construct v42@29 v41:#Ljquery.js/presetOpts/jquery.js@467 exception:v40jquery.js [455->796] (line 20)
-30   v38 = dispatch v37:#obj@30 v36,v39 exception:v46jquery.js [455->796] (line 20) [37=[$$destructure$elt8]36=[$$destructure$rcvr8]]
+28   v42 = global:global Function            jquery.js [639->980] (line 27)
+29   v39 = construct v42@29 v41:#Ljquery/nodejsModule/moduleSource/presetOpts/jquery@651 exception:v40jquery.js [639->980] (line 27)
+30   v38 = dispatch v37:#obj@30 v36,v39 exception:v46jquery.js [639->980] (line 27) [37=[$$destructure$elt10]36=[$$destructure$rcvr10]]
 BB13
-31   lexical:transform@Ljquery.js/presetOpts = v38jquery.js [439->797] (line 20)
-32   v48 = global:global Object              jquery.js [818->1549] (line 35)
-33   check v48                               jquery.js [818->1549] (line 35)
+31   lexical:transform@Ljquery/nodejsModule/moduleSource/presetOpts = v38jquery.js [623->981] (line 27)
+32   v48 = global:global Object              jquery.js [1002->1733] (line 42)
+33   check v48                               jquery.js [1002->1733] (line 42)
 BB14
-34   v47 = construct v48@34 exception:v49    jquery.js [818->1549] (line 35)
+34   v47 = construct v48@34 exception:v49    jquery.js [1002->1733] (line 42)
 BB15
-35   v54 = global:global Function            jquery.js [818->1549] (line 35)
-36   v51 = construct v54@36 v53:#Ljquery.js/presetOpts/jquery.js@835:transform exception:v52jquery.js [818->1549] (line 35)
-37   fieldref v47.v50:#transform = v51 = v51 jquery.js [818->1549] (line 35)
+35   v54 = global:global Function            jquery.js [1002->1733] (line 42)
+36   v51 = construct v54@36 v53:#Ljquery/nodejsModule/moduleSource/presetOpts/jquery@1019:transform exception:v52jquery.js [1002->1733] (line 42)
+37   fieldref v47.v50:#transform = v51 = v51 jquery.js [1002->1733] (line 42)
 BB16
-38   fieldref v47.v55:#groupBy = v29:#component = v29:#componentjquery.js [818->1549] (line 35)
+38   fieldref v47.v55:#groupBy = v29:#component = v29:#componentjquery.js [1002->1733] (line 42)
 BB17
-39   fieldref v47.v56:#commitGroupsSort = v57:#title = v57:#titlejquery.js [818->1549] (line 35)
+39   fieldref v47.v56:#commitGroupsSort = v57:#title = v57:#titlejquery.js [1002->1733] (line 42)
 BB18
-40   v60 = global:global Array               jquery.js [1434->1460] (line 58)
-41   check v60                               jquery.js [1434->1460] (line 58)
+40   v60 = global:global Array               jquery.js [1618->1644] (line 65)
+41   check v60                               jquery.js [1618->1644] (line 65)
 BB19
-42   v59 = construct v60@42 exception:v61    jquery.js [1434->1460] (line 58)
+42   v59 = construct v60@42 exception:v61    jquery.js [1618->1644] (line 65)
 BB20
-43   fieldref v59.v28:#0 = v29:#component = v29:#componentjquery.js [1434->1460] (line 58)
+43   fieldref v59.v28:#0 = v29:#component = v29:#componentjquery.js [1618->1644] (line 65)
 BB21
-44   fieldref v59.v30:#1 = v31:#shortDesc = v31:#shortDescjquery.js [1434->1460] (line 58)
+44   fieldref v59.v30:#1 = v31:#shortDesc = v31:#shortDescjquery.js [1618->1644] (line 65)
 BB22
-45   fieldref v47.v58:#commitsSort = v59 = v59jquery.js [818->1549] (line 35)
+45   fieldref v47.v58:#commitsSort = v59 = v59jquery.js [1002->1733] (line 42)
 BB23
-46   v66 = global:global Function            jquery.js [818->1549] (line 35)
-47   v63 = construct v66@47 v65:#Ljquery.js/presetOpts/jquery.js@1478:generateOn exception:v64jquery.js [818->1549] (line 35)
-48   fieldref v47.v62:#generateOn = v63 = v63jquery.js [818->1549] (line 35)
+46   v66 = global:global Function            jquery.js [1002->1733] (line 42)
+47   v63 = construct v66@47 v65:#Ljquery/nodejsModule/moduleSource/presetOpts/jquery@1662:generateOn exception:v64jquery.js [1002->1733] (line 42)
+48   fieldref v47.v62:#generateOn = v63 = v63jquery.js [1002->1733] (line 42)
 BB24
-49   lexical:writerOpts@Ljquery.js/presetOpts = v47jquery.js [801->1550] (line 35)
-54   v73 = lexical:Q@Ljquery.js              jquery.js [1554->1555] (line 64) [73=[$$destructure$rcvr17]]
-55   check v73                               jquery.js [1554->1555] (line 64) [73=[$$destructure$rcvr17]]
+49   lexical:writerOpts@Ljquery/nodejsModule/moduleSource/presetOpts = v47jquery.js [985->1734] (line 42)
+54   v73 = lexical:Q@Ljquery/nodejsModule/moduleSourcejquery.js [1738->1739] (line 71) [73=[$$destructure$rcvr19]]
+55   check v73                               jquery.js [1738->1739] (line 71) [73=[$$destructure$rcvr19]]
 BB25
-58   v77 = global:global Array               jquery.js [1560->1797] (line 64)
-59   check v77                               jquery.js [1560->1797] (line 64)
+58   v77 = global:global Array               jquery.js [1744->1981] (line 71)
+59   check v77                               jquery.js [1744->1981] (line 71)
 BB26
-60   v76 = construct v77@60 exception:v78    jquery.js [1560->1797] (line 64)
+60   v76 = construct v77@60 exception:v78    jquery.js [1744->1981] (line 71)
 BB27
-61   v81 = lexical:readFile@Ljquery.js       jquery.js [1566->1574] (line 65)
-62   check v81                               jquery.js [1566->1574] (line 65)
+61   v81 = lexical:readFile@Ljquery/nodejsModule/moduleSourcejquery.js [1750->1758] (line 72)
+62   check v81                               jquery.js [1750->1758] (line 72)
 BB28
-63   v82 = global:global __WALA__int3rnal__globaljquery.js [1566->1639] (line 65)
-64   v85 = lexical:resolve@Ljquery.js        jquery.js [1575->1582] (line 65)
-65   check v85                               jquery.js [1575->1582] (line 65)
+63   v82 = global:global __WALA__int3rnal__globaljquery.js [1750->1823] (line 72)
+64   v85 = lexical:resolve@Ljquery/nodejsModule/moduleSourcejquery.js [1759->1766] (line 72)
+65   check v85                               jquery.js [1759->1766] (line 72)
 BB29
-66   v86 = global:global __WALA__int3rnal__globaljquery.js [1575->1629] (line 65)
-67   v88 = global:global __dirname           jquery.js [1583->1592] (line 65)
-68   check v88                               jquery.js [1583->1592] (line 65)
+66   v86 = global:global __WALA__int3rnal__globaljquery.js [1759->1813] (line 72)
+67   v88 = lexical:__dirname@Ljquery/nodejsModule/moduleSourcejquery.js [1767->1776] (line 72)
+68   check v88                               jquery.js [1767->1776] (line 72)
 BB30
-69   v83 = invoke v85@69 v86,v88,v89:#../templates/jquery/template.hbs exception:v90jquery.js [1575->1629] (line 65)
+69   v83 = invoke v85@69 v86,v88,v89:#../templates/jquery/template.hbs exception:v90jquery.js [1759->1813] (line 72)
 BB31
-70   v79 = invoke v81@70 v82,v83,v91:#utf-8 exception:v92jquery.js [1566->1639] (line 65)
+70   v79 = invoke v81@70 v82,v83,v91:#utf-8 exception:v92jquery.js [1750->1823] (line 72)
 BB32
-71   fieldref v76.v28:#0 = v79 = v79         jquery.js [1560->1797] (line 64)
+71   fieldref v76.v28:#0 = v79 = v79         jquery.js [1744->1981] (line 71)
 BB33
-72   v94 = lexical:readFile@Ljquery.js       jquery.js [1645->1653] (line 66)
-73   check v94                               jquery.js [1645->1653] (line 66)
+72   v94 = lexical:readFile@Ljquery/nodejsModule/moduleSourcejquery.js [1829->1837] (line 73)
+73   check v94                               jquery.js [1829->1837] (line 73)
 BB34
-74   v95 = global:global __WALA__int3rnal__globaljquery.js [1645->1716] (line 66)
-75   v97 = lexical:resolve@Ljquery.js        jquery.js [1654->1661] (line 66)
-76   check v97                               jquery.js [1654->1661] (line 66)
+74   v95 = global:global __WALA__int3rnal__globaljquery.js [1829->1900] (line 73)
+75   v97 = lexical:resolve@Ljquery/nodejsModule/moduleSourcejquery.js [1838->1845] (line 73)
+76   check v97                               jquery.js [1838->1845] (line 73)
 BB35
-77   v98 = global:global __WALA__int3rnal__globaljquery.js [1654->1706] (line 66)
-78   v99 = global:global __dirname           jquery.js [1662->1671] (line 66)
-79   check v99                               jquery.js [1662->1671] (line 66)
+77   v98 = global:global __WALA__int3rnal__globaljquery.js [1838->1890] (line 73)
+78   v99 = lexical:__dirname@Ljquery/nodejsModule/moduleSourcejquery.js [1846->1855] (line 73)
+79   check v99                               jquery.js [1846->1855] (line 73)
 BB36
-80   v96 = invoke v97@80 v98,v99,v100:#../templates/jquery/header.hbs exception:v101jquery.js [1654->1706] (line 66)
+80   v96 = invoke v97@80 v98,v99,v100:#../templates/jquery/header.hbs exception:v101jquery.js [1838->1890] (line 73)
 BB37
-81   v93 = invoke v94@81 v95,v96,v91:#utf-8 exception:v102jquery.js [1645->1716] (line 66)
+81   v93 = invoke v94@81 v95,v96,v91:#utf-8 exception:v102jquery.js [1829->1900] (line 73)
 BB38
-82   fieldref v76.v30:#1 = v93 = v93         jquery.js [1560->1797] (line 64)
+82   fieldref v76.v30:#1 = v93 = v93         jquery.js [1744->1981] (line 71)
 BB39
-83   v105 = lexical:readFile@Ljquery.js      jquery.js [1722->1730] (line 67)
-84   check v105                              jquery.js [1722->1730] (line 67)
+83   v105 = lexical:readFile@Ljquery/nodejsModule/moduleSourcejquery.js [1906->1914] (line 74)
+84   check v105                              jquery.js [1906->1914] (line 74)
 BB40
-85   v106 = global:global __WALA__int3rnal__globaljquery.js [1722->1793] (line 67)
-86   v108 = lexical:resolve@Ljquery.js       jquery.js [1731->1738] (line 67)
-87   check v108                              jquery.js [1731->1738] (line 67)
+85   v106 = global:global __WALA__int3rnal__globaljquery.js [1906->1977] (line 74)
+86   v108 = lexical:resolve@Ljquery/nodejsModule/moduleSourcejquery.js [1915->1922] (line 74)
+87   check v108                              jquery.js [1915->1922] (line 74)
 BB41
-88   v109 = global:global __WALA__int3rnal__globaljquery.js [1731->1783] (line 67)
-89   v110 = global:global __dirname          jquery.js [1739->1748] (line 67)
-90   check v110                              jquery.js [1739->1748] (line 67)
+88   v109 = global:global __WALA__int3rnal__globaljquery.js [1915->1967] (line 74)
+89   v110 = lexical:__dirname@Ljquery/nodejsModule/moduleSourcejquery.js [1923->1932] (line 74)
+90   check v110                              jquery.js [1923->1932] (line 74)
 BB42
-91   v107 = invoke v108@91 v109,v110,v111:#../templates/jquery/commit.hbs exception:v112jquery.js [1731->1783] (line 67)
+91   v107 = invoke v108@91 v109,v110,v111:#../templates/jquery/commit.hbs exception:v112jquery.js [1915->1967] (line 74)
 BB43
-92   v104 = invoke v105@92 v106,v107,v91:#utf-8 exception:v113jquery.js [1722->1793] (line 67)
+92   v104 = invoke v105@92 v106,v107,v91:#utf-8 exception:v113jquery.js [1906->1977] (line 74)
 BB44
-93   fieldref v76.v103:#2 = v104 = v104      jquery.js [1560->1797] (line 64)
+93   fieldref v76.v103:#2 = v104 = v104      jquery.js [1744->1981] (line 71)
 BB45
-94   v75 = dispatch v74:#all@94 v73,v76 exception:v114jquery.js [1554->1798] (line 64) [75=[$$destructure$rcvr16]74=[$$destructure$elt17]73=[$$destructure$rcvr17]]
+94   v75 = dispatch v74:#all@94 v73,v76 exception:v114jquery.js [1738->1982] (line 71) [75=[$$destructure$rcvr18]74=[$$destructure$elt19]73=[$$destructure$rcvr19]]
 BB46
-97   v120 = global:global Function           jquery.js [1554->2099] (line 69)
-98   v117 = construct v120@98 v119:#Ljquery.js/presetOpts/jquery.js@1811 exception:v118jquery.js [1554->2099] (line 69)
-99   v116 = dispatch v115:#spread@99 v75,v117 exception:v121jquery.js [1554->2099] (line 69) [115=[$$destructure$elt16]75=[$$destructure$rcvr16]]
+97   v120 = global:global Function           jquery.js [1738->2283] (line 76)
+98   v117 = construct v120@98 v119:#Ljquery/nodejsModule/moduleSource/presetOpts/jquery@1995 exception:v118jquery.js [1738->2283] (line 76)
+99   v116 = dispatch v115:#spread@99 v75,v117 exception:v121jquery.js [1738->2283] (line 76) [115=[$$destructure$elt18]75=[$$destructure$rcvr18]]
 BB47
 
 
-<ctor for <JavaScriptLoader,LFunction>(Ljquery.js/presetOpts/jquery.js@467)>
+<ctor for <JavaScriptLoader,LFunction>(Ljquery/nodejsModule/moduleSource/presetOpts/jquery@651)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -556,7 +748,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Ljquery.js/presetOpts/jquery.js@467>@2
+2   v5 = new <JavaScriptLoader,Ljquery/nodejsModule/moduleSource/presetOpts/jquery@651>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -569,7 +761,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Ljquery.js/presetOpts/jquery.js@835:transform)>
+<ctor for <JavaScriptLoader,LFunction>(Ljquery/nodejsModule/moduleSource/presetOpts/jquery@1019:transform)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -595,7 +787,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Ljquery.js/presetOpts/jquery.js@835:transform>@2
+2   v5 = new <JavaScriptLoader,Ljquery/nodejsModule/moduleSource/presetOpts/jquery@1019:transform>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -608,7 +800,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Ljquery.js/presetOpts/jquery.js@1478:generateOn)>
+<ctor for <JavaScriptLoader,LFunction>(Ljquery/nodejsModule/moduleSource/presetOpts/jquery@1662:generateOn)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -634,7 +826,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Ljquery.js/presetOpts/jquery.js@1478:generateOn>@2
+2   v5 = new <JavaScriptLoader,Ljquery/nodejsModule/moduleSource/presetOpts/jquery@1662:generateOn>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -647,7 +839,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Ljquery.js/presetOpts/jquery.js@1811)>
+<ctor for <JavaScriptLoader,LFunction>(Ljquery/nodejsModule/moduleSource/presetOpts/jquery@1995)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -673,7 +865,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Ljquery.js/presetOpts/jquery.js@1811>@2
+2   v5 = new <JavaScriptLoader,Ljquery/nodejsModule/moduleSource/presetOpts/jquery@1995>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -684,6 +876,58 @@ BB5
 BB6
 7   return v5                                
 BB7
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
 
 
 <ctor for <JavaScriptLoader,LObject>>

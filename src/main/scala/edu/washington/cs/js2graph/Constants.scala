@@ -8,7 +8,45 @@ import scala.jdk.CollectionConverters._
 
 object Constants {
   val unknownModule = "__unknownModule"
-  val nodeJsBuiltInGlobalNames = Set("process", "console", "document", "Buffer", "eval", "Buffer", "child_process", unknownModule, "crypto")
+  val nodeJsBuiltInGlobalNames =
+    Set(
+      "assert",
+      "buffer",
+      "cluster",
+      "crypto",
+      "dgram",
+      "dns",
+      "domain",
+      "events",
+      "fs",
+      "http",
+      "https",
+      "net",
+      "os",
+      "path",
+      "punycode",
+      "querystring",
+      "readline",
+      "repl",
+      "stream",
+      "string_decoder",
+      "tls",
+      "tty",
+      "url",
+      "util",
+      "v8",
+      "vm",
+      "zlib",
+      "process",
+      "console",
+      "document",
+      "Buffer",
+      "eval",
+      "Buffer",
+      "child_process",
+      unknownModule,
+      "crypto"
+    )
 
   def isLibraryGlobalName(name: String): Boolean = {
     nodeJsBuiltInGlobalNames.exists(globalName => name.startsWith(globalName))
@@ -25,6 +63,8 @@ object Constants {
     }
     None
   }
+
+  val moduleFieldNames = Set("_compile", "exports")
 
   /** Point to global context https://sourceforge.net/p/wala/mailman/message/32491808/
     */
@@ -46,10 +86,12 @@ object Constants {
   val debug: Option[String] = sys.env.get("DEBUG")
 
   def isApplicationClassName(className: String): Boolean =
-    !className.startsWith("LFakeRoot") && !className.startsWith("Lprologue.js") &&
+    !className.startsWith("LFakeRoot") &&
+      !className.startsWith("Lprologue.js") &&
+      !className.startsWith("Lextended-prologue.js") &&
       !className.startsWith("LObject")
 
-  private val libPkgNames = Set("prologue.js")
+  private val libPkgNames = Set("prologue.js", "extended-prologue.js")
   def isLibraryPkgName(pkgName: String): Boolean = libPkgNames.contains(pkgName)
 
   /** Decide whether a CGNode is a node in application code
@@ -66,6 +108,7 @@ object Constants {
         if (Constants.isLibraryPkgName(pkgName.toString)) {
           return false
         }
+        return true
       case _ =>
     }
     Constants.isApplicationClassName(node.getMethod.getDeclaringClass.getName.toString)

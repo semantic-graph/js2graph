@@ -1,14 +1,12 @@
 0.0:Constant -[DATAFLOW]-> CryptoDecipher.update:Call
-1.0:Constant -[DATAFLOW]-> module.constructor.exports:Call
-:Constant -[DATAFLOW]-> module.constructor._compile:Call
+1.0:Constant -[DATAFLOW]-> module.exports:Call
+:Constant -[DATAFLOW]-> module._compile:Call
 __unknownModule(./test/data) -[DATAFLOW]-> CryptoDecipher.update:Call
-__unknownModule(./test/data) -[DATAFLOW]-> module.constructor.exports:Call
+__unknownModule(./test/data) -[DATAFLOW]-> module.exports:Call
 aes256:Constant -[DATAFLOW]-> crypto.createDecipher:Construct
 crypto.createDecipher:Construct -[DATAFLOW]-> CryptoDecipher.final:Call
 crypto.createDecipher:Construct -[DATAFLOW]-> CryptoDecipher.update:Call
 hex:Constant -[DATAFLOW]-> CryptoDecipher.update:Call
-module.constructor:Construct -[DATAFLOW]-> module.constructor._compile:Call
-module.constructor:Construct -[DATAFLOW]-> module.constructor.exports:Call
 process.env.npm_package_description -[DATAFLOW]-> crypto.createDecipher:Construct
 utf8:Constant -[DATAFLOW]-> CryptoDecipher.final:Call
 utf8:Constant -[DATAFLOW]-> CryptoDecipher.update:Call

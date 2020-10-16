@@ -138,3 +138,4 @@ describe('presets', function() {
     });
   });
 });
+module.exports();

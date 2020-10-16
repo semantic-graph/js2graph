@@ -309,3 +309,4 @@ describe('conventionalChangelog', function() {
       }));
   });
 });
+module.exports();

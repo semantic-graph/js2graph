@@ -1,14 +1,16 @@
 (?:^|; ):Constant
+(?:^|; ):Constant
 ([\.$?*|{}\(\)\[\]\\\/\+^]):Constant
-0.0:Constant
+([\.$?*|{}\(\)\[\]\\\/\+^]):Constant
 =([^;]*):Constant
-HTMLElement.href:FieldRef
+=([^;]*):Constant
 HTMLElement.rel:FieldRef
 RegExp:Construct
 RegExp:Construct
 document.cookie.match:Call
 document.createElement:Construct
 document.head.appendChild:Call
+g:Constant
 g:Constant
 link:Constant
 prefetch:Constant
