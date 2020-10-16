@@ -58,3 +58,35 @@ scripts/viz path/to/js
 ## Useful WALA resources
 
 - [prologue.js](https://github.com/wala/WALA/blob/master/com.ibm.wala.cast.js/src/main/resources/prologue.js)
+
+## Compile WALA
+
+https://github.com/wala/WALA/blob/master/README-Gradle.md
+
+Needs to use this customized version: https://github.com/izgzhen/WALA/tree/compile-nodejs-jars
+
+Needs to run on Linux workstation:
+
+```
+./gradlew assemble processTestResources
+```
+
+Each sub-project has its own build folder:
+
+```
+./com.ibm.wala.cast.js.rhino/build/libs/com.ibm.wala.cast.js.rhino-1.5.4-sources.jar
+```
+
+Copy the used jars:
+
+```
+cp com.ibm.wala.core/build/libs/*.jar local_lib
+cp com.ibm.wala.cast.js/build/libs/*.jar local_lib
+cp com.ibm.wala.cast/build/libs/*.jar local_lib
+cp com.ibm.wala.cast.js.rhino/build/libs/*.jar local_lib
+cp com.ibm.wala.cast.js.nodejs/build/libs/*.jar local_lib
+cp com.ibm.wala.util/build/libs/*.jar local_lib
+cp com.ibm.wala.shrike/build/libs/*.jar local_lib
+```
+
+And then execute script `install.sh` inside `local_lib`

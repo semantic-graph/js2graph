@@ -1,0 +1,344 @@
+<Code body of function Lexample7>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..4]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v1 = new <JavaScriptLoader,LArray>@0     example7.js [0->331] (line 1) [1=[arguments]]
+1   v6 = global:global Function              example7.js [1->330] (line 12)
+2   v3 = construct v6@2 v5:#Lexample7/nodejsModule exception:v4example7.js [1->330] (line 12)
+3   v11 = global:global __WALA__int3rnal__globalexample7.js [1->330] (line 12)
+4   v2 = invoke v3@4 v11 exception:v12       example7.js [1->330] (line 12)
+BB2
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lexample7/nodejsModule)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lexample7/nodejsModule>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Lexample7/nodejsModule>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..4]
+    -> BB2
+    -> BB12
+BB2[5..5]
+    -> BB3
+    -> BB12
+BB3[6..8]
+    -> BB4
+    -> BB12
+BB4[9..10]
+    -> BB5
+    -> BB12
+BB5[11..11]
+    -> BB6
+    -> BB12
+BB6[12..12]
+    -> BB7
+    -> BB12
+BB7[13..19]
+    -> BB8
+    -> BB12
+BB8[20..22]
+    -> BB9
+    -> BB12
+BB9[23..23]
+    -> BB10
+    -> BB12
+BB10[24..26]
+    -> BB11
+    -> BB12
+BB11[27..27]
+    -> BB12
+BB12[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     example7.js [1->327] (line 1) [3=[arguments]]
+1   v5 = global:global $$undefined           example7.js [28->104] (line 2) [5=[module]]
+3   v9 = global:global Object                example7.js [41->103] (line 2)
+4   check v9                                 example7.js [41->103] (line 2)
+BB2
+5   v7 = construct v9@5 exception:v10        example7.js [41->103] (line 2) [7=[module]]
+BB3
+6   v15 = global:global Function             example7.js [41->103] (line 2)
+7   v12 = construct v15@7 v14:#Lexample7/nodejsModule/__WALA__require exception:v13example7.js [41->103] (line 2)
+8   fieldref v7.v11:#require = v12 = v12     example7.js [41->103] (line 2) [7=[module]]
+BB4
+9   v18 = global:global Object               example7.js [98->100] (line 4)
+10   check v18                               example7.js [98->100] (line 4)
+BB5
+11   v17 = construct v18@11 exception:v19    example7.js [98->100] (line 4)
+BB6
+12   fieldref v7.v16:#exports = v17 = v17    example7.js [41->103] (line 2) [7=[module]]
+BB7
+14   v24 = global:global Function            example7.js [109->298] (line 9)
+15   v21 = construct v24@15 v23:#Lexample7/nodejsModule/moduleSource exception:v22example7.js [109->298] (line 9)
+16   v27 = global:global __WALA__int3rnal__globalexample7.js [109->298] (line 9)
+18   v6 = prototype_values(v7)               example7.js [216->230] (line 9) [7=[module]]
+19   v28 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v6example7.js [216->230] (line 9)
+BB8
+21   v29 = prototype_values(v7)              example7.js [232->246] (line 9) [7=[module]]
+22   v30 = getfield < JavaScriptLoader, LRoot, require, <JavaScriptLoader,LRoot> > v29example7.js [232->246] (line 9)
+BB9
+23   v20 = invoke v21@23 v27,v28,v30,v7,v32:#example7.js,v33:#src/test/resources/small exception:v34example7.js [109->298] (line 9) [7=[module]]
+BB10
+25   v31 = prototype_values(v7)              example7.js [310->324] (line 11) [7=[module]]
+26   v35 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v31example7.js [310->324] (line 11)
+BB11
+27   return v35                              example7.js [303->325] (line 11)
+BB12
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lexample7/nodejsModule/__WALA__require)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lexample7/nodejsModule/__WALA__require>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lexample7/nodejsModule/moduleSource)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lexample7/nodejsModule/moduleSource>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Lexample7/nodejsModule/moduleSource>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..4]
+    -> BB2
+    -> BB4
+BB2[5..10]
+    -> BB3
+    -> BB4
+BB3[11..11]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+BB1
+0   v8 = new <JavaScriptLoader,LArray>@0     example7.js [109->214] (line 7) [8=[arguments]]
+3   v13 = global:global console              example7.js [184->191] (line 8) [13=[$$destructure$rcvr3]]
+4   check v13                                example7.js [184->191] (line 8) [13=[$$destructure$rcvr3]]
+BB2
+7   v20 = global:global Function             example7.js [197->209] (line 8)
+8   v17 = construct v20@8 v19:#Lexample7/nodejsModule/moduleSource/example7@197 exception:v18example7.js [197->209] (line 8)
+9   v22 = global:global __WALA__int3rnal__globalexample7.js [197->209] (line 8)
+10   v16 = invoke v17@10 v22 exception:v23   example7.js [197->209] (line 8)
+BB3
+11   v15 = dispatch v14:#log@11 v13,v16 exception:v24example7.js [184->210] (line 8) [14=[$$destructure$elt3]13=[$$destructure$rcvr3]]
+BB4
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lexample7/nodejsModule/moduleSource/example7@197)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lexample7/nodejsModule/moduleSource/example7@197>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Lexample7/nodejsModule/moduleSource/example7@197>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..1]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     example7.js [197->207] (line 8) [3=[arguments]]
+1   return v4:#1.0                           example7.js [203->206] (line 8)
+BB2
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4

@@ -80,8 +80,4 @@ function presetOpts(cb) {
 }
 
 module.exports = presetOpts;
-presetOpts();
-presetOpts();
-presetOpts();
-presetOpts();
-presetOpts();
+module.exports();

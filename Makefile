@@ -13,6 +13,7 @@ check:
 	./check-jdk-version
 
 init: check
+	cd local_lib; bash install.sh
 	mvn -q package
 	mvn -q clean compile assembly:single
 

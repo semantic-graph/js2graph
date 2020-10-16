@@ -8,9 +8,8 @@ __unknownModule(./test/data)
 aes256:Constant
 crypto.createDecipher:Construct
 hex:Constant
-module.constructor._compile:Call
-module.constructor.exports:Call
-module.constructor:Construct
+module._compile:Call
+module.exports:Call
 process.env.npm_package_description
 utf8:Constant
 utf8:Constant

@@ -164,21 +164,5 @@ function currentDate() {
 
   return util.format('%d-%s-%s', now.getFullYear(), pad(now.getMonth() + 1), pad(now.getDate()));
 }
-Writer();
-Writer();
-Writer();
-Writer();
-Writer();
-Writer();
-currentDate();
-currentDate();
-getCommitLink();
-getIssueLink();
-getPatchVersionLink();
-getVersionLink();
-writeLog();
-writeLog();
-writeLog();
-writeLog();
-writeLog();
-writeLog();
+module.exports();
+module.exports.Writer();

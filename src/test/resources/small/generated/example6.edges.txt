@@ -1,0 +1,2 @@
+Jim:Constant -[DATAFLOW]-> __unknownModule(./util.js).__WALA__int3rnal__global:Call
+Jim:Constant -[DATAFLOW]-> console.log:Call

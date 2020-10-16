@@ -1,15 +1,1 @@
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
+module.exports();

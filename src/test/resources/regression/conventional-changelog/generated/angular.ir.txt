@@ -1,130 +1,22 @@
-<Code body of function Langular.js>
+<Code body of function Langular>
 CFG:
 BB0[-1..-2]
     -> BB1
-BB1[0..14]
+BB1[0..4]
     -> BB2
-    -> BB17
-BB2[15..16]
-    -> BB3
-    -> BB17
-BB3[17..19]
-    -> BB4
-    -> BB17
-BB4[20..21]
-    -> BB5
-    -> BB17
-BB5[22..24]
-    -> BB6
-    -> BB17
-BB6[25..26]
-    -> BB7
-    -> BB17
-BB7[27..29]
-    -> BB8
-    -> BB17
-BB8[30..32]
-    -> BB9
-    -> BB17
-BB9[33..34]
-    -> BB10
-    -> BB17
-BB10[35..37]
-    -> BB11
-    -> BB17
-BB11[38..39]
-    -> BB12
-    -> BB17
-BB12[40..42]
-    -> BB13
-    -> BB17
-BB13[43..44]
-    -> BB14
-    -> BB17
-BB14[45..47]
-    -> BB15
-    -> BB17
-BB15[48..50]
-    -> BB16
-    -> BB17
-BB16[51..54]
-    -> BB17
-BB17[-1..-2]
+BB2[-1..-2]
 Instructions:
 BB0
 BB1
-0   v1 = new <JavaScriptLoader,LArray>@0     angular.js [0->4265] (line 1) [1=[arguments]]
-1   v3 = global:global $$undefined           angular.js [14->51] (line 2)
-2   lexical:child@Langular.js = v3           angular.js [14->51] (line 2)
-3   v5 = global:global $$undefined           angular.js [52->95] (line 3)
-4   lexical:conventionalChangelog@Langular.js = v5angular.js [52->95] (line 3)
-5   v7 = global:global $$undefined           angular.js [96->132] (line 4)
-6   lexical:expect@Langular.js = v7          angular.js [96->132] (line 4)
-7   v9 = global:global $$undefined           angular.js [133->164] (line 5)
-8   lexical:shell@Langular.js = v9           angular.js [133->164] (line 5)
-9   v11 = global:global $$undefined          angular.js [165->199] (line 6)
-10   lexical:through@Langular.js = v11       angular.js [165->199] (line 6)
-11   v13 = global:global $$undefined         angular.js [200->248] (line 7)
-12   lexical:writeFileSync@Langular.js = v13 angular.js [200->248] (line 7)
-13   v18 = global:global require             angular.js [26->33] (line 2)
-14   check v18                               angular.js [26->33] (line 2)
+0   v1 = new <JavaScriptLoader,LArray>@0     angular.js [0->4669] (line 1) [1=[arguments]]
+1   v6 = global:global Function              angular.js [1->4668] (line 152)
+2   v3 = construct v6@2 v5:#Langular/nodejsModule exception:v4angular.js [1->4668] (line 152)
+3   v14 = global:global __WALA__int3rnal__globalangular.js [1->4668] (line 152)
+4   v2 = invoke v3@4 v14 exception:v15       angular.js [1->4668] (line 152)
 BB2
-15   v20 = global:global __WALA__int3rnal__globalangular.js [26->50] (line 2)
-16   v16 = invoke v18@16 v20,v21:#child_process exception:v22angular.js [26->50] (line 2)
-BB3
-17   lexical:child@Langular.js = v16         angular.js [14->51] (line 2)
-18   v24 = global:global require             angular.js [80->87] (line 3)
-19   check v24                               angular.js [80->87] (line 3)
-BB4
-20   v25 = global:global __WALA__int3rnal__globalangular.js [80->94] (line 3)
-21   v23 = invoke v24@21 v25,v26:#../ exception:v27angular.js [80->94] (line 3)
-BB5
-22   lexical:conventionalChangelog@Langular.js = v23angular.js [52->95] (line 3)
-23   v30 = global:global require             angular.js [109->116] (line 4)
-24   check v30                               angular.js [109->116] (line 4)
-BB6
-25   v31 = global:global __WALA__int3rnal__globalangular.js [109->124] (line 4)
-26   v29 = invoke v30@26 v31,v32:#chai exception:v33angular.js [109->124] (line 4)
-BB7
-28   v35 = prototype_values(v29)             angular.js [109->131] (line 4)
-29   v28 = getfield < JavaScriptLoader, LRoot, expect, <JavaScriptLoader,LRoot> > v35angular.js [109->131] (line 4)
-BB8
-30   lexical:expect@Langular.js = v28        angular.js [96->132] (line 4)
-31   v37 = global:global require             angular.js [145->152] (line 5)
-32   check v37                               angular.js [145->152] (line 5)
-BB9
-33   v38 = global:global __WALA__int3rnal__globalangular.js [145->163] (line 5)
-34   v36 = invoke v37@34 v38,v39:#shelljs exception:v40angular.js [145->163] (line 5)
-BB10
-35   lexical:shell@Langular.js = v36         angular.js [133->164] (line 5)
-36   v42 = global:global require             angular.js [179->186] (line 6)
-37   check v42                               angular.js [179->186] (line 6)
-BB11
-38   v43 = global:global __WALA__int3rnal__globalangular.js [179->198] (line 6)
-39   v41 = invoke v42@39 v43,v44:#through2 exception:v45angular.js [179->198] (line 6)
-BB12
-40   lexical:through@Langular.js = v41       angular.js [165->199] (line 6)
-41   v48 = global:global require             angular.js [220->227] (line 7)
-42   check v48                               angular.js [220->227] (line 7)
-BB13
-43   v49 = global:global __WALA__int3rnal__globalangular.js [220->233] (line 7)
-44   v47 = invoke v48@44 v49,v50:#fs exception:v51angular.js [220->233] (line 7)
-BB14
-46   v53 = prototype_values(v47)             angular.js [220->247] (line 7)
-47   v46 = getfield < JavaScriptLoader, LRoot, writeFileSync, <JavaScriptLoader,LRoot> > v53angular.js [220->247] (line 7)
-BB15
-48   lexical:writeFileSync@Langular.js = v46 angular.js [200->248] (line 7)
-49   v56 = global:global describe            angular.js [250->258] (line 9)
-50   check v56                               angular.js [250->258] (line 9)
-BB16
-51   v57 = global:global __WALA__int3rnal__globalangular.js [250->4264] (line 9)
-52   v62 = global:global Function            angular.js [250->4264] (line 9)
-53   v59 = construct v62@53 v61:#Langular.js/angular.js@270 exception:v60angular.js [250->4264] (line 9)
-54   v54 = invoke v56@54 v57,v58:#presets,v59 exception:v67angular.js [250->4264] (line 9)
-BB17
 
 
-<ctor for <JavaScriptLoader,LFunction>(Langular.js/angular.js@270)>
+<ctor for <JavaScriptLoader,LFunction>(Langular/nodejsModule)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -150,7 +42,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Langular.js/angular.js@270>@2
+2   v5 = new <JavaScriptLoader,Langular/nodejsModule>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -161,3 +53,999 @@ BB5
 BB6
 7   return v5                                
 BB7
+
+
+<Code body of function Langular/nodejsModule>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..4]
+    -> BB2
+    -> BB12
+BB2[5..5]
+    -> BB3
+    -> BB12
+BB3[6..8]
+    -> BB4
+    -> BB12
+BB4[9..10]
+    -> BB5
+    -> BB12
+BB5[11..11]
+    -> BB6
+    -> BB12
+BB6[12..12]
+    -> BB7
+    -> BB12
+BB7[13..19]
+    -> BB8
+    -> BB12
+BB8[20..22]
+    -> BB9
+    -> BB12
+BB9[23..23]
+    -> BB10
+    -> BB12
+BB10[24..26]
+    -> BB11
+    -> BB12
+BB11[27..27]
+    -> BB12
+BB12[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     angular.js [1->4665] (line 1) [3=[arguments]]
+1   v5 = global:global $$undefined           angular.js [28->104] (line 2) [5=[module]]
+3   v9 = global:global Object                angular.js [41->103] (line 2)
+4   check v9                                 angular.js [41->103] (line 2)
+BB2
+5   v7 = construct v9@5 exception:v10        angular.js [41->103] (line 2) [7=[module]]
+BB3
+6   v15 = global:global Function             angular.js [41->103] (line 2)
+7   v12 = construct v15@7 v14:#Langular/nodejsModule/__WALA__require exception:v13angular.js [41->103] (line 2)
+8   fieldref v7.v11:#require = v12 = v12     angular.js [41->103] (line 2) [7=[module]]
+BB4
+9   v18 = global:global Object               angular.js [98->100] (line 4)
+10   check v18                               angular.js [98->100] (line 4)
+BB5
+11   v17 = construct v18@11 exception:v19    angular.js [98->100] (line 4)
+BB6
+12   fieldref v7.v16:#exports = v17 = v17    angular.js [41->103] (line 2) [7=[module]]
+BB7
+14   v24 = global:global Function            angular.js [109->4636] (line 149)
+15   v21 = construct v24@15 v23:#Langular/nodejsModule/moduleSource exception:v22angular.js [109->4636] (line 149)
+16   v30 = global:global __WALA__int3rnal__globalangular.js [109->4636] (line 149)
+18   v6 = prototype_values(v7)               angular.js [4472->4486] (line 149) [7=[module]]
+19   v31 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v6angular.js [4472->4486] (line 149)
+BB8
+21   v32 = prototype_values(v7)              angular.js [4488->4502] (line 149) [7=[module]]
+22   v33 = getfield < JavaScriptLoader, LRoot, require, <JavaScriptLoader,LRoot> > v32angular.js [4488->4502] (line 149)
+BB9
+23   v20 = invoke v21@23 v30,v31,v33,v7,v35:#angular.js,v36:#/Users/zhen/projects/semantic-graph/js2graph/src/test/resources/regression/conventional-changelog/generated exception:v37angular.js [109->4636] (line 149) [7=[module]]
+BB10
+25   v34 = prototype_values(v7)              angular.js [4648->4662] (line 151) [7=[module]]
+26   v38 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v34angular.js [4648->4662] (line 151)
+BB11
+27   return v38                              angular.js [4641->4663] (line 151)
+BB12
+
+
+<ctor for <JavaScriptLoader,LFunction>(Langular/nodejsModule/__WALA__require)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Langular/nodejsModule/__WALA__require>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Langular/nodejsModule/moduleSource)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Langular/nodejsModule/moduleSource>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Langular/nodejsModule/moduleSource>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..14]
+    -> BB2
+    -> BB12
+BB2[15..17]
+    -> BB3
+    -> BB12
+BB3[18..20]
+    -> BB4
+    -> BB12
+BB4[21..23]
+    -> BB5
+    -> BB12
+BB5[24..26]
+    -> BB6
+    -> BB12
+BB6[27..29]
+    -> BB7
+    -> BB12
+BB7[30..32]
+    -> BB8
+    -> BB12
+BB8[33..35]
+    -> BB9
+    -> BB12
+BB9[36..38]
+    -> BB10
+    -> BB12
+BB10[39..42]
+    -> BB11
+    -> BB12
+BB11[43..47]
+    -> BB12
+BB12[-1..-2]
+Instructions:
+BB0
+BB1
+0   v8 = new <JavaScriptLoader,LArray>@0     angular.js [109->4470] (line 7) [8=[arguments]]
+1   v10 = global:global $$undefined          angular.js [198->235] (line 9)
+2   lexical:child@Langular/nodejsModule/moduleSource = v10angular.js [198->235] (line 9)
+3   v12 = global:global $$undefined          angular.js [236->279] (line 10)
+4   lexical:conventionalChangelog@Langular/nodejsModule/moduleSource = v12angular.js [236->279] (line 10)
+5   v14 = global:global $$undefined          angular.js [280->316] (line 11)
+6   lexical:expect@Langular/nodejsModule/moduleSource = v14angular.js [280->316] (line 11)
+7   v16 = global:global $$undefined          angular.js [317->348] (line 12)
+8   lexical:shell@Langular/nodejsModule/moduleSource = v16angular.js [317->348] (line 12)
+9   v18 = global:global $$undefined          angular.js [349->383] (line 13)
+10   lexical:through@Langular/nodejsModule/moduleSource = v18angular.js [349->383] (line 13)
+11   v20 = global:global $$undefined         angular.js [384->432] (line 14)
+12   lexical:writeFileSync@Langular/nodejsModule/moduleSource = v20angular.js [384->432] (line 14)
+13   v25 = global:global __WALA__int3rnal__globalangular.js [210->234] (line 9)
+14   v23 = invoke v4@14 v25,v26:#child_process exception:v27angular.js [210->234] (line 9) [4=[require]]
+BB2
+15   lexical:child@Langular/nodejsModule/moduleSource = v23angular.js [198->235] (line 9)
+16   v29 = global:global __WALA__int3rnal__globalangular.js [264->278] (line 10)
+17   v28 = invoke v4@17 v29,v30:#../ exception:v31angular.js [264->278] (line 10) [4=[require]]
+BB3
+18   lexical:conventionalChangelog@Langular/nodejsModule/moduleSource = v28angular.js [236->279] (line 10)
+19   v34 = global:global __WALA__int3rnal__globalangular.js [293->308] (line 11)
+20   v33 = invoke v4@20 v34,v35:#chai exception:v36angular.js [293->308] (line 11) [4=[require]]
+BB4
+22   v38 = prototype_values(v33)             angular.js [293->315] (line 11)
+23   v32 = getfield < JavaScriptLoader, LRoot, expect, <JavaScriptLoader,LRoot> > v38angular.js [293->315] (line 11)
+BB5
+24   lexical:expect@Langular/nodejsModule/moduleSource = v32angular.js [280->316] (line 11)
+25   v40 = global:global __WALA__int3rnal__globalangular.js [329->347] (line 12)
+26   v39 = invoke v4@26 v40,v41:#shelljs exception:v42angular.js [329->347] (line 12) [4=[require]]
+BB6
+27   lexical:shell@Langular/nodejsModule/moduleSource = v39angular.js [317->348] (line 12)
+28   v44 = global:global __WALA__int3rnal__globalangular.js [363->382] (line 13)
+29   v43 = invoke v4@29 v44,v45:#through2 exception:v46angular.js [363->382] (line 13) [4=[require]]
+BB7
+30   lexical:through@Langular/nodejsModule/moduleSource = v43angular.js [349->383] (line 13)
+31   v49 = global:global __WALA__int3rnal__globalangular.js [404->417] (line 14)
+32   v48 = invoke v4@32 v49,v50:#fs exception:v51angular.js [404->417] (line 14) [4=[require]]
+BB8
+34   v53 = prototype_values(v48)             angular.js [404->431] (line 14)
+35   v47 = getfield < JavaScriptLoader, LRoot, writeFileSync, <JavaScriptLoader,LRoot> > v53angular.js [404->431] (line 14)
+BB9
+36   lexical:writeFileSync@Langular/nodejsModule/moduleSource = v47angular.js [384->432] (line 14)
+37   v56 = global:global describe            angular.js [434->442] (line 16)
+38   check v56                               angular.js [434->442] (line 16)
+BB10
+39   v57 = global:global __WALA__int3rnal__globalangular.js [434->4448] (line 16)
+40   v62 = global:global Function            angular.js [434->4448] (line 16)
+41   v59 = construct v62@41 v61:#Langular/nodejsModule/moduleSource/angular@454 exception:v60angular.js [434->4448] (line 16)
+42   v54 = invoke v56@42 v57,v58:#presets,v59 exception:v67angular.js [434->4448] (line 16)
+BB11
+47   v72 = dispatch v71:#exports@47 v5 exception:v73angular.js [4450->4466] (line 148) [71=[$$destructure$elt112]5=[module, $$destructure$rcvr112]]
+BB12
+
+
+<Code body of function Langular/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     angular.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..4]
+    -> BB2
+    -> BB12
+BB2[5..5]
+    -> BB3
+    -> BB12
+BB3[6..8]
+    -> BB4
+    -> BB12
+BB4[9..10]
+    -> BB5
+    -> BB12
+BB5[11..11]
+    -> BB6
+    -> BB12
+BB6[12..12]
+    -> BB7
+    -> BB12
+BB7[13..19]
+    -> BB8
+    -> BB12
+BB8[20..22]
+    -> BB9
+    -> BB12
+BB9[23..23]
+    -> BB10
+    -> BB12
+BB10[24..26]
+    -> BB11
+    -> BB12
+BB11[27..27]
+    -> BB12
+BB12[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     index.js [1->8188] (line 1) [3=[arguments]]
+1   v5 = global:global $$undefined           index.js [28->104] (line 2) [5=[module]]
+3   v9 = global:global Object                index.js [41->103] (line 2)
+4   check v9                                 index.js [41->103] (line 2)
+BB2
+5   v7 = construct v9@5 exception:v10        index.js [41->103] (line 2) [7=[module]]
+BB3
+6   v15 = global:global Function             index.js [41->103] (line 2)
+7   v12 = construct v15@7 v14:#L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require exception:v13index.js [41->103] (line 2)
+8   fieldref v7.v11:#require = v12 = v12     index.js [41->103] (line 2) [7=[module]]
+BB4
+9   v18 = global:global Object               index.js [98->100] (line 4)
+10   check v18                               index.js [98->100] (line 4)
+BB5
+11   v17 = construct v18@11 exception:v19    index.js [98->100] (line 4)
+BB6
+12   fieldref v7.v16:#exports = v17 = v17    index.js [41->103] (line 2) [7=[module]]
+BB7
+14   v24 = global:global Function            index.js [109->8159] (line 266)
+15   v21 = construct v24@15 v23:#L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource exception:v22index.js [109->8159] (line 266)
+16   v31 = global:global __WALA__int3rnal__globalindex.js [109->8159] (line 266)
+18   v6 = prototype_values(v7)               index.js [7994->8008] (line 266) [7=[module]]
+19   v32 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v6index.js [7994->8008] (line 266)
+BB8
+21   v33 = prototype_values(v7)              index.js [8010->8024] (line 266) [7=[module]]
+22   v34 = getfield < JavaScriptLoader, LRoot, require, <JavaScriptLoader,LRoot> > v33index.js [8010->8024] (line 266)
+BB9
+23   v20 = invoke v21@23 v31,v32,v34,v7,v36:#index.js,v37:#/Users/zhen/projects/semantic-graph/js2graph/src/test/resources/regression/conventional-changelog/generated/.. exception:v38index.js [109->8159] (line 266) [7=[module]]
+BB10
+25   v35 = prototype_values(v7)              index.js [8171->8185] (line 268) [7=[module]]
+26   v39 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v35index.js [8171->8185] (line 268)
+BB11
+27   return v39                              index.js [8164->8186] (line 268)
+BB12
+
+
+<Code body of function Langular/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     angular.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Langular/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     angular.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Langular/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     angular.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Langular/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     angular.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<ctor for <JavaScriptLoader,LFunction>(Langular/nodejsModule/moduleSource/angular@454)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Langular/nodejsModule/moduleSource/angular@454>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..35]
+    -> BB2
+    -> BB19
+BB2[36..39]
+    -> BB3
+    -> BB19
+BB3[40..43]
+    -> BB4
+    -> BB19
+BB4[44..47]
+    -> BB5
+    -> BB19
+BB5[48..51]
+    -> BB6
+    -> BB19
+BB6[52..55]
+    -> BB7
+    -> BB19
+BB7[56..59]
+    -> BB8
+    -> BB19
+BB8[60..63]
+    -> BB9
+    -> BB19
+BB9[64..67]
+    -> BB10
+    -> BB19
+BB10[68..71]
+    -> BB11
+    -> BB19
+BB11[72..75]
+    -> BB12
+    -> BB19
+BB12[76..79]
+    -> BB13
+    -> BB19
+BB13[80..82]
+    -> BB14
+    -> BB19
+BB14[83..83]
+    -> BB15
+    -> BB19
+BB15[84..86]
+    -> BB16
+    -> BB19
+BB16[87..87]
+    -> BB17
+    -> BB19
+BB17[88..90]
+    -> BB18
+    -> BB19
+BB18[91..91]
+    -> BB19
+BB19[-1..-2]
+Instructions:
+BB0
+BB1
+0   lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v4index.js [109->7992] (line 7) [4=[require]]
+1   v8 = new <JavaScriptLoader,LArray>@1     index.js [109->7992] (line 7) [8=[arguments]]
+2   v10 = global:global $$undefined          index.js [198->269] (line 9)
+3   lexical:conventionalCommitsParser@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v10index.js [198->269] (line 9)
+4   v12 = global:global $$undefined          index.js [270->345] (line 10)
+5   lexical:conventionalChangelogWriter@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v12index.js [270->345] (line 10)
+6   v14 = global:global $$undefined          index.js [346->385] (line 11)
+7   lexical:dateFormat@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v14index.js [346->385] (line 11)
+8   v16 = global:global $$undefined          index.js [386->409] (line 12)
+9   lexical:fs@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v16index.js [386->409] (line 12)
+10   v18 = global:global $$undefined         index.js [410->451] (line 13)
+11   lexical:getPkgRepo@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v18index.js [410->451] (line 13)
+12   v20 = global:global $$undefined         index.js [452->499] (line 14)
+13   lexical:gitRawCommits@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v20index.js [452->499] (line 14)
+14   v22 = global:global $$undefined         index.js [500->547] (line 15)
+15   lexical:gitSemverTags@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v22index.js [500->547] (line 15)
+16   v24 = global:global $$undefined         index.js [548->569] (line 16)
+17   lexical:Q@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v24index.js [548->569] (line 16)
+18   v26 = global:global $$undefined         index.js [570->601] (line 17)
+19   lexical:stream@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v26index.js [570->601] (line 17)
+20   v28 = global:global $$undefined         index.js [602->636] (line 18)
+21   lexical:through@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v28index.js [602->636] (line 18)
+22   v30 = global:global $$undefined         index.js [637->662] (line 19)
+23   lexical:url@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v30index.js [637->662] (line 19)
+24   v32 = global:global $$undefined         index.js [663->689] (line 20)
+25   lexical:_@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v32index.js [663->689] (line 20)
+26   v34 = global:global $$undefined         index.js [691->731] (line 22)
+27   lexical:rhosts@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v34index.js [691->731] (line 22)
+28   v36 = global:global $$undefined         index.js [732->770] (line 23)
+29   lexical:rtag@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v36index.js [732->770] (line 23)
+30   v41 = global:global Function            index.js [109->7992] (line 7)
+31   v38 = construct v41@31 v40:#L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource/conventionalChangelog exception:v39index.js [109->7992] (line 7)
+32   global:global conventionalChangelog = v38index.js [109->7992] (line 7)
+33   v45 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [230->237] (line 9)
+34   v47 = global:global __WALA__int3rnal__globalindex.js [230->268] (line 9)
+35   v44 = invoke v45@35 v47,v48:#conventional-commits-parser exception:v49index.js [230->268] (line 9)
+BB2
+36   lexical:conventionalCommitsParser@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v44index.js [198->269] (line 9)
+37   v51 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [304->311] (line 10)
+38   v52 = global:global __WALA__int3rnal__globalindex.js [304->344] (line 10)
+39   v50 = invoke v51@39 v52,v53:#conventional-changelog-writer exception:v54index.js [304->344] (line 10)
+BB3
+40   lexical:conventionalChangelogWriter@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v50index.js [270->345] (line 10)
+41   v56 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [363->370] (line 11)
+42   v57 = global:global __WALA__int3rnal__globalindex.js [363->384] (line 11)
+43   v55 = invoke v56@43 v57,v58:#dateformat exception:v59index.js [363->384] (line 11)
+BB4
+44   lexical:dateFormat@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v55index.js [346->385] (line 11)
+45   v61 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [395->402] (line 12)
+46   v62 = global:global __WALA__int3rnal__globalindex.js [395->408] (line 12)
+47   v60 = invoke v61@47 v62,v63:#fs exception:v64index.js [395->408] (line 12)
+BB5
+48   lexical:fs@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v60index.js [386->409] (line 12)
+49   v66 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [427->434] (line 13)
+50   v67 = global:global __WALA__int3rnal__globalindex.js [427->450] (line 13)
+51   v65 = invoke v66@51 v67,v68:#get-pkg-repo exception:v69index.js [427->450] (line 13)
+BB6
+52   lexical:getPkgRepo@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v65index.js [410->451] (line 13)
+53   v71 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [472->479] (line 14)
+54   v72 = global:global __WALA__int3rnal__globalindex.js [472->498] (line 14)
+55   v70 = invoke v71@55 v72,v73:#git-raw-commits exception:v74index.js [472->498] (line 14)
+BB7
+56   lexical:gitRawCommits@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v70index.js [452->499] (line 14)
+57   v76 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [520->527] (line 15)
+58   v77 = global:global __WALA__int3rnal__globalindex.js [520->546] (line 15)
+59   v75 = invoke v76@59 v77,v78:#git-semver-tags exception:v79index.js [520->546] (line 15)
+BB8
+60   lexical:gitSemverTags@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v75index.js [500->547] (line 15)
+61   v81 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [556->563] (line 16)
+62   v82 = global:global __WALA__int3rnal__globalindex.js [556->568] (line 16)
+63   v80 = invoke v81@63 v82,v83:#q exception:v84index.js [556->568] (line 16)
+BB9
+64   lexical:Q@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v80index.js [548->569] (line 16)
+65   v86 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [583->590] (line 17)
+66   v87 = global:global __WALA__int3rnal__globalindex.js [583->600] (line 17)
+67   v85 = invoke v86@67 v87,v88:#stream exception:v89index.js [583->600] (line 17)
+BB10
+68   lexical:stream@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v85index.js [570->601] (line 17)
+69   v91 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [616->623] (line 18)
+70   v92 = global:global __WALA__int3rnal__globalindex.js [616->635] (line 18)
+71   v90 = invoke v91@71 v92,v93:#through2 exception:v94index.js [616->635] (line 18)
+BB11
+72   lexical:through@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v90index.js [602->636] (line 18)
+73   v96 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [647->654] (line 19)
+74   v97 = global:global __WALA__int3rnal__globalindex.js [647->661] (line 19)
+75   v95 = invoke v96@75 v97,v98:#url exception:v99index.js [647->661] (line 19)
+BB12
+76   lexical:url@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v95index.js [637->662] (line 19)
+77   v101 = lexical:require@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSourceindex.js [671->678] (line 20)
+78   v102 = global:global __WALA__int3rnal__globalindex.js [671->688] (line 20)
+79   v100 = invoke v101@79 v102,v103:#lodash exception:v104index.js [671->688] (line 20)
+BB13
+80   lexical:_@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v100index.js [663->689] (line 20)
+81   v107 = global:global RegExp             index.js [704->730] (line 22)
+82   check v107                              index.js [704->730] (line 22)
+BB14
+83   v105 = construct v107@83 v108:#i,v109:#github|bitbucket|gitlab exception:v110index.js [704->730] (line 22)
+BB15
+84   lexical:rhosts@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v105index.js [691->731] (line 22)
+85   v112 = global:global RegExp             index.js [743->769] (line 23)
+86   check v112                              index.js [743->769] (line 23)
+BB16
+87   v111 = construct v112@87 v113:#gi,v114:#tag:\s*[v=]?(.+?)[,\)] exception:v115index.js [743->769] (line 23)
+BB17
+88   lexical:rtag@L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource = v111index.js [732->770] (line 23)
+89   v117 = global:global conventionalChangelogindex.js [7966->7987] (line 264)
+90   check v117                              index.js [7966->7987] (line 264)
+BB18
+91   fieldref v5.v118:#exports = v117 = v117 index.js [7949->7987] (line 264) [5=[module]]
+BB19
+
+
+<ctor for <JavaScriptLoader,LFunction>(L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource/conventionalChangelog)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/moduleSource/conventionalChangelog>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function L_Users_zhen_projects_semantic__graph_js2graph_src_test_resources_regression_conventional__changelog_index/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4

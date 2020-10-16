@@ -3,5 +3,6 @@ Byte[].toString:Construct
 Byte[].toString:Construct
 child_process.execSync:Construct
 child_process.execSync:Construct
+module.exports:Call
 sfdx :Constant
 sfdx :Constant

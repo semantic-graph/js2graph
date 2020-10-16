@@ -1,5 +1,1 @@
-presetOpts();
-presetOpts();
-presetOpts();
-presetOpts();
-presetOpts();
+module.exports();

@@ -1,422 +1,22 @@
-<Code body of function Lindex.js>
+<Code body of function Lindex>
 CFG:
 BB0[-1..-2]
     -> BB1
-BB1[0..33]
+BB1[0..4]
     -> BB2
-    -> BB62
-BB2[34..35]
-    -> BB3
-    -> BB62
-BB3[36..38]
-    -> BB4
-    -> BB62
-BB4[39..40]
-    -> BB5
-    -> BB62
-BB5[41..43]
-    -> BB6
-    -> BB62
-BB6[44..45]
-    -> BB7
-    -> BB62
-BB7[46..48]
-    -> BB8
-    -> BB62
-BB8[49..50]
-    -> BB9
-    -> BB62
-BB9[51..53]
-    -> BB10
-    -> BB62
-BB10[54..55]
-    -> BB11
-    -> BB62
-BB11[56..58]
-    -> BB12
-    -> BB62
-BB12[59..60]
-    -> BB13
-    -> BB62
-BB13[61..63]
-    -> BB14
-    -> BB62
-BB14[64..65]
-    -> BB15
-    -> BB62
-BB15[66..68]
-    -> BB16
-    -> BB62
-BB16[69..70]
-    -> BB17
-    -> BB62
-BB17[71..73]
-    -> BB18
-    -> BB62
-BB18[74..75]
-    -> BB19
-    -> BB62
-BB19[76..78]
-    -> BB20
-    -> BB62
-BB20[79..80]
-    -> BB21
-    -> BB62
-BB21[81..83]
-    -> BB22
-    -> BB62
-BB22[84..85]
-    -> BB23
-    -> BB62
-BB23[86..88]
-    -> BB24
-    -> BB62
-BB24[89..90]
-    -> BB25
-    -> BB62
-BB25[91..93]
-    -> BB26
-    -> BB62
-BB26[94..94]
-    -> BB27
-    -> BB62
-BB27[95..97]
-    -> BB28
-    -> BB62
-BB28[98..98]
-    -> BB29
-    -> BB62
-BB29[99..101]
-    -> BB30
-    -> BB62
-BB30[102..103]
-    -> BB31
-    -> BB62
-BB31[104..104]
-    -> BB32
-    -> BB62
-BB32[105..106]
-    -> BB33
-    -> BB62
-BB33[107..108]
-    -> BB34
-    -> BB62
-BB34[109..110]
-    -> BB35
-    -> BB62
-BB35[111..112]
-    -> BB36
-    -> BB62
-BB36[113..114]
-    -> BB37
-    -> BB62
-BB37[115..116]
-    -> BB38
-    -> BB62
-BB38[117..118]
-    -> BB39
-    -> BB62
-BB39[119..120]
-    -> BB40
-    -> BB62
-BB40[121..122]
-    -> BB41
-    -> BB62
-BB41[123..124]
-    -> BB42
-    -> BB62
-BB42[125..126]
-    -> BB43
-    -> BB62
-BB43[127..128]
-    -> BB44
-    -> BB62
-BB44[129..130]
-    -> BB45
-    -> BB62
-BB45[131..132]
-    -> BB46
-    -> BB62
-BB46[133..134]
-    -> BB47
-    -> BB62
-BB47[135..136]
-    -> BB48
-    -> BB62
-BB48[137..138]
-    -> BB49
-    -> BB62
-BB49[139..140]
-    -> BB50
-    -> BB62
-BB50[141..142]
-    -> BB51
-    -> BB62
-BB51[143..144]
-    -> BB52
-    -> BB62
-BB52[145..146]
-    -> BB53
-    -> BB62
-BB53[147..148]
-    -> BB54
-    -> BB62
-BB54[149..150]
-    -> BB55
-    -> BB62
-BB55[151..152]
-    -> BB56
-    -> BB62
-BB56[153..154]
-    -> BB57
-    -> BB62
-BB57[155..156]
-    -> BB58
-    -> BB62
-BB58[157..158]
-    -> BB59
-    -> BB62
-BB59[159..160]
-    -> BB60
-    -> BB62
-BB60[161..162]
-    -> BB61
-    -> BB62
-BB61[163..164]
-    -> BB62
-BB62[-1..-2]
+BB2[-1..-2]
 Instructions:
 BB0
 BB1
-0   v1 = new <JavaScriptLoader,LArray>@0     index.js [0->8179] (line 1) [1=[arguments]]
-1   v3 = global:global $$undefined           index.js [14->85] (line 2)
-2   lexical:conventionalCommitsParser@Lindex.js = v3index.js [14->85] (line 2)
-3   v5 = global:global $$undefined           index.js [86->161] (line 3)
-4   lexical:conventionalChangelogWriter@Lindex.js = v5index.js [86->161] (line 3)
-5   v7 = global:global $$undefined           index.js [162->201] (line 4)
-6   lexical:dateFormat@Lindex.js = v7        index.js [162->201] (line 4)
-7   v9 = global:global $$undefined           index.js [202->225] (line 5)
-8   lexical:fs@Lindex.js = v9                index.js [202->225] (line 5)
-9   v11 = global:global $$undefined          index.js [226->267] (line 6)
-10   lexical:getPkgRepo@Lindex.js = v11      index.js [226->267] (line 6)
-11   v13 = global:global $$undefined         index.js [268->315] (line 7)
-12   lexical:gitRawCommits@Lindex.js = v13   index.js [268->315] (line 7)
-13   v15 = global:global $$undefined         index.js [316->363] (line 8)
-14   lexical:gitSemverTags@Lindex.js = v15   index.js [316->363] (line 8)
-15   v17 = global:global $$undefined         index.js [364->385] (line 9)
-16   lexical:Q@Lindex.js = v17               index.js [364->385] (line 9)
-17   v19 = global:global $$undefined         index.js [386->417] (line 10)
-18   lexical:stream@Lindex.js = v19          index.js [386->417] (line 10)
-19   v21 = global:global $$undefined         index.js [418->452] (line 11)
-20   lexical:through@Lindex.js = v21         index.js [418->452] (line 11)
-21   v23 = global:global $$undefined         index.js [453->478] (line 12)
-22   lexical:url@Lindex.js = v23             index.js [453->478] (line 12)
-23   v25 = global:global $$undefined         index.js [479->505] (line 13)
-24   lexical:_@Lindex.js = v25               index.js [479->505] (line 13)
-25   v27 = global:global $$undefined         index.js [507->547] (line 15)
-26   lexical:rhosts@Lindex.js = v27          index.js [507->547] (line 15)
-27   v29 = global:global $$undefined         index.js [548->586] (line 16)
-28   lexical:rtag@Lindex.js = v29            index.js [548->586] (line 16)
-29   v34 = global:global Function            index.js [0->8179] (line 1)
-30   v31 = construct v34@30 v33:#Lindex.js/conventionalChangelog exception:v32index.js [0->8179] (line 1)
-31   global:global conventionalChangelog = v31index.js [0->8179] (line 1)
-32   v39 = global:global require             index.js [46->53] (line 2)
-33   check v39                               index.js [46->53] (line 2)
+0   v1 = new <JavaScriptLoader,LArray>@0     index.js [0->8206] (line 1) [1=[arguments]]
+1   v6 = global:global Function              index.js [1->8205] (line 269)
+2   v3 = construct v6@2 v5:#Lindex/nodejsModule exception:v4index.js [1->8205] (line 269)
+3   v14 = global:global __WALA__int3rnal__globalindex.js [1->8205] (line 269)
+4   v2 = invoke v3@4 v14 exception:v15       index.js [1->8205] (line 269)
 BB2
-34   v41 = global:global __WALA__int3rnal__globalindex.js [46->84] (line 2)
-35   v37 = invoke v39@35 v41,v42:#conventional-commits-parser exception:v43index.js [46->84] (line 2)
-BB3
-36   lexical:conventionalCommitsParser@Lindex.js = v37index.js [14->85] (line 2)
-37   v45 = global:global require             index.js [120->127] (line 3)
-38   check v45                               index.js [120->127] (line 3)
-BB4
-39   v46 = global:global __WALA__int3rnal__globalindex.js [120->160] (line 3)
-40   v44 = invoke v45@40 v46,v47:#conventional-changelog-writer exception:v48index.js [120->160] (line 3)
-BB5
-41   lexical:conventionalChangelogWriter@Lindex.js = v44index.js [86->161] (line 3)
-42   v50 = global:global require             index.js [179->186] (line 4)
-43   check v50                               index.js [179->186] (line 4)
-BB6
-44   v51 = global:global __WALA__int3rnal__globalindex.js [179->200] (line 4)
-45   v49 = invoke v50@45 v51,v52:#dateformat exception:v53index.js [179->200] (line 4)
-BB7
-46   lexical:dateFormat@Lindex.js = v49      index.js [162->201] (line 4)
-47   v55 = global:global require             index.js [211->218] (line 5)
-48   check v55                               index.js [211->218] (line 5)
-BB8
-49   v56 = global:global __WALA__int3rnal__globalindex.js [211->224] (line 5)
-50   v54 = invoke v55@50 v56,v57:#fs exception:v58index.js [211->224] (line 5)
-BB9
-51   lexical:fs@Lindex.js = v54              index.js [202->225] (line 5)
-52   v60 = global:global require             index.js [243->250] (line 6)
-53   check v60                               index.js [243->250] (line 6)
-BB10
-54   v61 = global:global __WALA__int3rnal__globalindex.js [243->266] (line 6)
-55   v59 = invoke v60@55 v61,v62:#get-pkg-repo exception:v63index.js [243->266] (line 6)
-BB11
-56   lexical:getPkgRepo@Lindex.js = v59      index.js [226->267] (line 6)
-57   v65 = global:global require             index.js [288->295] (line 7)
-58   check v65                               index.js [288->295] (line 7)
-BB12
-59   v66 = global:global __WALA__int3rnal__globalindex.js [288->314] (line 7)
-60   v64 = invoke v65@60 v66,v67:#git-raw-commits exception:v68index.js [288->314] (line 7)
-BB13
-61   lexical:gitRawCommits@Lindex.js = v64   index.js [268->315] (line 7)
-62   v70 = global:global require             index.js [336->343] (line 8)
-63   check v70                               index.js [336->343] (line 8)
-BB14
-64   v71 = global:global __WALA__int3rnal__globalindex.js [336->362] (line 8)
-65   v69 = invoke v70@65 v71,v72:#git-semver-tags exception:v73index.js [336->362] (line 8)
-BB15
-66   lexical:gitSemverTags@Lindex.js = v69   index.js [316->363] (line 8)
-67   v75 = global:global require             index.js [372->379] (line 9)
-68   check v75                               index.js [372->379] (line 9)
-BB16
-69   v76 = global:global __WALA__int3rnal__globalindex.js [372->384] (line 9)
-70   v74 = invoke v75@70 v76,v77:#q exception:v78index.js [372->384] (line 9)
-BB17
-71   lexical:Q@Lindex.js = v74               index.js [364->385] (line 9)
-72   v80 = global:global require             index.js [399->406] (line 10)
-73   check v80                               index.js [399->406] (line 10)
-BB18
-74   v81 = global:global __WALA__int3rnal__globalindex.js [399->416] (line 10)
-75   v79 = invoke v80@75 v81,v82:#stream exception:v83index.js [399->416] (line 10)
-BB19
-76   lexical:stream@Lindex.js = v79          index.js [386->417] (line 10)
-77   v85 = global:global require             index.js [432->439] (line 11)
-78   check v85                               index.js [432->439] (line 11)
-BB20
-79   v86 = global:global __WALA__int3rnal__globalindex.js [432->451] (line 11)
-80   v84 = invoke v85@80 v86,v87:#through2 exception:v88index.js [432->451] (line 11)
-BB21
-81   lexical:through@Lindex.js = v84         index.js [418->452] (line 11)
-82   v90 = global:global require             index.js [463->470] (line 12)
-83   check v90                               index.js [463->470] (line 12)
-BB22
-84   v91 = global:global __WALA__int3rnal__globalindex.js [463->477] (line 12)
-85   v89 = invoke v90@85 v91,v92:#url exception:v93index.js [463->477] (line 12)
-BB23
-86   lexical:url@Lindex.js = v89             index.js [453->478] (line 12)
-87   v95 = global:global require             index.js [487->494] (line 13)
-88   check v95                               index.js [487->494] (line 13)
-BB24
-89   v96 = global:global __WALA__int3rnal__globalindex.js [487->504] (line 13)
-90   v94 = invoke v95@90 v96,v97:#lodash exception:v98index.js [487->504] (line 13)
-BB25
-91   lexical:_@Lindex.js = v94               index.js [479->505] (line 13)
-92   v101 = global:global RegExp             index.js [520->546] (line 15)
-93   check v101                              index.js [520->546] (line 15)
-BB26
-94   v99 = construct v101@94 v102:#i,v103:#github|bitbucket|gitlab exception:v104index.js [520->546] (line 15)
-BB27
-95   lexical:rhosts@Lindex.js = v99          index.js [507->547] (line 15)
-96   v106 = global:global RegExp             index.js [559->585] (line 16)
-97   check v106                              index.js [559->585] (line 16)
-BB28
-98   v105 = construct v106@98 v107:#gi,v108:#tag:\s*[v=]?(.+?)[,\)] exception:v109index.js [559->585] (line 16)
-BB29
-99   lexical:rtag@Lindex.js = v105           index.js [548->586] (line 16)
-100   v111 = global:global conventionalChangelogindex.js [7782->7803] (line 257)
-101   check v111                             index.js [7782->7803] (line 257)
-BB30
-102   v113 = global:global module            index.js [7765->7771] (line 257)
-103   check v113                             index.js [7765->7771] (line 257)
-BB31
-104   fieldref v113.v114:#exports = v111 = v111index.js [7765->7803] (line 257)
-BB32
-105   v116 = global:global conventionalChangelogindex.js [7805->7826] (line 258)
-106   check v116                             index.js [7805->7826] (line 258)
-BB33
-107   v117 = global:global __WALA__int3rnal__globalindex.js [7805->7828] (line 258)
-108   v115 = invoke v116@108 v117 exception:v118index.js [7805->7828] (line 258)
-BB34
-109   v120 = global:global conventionalChangelogindex.js [7830->7851] (line 259)
-110   check v120                             index.js [7830->7851] (line 259)
-BB35
-111   v121 = global:global __WALA__int3rnal__globalindex.js [7830->7853] (line 259)
-112   v119 = invoke v120@112 v121 exception:v122index.js [7830->7853] (line 259)
-BB36
-113   v124 = global:global conventionalChangelogindex.js [7855->7876] (line 260)
-114   check v124                             index.js [7855->7876] (line 260)
-BB37
-115   v125 = global:global __WALA__int3rnal__globalindex.js [7855->7878] (line 260)
-116   v123 = invoke v124@116 v125 exception:v126index.js [7855->7878] (line 260)
-BB38
-117   v128 = global:global conventionalChangelogindex.js [7880->7901] (line 261)
-118   check v128                             index.js [7880->7901] (line 261)
-BB39
-119   v129 = global:global __WALA__int3rnal__globalindex.js [7880->7903] (line 261)
-120   v127 = invoke v128@120 v129 exception:v130index.js [7880->7903] (line 261)
-BB40
-121   v132 = global:global conventionalChangelogindex.js [7905->7926] (line 262)
-122   check v132                             index.js [7905->7926] (line 262)
-BB41
-123   v133 = global:global __WALA__int3rnal__globalindex.js [7905->7928] (line 262)
-124   v131 = invoke v132@124 v133 exception:v134index.js [7905->7928] (line 262)
-BB42
-125   v136 = global:global conventionalChangelogindex.js [7930->7951] (line 263)
-126   check v136                             index.js [7930->7951] (line 263)
-BB43
-127   v137 = global:global __WALA__int3rnal__globalindex.js [7930->7953] (line 263)
-128   v135 = invoke v136@128 v137 exception:v138index.js [7930->7953] (line 263)
-BB44
-129   v140 = global:global conventionalChangelogindex.js [7955->7976] (line 264)
-130   check v140                             index.js [7955->7976] (line 264)
-BB45
-131   v141 = global:global __WALA__int3rnal__globalindex.js [7955->7978] (line 264)
-132   v139 = invoke v140@132 v141 exception:v142index.js [7955->7978] (line 264)
-BB46
-133   v144 = global:global conventionalChangelogindex.js [7980->8001] (line 265)
-134   check v144                             index.js [7980->8001] (line 265)
-BB47
-135   v145 = global:global __WALA__int3rnal__globalindex.js [7980->8003] (line 265)
-136   v143 = invoke v144@136 v145 exception:v146index.js [7980->8003] (line 265)
-BB48
-137   v148 = global:global conventionalChangelogindex.js [8005->8026] (line 266)
-138   check v148                             index.js [8005->8026] (line 266)
-BB49
-139   v149 = global:global __WALA__int3rnal__globalindex.js [8005->8028] (line 266)
-140   v147 = invoke v148@140 v149 exception:v150index.js [8005->8028] (line 266)
-BB50
-141   v152 = global:global conventionalChangelogindex.js [8030->8051] (line 267)
-142   check v152                             index.js [8030->8051] (line 267)
-BB51
-143   v153 = global:global __WALA__int3rnal__globalindex.js [8030->8053] (line 267)
-144   v151 = invoke v152@144 v153 exception:v154index.js [8030->8053] (line 267)
-BB52
-145   v156 = global:global conventionalChangelogindex.js [8055->8076] (line 268)
-146   check v156                             index.js [8055->8076] (line 268)
-BB53
-147   v157 = global:global __WALA__int3rnal__globalindex.js [8055->8078] (line 268)
-148   v155 = invoke v156@148 v157 exception:v158index.js [8055->8078] (line 268)
-BB54
-149   v160 = global:global conventionalChangelogindex.js [8080->8101] (line 269)
-150   check v160                             index.js [8080->8101] (line 269)
-BB55
-151   v161 = global:global __WALA__int3rnal__globalindex.js [8080->8103] (line 269)
-152   v159 = invoke v160@152 v161 exception:v162index.js [8080->8103] (line 269)
-BB56
-153   v164 = global:global conventionalChangelogindex.js [8105->8126] (line 270)
-154   check v164                             index.js [8105->8126] (line 270)
-BB57
-155   v165 = global:global __WALA__int3rnal__globalindex.js [8105->8128] (line 270)
-156   v163 = invoke v164@156 v165 exception:v166index.js [8105->8128] (line 270)
-BB58
-157   v168 = global:global conventionalChangelogindex.js [8130->8151] (line 271)
-158   check v168                             index.js [8130->8151] (line 271)
-BB59
-159   v169 = global:global __WALA__int3rnal__globalindex.js [8130->8153] (line 271)
-160   v167 = invoke v168@160 v169 exception:v170index.js [8130->8153] (line 271)
-BB60
-161   v172 = global:global conventionalChangelogindex.js [8155->8176] (line 272)
-162   check v172                             index.js [8155->8176] (line 272)
-BB61
-163   v173 = global:global __WALA__int3rnal__globalindex.js [8155->8178] (line 272)
-164   v171 = invoke v172@164 v173 exception:v174index.js [8155->8178] (line 272)
-BB62
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lindex.js/conventionalChangelog)>
+<ctor for <JavaScriptLoader,LFunction>(Lindex/nodejsModule)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -442,7 +42,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lindex.js/conventionalChangelog>@2
+2   v5 = new <JavaScriptLoader,Lindex/nodejsModule>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -455,7 +55,539 @@ BB6
 BB7
 
 
-<Code body of function Lindex.js/conventionalChangelog>
+<Code body of function Lindex/nodejsModule>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..4]
+    -> BB2
+    -> BB12
+BB2[5..5]
+    -> BB3
+    -> BB12
+BB3[6..8]
+    -> BB4
+    -> BB12
+BB4[9..10]
+    -> BB5
+    -> BB12
+BB5[11..11]
+    -> BB6
+    -> BB12
+BB6[12..12]
+    -> BB7
+    -> BB12
+BB7[13..19]
+    -> BB8
+    -> BB12
+BB8[20..22]
+    -> BB9
+    -> BB12
+BB9[23..23]
+    -> BB10
+    -> BB12
+BB10[24..26]
+    -> BB11
+    -> BB12
+BB11[27..27]
+    -> BB12
+BB12[-1..-2]
+Instructions:
+BB0
+BB1
+0   v3 = new <JavaScriptLoader,LArray>@0     index.js [1->8202] (line 1) [3=[arguments]]
+1   v5 = global:global $$undefined           index.js [28->104] (line 2) [5=[module]]
+3   v9 = global:global Object                index.js [41->103] (line 2)
+4   check v9                                 index.js [41->103] (line 2)
+BB2
+5   v7 = construct v9@5 exception:v10        index.js [41->103] (line 2) [7=[module]]
+BB3
+6   v15 = global:global Function             index.js [41->103] (line 2)
+7   v12 = construct v15@7 v14:#Lindex/nodejsModule/__WALA__require exception:v13index.js [41->103] (line 2)
+8   fieldref v7.v11:#require = v12 = v12     index.js [41->103] (line 2) [7=[module]]
+BB4
+9   v18 = global:global Object               index.js [98->100] (line 4)
+10   check v18                               index.js [98->100] (line 4)
+BB5
+11   v17 = construct v18@11 exception:v19    index.js [98->100] (line 4)
+BB6
+12   fieldref v7.v16:#exports = v17 = v17    index.js [41->103] (line 2) [7=[module]]
+BB7
+14   v24 = global:global Function            index.js [109->8173] (line 266)
+15   v21 = construct v24@15 v23:#Lindex/nodejsModule/moduleSource exception:v22index.js [109->8173] (line 266)
+16   v30 = global:global __WALA__int3rnal__globalindex.js [109->8173] (line 266)
+18   v6 = prototype_values(v7)               index.js [8011->8025] (line 266) [7=[module]]
+19   v31 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v6index.js [8011->8025] (line 266)
+BB8
+21   v32 = prototype_values(v7)              index.js [8027->8041] (line 266) [7=[module]]
+22   v33 = getfield < JavaScriptLoader, LRoot, require, <JavaScriptLoader,LRoot> > v32index.js [8027->8041] (line 266)
+BB9
+23   v20 = invoke v21@23 v30,v31,v33,v7,v35:#index.js,v36:#/Users/zhen/projects/semantic-graph/js2graph/src/test/resources/regression/conventional-changelog/generated exception:v37index.js [109->8173] (line 266) [7=[module]]
+BB10
+25   v34 = prototype_values(v7)              index.js [8185->8199] (line 268) [7=[module]]
+26   v38 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v34index.js [8185->8199] (line 268)
+BB11
+27   return v38                              index.js [8178->8200] (line 268)
+BB12
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lindex/nodejsModule/__WALA__require)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lindex/nodejsModule/__WALA__require>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lindex/nodejsModule/moduleSource)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lindex/nodejsModule/moduleSource>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Lindex/nodejsModule/moduleSource>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..34]
+    -> BB2
+    -> BB19
+BB2[35..38]
+    -> BB3
+    -> BB19
+BB3[39..42]
+    -> BB4
+    -> BB19
+BB4[43..46]
+    -> BB5
+    -> BB19
+BB5[47..50]
+    -> BB6
+    -> BB19
+BB6[51..54]
+    -> BB7
+    -> BB19
+BB7[55..58]
+    -> BB8
+    -> BB19
+BB8[59..62]
+    -> BB9
+    -> BB19
+BB9[63..66]
+    -> BB10
+    -> BB19
+BB10[67..70]
+    -> BB11
+    -> BB19
+BB11[71..74]
+    -> BB12
+    -> BB19
+BB12[75..78]
+    -> BB13
+    -> BB19
+BB13[79..81]
+    -> BB14
+    -> BB19
+BB14[82..82]
+    -> BB15
+    -> BB19
+BB15[83..85]
+    -> BB16
+    -> BB19
+BB16[86..86]
+    -> BB17
+    -> BB19
+BB17[87..88]
+    -> BB18
+    -> BB19
+BB18[89..93]
+    -> BB19
+BB19[-1..-2]
+Instructions:
+BB0
+BB1
+0   lexical:require@Lindex/nodejsModule/moduleSource = v4index.js [109->8009] (line 7) [4=[require]]
+1   v8 = new <JavaScriptLoader,LArray>@1     index.js [109->8009] (line 7) [8=[arguments]]
+2   v10 = global:global $$undefined          index.js [198->269] (line 9)
+3   lexical:conventionalCommitsParser@Lindex/nodejsModule/moduleSource = v10index.js [198->269] (line 9)
+4   v12 = global:global $$undefined          index.js [270->345] (line 10)
+5   lexical:conventionalChangelogWriter@Lindex/nodejsModule/moduleSource = v12index.js [270->345] (line 10)
+6   v14 = global:global $$undefined          index.js [346->385] (line 11)
+7   lexical:dateFormat@Lindex/nodejsModule/moduleSource = v14index.js [346->385] (line 11)
+8   v16 = global:global $$undefined          index.js [386->409] (line 12)
+9   lexical:fs@Lindex/nodejsModule/moduleSource = v16index.js [386->409] (line 12)
+10   v18 = global:global $$undefined         index.js [410->451] (line 13)
+11   lexical:getPkgRepo@Lindex/nodejsModule/moduleSource = v18index.js [410->451] (line 13)
+12   v20 = global:global $$undefined         index.js [452->499] (line 14)
+13   lexical:gitRawCommits@Lindex/nodejsModule/moduleSource = v20index.js [452->499] (line 14)
+14   v22 = global:global $$undefined         index.js [500->547] (line 15)
+15   lexical:gitSemverTags@Lindex/nodejsModule/moduleSource = v22index.js [500->547] (line 15)
+16   v24 = global:global $$undefined         index.js [548->569] (line 16)
+17   lexical:Q@Lindex/nodejsModule/moduleSource = v24index.js [548->569] (line 16)
+18   v26 = global:global $$undefined         index.js [570->601] (line 17)
+19   lexical:stream@Lindex/nodejsModule/moduleSource = v26index.js [570->601] (line 17)
+20   v28 = global:global $$undefined         index.js [602->636] (line 18)
+21   lexical:through@Lindex/nodejsModule/moduleSource = v28index.js [602->636] (line 18)
+22   v30 = global:global $$undefined         index.js [637->662] (line 19)
+23   lexical:url@Lindex/nodejsModule/moduleSource = v30index.js [637->662] (line 19)
+24   v32 = global:global $$undefined         index.js [663->689] (line 20)
+25   lexical:_@Lindex/nodejsModule/moduleSource = v32index.js [663->689] (line 20)
+26   v34 = global:global $$undefined         index.js [691->731] (line 22)
+27   lexical:rhosts@Lindex/nodejsModule/moduleSource = v34index.js [691->731] (line 22)
+28   v36 = global:global $$undefined         index.js [732->770] (line 23)
+29   lexical:rtag@Lindex/nodejsModule/moduleSource = v36index.js [732->770] (line 23)
+30   v41 = global:global Function            index.js [109->8009] (line 7)
+31   v38 = construct v41@31 v40:#Lindex/nodejsModule/moduleSource/conventionalChangelog exception:v39index.js [109->8009] (line 7) [38=[conventionalChangelog]]
+32   v44 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [230->237] (line 9)
+33   v46 = global:global __WALA__int3rnal__globalindex.js [230->268] (line 9)
+34   v43 = invoke v44@34 v46,v47:#conventional-commits-parser exception:v48index.js [230->268] (line 9)
+BB2
+35   lexical:conventionalCommitsParser@Lindex/nodejsModule/moduleSource = v43index.js [198->269] (line 9)
+36   v50 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [304->311] (line 10)
+37   v51 = global:global __WALA__int3rnal__globalindex.js [304->344] (line 10)
+38   v49 = invoke v50@38 v51,v52:#conventional-changelog-writer exception:v53index.js [304->344] (line 10)
+BB3
+39   lexical:conventionalChangelogWriter@Lindex/nodejsModule/moduleSource = v49index.js [270->345] (line 10)
+40   v55 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [363->370] (line 11)
+41   v56 = global:global __WALA__int3rnal__globalindex.js [363->384] (line 11)
+42   v54 = invoke v55@42 v56,v57:#dateformat exception:v58index.js [363->384] (line 11)
+BB4
+43   lexical:dateFormat@Lindex/nodejsModule/moduleSource = v54index.js [346->385] (line 11)
+44   v60 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [395->402] (line 12)
+45   v61 = global:global __WALA__int3rnal__globalindex.js [395->408] (line 12)
+46   v59 = invoke v60@46 v61,v62:#fs exception:v63index.js [395->408] (line 12)
+BB5
+47   lexical:fs@Lindex/nodejsModule/moduleSource = v59index.js [386->409] (line 12)
+48   v65 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [427->434] (line 13)
+49   v66 = global:global __WALA__int3rnal__globalindex.js [427->450] (line 13)
+50   v64 = invoke v65@50 v66,v67:#get-pkg-repo exception:v68index.js [427->450] (line 13)
+BB6
+51   lexical:getPkgRepo@Lindex/nodejsModule/moduleSource = v64index.js [410->451] (line 13)
+52   v70 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [472->479] (line 14)
+53   v71 = global:global __WALA__int3rnal__globalindex.js [472->498] (line 14)
+54   v69 = invoke v70@54 v71,v72:#git-raw-commits exception:v73index.js [472->498] (line 14)
+BB7
+55   lexical:gitRawCommits@Lindex/nodejsModule/moduleSource = v69index.js [452->499] (line 14)
+56   v75 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [520->527] (line 15)
+57   v76 = global:global __WALA__int3rnal__globalindex.js [520->546] (line 15)
+58   v74 = invoke v75@58 v76,v77:#git-semver-tags exception:v78index.js [520->546] (line 15)
+BB8
+59   lexical:gitSemverTags@Lindex/nodejsModule/moduleSource = v74index.js [500->547] (line 15)
+60   v80 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [556->563] (line 16)
+61   v81 = global:global __WALA__int3rnal__globalindex.js [556->568] (line 16)
+62   v79 = invoke v80@62 v81,v82:#q exception:v83index.js [556->568] (line 16)
+BB9
+63   lexical:Q@Lindex/nodejsModule/moduleSource = v79index.js [548->569] (line 16)
+64   v85 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [583->590] (line 17)
+65   v86 = global:global __WALA__int3rnal__globalindex.js [583->600] (line 17)
+66   v84 = invoke v85@66 v86,v87:#stream exception:v88index.js [583->600] (line 17)
+BB10
+67   lexical:stream@Lindex/nodejsModule/moduleSource = v84index.js [570->601] (line 17)
+68   v90 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [616->623] (line 18)
+69   v91 = global:global __WALA__int3rnal__globalindex.js [616->635] (line 18)
+70   v89 = invoke v90@70 v91,v92:#through2 exception:v93index.js [616->635] (line 18)
+BB11
+71   lexical:through@Lindex/nodejsModule/moduleSource = v89index.js [602->636] (line 18)
+72   v95 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [647->654] (line 19)
+73   v96 = global:global __WALA__int3rnal__globalindex.js [647->661] (line 19)
+74   v94 = invoke v95@74 v96,v97:#url exception:v98index.js [647->661] (line 19)
+BB12
+75   lexical:url@Lindex/nodejsModule/moduleSource = v94index.js [637->662] (line 19)
+76   v100 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [671->678] (line 20)
+77   v101 = global:global __WALA__int3rnal__globalindex.js [671->688] (line 20)
+78   v99 = invoke v100@78 v101,v102:#lodash exception:v103index.js [671->688] (line 20)
+BB13
+79   lexical:_@Lindex/nodejsModule/moduleSource = v99index.js [663->689] (line 20)
+80   v106 = global:global RegExp             index.js [704->730] (line 22)
+81   check v106                              index.js [704->730] (line 22)
+BB14
+82   v104 = construct v106@82 v107:#i,v108:#github|bitbucket|gitlab exception:v109index.js [704->730] (line 22)
+BB15
+83   lexical:rhosts@Lindex/nodejsModule/moduleSource = v104index.js [691->731] (line 22)
+84   v111 = global:global RegExp             index.js [743->769] (line 23)
+85   check v111                              index.js [743->769] (line 23)
+BB16
+86   v110 = construct v111@86 v112:#gi,v113:#tag:\s*[v=]?(.+?)[,\)] exception:v114index.js [743->769] (line 23)
+BB17
+87   lexical:rtag@Lindex/nodejsModule/moduleSource = v110index.js [732->770] (line 23)
+88   fieldref v5.v116:#exports = v38 = v38   index.js [7949->7987] (line 264) [5=[module, $$destructure$rcvr69]116=[$$destructure$elt69]38=[conventionalChangelog]]
+BB18
+93   v119 = dispatch v116:#exports@93 v5 exception:v120index.js [7989->8005] (line 265) [116=[$$destructure$elt69]5=[module, $$destructure$rcvr69]]
+BB19
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lindex/nodejsModule/moduleSource/conventionalChangelog)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Lindex/nodejsModule/moduleSource/conventionalChangelog>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<Code body of function Lindex/nodejsModule/moduleSource/conventionalChangelog>
 CFG:
 BB0[-1..-2]
     -> BB1
@@ -669,234 +801,234 @@ BB73[-1..-2]
 Instructions:
 BB0
 BB1
-0   lexical:options@Lindex.js/conventionalChangelog = v3index.js [588->7763] (line 18) [3=[options]]
-1   lexical:context@Lindex.js/conventionalChangelog = v4index.js [588->7763] (line 18) [4=[context]]
-2   lexical:gitRawCommitsOpts@Lindex.js/conventionalChangelog = v5index.js [588->7763] (line 18) [5=[gitRawCommitsOpts]]
-3   lexical:parserOpts@Lindex.js/conventionalChangelog = v6index.js [588->7763] (line 18) [6=[parserOpts]]
-4   lexical:writerOpts@Lindex.js/conventionalChangelog = v7index.js [588->7763] (line 18) [7=[writerOpts]]
-5   v8 = new <JavaScriptLoader,LArray>@5     index.js [588->7763] (line 18) [8=[arguments]]
-6   v10 = global:global $$undefined          index.js [684->702] (line 19) [10=[presetPromise]]
-8   v12 = global:global $$undefined          index.js [705->720] (line 20) [12=[pkgPromise]]
-10   v14 = global:global $$undefined         index.js [723->745] (line 21) [14=[semverTagsPromise]]
-12   v16 = global:global $$undefined         index.js [783->867] (line 25)
-13   lexical:readable@Lindex.js/conventionalChangelog = v16index.js [783->867] (line 25)
-14   v18 = global:global $$undefined         index.js [1622->1654] (line 62)
-15   lexical:loadPreset@Lindex.js/conventionalChangelog = v18index.js [1622->1654] (line 62)
-16   v20 = global:global $$undefined         index.js [1680->1911] (line 65) [20=[err]]
-18   v22 = global:global $$undefined         index.js [1692->1746] (line 66) [22=[presetFn]]
-20   v25 = lexical:writerOpts@Lindex.js/conventionalChangelogindex.js [762->772] (line 23)
-22   conditional branch(eq, to iindex=25) v25,v28:#0index.js [762->778] (line 23)
+0   lexical:options@Lindex/nodejsModule/moduleSource/conventionalChangelog = v3index.js [772->7947] (line 25) [3=[options]]
+1   lexical:context@Lindex/nodejsModule/moduleSource/conventionalChangelog = v4index.js [772->7947] (line 25) [4=[context]]
+2   lexical:gitRawCommitsOpts@Lindex/nodejsModule/moduleSource/conventionalChangelog = v5index.js [772->7947] (line 25) [5=[gitRawCommitsOpts]]
+3   lexical:parserOpts@Lindex/nodejsModule/moduleSource/conventionalChangelog = v6index.js [772->7947] (line 25) [6=[parserOpts]]
+4   lexical:writerOpts@Lindex/nodejsModule/moduleSource/conventionalChangelog = v7index.js [772->7947] (line 25) [7=[writerOpts]]
+5   v8 = new <JavaScriptLoader,LArray>@5     index.js [772->7947] (line 25) [8=[arguments]]
+6   v10 = global:global $$undefined          index.js [868->886] (line 26) [10=[presetPromise]]
+8   v12 = global:global $$undefined          index.js [889->904] (line 27) [12=[pkgPromise]]
+10   v14 = global:global $$undefined         index.js [907->929] (line 28) [14=[semverTagsPromise]]
+12   v16 = global:global $$undefined         index.js [967->1051] (line 32)
+13   lexical:readable@Lindex/nodejsModule/moduleSource/conventionalChangelog = v16index.js [967->1051] (line 32)
+14   v18 = global:global $$undefined         index.js [1806->1838] (line 69)
+15   lexical:loadPreset@Lindex/nodejsModule/moduleSource/conventionalChangelog = v18index.js [1806->1838] (line 69)
+16   v20 = global:global $$undefined         index.js [1864->2095] (line 72) [20=[err]]
+18   v22 = global:global $$undefined         index.js [1876->1930] (line 73) [22=[presetFn]]
+20   v25 = lexical:writerOpts@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [946->956] (line 30)
+22   conditional branch(eq, to iindex=25) v25,v28:#0index.js [946->962] (line 30)
 BB2
-24   goto (from iindex= 24 to iindex = 29)   index.js [762->778] (line 23)
+24   goto (from iindex= 24 to iindex = 29)   index.js [946->962] (line 30)
 BB3
-25   v31 = global:global Object              index.js [776->778] (line 23)
-26   check v31                               index.js [776->778] (line 23)
+25   v31 = global:global Object              index.js [960->962] (line 30)
+26   check v31                               index.js [960->962] (line 30)
 BB4
-27   v29 = construct v31@27 exception:v32    index.js [776->778] (line 23)
+27   v29 = construct v31@27 exception:v32    index.js [960->962] (line 30)
 BB5
 BB6
            v11 = phi  v25,v29
-29   lexical:writerOpts@Lindex.js/conventionalChangelog = v11index.js [749->778] (line 23)
-30   v36 = lexical:stream@Lindex.js          index.js [802->808] (line 25)
-31   check v36                               index.js [802->808] (line 25)
+29   lexical:writerOpts@Lindex/nodejsModule/moduleSource/conventionalChangelog = v11index.js [933->962] (line 30)
+30   v36 = lexical:stream@Lindex/nodejsModule/moduleSourceindex.js [986->992] (line 32)
+31   check v36                               index.js [986->992] (line 32)
 BB7
-33   v13 = prototype_values(v36)             index.js [802->817] (line 25)
-34   v34 = getfield < JavaScriptLoader, LRoot, Readable, <JavaScriptLoader,LRoot> > v13index.js [802->817] (line 25)
+33   v13 = prototype_values(v36)             index.js [986->1001] (line 32)
+34   v34 = getfield < JavaScriptLoader, LRoot, Readable, <JavaScriptLoader,LRoot> > v13index.js [986->1001] (line 32)
 BB8
-35   v40 = global:global Object              index.js [818->865] (line 25)
-36   check v40                               index.js [818->865] (line 25)
+35   v40 = global:global Object              index.js [1002->1049] (line 32)
+36   check v40                               index.js [1002->1049] (line 32)
 BB9
-37   v39 = construct v40@37 exception:v41    index.js [818->865] (line 25)
+37   v39 = construct v40@37 exception:v41    index.js [1002->1049] (line 32)
 BB10
-38   v44 = lexical:writerOpts@Lindex.js/conventionalChangelogindex.js [836->846] (line 26)
-40   v15 = prototype_values(v44)             index.js [836->861] (line 26)
-41   v43 = getfield < JavaScriptLoader, LRoot, includeDetails, <JavaScriptLoader,LRoot> > v15index.js [836->861] (line 26)
+38   v44 = lexical:writerOpts@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [1020->1030] (line 33)
+40   v15 = prototype_values(v44)             index.js [1020->1045] (line 33)
+41   v43 = getfield < JavaScriptLoader, LRoot, includeDetails, <JavaScriptLoader,LRoot> > v15index.js [1020->1045] (line 33)
 BB11
-42   fieldref v39.v42:#objectMode = v43 = v43index.js [818->865] (line 25)
+42   fieldref v39.v42:#objectMode = v43 = v43index.js [1002->1049] (line 32)
 BB12
-43   v33 = construct v34@43 v39 exception:v47index.js [798->866] (line 25)
+43   v33 = construct v34@43 v39 exception:v47index.js [982->1050] (line 32)
 BB13
-44   lexical:readable@Lindex.js/conventionalChangelog = v33index.js [783->867] (line 25)
-45   v51 = global:global Function            index.js [870->900] (line 28)
-46   v48 = construct v51@46 v50:#Lindex.js/conventionalChangelog/index.js@887 exception:v49index.js [870->900] (line 28)
-47   v52 = lexical:readable@Lindex.js/conventionalChangelogindex.js [870->878] (line 28)
-48   fieldref v52.v53:#_read = v48 = v48     index.js [870->900] (line 28)
+44   lexical:readable@Lindex/nodejsModule/moduleSource/conventionalChangelog = v33index.js [967->1051] (line 32)
+45   v51 = global:global Function            index.js [1054->1084] (line 35)
+46   v48 = construct v51@46 v50:#Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1071 exception:v49index.js [1054->1084] (line 35)
+47   v52 = lexical:readable@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [1054->1062] (line 35)
+48   fieldref v52.v53:#_read = v48 = v48     index.js [1054->1084] (line 35)
 BB14
-49   v54 = lexical:context@Lindex.js/conventionalChangelogindex.js [915->922] (line 30)
-51   conditional branch(eq, to iindex=54) v54,v28:#0index.js [915->928] (line 30)
+49   v54 = lexical:context@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [1099->1106] (line 37)
+51   conditional branch(eq, to iindex=54) v54,v28:#0index.js [1099->1112] (line 37)
 BB15
-53   goto (from iindex= 53 to iindex = 58)   index.js [915->928] (line 30)
+53   goto (from iindex= 53 to iindex = 58)   index.js [1099->1112] (line 37)
 BB16
-54   v58 = global:global Object              index.js [926->928] (line 30)
-55   check v58                               index.js [926->928] (line 30)
+54   v58 = global:global Object              index.js [1110->1112] (line 37)
+55   check v58                               index.js [1110->1112] (line 37)
 BB17
-56   v57 = construct v58@56 exception:v59    index.js [926->928] (line 30)
+56   v57 = construct v58@56 exception:v59    index.js [1110->1112] (line 37)
 BB18
 BB19
            v21 = phi  v54,v57
-58   lexical:context@Lindex.js/conventionalChangelog = v21index.js [905->928] (line 30)
-59   v60 = lexical:gitRawCommitsOpts@Lindex.js/conventionalChangelogindex.js [952->969] (line 31)
-61   conditional branch(eq, to iindex=64) v60,v28:#0index.js [952->975] (line 31)
+58   lexical:context@Lindex/nodejsModule/moduleSource/conventionalChangelog = v21index.js [1089->1112] (line 37)
+59   v60 = lexical:gitRawCommitsOpts@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [1136->1153] (line 38)
+61   conditional branch(eq, to iindex=64) v60,v28:#0index.js [1136->1159] (line 38)
 BB20
-63   goto (from iindex= 63 to iindex = 68)   index.js [952->975] (line 31)
+63   goto (from iindex= 63 to iindex = 68)   index.js [1136->1159] (line 38)
 BB21
-64   v64 = global:global Object              index.js [973->975] (line 31)
-65   check v64                               index.js [973->975] (line 31)
+64   v64 = global:global Object              index.js [1157->1159] (line 38)
+65   check v64                               index.js [1157->1159] (line 38)
 BB22
-66   v63 = construct v64@66 exception:v65    index.js [973->975] (line 31)
+66   v63 = construct v64@66 exception:v65    index.js [1157->1159] (line 38)
 BB23
 BB24
            v23 = phi  v60,v63
-68   lexical:gitRawCommitsOpts@Lindex.js/conventionalChangelog = v23index.js [932->975] (line 31)
-71   v69 = lexical:_@Lindex.js               index.js [990->991] (line 33) [69=[$$destructure$rcvr13]]
-72   check v69                               index.js [990->991] (line 33) [69=[$$destructure$rcvr13]]
+68   lexical:gitRawCommitsOpts@Lindex/nodejsModule/moduleSource/conventionalChangelog = v23index.js [1116->1159] (line 38)
+71   v69 = lexical:_@Lindex/nodejsModule/moduleSourceindex.js [1174->1175] (line 40) [69=[$$destructure$rcvr15]]
+72   check v69                               index.js [1174->1175] (line 40) [69=[$$destructure$rcvr15]]
 BB25
-75   v73 = global:global Object              index.js [998->1572] (line 33)
-76   check v73                               index.js [998->1572] (line 33)
+75   v73 = global:global Object              index.js [1182->1756] (line 40)
+76   check v73                               index.js [1182->1756] (line 40)
 BB26
-77   v72 = construct v73@77 exception:v74    index.js [998->1572] (line 33)
+77   v72 = construct v73@77 exception:v74    index.js [1182->1756] (line 40)
 BB27
-78   v77 = global:global Object              index.js [1009->1105] (line 34)
-79   check v77                               index.js [1009->1105] (line 34)
+78   v77 = global:global Object              index.js [1193->1289] (line 41)
+79   check v77                               index.js [1193->1289] (line 41)
 BB28
-80   v76 = construct v77@80 exception:v78    index.js [1009->1105] (line 34)
+80   v76 = construct v77@80 exception:v78    index.js [1193->1289] (line 41)
 BB29
-81   fieldref v76.v79:#path = v80:#package.json = v80:#package.jsonindex.js [1009->1105] (line 34)
+81   fieldref v76.v79:#path = v80:#package.json = v80:#package.jsonindex.js [1193->1289] (line 41)
 BB30
-82   v85 = global:global Function            index.js [1009->1105] (line 34)
-83   v82 = construct v85@83 v84:#Lindex.js/conventionalChangelog/index.js@1056:transform exception:v83index.js [1009->1105] (line 34)
-84   fieldref v76.v81:#transform = v82 = v82 index.js [1009->1105] (line 34)
+82   v85 = global:global Function            index.js [1193->1289] (line 41)
+83   v82 = construct v85@83 v84:#Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1240:transform exception:v83index.js [1193->1289] (line 41)
+84   fieldref v76.v81:#transform = v82 = v82 index.js [1193->1289] (line 41)
 BB31
-85   fieldref v72.v75:#pkg = v76 = v76       index.js [998->1572] (line 33)
+85   fieldref v72.v75:#pkg = v76 = v76       index.js [1182->1756] (line 40)
 BB32
-86   fieldref v72.v86:#append = v87:#false = v87:#falseindex.js [998->1572] (line 33)
+86   fieldref v72.v86:#append = v87:#false = v87:#falseindex.js [1182->1756] (line 40)
 BB33
-87   fieldref v72.v88:#releaseCount = v89:#1.0 = v89:#1.0index.js [998->1572] (line 33)
+87   fieldref v72.v88:#releaseCount = v89:#1.0 = v89:#1.0index.js [1182->1756] (line 40)
 BB34
-88   v94 = global:global Function            index.js [998->1572] (line 33)
-89   v91 = construct v94@89 v93:#Lindex.js/conventionalChangelog/index.js@1157:warn exception:v92index.js [998->1572] (line 33)
-90   fieldref v72.v90:#warn = v91 = v91      index.js [998->1572] (line 33) [90=[$$destructure$elt17]]
+88   v94 = global:global Function            index.js [1182->1756] (line 40)
+89   v91 = construct v94@89 v93:#Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1341:warn exception:v92index.js [1182->1756] (line 40)
+90   fieldref v72.v90:#warn = v91 = v91      index.js [1182->1756] (line 40) [90=[$$destructure$elt19]]
 BB35
-91   v98 = global:global Function            index.js [998->1572] (line 33)
-92   v95 = construct v98@92 v97:#Lindex.js/conventionalChangelog/index.js@1187:transform exception:v96index.js [998->1572] (line 33)
-93   fieldref v72.v81:#transform = v95 = v95 index.js [998->1572] (line 33)
+91   v98 = global:global Function            index.js [1182->1756] (line 40)
+92   v95 = construct v98@92 v97:#Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1371:transform exception:v96index.js [1182->1756] (line 40)
+93   fieldref v72.v81:#transform = v95 = v95 index.js [1182->1756] (line 40)
 BB36
-94   v102 = lexical:options@Lindex.js/conventionalChangelogindex.js [1574->1581] (line 59)
-95   v71 = dispatch v70:#merge@95 v69,v72,v102 exception:v103index.js [990->1582] (line 33) [70=[$$destructure$elt13]69=[$$destructure$rcvr13]]
+94   v102 = lexical:options@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [1758->1765] (line 66)
+95   v71 = dispatch v70:#merge@95 v69,v72,v102 exception:v103index.js [1174->1766] (line 40) [70=[$$destructure$elt15]69=[$$destructure$rcvr15]]
 BB37
-96   lexical:options@Lindex.js/conventionalChangelog = v71index.js [980->1582] (line 33)
-97   v105 = lexical:options@Lindex.js/conventionalChangelogindex.js [1601->1608] (line 61)
-99   v26 = prototype_values(v105)            index.js [1601->1612] (line 61)
-100   v104 = getfield < JavaScriptLoader, LRoot, pkg, <JavaScriptLoader,LRoot> > v26index.js [1601->1612] (line 61)
+96   lexical:options@Lindex/nodejsModule/moduleSource/conventionalChangelog = v71index.js [1164->1766] (line 40)
+97   v105 = lexical:options@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [1785->1792] (line 68)
+99   v26 = prototype_values(v105)            index.js [1785->1796] (line 68)
+100   v104 = getfield < JavaScriptLoader, LRoot, pkg, <JavaScriptLoader,LRoot> > v26index.js [1785->1796] (line 68)
 BB38
-101   conditional branch(eq, to iindex=104) v104,v28:#0index.js [1601->1618] (line 61)
+101   conditional branch(eq, to iindex=104) v104,v28:#0index.js [1785->1802] (line 68)
 BB39
-103   goto (from iindex= 103 to iindex = 108)index.js [1601->1618] (line 61)
+103   goto (from iindex= 103 to iindex = 108)index.js [1785->1802] (line 68)
 BB40
-104   v109 = global:global Object            index.js [1616->1618] (line 61)
-105   check v109                             index.js [1616->1618] (line 61)
+104   v109 = global:global Object            index.js [1800->1802] (line 68)
+105   check v109                             index.js [1800->1802] (line 68)
 BB41
-106   v108 = construct v109@106 exception:v110index.js [1616->1618] (line 61)
+106   v108 = construct v109@106 exception:v110index.js [1800->1802] (line 68)
 BB42
 BB43
            v27 = phi  v104,v108
-108   v111 = lexical:options@Lindex.js/conventionalChangelogindex.js [1587->1594] (line 61)
-109   fieldref v111.v75:#pkg = v27 = v27     index.js [1587->1618] (line 61)
+108   v111 = lexical:options@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [1771->1778] (line 68)
+109   fieldref v111.v75:#pkg = v27 = v27     index.js [1771->1802] (line 68)
 BB44
-110   v113 = lexical:options@Lindex.js/conventionalChangelogindex.js [1639->1646] (line 62)
-112   v38 = prototype_values(v113)           index.js [1639->1653] (line 62)
-113   v112 = getfield < JavaScriptLoader, LRoot, preset, <JavaScriptLoader,LRoot> > v38index.js [1639->1653] (line 62)
+110   v113 = lexical:options@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [1823->1830] (line 69)
+112   v38 = prototype_values(v113)           index.js [1823->1837] (line 69)
+113   v112 = getfield < JavaScriptLoader, LRoot, preset, <JavaScriptLoader,LRoot> > v38index.js [1823->1837] (line 69)
 BB45
-114   lexical:loadPreset@Lindex.js/conventionalChangelog = v112index.js [1622->1654] (line 62)
-115   v116 = lexical:loadPreset@Lindex.js/conventionalChangelogindex.js [1662->1672] (line 64)
-116   conditional branch(eq, to iindex=151) v116,v28:#0index.js [1658->1915] (line 64)
+114   lexical:loadPreset@Lindex/nodejsModule/moduleSource/conventionalChangelog = v112index.js [1806->1838] (line 69)
+115   v116 = lexical:loadPreset@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [1846->1856] (line 71)
+116   conditional branch(eq, to iindex=151) v116,v28:#0index.js [1842->2099] (line 71)
 BB46
-117   v119 = global:global require           index.js [1707->1714] (line 66)
-118   check v119                             index.js [1707->1714] (line 66)
+117   v119 = lexical:require@Lindex/nodejsModule/moduleSourceindex.js [1891->1898] (line 73)
+118   check v119                             index.js [1891->1898] (line 73)
 BB47
-119   v120 = global:global __WALA__int3rnal__globalindex.js [1707->1745] (line 66)
-120   v124 = lexical:options@Lindex.js/conventionalChangelogindex.js [1730->1737] (line 66)
-122   v46 = prototype_values(v124)           index.js [1730->1744] (line 66)
-123   v123 = getfield < JavaScriptLoader, LRoot, preset, <JavaScriptLoader,LRoot> > v46index.js [1730->1744] (line 66)
+119   v120 = global:global __WALA__int3rnal__globalindex.js [1891->1929] (line 73)
+120   v124 = lexical:options@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [1914->1921] (line 73)
+122   v46 = prototype_values(v124)           index.js [1914->1928] (line 73)
+123   v123 = getfield < JavaScriptLoader, LRoot, preset, <JavaScriptLoader,LRoot> > v46index.js [1914->1928] (line 73)
 BB48
-124   v121 = binaryop(add) v122:#./presets/ , v123index.js [1715->1744] (line 66)
-125   v117 = invoke v119@125 v120,v121 exception:v126index.js [1707->1745] (line 66) [117=[presetFn]]
+124   v121 = binaryop(add) v122:#./presets/ , v123index.js [1899->1928] (line 73)
+125   v117 = invoke v119@125 v120,v121 exception:v126index.js [1891->1929] (line 73) [117=[presetFn]]
 BB49
-129   v130 = lexical:Q@Lindex.js             index.js [1769->1770] (line 67) [130=[$$destructure$rcvr19]]
-130   check v130                             index.js [1769->1770] (line 67) [130=[$$destructure$rcvr19]]
+129   v130 = lexical:Q@Lindex/nodejsModule/moduleSourceindex.js [1953->1954] (line 74) [130=[$$destructure$rcvr21]]
+130   check v130                             index.js [1953->1954] (line 74) [130=[$$destructure$rcvr21]]
 BB50
-133   v132 = dispatch v131:#nfcall@133 v130,v117 exception:v133index.js [1769->1787] (line 67) [132=[presetPromise]131=[$$destructure$elt21]130=[$$destructure$rcvr19]117=[presetFn]]
+133   v132 = dispatch v131:#nfcall@133 v130,v117 exception:v133index.js [1953->1971] (line 74) [132=[presetPromise]131=[$$destructure$elt23]130=[$$destructure$rcvr21]117=[presetFn]]
 BB51
-135   goto (from iindex= 135 to iindex = 151)index.js [1680->1911] (line 65)
+135   goto (from iindex= 135 to iindex = 151)index.js [1864->2095] (line 72)
 BB52<Handler> (<JavaScriptLoader,LRoot>)
            v134 = getCaughtException 
-138   lexical:loadPreset@Lindex.js/conventionalChangelog = v87:#falseindex.js [1815->1833] (line 69)
-141   v137 = lexical:options@Lindex.js/conventionalChangelogindex.js [1841->1848] (line 70) [137=[$$destructure$rcvr17]]
-144   v143 = lexical:options@Lindex.js/conventionalChangelogindex.js [1868->1875] (line 70)
-146   v55 = prototype_values(v143)           index.js [1868->1882] (line 70)
-147   v142 = getfield < JavaScriptLoader, LRoot, preset, <JavaScriptLoader,LRoot> > v55index.js [1868->1882] (line 70)
+138   lexical:loadPreset@Lindex/nodejsModule/moduleSource/conventionalChangelog = v87:#falseindex.js [1999->2017] (line 76)
+141   v137 = lexical:options@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [2025->2032] (line 77) [137=[$$destructure$rcvr19]]
+144   v143 = lexical:options@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [2052->2059] (line 77)
+146   v55 = prototype_values(v143)           index.js [2052->2066] (line 77)
+147   v142 = getfield < JavaScriptLoader, LRoot, preset, <JavaScriptLoader,LRoot> > v55index.js [2052->2066] (line 77)
 BB53
-148   v140 = binaryop(add) v141:#Preset: " , v142index.js [1854->1882] (line 70)
-149   v139 = binaryop(add) v140 , v145:#" does not existindex.js [1854->1903] (line 70)
-150   v138 = dispatch v90:#warn@150 v137,v139 exception:v146index.js [1841->1904] (line 70) [90=[$$destructure$elt17]137=[$$destructure$rcvr17]]
+148   v140 = binaryop(add) v141:#Preset: " , v142index.js [2038->2066] (line 77)
+149   v139 = binaryop(add) v140 , v145:#" does not existindex.js [2038->2087] (line 77)
+150   v138 = dispatch v90:#warn@150 v137,v139 exception:v146index.js [2025->2088] (line 77) [90=[$$destructure$elt19]137=[$$destructure$rcvr19]]
 BB54
            v56 = phi  v10,v132,v10
-153   v149 = lexical:Q@Lindex.js             index.js [1932->1933] (line 74) [149=[$$destructure$rcvr20]]
-154   check v149                             index.js [1932->1933] (line 74) [149=[$$destructure$rcvr20]]
+153   v149 = lexical:Q@Lindex/nodejsModule/moduleSourceindex.js [2116->2117] (line 81) [149=[$$destructure$rcvr22]]
+154   check v149                             index.js [2116->2117] (line 81) [149=[$$destructure$rcvr22]]
 BB55
-157   v153 = lexical:fs@Lindex.js            index.js [1941->1943] (line 74)
-158   check v153                             index.js [1941->1943] (line 74)
+157   v153 = lexical:fs@Lindex/nodejsModule/moduleSourceindex.js [2125->2127] (line 81)
+158   check v153                             index.js [2125->2127] (line 81)
 BB56
-160   v61 = prototype_values(v153)           index.js [1941->1952] (line 74)
-161   v151 = getfield < JavaScriptLoader, LRoot, readFile, <JavaScriptLoader,LRoot> > v61index.js [1941->1952] (line 74)
+160   v61 = prototype_values(v153)           index.js [2125->2136] (line 81)
+161   v151 = getfield < JavaScriptLoader, LRoot, readFile, <JavaScriptLoader,LRoot> > v61index.js [2125->2136] (line 81)
 BB57
-162   v158 = lexical:options@Lindex.js/conventionalChangelogindex.js [1954->1961] (line 74)
-164   v62 = prototype_values(v158)           index.js [1954->1965] (line 74)
-165   v157 = getfield < JavaScriptLoader, LRoot, pkg, <JavaScriptLoader,LRoot> > v62index.js [1954->1965] (line 74)
+162   v158 = lexical:options@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [2138->2145] (line 81)
+164   v62 = prototype_values(v158)           index.js [2138->2149] (line 81)
+165   v157 = getfield < JavaScriptLoader, LRoot, pkg, <JavaScriptLoader,LRoot> > v62index.js [2138->2149] (line 81)
 BB58
-167   v66 = prototype_values(v157)           index.js [1954->1970] (line 74)
-168   v156 = getfield < JavaScriptLoader, LRoot, path, <JavaScriptLoader,LRoot> > v66index.js [1954->1970] (line 74)
+167   v66 = prototype_values(v157)           index.js [2138->2154] (line 81)
+168   v156 = getfield < JavaScriptLoader, LRoot, path, <JavaScriptLoader,LRoot> > v66index.js [2138->2154] (line 81)
 BB59
-169   v150 = dispatch v131:#nfcall@169 v149,v151,v156,v161:#utf8 exception:v162index.js [1932->1979] (line 74) [150=[pkgPromise]131=[$$destructure$elt21]149=[$$destructure$rcvr20]]
+169   v150 = dispatch v131:#nfcall@169 v149,v151,v156,v161:#utf8 exception:v162index.js [2116->2163] (line 81) [150=[pkgPromise]131=[$$destructure$elt23]149=[$$destructure$rcvr22]]
 BB60
-173   v165 = lexical:Q@Lindex.js             index.js [2004->2005] (line 76) [165=[$$destructure$rcvr21]]
-174   check v165                             index.js [2004->2005] (line 76) [165=[$$destructure$rcvr21]]
+173   v165 = lexical:Q@Lindex/nodejsModule/moduleSourceindex.js [2188->2189] (line 83) [165=[$$destructure$rcvr23]]
+174   check v165                             index.js [2188->2189] (line 83) [165=[$$destructure$rcvr23]]
 BB61
-177   v168 = lexical:gitSemverTags@Lindex.js index.js [2013->2026] (line 76)
-178   check v168                             index.js [2013->2026] (line 76)
+177   v168 = lexical:gitSemverTags@Lindex/nodejsModule/moduleSourceindex.js [2197->2210] (line 83)
+178   check v168                             index.js [2197->2210] (line 83)
 BB62
-179   v166 = dispatch v131:#nfcall@179 v165,v168 exception:v169index.js [2004->2027] (line 76) [166=[semverTagsPromise]131=[$$destructure$elt21]165=[$$destructure$rcvr21]]
+179   v166 = dispatch v131:#nfcall@179 v165,v168 exception:v169index.js [2188->2211] (line 83) [166=[semverTagsPromise]131=[$$destructure$elt23]165=[$$destructure$rcvr23]]
 BB63
-187   v176 = lexical:Q@Lindex.js             index.js [2032->2033] (line 78) [176=[$$destructure$rcvr24]]
-188   check v176                             index.js [2032->2033] (line 78) [176=[$$destructure$rcvr24]]
+187   v176 = lexical:Q@Lindex/nodejsModule/moduleSourceindex.js [2216->2217] (line 85) [176=[$$destructure$rcvr26]]
+188   check v176                             index.js [2216->2217] (line 85) [176=[$$destructure$rcvr26]]
 BB64
-191   v181 = global:global Array             index.js [2045->2091] (line 78)
-192   check v181                             index.js [2045->2091] (line 78)
+191   v181 = global:global Array             index.js [2229->2275] (line 85)
+192   check v181                             index.js [2229->2275] (line 85)
 BB65
-193   v179 = construct v181@193 exception:v182index.js [2045->2091] (line 78)
+193   v179 = construct v181@193 exception:v182index.js [2229->2275] (line 85)
 BB66
-194   fieldref v179.v183:#0 = v56 = v56      index.js [2045->2091] (line 78) [56=[presetPromise]]
+194   fieldref v179.v183:#0 = v56 = v56      index.js [2229->2275] (line 85) [56=[presetPromise]]
 BB67
-195   fieldref v179.v184:#1 = v150 = v150    index.js [2045->2091] (line 78) [150=[pkgPromise]]
+195   fieldref v179.v184:#1 = v150 = v150    index.js [2229->2275] (line 85) [150=[pkgPromise]]
 BB68
-196   fieldref v179.v185:#2 = v166 = v166    index.js [2045->2091] (line 78) [166=[semverTagsPromise]]
+196   fieldref v179.v185:#2 = v166 = v166    index.js [2229->2275] (line 85) [166=[semverTagsPromise]]
 BB69
-197   v178 = dispatch v177:#allSettled@197 v176,v179 exception:v186index.js [2032->2092] (line 78) [178=[$$destructure$rcvr23]177=[$$destructure$elt24]176=[$$destructure$rcvr24]]
+197   v178 = dispatch v177:#allSettled@197 v176,v179 exception:v186index.js [2216->2276] (line 85) [178=[$$destructure$rcvr25]177=[$$destructure$elt26]176=[$$destructure$rcvr26]]
 BB70
-200   v192 = global:global Function          index.js [2032->7642] (line 79)
-201   v189 = construct v192@201 v191:#Lindex.js/conventionalChangelog/index.js@2105 exception:v190index.js [2032->7642] (line 79)
-202   v188 = dispatch v187:#spread@202 v178,v189 exception:v202index.js [2032->7642] (line 79) [188=[$$destructure$rcvr22]187=[$$destructure$elt23]178=[$$destructure$rcvr23]]
+200   v192 = global:global Function          index.js [2216->7826] (line 86)
+201   v189 = construct v192@201 v191:#Lindex/nodejsModule/moduleSource/conventionalChangelog/index@2289 exception:v190index.js [2216->7826] (line 86)
+202   v188 = dispatch v187:#spread@202 v178,v189 exception:v202index.js [2216->7826] (line 86) [188=[$$destructure$rcvr24]187=[$$destructure$elt25]178=[$$destructure$rcvr25]]
 BB71
-205   v208 = global:global Function          index.js [2032->7740] (line 250)
-206   v205 = construct v208@206 v207:#Lindex.js/conventionalChangelog/index.js@7654 exception:v206index.js [2032->7740] (line 250)
-207   v204 = dispatch v203:#catch@207 v188,v205 exception:v210index.js [2032->7740] (line 250) [203=[$$destructure$elt22]188=[$$destructure$rcvr22]]
+205   v208 = global:global Function          index.js [2216->7924] (line 257)
+206   v205 = construct v208@206 v207:#Lindex/nodejsModule/moduleSource/conventionalChangelog/index@7838 exception:v206index.js [2216->7924] (line 257)
+207   v204 = dispatch v203:#catch@207 v188,v205 exception:v210index.js [2216->7924] (line 257) [203=[$$destructure$elt24]188=[$$destructure$rcvr24]]
 BB72
-208   v211 = lexical:readable@Lindex.js/conventionalChangelogindex.js [7752->7760] (line 254)
-209   return v211                            index.js [7745->7761] (line 254)
+208   v211 = lexical:readable@Lindex/nodejsModule/moduleSource/conventionalChangelogindex.js [7936->7944] (line 261)
+209   return v211                            index.js [7929->7945] (line 261)
 BB73
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lindex.js/conventionalChangelog/index.js@887)>
+<ctor for <JavaScriptLoader,LFunction>(Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1071)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -922,7 +1054,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lindex.js/conventionalChangelog/index.js@887>@2
+2   v5 = new <JavaScriptLoader,Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1071>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -935,7 +1067,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lindex.js/conventionalChangelog/index.js@1056:transform)>
+<ctor for <JavaScriptLoader,LFunction>(Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1240:transform)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -961,7 +1093,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lindex.js/conventionalChangelog/index.js@1056:transform>@2
+2   v5 = new <JavaScriptLoader,Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1240:transform>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -974,7 +1106,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lindex.js/conventionalChangelog/index.js@1157:warn)>
+<ctor for <JavaScriptLoader,LFunction>(Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1341:warn)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -1000,7 +1132,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lindex.js/conventionalChangelog/index.js@1157:warn>@2
+2   v5 = new <JavaScriptLoader,Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1341:warn>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -1013,7 +1145,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lindex.js/conventionalChangelog/index.js@1187:transform)>
+<ctor for <JavaScriptLoader,LFunction>(Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1371:transform)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -1039,7 +1171,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lindex.js/conventionalChangelog/index.js@1187:transform>@2
+2   v5 = new <JavaScriptLoader,Lindex/nodejsModule/moduleSource/conventionalChangelog/index@1371:transform>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -1052,7 +1184,21 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lindex.js/conventionalChangelog/index.js@2105)>
+<Code body of function Lindex/nodejsModule/__WALA__require>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..0]
+    -> BB2
+BB2[-1..-2]
+Instructions:
+BB0
+BB1
+0   v4 = new <JavaScriptLoader,LArray>@0     index.js [54->85] (line 3) [4=[arguments]]
+BB2
+
+
+<ctor for <JavaScriptLoader,LFunction>(Lindex/nodejsModule/moduleSource/conventionalChangelog/index@2289)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -1078,7 +1224,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lindex.js/conventionalChangelog/index.js@2105>@2
+2   v5 = new <JavaScriptLoader,Lindex/nodejsModule/moduleSource/conventionalChangelog/index@2289>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -1091,7 +1237,7 @@ BB6
 BB7
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lindex.js/conventionalChangelog/index.js@7654)>
+<ctor for <JavaScriptLoader,LFunction>(Lindex/nodejsModule/moduleSource/conventionalChangelog/index@7838)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -1117,7 +1263,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lindex.js/conventionalChangelog/index.js@7654>@2
+2   v5 = new <JavaScriptLoader,Lindex/nodejsModule/moduleSource/conventionalChangelog/index@7838>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -1128,6 +1274,58 @@ BB5
 BB6
 7   return v5                                
 BB7
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
+
+
+<ctor for <JavaScriptLoader,LObject>>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB4
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB4
+BB3[3..4]
+    -> BB4
+BB4[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,LObject>@2    
+BB3
+3   set_prototype(v5, v4)                    
+4   return v5                                
+BB4
 
 
 <ctor for <JavaScriptLoader,LObject>>

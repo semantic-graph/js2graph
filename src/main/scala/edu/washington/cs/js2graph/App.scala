@@ -24,7 +24,7 @@ object App {
       case "core" =>
         // Perform main JavaScript analysis
         val g = new GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]()
-        val cg = JSFlowGraph.addCallGraph(jsPath)
+        val cg = JSFlowGraph.getCallGraph(jsPath)
         JSFlowGraph.addDataFlowGraph(g, cg)
         g.write(outputPath)
         println("Written to " + outputPath)

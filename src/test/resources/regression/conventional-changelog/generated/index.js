@@ -255,18 +255,4 @@ function conventionalChangelog(options, context, gitRawCommitsOpts, parserOpts, 
 }
 
 module.exports = conventionalChangelog;
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
-conventionalChangelog();
+module.exports();

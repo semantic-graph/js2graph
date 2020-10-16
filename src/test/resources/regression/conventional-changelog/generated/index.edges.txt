@@ -1,9 +1,9 @@
 " does not exist:Constant -[DATAFLOW]-> __unknownModule(lodash).merge.warn:Call
 Preset: ":Constant -[DATAFLOW]-> __unknownModule(lodash).merge.warn:Call
-__unknownModule(fs).readFile -[DATAFLOW]-> __unknownModule(q).nfcall:Call
 __unknownModule(git-semver-tags) -[DATAFLOW]-> __unknownModule(q).nfcall:Call
 __unknownModule(lodash).merge.pkg.path -[DATAFLOW]-> __unknownModule(q).nfcall:Call
 __unknownModule(lodash).merge.preset -[DATAFLOW]-> __unknownModule(lodash).merge.warn:Call
+fs.readFile -[DATAFLOW]-> __unknownModule(q).nfcall:Call
 gi:Constant -[DATAFLOW]-> RegExp:Construct
 github|bitbucket|gitlab:Constant -[DATAFLOW]-> RegExp:Construct
 i:Constant -[DATAFLOW]-> RegExp:Construct

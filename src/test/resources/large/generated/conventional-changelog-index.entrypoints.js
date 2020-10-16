@@ -1,2 +1,1 @@
-conventionalChangelog();
-conventionalChangelog();
+module.exports();
