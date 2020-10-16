@@ -1,3 +1,14 @@
-^(\w*)\: (.*)$:CONSTANT -[DATAFLOW]-> [Construct]global RegExp:INSTANCE
-require(fs).readFile:GLOBAL -[DATAFLOW]-> [Call]require(q).denodeify:INSTANCE
-tag:\s*[v=]?(.+?)[,\)]:CONSTANT -[DATAFLOW]-> [Construct]global RegExp:INSTANCE
+../templates/jquery/commit.hbs:Constant -[DATAFLOW]-> __unknownModule(path).resolve:Call
+../templates/jquery/header.hbs:Constant -[DATAFLOW]-> __unknownModule(path).resolve:Call
+../templates/jquery/template.hbs:Constant -[DATAFLOW]-> __unknownModule(path).resolve:Call
+:Constant -[DATAFLOW]-> RegExp:Construct
+^(\w*)\: (.*)$:Constant -[DATAFLOW]-> RegExp:Construct
+__unknownModule(fs).readFile -[DATAFLOW]-> __unknownModule(q).denodeify:Call
+__unknownModule(path).resolve -[DATAFLOW]-> __unknownModule(q).denodeify:Call
+__unknownModule(path).resolve -[DATAFLOW]-> __unknownModule(q).denodeify:Call
+__unknownModule(path).resolve -[DATAFLOW]-> __unknownModule(q).denodeify:Call
+gi:Constant -[DATAFLOW]-> RegExp:Construct
+tag:\s*[v=]?(.+?)[,\)]:Constant -[DATAFLOW]-> RegExp:Construct
+utf-8:Constant -[DATAFLOW]-> __unknownModule(q).denodeify:Call
+utf-8:Constant -[DATAFLOW]-> __unknownModule(q).denodeify:Call
+utf-8:Constant -[DATAFLOW]-> __unknownModule(q).denodeify:Call

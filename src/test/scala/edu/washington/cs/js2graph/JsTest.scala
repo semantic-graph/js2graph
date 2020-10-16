@@ -3,6 +3,7 @@ package edu.washington.cs.js2graph
 import java.io.{File, Reader, Writer}
 import java.nio.charset.StandardCharsets
 import java.nio.file.Files
+import better.files._ // Provides syntactic sugar etc.
 
 import com.semantic_graph.writer.GexfWriter
 import org.junit.Test
@@ -213,15 +214,15 @@ class JsTest {
   }
 
 // FIXME: flaky
-//  /**
-//   * Type: Regression test
-//   * Source: conventional-changelog package from NPM
-//   */
-//  @Test
-//  def testConventionalExamples(): Unit = {
-//    val dir = "src"/"test"/"resources"/"regression"/"conventional-changelog"
-//    for (jsFile <- dir.glob("*.js")) {
-//      testJSWithEntrypoints(jsFile.toString)
-//    }
-//  }
+  /**
+   * Type: Regression test
+   * Source: conventional-changelog package from NPM
+   */
+  @Test
+  def testConventionalExamples(): Unit = {
+    val dir = "src"/"test"/"resources"/"regression"/"conventional-changelog"
+    for (jsFile <- dir.glob("*.js")) {
+      testJSWithEntrypoints(jsFile.toString)
+    }
+  }
 }

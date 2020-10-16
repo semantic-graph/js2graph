@@ -1,21 +1,19 @@
-[Call]global getIssueLink.bind:INSTANCE -[DATAFLOW]-> [FieldRef]require(util).format.issueLink:INSTANCE
-2.0:CONSTANT -[DATAFLOW]-> [Call]global $$undefined.substr:INSTANCE
-[Call]global getIssueLink.bind:INSTANCE -[DATAFLOW]-> [FieldRef]global $$undefined.substr.issueLink:INSTANCE
-%d-%s-%s:CONSTANT -[DATAFLOW]-> [Call]require(util).format:INSTANCE
-Features:CONSTANT -[DATAFLOW]-> [Call]global Writer.section:INSTANCE
-[Construct]require(util).format:INSTANCE -[DATAFLOW]-> [Call]global getIssueLink.bind:INSTANCE
-[Call]global getPatchVersionLink.bind:INSTANCE -[DATAFLOW]-> [FieldRef]require(util).format.patchVersionLink:INSTANCE
-require(util):GLOBAL -[DATAFLOW]-> [Call]require(util).format:INSTANCE
-[Call]global getVersionLink.bind:INSTANCE -[DATAFLOW]-> [FieldRef]global $$undefined.substr.versionLink:INSTANCE
-[Construct]require(util).format:INSTANCE -[DATAFLOW]-> [Call]global getVersionLink.bind:INSTANCE
-require(util):GLOBAL -[DATAFLOW]-> [FieldRef]global $$undefined.substr.versionLink:INSTANCE
-[Construct]require(util).format:INSTANCE -[DATAFLOW]-> [Call]global getPatchVersionLink.bind:INSTANCE
-Breaking Changes:CONSTANT -[DATAFLOW]-> [Call]global Writer.section:INSTANCE
-[Call]global getCommitLink.bind:INSTANCE -[DATAFLOW]-> [FieldRef]require(util).format.commitLink:INSTANCE
-[Call]global getCommitLink.bind:INSTANCE -[DATAFLOW]-> [FieldRef]global $$undefined.substr.commitLink:INSTANCE
-[Construct]require(util).format:INSTANCE -[DATAFLOW]-> [Call]global getCommitLink.bind:INSTANCE
-Bug Fixes:CONSTANT -[DATAFLOW]-> [Call]global Writer.section:INSTANCE
-require(lodash.assign):GLOBAL -[DATAFLOW]-> [Call]require(event-stream).through:INSTANCE
-[Call]global getPatchVersionLink.bind:INSTANCE -[DATAFLOW]-> [FieldRef]global $$undefined.substr.patchVersionLink:INSTANCE
-1.0:CONSTANT -[DATAFLOW]-> [FieldRef]global $$undefined.substr.patchVersionLink:INSTANCE
-[Call]global getVersionLink.bind:INSTANCE -[DATAFLOW]-> [FieldRef]require(util).format.versionLink:INSTANCE
+## %s %s:Constant -[DATAFLOW]-> __unknownModule(util).format:Call
+### %s %s:Constant -[DATAFLOW]-> __unknownModule(util).format:Call
+%d-%s-%s:Constant -[DATAFLOW]-> __unknownModule(util).format:Call
+(#%s):Constant -[DATAFLOW]-> __unknownModule(util).format:Call
+(%s):Constant -[DATAFLOW]-> __unknownModule(util).format:Call
+Breaking Changes:Constant -[DATAFLOW]-> Writer.section:Call
+Bug Fixes:Constant -[DATAFLOW]-> Writer.section:Call
+Features:Constant -[DATAFLOW]-> Writer.section:Call
+Writer:Construct -[DATAFLOW]-> Writer.end:Call
+Writer:Construct -[DATAFLOW]-> Writer.header:Call
+Writer:Construct -[DATAFLOW]-> Writer.section:Call
+Writer:Construct -[DATAFLOW]-> Writer.section:Call
+Writer:Construct -[DATAFLOW]-> Writer.section:Call
+[## %s%s](%s/releases/tag/%s):Constant -[DATAFLOW]-> __unknownModule(util).format:Call
+[### %s%s](%s/releases/tag/%s):Constant -[DATAFLOW]-> __unknownModule(util).format:Call
+[#%s](%s/issues/%s):Constant -[DATAFLOW]-> __unknownModule(util).format:Call
+[%s](%s/commit/%s):Constant -[DATAFLOW]-> __unknownModule(util).format:Call
+__unknownModule(lodash.assign) -[DATAFLOW]-> Writer:Construct
+__unknownModule(lodash.assign).version -[DATAFLOW]-> Writer.header:Call

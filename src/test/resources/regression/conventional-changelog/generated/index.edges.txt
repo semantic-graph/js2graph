@@ -1,9 +1,11 @@
-[Call]require(lodash).merge:INSTANCE -[DATAFLOW]-> [Call]require(q).nfcall:INSTANCE
-github|bitbucket|gitlab:CONSTANT -[DATAFLOW]-> [Construct]global RegExp:INSTANCE
-require(git-semver-tags):GLOBAL -[DATAFLOW]-> [Call]require(q).nfcall:INSTANCE
-require(fs).readFile:GLOBAL -[DATAFLOW]-> [Call]require(q).nfcall:INSTANCE
-" does not exist:CONSTANT -[DATAFLOW]-> [Call]require(lodash).merge.warn:INSTANCE
-utf8:CONSTANT -[DATAFLOW]-> [Call]require(q).nfcall:INSTANCE
-[Call]require(lodash).merge:INSTANCE -[DATAFLOW]-> [Call]require(lodash).merge.warn:INSTANCE
-tag:\s*[v=]?(.+?)[,\)]:CONSTANT -[DATAFLOW]-> [Construct]global RegExp:INSTANCE
-Preset: ":CONSTANT -[DATAFLOW]-> [Call]require(lodash).merge.warn:INSTANCE
+" does not exist:Constant -[DATAFLOW]-> __unknownModule(lodash).merge.warn:Call
+Preset: ":Constant -[DATAFLOW]-> __unknownModule(lodash).merge.warn:Call
+__unknownModule(fs).readFile -[DATAFLOW]-> __unknownModule(q).nfcall:Call
+__unknownModule(git-semver-tags) -[DATAFLOW]-> __unknownModule(q).nfcall:Call
+__unknownModule(lodash).merge.pkg.path -[DATAFLOW]-> __unknownModule(q).nfcall:Call
+__unknownModule(lodash).merge.preset -[DATAFLOW]-> __unknownModule(lodash).merge.warn:Call
+gi:Constant -[DATAFLOW]-> RegExp:Construct
+github|bitbucket|gitlab:Constant -[DATAFLOW]-> RegExp:Construct
+i:Constant -[DATAFLOW]-> RegExp:Construct
+tag:\s*[v=]?(.+?)[,\)]:Constant -[DATAFLOW]-> RegExp:Construct
+utf8:Constant -[DATAFLOW]-> __unknownModule(q).nfcall:Call

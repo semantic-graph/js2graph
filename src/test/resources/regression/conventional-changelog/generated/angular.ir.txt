@@ -1,0 +1,163 @@
+<Code body of function Langular.js>
+CFG:
+BB0[-1..-2]
+    -> BB1
+BB1[0..14]
+    -> BB2
+    -> BB17
+BB2[15..16]
+    -> BB3
+    -> BB17
+BB3[17..19]
+    -> BB4
+    -> BB17
+BB4[20..21]
+    -> BB5
+    -> BB17
+BB5[22..24]
+    -> BB6
+    -> BB17
+BB6[25..26]
+    -> BB7
+    -> BB17
+BB7[27..29]
+    -> BB8
+    -> BB17
+BB8[30..32]
+    -> BB9
+    -> BB17
+BB9[33..34]
+    -> BB10
+    -> BB17
+BB10[35..37]
+    -> BB11
+    -> BB17
+BB11[38..39]
+    -> BB12
+    -> BB17
+BB12[40..42]
+    -> BB13
+    -> BB17
+BB13[43..44]
+    -> BB14
+    -> BB17
+BB14[45..47]
+    -> BB15
+    -> BB17
+BB15[48..50]
+    -> BB16
+    -> BB17
+BB16[51..54]
+    -> BB17
+BB17[-1..-2]
+Instructions:
+BB0
+BB1
+0   v1 = new <JavaScriptLoader,LArray>@0     angular.js [0->4265] (line 1) [1=[arguments]]
+1   v3 = global:global $$undefined           angular.js [14->51] (line 2)
+2   lexical:child@Langular.js = v3           angular.js [14->51] (line 2)
+3   v5 = global:global $$undefined           angular.js [52->95] (line 3)
+4   lexical:conventionalChangelog@Langular.js = v5angular.js [52->95] (line 3)
+5   v7 = global:global $$undefined           angular.js [96->132] (line 4)
+6   lexical:expect@Langular.js = v7          angular.js [96->132] (line 4)
+7   v9 = global:global $$undefined           angular.js [133->164] (line 5)
+8   lexical:shell@Langular.js = v9           angular.js [133->164] (line 5)
+9   v11 = global:global $$undefined          angular.js [165->199] (line 6)
+10   lexical:through@Langular.js = v11       angular.js [165->199] (line 6)
+11   v13 = global:global $$undefined         angular.js [200->248] (line 7)
+12   lexical:writeFileSync@Langular.js = v13 angular.js [200->248] (line 7)
+13   v18 = global:global require             angular.js [26->33] (line 2)
+14   check v18                               angular.js [26->33] (line 2)
+BB2
+15   v20 = global:global __WALA__int3rnal__globalangular.js [26->50] (line 2)
+16   v16 = invoke v18@16 v20,v21:#child_process exception:v22angular.js [26->50] (line 2)
+BB3
+17   lexical:child@Langular.js = v16         angular.js [14->51] (line 2)
+18   v24 = global:global require             angular.js [80->87] (line 3)
+19   check v24                               angular.js [80->87] (line 3)
+BB4
+20   v25 = global:global __WALA__int3rnal__globalangular.js [80->94] (line 3)
+21   v23 = invoke v24@21 v25,v26:#../ exception:v27angular.js [80->94] (line 3)
+BB5
+22   lexical:conventionalChangelog@Langular.js = v23angular.js [52->95] (line 3)
+23   v30 = global:global require             angular.js [109->116] (line 4)
+24   check v30                               angular.js [109->116] (line 4)
+BB6
+25   v31 = global:global __WALA__int3rnal__globalangular.js [109->124] (line 4)
+26   v29 = invoke v30@26 v31,v32:#chai exception:v33angular.js [109->124] (line 4)
+BB7
+28   v35 = prototype_values(v29)             angular.js [109->131] (line 4)
+29   v28 = getfield < JavaScriptLoader, LRoot, expect, <JavaScriptLoader,LRoot> > v35angular.js [109->131] (line 4)
+BB8
+30   lexical:expect@Langular.js = v28        angular.js [96->132] (line 4)
+31   v37 = global:global require             angular.js [145->152] (line 5)
+32   check v37                               angular.js [145->152] (line 5)
+BB9
+33   v38 = global:global __WALA__int3rnal__globalangular.js [145->163] (line 5)
+34   v36 = invoke v37@34 v38,v39:#shelljs exception:v40angular.js [145->163] (line 5)
+BB10
+35   lexical:shell@Langular.js = v36         angular.js [133->164] (line 5)
+36   v42 = global:global require             angular.js [179->186] (line 6)
+37   check v42                               angular.js [179->186] (line 6)
+BB11
+38   v43 = global:global __WALA__int3rnal__globalangular.js [179->198] (line 6)
+39   v41 = invoke v42@39 v43,v44:#through2 exception:v45angular.js [179->198] (line 6)
+BB12
+40   lexical:through@Langular.js = v41       angular.js [165->199] (line 6)
+41   v48 = global:global require             angular.js [220->227] (line 7)
+42   check v48                               angular.js [220->227] (line 7)
+BB13
+43   v49 = global:global __WALA__int3rnal__globalangular.js [220->233] (line 7)
+44   v47 = invoke v48@44 v49,v50:#fs exception:v51angular.js [220->233] (line 7)
+BB14
+46   v53 = prototype_values(v47)             angular.js [220->247] (line 7)
+47   v46 = getfield < JavaScriptLoader, LRoot, writeFileSync, <JavaScriptLoader,LRoot> > v53angular.js [220->247] (line 7)
+BB15
+48   lexical:writeFileSync@Langular.js = v46 angular.js [200->248] (line 7)
+49   v56 = global:global describe            angular.js [250->258] (line 9)
+50   check v56                               angular.js [250->258] (line 9)
+BB16
+51   v57 = global:global __WALA__int3rnal__globalangular.js [250->4264] (line 9)
+52   v62 = global:global Function            angular.js [250->4264] (line 9)
+53   v59 = construct v62@53 v61:#Langular.js/angular.js@270 exception:v60angular.js [250->4264] (line 9)
+54   v54 = invoke v56@54 v57,v58:#presets,v59 exception:v67angular.js [250->4264] (line 9)
+BB17
+
+
+<ctor for <JavaScriptLoader,LFunction>(Langular.js/angular.js@270)>
+CFG:
+BB0[0..0]
+    -> BB1
+    -> BB7
+BB1[1..1]
+    -> BB2
+BB2[2..2]
+    -> BB3
+    -> BB7
+BB3[3..3]
+    -> BB4
+    -> BB7
+BB4[4..5]
+    -> BB5
+BB5[6..6]
+    -> BB6
+BB6[7..7]
+    -> BB7
+BB7[-1..-2]
+Instructions:
+BB0
+0   v2 = new <JavaScriptLoader,LArray>@0     
+BB1
+1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
+BB2
+2   v5 = new <JavaScriptLoader,Langular.js/angular.js@270>@2
+BB3
+3   v7 = new <JavaScriptLoader,LObject>@3    
+BB4
+4   set_prototype(v5, v4)                    
+5   putfield v5.< JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > = v7
+BB5
+6   putfield v7.< JavaScriptLoader, LRoot, constructor, <JavaScriptLoader,LRoot> > = v5
+BB6
+7   return v5                                
+BB7
