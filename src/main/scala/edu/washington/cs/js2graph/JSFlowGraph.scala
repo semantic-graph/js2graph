@@ -102,9 +102,8 @@ object JSFlowGraph {
             dataDeps.get(AbsPath.Local(propertyWrite.getValue)) match {
               case Some(fromValues) =>
                 return fromValues.flatMap {
-                  case AbsVal.HasField(fieldName) =>
-                    Some(fieldName)
-                  case _ => None
+                  case AbsVal.HasField(subFieldName) => Some(subFieldName)
+                  case _                             => None
                 }
               case _ =>
             }
