@@ -7,7 +7,6 @@ import com.ibm.wala.cast.js.ipa.callgraph.JSCallGraphUtil
 import com.ibm.wala.cast.js.nodejs.PatchedNodejsCallGraphBuilderUtil
 import com.ibm.wala.cast.js.ssa._
 import com.ibm.wala.cast.js.translator.PatchedCAstRhinoTranslatorFactory
-import com.ibm.wala.classLoader.IMethod
 import com.ibm.wala.ipa.callgraph.{CGNode, CallGraph}
 import com.ibm.wala.ipa.cfg.ExplodedInterproceduralCFG
 import com.ibm.wala.ssa._
@@ -18,13 +17,13 @@ import scala.collection.mutable
 import scala.jdk.CollectionConverters._
 
 object JSFlowGraph {
-  private val postApiInvocationNodes = mutable.Map[JavaScriptInvoke, NodeId]()
+  private val fromOpNodes = mutable.Map[SSAInstruction, NodeId]()
 
-  def getPostApiInvocationNode(g: GW, invoke: JavaScriptInvoke, apiName: String, attrs: Constants.NodeAttrs): NodeId = {
-    if (!postApiInvocationNodes.contains(invoke)) {
-      postApiInvocationNodes.addOne(invoke, g.createNode(apiName, attrs))
+  def getFromOpNode(g: GW, instruction: SSAInstruction, apiName: String, attrs: Constants.NodeAttrs): NodeId = {
+    if (!fromOpNodes.contains(instruction)) {
+      fromOpNodes.addOne(instruction, g.createNode(apiName, attrs))
     }
-    postApiInvocationNodes(invoke)
+    fromOpNodes(instruction)
   }
 
   def getMethodName(s: String): Option[String] = {
@@ -41,19 +40,6 @@ object JSFlowGraph {
 
   def getMethodName(node: CGNode): Option[String] = {
     getMethodName(node.getMethod.getDeclaringClass.getName.toString)
-  }
-
-  private def splitAtLast(s: String, c: Char): (String, String) = {
-    if (s.isEmpty) {
-      ("", "")
-    } else {
-      if (s.head == c) {
-        val (heads, rest) = splitAtLast(s.tail, c)
-        (c + heads, rest)
-      } else {
-        ("", s)
-      }
-    }
   }
 
   def getAllModuleEntrypoints(jsPath: String): List[String] = {
@@ -114,6 +100,13 @@ object JSFlowGraph {
     Set()
   }
 
+  def getFromIntermediateOpNode(dataFlow: IFDSDataFlow, g: GW, instruction: SSAInstruction): Option[NodeId] = {
+    dataFlow.getOpNodeNameAndAttrs(instruction) match {
+      case Some((name, attrs)) => Some(getFromOpNode(g, instruction, name, attrs))
+      case None                => None
+    }
+  }
+
   /** Get possible opNodes for a [[SSAInstruction]]
     *
     * FIXME: defUse and symTable should be an attribute of some processor class
@@ -128,7 +121,7 @@ object JSFlowGraph {
         // Case 1: Data-flow analysis has defined some intermediate API name already (as well as tag), use this directly
         dataFlow.getOpNodeNameAndAttrs(invokeInstruction) match {
           case Some((name, attrs)) =>
-            return Set(getPostApiInvocationNode(g, invokeInstruction, name, attrs))
+            return Set(getFromOpNode(g, invokeInstruction, name, attrs))
           case None =>
         }
         // Otherwise -- Case 2: Post-analyze used API here
@@ -181,6 +174,8 @@ object JSFlowGraph {
           case None =>
         }
         Set()
+      case binaryOpInstruction: SSABinaryOpInstruction =>
+        getFromIntermediateOpNode(dataFlow, g, binaryOpInstruction).toSet
       case _ => Set()
     }
   }
@@ -293,14 +288,13 @@ object JSFlowGraph {
                         g.createNode(v, Map(JsNodeAttr.TYPE -> NodeType.Constant.toString)),
                         opNode,
                         Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
-                    case AbsVal.Instance(className, invoke) =>
-                      val fromOpNode = getPostApiInvocationNode(
-                        g,
-                        invoke,
-                        className,
-                        Map(JsNodeAttr.TYPE -> NodeType.Constant.toString, JsNodeAttr.TAG -> Tag.Instance.toString))
-                      if (!g.getEdges.contains(fromOpNode, opNode)) {
-                        g.addEdge(fromOpNode, opNode, Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
+                    case AbsVal.Instance(_, sourceInstruction) =>
+                      getFromIntermediateOpNode(dataflow, g, sourceInstruction) match {
+                        case Some(fromOpNode) =>
+                          if (!g.getEdges.contains(fromOpNode, opNode)) {
+                            g.addEdge(fromOpNode, opNode, Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
+                          }
+                        case None =>
                       }
                     case _ =>
                   }

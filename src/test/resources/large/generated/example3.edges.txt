@@ -1,5 +1,10 @@
- --targetusername :Constant -[DATAFLOW]-> child_process.execSync:Construct
+ --targetusername :Constant -[DATAFLOW]-> +:PrimOp
++:PrimOp -[DATAFLOW]-> +:PrimOp
++:PrimOp -[DATAFLOW]-> +:PrimOp
++:PrimOp -[DATAFLOW]-> child_process.execSync:Construct
++:PrimOp -[DATAFLOW]-> child_process.execSync:Construct
 child_process.execSync:Construct -[DATAFLOW]-> Byte[].toString:Construct
 child_process.execSync:Construct -[DATAFLOW]-> Byte[].toString:Construct
-sfdx :Constant -[DATAFLOW]-> child_process.execSync:Construct
-sfdx :Constant -[DATAFLOW]-> child_process.execSync:Construct
+sfdx :Constant -[DATAFLOW]-> +:PrimOp
+sfdx :Constant -[DATAFLOW]-> +:PrimOp
+undefined:Constant -[DATAFLOW]-> !=:PrimOp

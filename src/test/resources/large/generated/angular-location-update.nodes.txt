@@ -2,8 +2,25 @@
 (?:^|; ):Constant
 ([\.$?*|{}\(\)\[\]\\\/\+^]):Constant
 ([\.$?*|{}\(\)\[\]\\\/\+^]):Constant
+*:PrimOp
++:PrimOp
++:PrimOp
++:PrimOp
++:PrimOp
++:PrimOp
++:PrimOp
++:PrimOp
++:PrimOp
++:PrimOp
+0.0:Constant
+1.0:Constant
+1000.0:Constant
+86400.0:Constant
+; expires=:Constant
+;:Constant
 =([^;]*):Constant
 =([^;]*):Constant
+=:Constant
 HTMLElement.rel:FieldRef
 RegExp:Construct
 RegExp:Construct
@@ -14,3 +31,4 @@ g:Constant
 g:Constant
 link:Constant
 prefetch:Constant
+xhfd:Constant

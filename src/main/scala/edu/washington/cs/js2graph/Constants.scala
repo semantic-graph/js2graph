@@ -1,7 +1,9 @@
 package edu.washington.cs.js2graph
 
+import com.ibm.wala.cast.ir.ssa.{CAstBinaryOp, CAstUnaryOp}
 import com.ibm.wala.cast.js.ipa.summaries.JavaScriptConstructorFunctions
 import com.ibm.wala.ipa.callgraph.{CGNode, CallGraph}
+import com.ibm.wala.shrikeBT.{IBinaryOpInstruction, IUnaryOpInstruction}
 import com.semantic_graph.writer.GexfWriter
 
 import scala.jdk.CollectionConverters._
@@ -62,6 +64,42 @@ object Constants {
       return Some(globalBaseName + "." + receiverFuncName)
     }
     None
+  }
+
+  def primBinaryOpName(operator: IBinaryOpInstruction.IOperator): String =
+    operator match {
+      case op: CAstBinaryOp =>
+        op match {
+          case CAstBinaryOp.CONCAT    => "+"
+          case CAstBinaryOp.EQ        => "=="
+          case CAstBinaryOp.NE        => "!="
+          case CAstBinaryOp.LT        => "<"
+          case CAstBinaryOp.GE        => ">="
+          case CAstBinaryOp.GT        => ">"
+          case CAstBinaryOp.LE        => "<="
+          case CAstBinaryOp.STRICT_EQ => "==="
+          case CAstBinaryOp.STRICT_NE => "!=="
+        }
+      case IBinaryOpInstruction.Operator.ADD => "+"
+      case IBinaryOpInstruction.Operator.SUB => "-"
+      case IBinaryOpInstruction.Operator.MUL => "*"
+      case IBinaryOpInstruction.Operator.DIV => "/"
+      case IBinaryOpInstruction.Operator.REM => "%"
+      case IBinaryOpInstruction.Operator.AND => "&"
+      case IBinaryOpInstruction.Operator.OR  => "|"
+      case IBinaryOpInstruction.Operator.XOR => "^"
+    }
+
+  def primUnaryOpName(operator: IUnaryOpInstruction.IOperator): String = {
+    operator match {
+      case op: CAstUnaryOp =>
+        op match {
+          case CAstUnaryOp.MINUS  => "-"
+          case CAstUnaryOp.BITNOT => "!"
+          case CAstUnaryOp.PLUS   => "+"
+        }
+      case IUnaryOpInstruction.Operator.NEG => "-"
+    }
   }
 
   val moduleFieldNames = Set("_compile", "exports")

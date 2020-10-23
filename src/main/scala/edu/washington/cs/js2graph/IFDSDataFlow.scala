@@ -36,7 +36,7 @@ object AbsVal {
 
   /** Use instruction to track API instance constructed by the instruction
     */
-  final case class Instance(className: String, instruction: JavaScriptInvoke) extends AbsVal
+  final case class Instance(className: String, instruction: SSAInstruction) extends AbsVal
 }
 
 sealed abstract class AbsPath extends Product with Serializable
@@ -73,9 +73,9 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
     *
     * FIXME: maybe multiple values?
     */
-  private val postApiInvocation = mutable.Map[JavaScriptInvoke, (String, Constants.NodeAttrs)]()
-  def getOpNodeNameAndAttrs(javaScriptInvoke: JavaScriptInvoke): Option[(String, Constants.NodeAttrs)] =
-    postApiInvocation.get(javaScriptInvoke)
+  private val intermediateOpNameAndAttrs = mutable.Map[SSAInstruction, (String, Constants.NodeAttrs)]()
+  def getOpNodeNameAndAttrs(instruction: SSAInstruction): Option[(String, Constants.NodeAttrs)] =
+    intermediateOpNameAndAttrs.get(instruction)
 
   /** controls numbering of putstatic instructions for use in tabulation
     */
@@ -163,7 +163,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                   // Create a new instance type node here with type information
                   fact.snd match {
                     case AbsVal.Global(globalName) =>
-                      postApiInvocation.addOne(
+                      intermediateOpNameAndAttrs.addOne(
                         invokeInstruction,
                         (globalName, Map(JsNodeAttr.TYPE -> NodeType.Construct.toString, JsNodeAttr.TAG -> Tag.Singleton.toString)))
                       result.add(
@@ -231,12 +231,12 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                         case Some(constructedClassName) =>
                           // 1) LHS value is considered an instance returned from "built-in" API, which
                           //    can function as the parent of some other node in the dependency graph as well.
-                          postApiInvocation.addOne(
+                          intermediateOpNameAndAttrs.addOne(
                             invokeInstruction,
                             (apiName, Map(JsNodeAttr.TYPE -> NodeType.Construct.toString, JsNodeAttr.TAG -> tag.toString)))
                           AbsVal.Instance(constructedClassName, invokeInstruction)
                         case None =>
-                          postApiInvocation.addOne(
+                          intermediateOpNameAndAttrs.addOne(
                             invokeInstruction,
                             (apiName, Map(JsNodeAttr.TYPE -> NodeType.Call.toString, JsNodeAttr.TAG -> tag.toString)))
                           // 2) LHS value is still a global object, derived from the base global object.
@@ -250,7 +250,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                     if (fact.fst == AbsPath.Local(receiverFuncIndex)) {
                       fact.snd match {
                         case AbsVal.Global(apiName) if isLibraryGlobalName(apiName) =>
-                          postApiInvocation.addOne(
+                          intermediateOpNameAndAttrs.addOne(
                             invokeInstruction,
                             (apiName, Map(JsNodeAttr.TYPE -> NodeType.Call.toString, JsNodeAttr.TAG -> Tag.Singleton.toString)))
                           // 2) LHS value is still a global object, derived from the base global object.
@@ -300,11 +300,11 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
 
     /** @param withRhsTaint update the taint from RHS for new state
       */
-    private def flow(inputDomain: Int,
-                     lhsVar: AbsPath,
-                     rhsVars: Set[AbsPath],
-                     newFlows: Set[AbsVal],
-                     withRhsTaint: Option[AbsVal => AbsVal] = None): IntSet = {
+    private def flowThrough(inputDomain: Int,
+                            lhsVar: AbsPath,
+                            rhsVars: Set[AbsPath],
+                            newFlows: Set[AbsVal],
+                            withRhsTaint: Option[AbsVal => AbsVal] = None): IntSet = {
       flow(inputDomain, Set(lhsVar), rhsVars, newFlows, withRhsTaint)
     }
 
@@ -364,7 +364,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                 val memberRef = propertyWrite.getMemberRef
                 if (symTable.isConstant(memberRef)) {
                   val fieldName = symTable.getConstantValue(memberRef).toString
-                  return flow(inputDomain, AbsPath.Local(propertyWrite.getObjectRef), Set(), Set(AbsVal.HasField(fieldName)))
+                  return flowThrough(inputDomain, AbsPath.Local(propertyWrite.getObjectRef), Set(), Set(AbsVal.HasField(fieldName)))
                 }
               case astLexicalWrite: AstLexicalWrite =>
                 // e.g.
@@ -380,7 +380,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                 }
                 for (access <- astLexicalWrite.getAccesses) {
                   ret = ret.union(
-                    flow(
+                    flowThrough(
                       inputDomain,
                       AbsPath.Lexical(access.getName.fst + "@" + access.getName.snd),
                       Set(AbsPath.Local(from)),
@@ -388,9 +388,9 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                 }
                 return ret
               case lookup: PrototypeLookup =>
-                return flow(inputDomain, AbsPath.Local(lookup.getDef(0)), Set(AbsPath.Local(lookup.getUse(0))), Set())
+                return flowThrough(inputDomain, AbsPath.Local(lookup.getDef(0)), Set(AbsPath.Local(lookup.getUse(0))), Set())
               case readInstr: AstGlobalRead =>
-                return flow(
+                return flowThrough(
                   inputDomain,
                   AbsPath.Local(readInstr.getDef(0)),
                   Set(),
@@ -402,7 +402,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                 var ret: IntSet = new EmptyIntSet()
                 for (access <- astLexicalRead.getAccesses) {
                   ret = ret.union(
-                    flow(
+                    flowThrough(
                       inputDomain,
                       AbsPath.Local(astLexicalRead.getDef(0)),
                       Set(AbsPath.Lexical(access.getName.fst + "@" + access.getName.snd)),
@@ -410,14 +410,14 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                 }
                 return ret
               case writeInstr: AstGlobalWrite =>
-                return flow(
+                return flowThrough(
                   inputDomain,
                   AbsPath.fromInstrGlobalName(writeInstr.getGlobalName),
                   Set(AbsPath.Local(writeInstr.getVal)),
                   Set())
               case getInstr: SSAGetInstruction =>
                 val getFieldName = getInstr.getDeclaredField.getName.toString
-                return flow(
+                return flowThrough(
                   inputDomain,
                   AbsPath.Local(getInstr.getDef(0)),
                   Set(AbsPath.Local(instr.getUse(0))),
@@ -437,7 +437,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                   } else {
                     Set()
                   }
-                  return flow(inputDomain, AbsPath.Local(to), Set(AbsPath.Local(from)), newConstants)
+                  return flowThrough(inputDomain, AbsPath.Local(to), Set(AbsPath.Local(from)), newConstants)
                 }
               case javaScriptPropertyRead: JavaScriptPropertyRead =>
                 val from = javaScriptPropertyRead.getObjectRef
@@ -447,35 +447,19 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                 if (symTable.isConstant(from1) && symTable.getConstantValue(from1) != null) {
                   newConstants.add(AbsVal.Constant(symTable.getConstantValue(from1).toString))
                 }
-                return flow(inputDomain, AbsPath.Local(to), Set(AbsPath.Local(from)), newConstants.toSet)
-              case _: SSABinaryOpInstruction =>
-                val from1 = instr.getUse(0)
-                val from2 = instr.getUse(1)
+                return flowThrough(inputDomain, AbsPath.Local(to), Set(AbsPath.Local(from)), newConstants.toSet)
+              case binaryOpInstruction: SSABinaryOpInstruction =>
                 val lhs = instr.getDef(0)
-                val rhs = mutable.Set[AbsPath]()
-                val newConstants = mutable.Set[AbsVal]()
-                if (symTable.isConstant(from1) && symTable.getConstantValue(from1) != null) {
-                  newConstants.add(AbsVal.Constant(symTable.getConstantValue(from1).toString))
-                } else {
-                  rhs.add(AbsPath.Local(from1))
-                }
-                if (symTable.isConstant(from2) && symTable.getConstantValue(from2) != null) {
-                  newConstants.add(AbsVal.Constant(symTable.getConstantValue(from2).toString))
-                } else {
-                  rhs.add(AbsPath.Local(from2))
-                }
-                return flow(inputDomain, AbsPath.Local(lhs), rhs.toSet, newConstants.toSet)
-              case _: SSAUnaryOpInstruction =>
-                val from1 = instr.getUse(0)
+                val opName = Constants.primBinaryOpName(binaryOpInstruction.getOperator)
+                intermediateOpNameAndAttrs.addOne(binaryOpInstruction, (opName, Map(JsNodeAttr.TYPE -> NodeType.PrimOp.toString)))
+                val absVal = AbsVal.Instance(opName, binaryOpInstruction)
+                return flowThrough(inputDomain, AbsPath.Local(lhs), Set(), Set(absVal))
+              case unaryOpInstruction: SSAUnaryOpInstruction =>
                 val lhs = instr.getDef(0)
-                val newConstants = mutable.Set[AbsVal]()
-                val rhs = mutable.Set[AbsPath]()
-                if (symTable.isConstant(from1) && symTable.getConstantValue(from1) != null) {
-                  newConstants.add(AbsVal.Constant(symTable.getConstantValue(from1).toString))
-                } else {
-                  rhs.add(AbsPath.Local(lhs))
-                }
-                return flow(inputDomain, AbsPath.Local(lhs), rhs.toSet, newConstants.toSet)
+                val opName = Constants.primUnaryOpName(unaryOpInstruction.getOpcode)
+                intermediateOpNameAndAttrs.addOne(unaryOpInstruction, (opName, Map(JsNodeAttr.TYPE -> NodeType.PrimOp.toString)))
+                val absVal = AbsVal.Instance(opName, unaryOpInstruction)
+                return flowThrough(inputDomain, AbsPath.Local(lhs), Set(), Set(absVal))
               case returnInstruction: SSAReturnInstruction =>
                 val newConstants = mutable.Set[AbsVal]()
                 val rhs = mutable.Set[AbsPath]()
@@ -486,7 +470,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
                   } else {
                     rhs.add(AbsPath.Local(from1))
                   }
-                  return flow(inputDomain, AbsPath.Ret(), rhs.toSet, newConstants.toSet)
+                  return flowThrough(inputDomain, AbsPath.Ret(), rhs.toSet, newConstants.toSet)
                 }
               case _ =>
             }

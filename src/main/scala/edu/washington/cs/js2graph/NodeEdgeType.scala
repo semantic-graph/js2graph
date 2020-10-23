@@ -5,6 +5,9 @@ object NodeType extends Enumeration {
   /** Constant value
     */
   Constant,
+  /** Primitive Operation
+    */
+  PrimOp,
   /** Call of constructor API that returns some instance
     */
   Construct,
