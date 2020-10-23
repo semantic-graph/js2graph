@@ -1,9 +1,14 @@
 " does not exist:Constant
++:PrimOp
++:PrimOp
++:PrimOp
+./presets/:Constant
 Preset: ":Constant
 RegExp:Construct
 RegExp:Construct
 __unknownModule(git-semver-tags)
 __unknownModule(lodash).merge.pkg.path
+__unknownModule(lodash).merge.preset
 __unknownModule(lodash).merge.preset
 __unknownModule(lodash).merge.warn:Call
 __unknownModule(lodash).merge:Call

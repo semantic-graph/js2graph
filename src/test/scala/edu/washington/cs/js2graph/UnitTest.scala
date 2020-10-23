@@ -12,7 +12,8 @@ class UnitTest {
     val valueIdx = 4
     val writeInstruction = new JavaScriptPropertyWrite(1, 2, memberRefIdx, valueIdx)
     // Empty dataDeps and empty symbol table
-    assertEquals(JSFlowGraph.getModuleFieldNames(symTable, writeInstruction, Map()), Set[String]())
+
+    assertEquals(EntrypointAnalysis.getModuleFieldNames(symTable, writeInstruction, Map()), Set[String]())
     for (name <- Constants.moduleFieldNames) {
       // Non empty: v2.v3 = v4, in which v3 is one of Constants.moduleFieldNames and v3 is "exampleSubField".
       // In this case, getModuleFieldNames should return { "exampleSubField" }
@@ -22,7 +23,7 @@ class UnitTest {
       )
       symTable = new SymbolTable(3)
       symTable.setConstantValue(memberRefIdx, new ConstantValue(name))
-      assertEquals(JSFlowGraph.getModuleFieldNames(symTable, writeInstruction, dataDeps), Set[String](subFieldName))
+      assertEquals(EntrypointAnalysis.getModuleFieldNames(symTable, writeInstruction, dataDeps), Set[String](subFieldName))
     }
   }
 }

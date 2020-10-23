@@ -1,11 +1,6 @@
 package edu.washington.cs.js2graph
 
-import java.nio.file.Paths
-
-import com.ibm.wala.cast.js.ipa.callgraph.JSCallGraphUtil
-import com.ibm.wala.cast.js.nodejs.PatchedNodejsCallGraphBuilderUtil
 import com.ibm.wala.cast.js.ssa._
-import com.ibm.wala.cast.js.translator.PatchedCAstRhinoTranslatorFactory
 import com.ibm.wala.ipa.callgraph.CallGraph
 import com.ibm.wala.ipa.cfg.ExplodedInterproceduralCFG
 import com.ibm.wala.ssa._
@@ -15,51 +10,34 @@ import edu.washington.cs.js2graph.Constants.GraphWriter
 import scala.collection.mutable
 import scala.jdk.CollectionConverters._
 
-object JSFlowGraph {
+class JSFlowGraph(g: GraphWriter, cg: CallGraph) {
+  private val icfg = ExplodedInterproceduralCFG.make(cg)
+  private val dataflow = new IFDSDataFlow(icfg)
+  private val results = dataflow.solve
+
+  /*
+   Super graph is also called exploded CFG.
+   Super graph is a call-graph of CGNode, and each CGNode is a CFG of blocks.
+   */
+  private val superGraph = dataflow.problem.getSupergraph
+
   private val instructionOpNodeCacheMap = mutable.Map[SSAInstruction, NodeId]()
 
-  /**
-    * Each instruction is mapped to at most one unique node
+  /** Each instruction is mapped to at most one unique node
     */
-  private def getFromOpNode(g: GraphWriter, instruction: SSAInstruction, apiName: String, attrs: Constants.NodeAttrs): NodeId = {
+  private def getFromOpNode(instruction: SSAInstruction, apiName: String, attrs: Constants.NodeAttrs): NodeId = {
     if (!instructionOpNodeCacheMap.contains(instruction)) {
       instructionOpNodeCacheMap.addOne(instruction, g.createNode(apiName, attrs))
     }
     instructionOpNodeCacheMap(instruction)
   }
 
-  /**
-    * See UnitTest.testGetModuleFieldNames for its explanation
-    */
-  def getModuleFieldNames(symTable: SymbolTable, instruction: SSAInstruction,
-                          dataDeps: Map[AbsPath, Set[AbsVal]]): Set[String] = {
-    instruction match {
-      case propertyWrite: JavaScriptPropertyWrite =>
-        if (symTable.isConstant(propertyWrite.getMemberRef)) {
-          val fieldName = symTable.getConstantValue(propertyWrite.getMemberRef).toString
-          if (Constants.moduleFieldNames.contains(fieldName)) {
-            dataDeps.get(AbsPath.Local(propertyWrite.getValue)) match {
-              case Some(fromValues) =>
-                return fromValues.flatMap {
-                  case AbsVal.HasField(subFieldName) => Some(subFieldName)
-                  case _                             => None
-                }
-              case _ =>
-            }
-          }
-        }
-      case _ =>
-    }
-    Set()
-  }
-
-  /**
-    * Each instruction is mapped by dataFlow analysis to its expected node label and attributes, and then used for
+  /** Each instruction is mapped by dataFlow analysis to its expected node label and attributes, and then used for
     * creating a new node if not already existing.
     */
-  private def getFromIntermediateOpNode(dataFlow: IFDSDataFlow, g: GraphWriter, instruction: SSAInstruction): Option[NodeId] = {
-    dataFlow.getOpNodeNameAndAttrs(instruction) match {
-      case Some((name, attrs)) => Some(getFromOpNode(g, instruction, name, attrs))
+  private def getFromIntermediateOpNode(instruction: SSAInstruction): Option[NodeId] = {
+    dataflow.getOpNodeNameAndAttrs(instruction) match {
+      case Some((name, attrs)) => Some(getFromOpNode(instruction, name, attrs))
       case None                => None
     }
   }
@@ -69,17 +47,13 @@ object JSFlowGraph {
     *
     * FIXME: defUse and symTable should be an attribute of some processor class
     */
-  def getSinkOpNodes(dataFlow: IFDSDataFlow,
-                     g: GraphWriter,
-                     symTable: SymbolTable,
-                     instruction: SSAInstruction,
-                     dataDeps: Map[AbsPath, Set[AbsVal]]): Set[NodeId] = {
+  def getSinkOpNodes(symTable: SymbolTable, instruction: SSAInstruction, dataDeps: Map[AbsPath, Set[AbsVal]]): Set[NodeId] = {
     instruction match {
       case invokeInstruction: JavaScriptInvoke =>
         // Case 1: Data-flow analysis has defined some intermediate API name already (as well as tag), use this directly
-        dataFlow.getOpNodeNameAndAttrs(invokeInstruction) match {
+        dataflow.getOpNodeNameAndAttrs(invokeInstruction) match {
           case Some((name, attrs)) =>
-            return Set(getFromOpNode(g, invokeInstruction, name, attrs))
+            return Set(getFromOpNode(invokeInstruction, name, attrs))
           case None =>
         }
         // Otherwise -- Case 2: Post-analyze used API here
@@ -133,7 +107,7 @@ object JSFlowGraph {
         }
         Set()
       case binaryOpInstruction: SSABinaryOpInstruction =>
-        getFromIntermediateOpNode(dataFlow, g, binaryOpInstruction).toSet
+        getFromIntermediateOpNode(binaryOpInstruction).toSet
       case _ => Set()
     }
   }
@@ -148,40 +122,9 @@ object JSFlowGraph {
     allDeps
   }
 
-  def doEntrypointDataFlowAnalysis(cg: CallGraph): List[String] = {
-    val icfg = ExplodedInterproceduralCFG.make(cg)
-    val dataflow = new IFDSDataFlow(icfg)
-    val results = dataflow.solve
-    val superGraph = dataflow.problem.getSupergraph
-
-    val fieldNames = mutable.Set[String]()
-    for (block <- superGraph.asScala) {
-      if (Constants.isApplicationNode(block.getNode)) {
-        val symTable = block.getNode.getIR.getSymbolTable
-        val instruction = block.getDelegate.getInstruction
-        if (instruction != null) {
-          val dataFlowDeps = dataflow.getFacts(results, block)
-          fieldNames.addAll(getModuleFieldNames(symTable, instruction, dataFlowDeps))
-        }
-      }
-    }
-    fieldNames.toList
-  }
-
   /** IFDS based data-flow analysis
-    * @param g Semantic graph writer
-    * @param cg Call graph
     */
-  def addDataFlowGraph(g: GraphWriter, cg: CallGraph): Unit = {
-    val icfg = ExplodedInterproceduralCFG.make(cg)
-    val dataflow = new IFDSDataFlow(icfg)
-    val results = dataflow.solve
-
-    /*
-     Super graph is also called exploded CFG.
-     Super graph is a call-graph of CGNode, and each CGNode is a CFG of blocks.
-     */
-    val superGraph = dataflow.problem.getSupergraph
+  def addDataFlowGraph(): Unit = {
 
     /*
     In JavaScript, both function and class are just object.
@@ -208,7 +151,7 @@ object JSFlowGraph {
         if (instruction != null) {
           val dataFlowDeps = dataflow.getFacts(results, block)
 
-          for (sinkOpNode <- getSinkOpNodes(dataflow, g, symTable, instruction, dataFlowDeps)) {
+          for (sinkOpNode <- getSinkOpNodes(symTable, instruction, dataFlowDeps)) {
             // Build semantic graph of opNode and depEdge
             val firstUseIdx = instruction match {
               case _: JavaScriptInvoke        => 1 // from base
@@ -247,7 +190,7 @@ object JSFlowGraph {
                         sinkOpNode,
                         Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
                     case AbsVal.Instance(_, sourceInstruction) =>
-                      getFromIntermediateOpNode(dataflow, g, sourceInstruction) match {
+                      getFromIntermediateOpNode(sourceInstruction) match {
                         case Some(fromOpNode) =>
                           if (!g.getEdges.contains(fromOpNode, sinkOpNode)) {
                             g.addEdge(fromOpNode, sinkOpNode, Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
