@@ -8,7 +8,7 @@ import better.files._ // Provides syntactic sugar etc.
 import com.semantic_graph.writer.GexfWriter
 import org.junit.Test
 import com.semantic_graph.NodeId
-import edu.washington.cs.js2graph.Constants.GW
+import edu.washington.cs.js2graph.Constants.GraphWriter
 import io.github.izgzhen.msbase.IOUtil
 import org.junit.Assert._
 
@@ -59,7 +59,7 @@ class JsTest {
     }
   }
 
-  private def getNodeStr(g: GW, node: NodeId): String = {
+  private def getNodeStr(g: GraphWriter, node: NodeId): String = {
     var nodeStr = g.getNodeLabel(node)
     val nodeAttrs = g.getNodeAttrs(node)
     // Tag is hidden in this representation
@@ -70,11 +70,11 @@ class JsTest {
     nodeStr
   }
 
-  private def getNodeStrings(g: GW): List[String] = {
+  private def getNodeStrings(g: GraphWriter): List[String] = {
     g.getNodes.toList.map(getNodeStr(g, _))
   }
 
-  private def getEdgeStrings(g: GW): List[String] = {
+  private def getEdgeStrings(g: GraphWriter): List[String] = {
     g.getEdges.toList.map { case (u, v) =>
       val lu = getNodeStr(g, u)
       val lv = getNodeStr(g, v)
@@ -84,7 +84,7 @@ class JsTest {
 
   private def testJS(jsPath: String, isJsGenerated: Boolean = false): Unit = {
     val g = new GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]()
-    val cg = JSFlowGraph.getCallGraph(jsPath)
+    val cg = CallGraphAnalysis.getCallGraph(jsPath)
 
     JSFlowGraph.addDataFlowGraph(g, cg)
     val jsPathFile = new File(jsPath)
@@ -112,7 +112,7 @@ class JsTest {
     val jsName = jsPathFile.getName
     val jsGeneratedDir = jsDir + "/generated"
     val entrypointsJsPath = jsGeneratedDir + "/" + jsName.replace(".js", ".entrypoints.js")
-    val entrypoints = JSFlowGraph.getAllModuleEntrypoints(jsPath)
+    val entrypoints = EntrypointAnalysis.getAllModuleEntrypoints(jsPath)
     compareSortedStrings(entrypointsJsPath, entrypoints)
     val newJsPath = jsGeneratedDir + "/" + jsName
     mergeFiles(

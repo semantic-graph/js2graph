@@ -1,87 +1,40 @@
 package edu.washington.cs.js2graph
 
-import java.io.{BufferedWriter, File, FileWriter}
 import java.nio.file.Paths
 
 import com.ibm.wala.cast.js.ipa.callgraph.JSCallGraphUtil
 import com.ibm.wala.cast.js.nodejs.PatchedNodejsCallGraphBuilderUtil
 import com.ibm.wala.cast.js.ssa._
 import com.ibm.wala.cast.js.translator.PatchedCAstRhinoTranslatorFactory
-import com.ibm.wala.ipa.callgraph.{CGNode, CallGraph}
+import com.ibm.wala.ipa.callgraph.CallGraph
 import com.ibm.wala.ipa.cfg.ExplodedInterproceduralCFG
 import com.ibm.wala.ssa._
 import com.semantic_graph.NodeId
-import edu.washington.cs.js2graph.Constants.GW
+import edu.washington.cs.js2graph.Constants.GraphWriter
 
 import scala.collection.mutable
 import scala.jdk.CollectionConverters._
 
 object JSFlowGraph {
-  private val fromOpNodes = mutable.Map[SSAInstruction, NodeId]()
+  private val instructionOpNodeCacheMap = mutable.Map[SSAInstruction, NodeId]()
 
-  def getFromOpNode(g: GW, instruction: SSAInstruction, apiName: String, attrs: Constants.NodeAttrs): NodeId = {
-    if (!fromOpNodes.contains(instruction)) {
-      fromOpNodes.addOne(instruction, g.createNode(apiName, attrs))
-    }
-    fromOpNodes(instruction)
-  }
-
-  def getMethodName(s: String): Option[String] = {
-    if (s.contains(".js@")) {
-      None
-    } else {
-      if (s.contains("/")) {
-        Some(s.split('/').last)
-      } else {
-        Some(s)
-      }
-    }
-  }
-
-  def getMethodName(node: CGNode): Option[String] = {
-    getMethodName(node.getMethod.getDeclaringClass.getName.toString)
-  }
-
-  def getAllModuleEntrypoints(jsPath: String): List[String] = {
-    val cg = getCallGraph(jsPath)
-    val fieldNames = doEntrypointDataFlowAnalysis(cg)
-    val ret = mutable.Queue[String]()
-    for (fieldName <- fieldNames) {
-      ret.addOne("module.exports." + fieldName + "();")
-    }
-    // FIXME...
-    ret.addOne("module.exports();")
-    ret.toList
-  }
-
-  def writeEntrypoints(jsPath: String, outputPath: String): Unit = {
-    val file = new File(outputPath)
-    val bw = new BufferedWriter(new FileWriter(file))
-    for (line <- getAllModuleEntrypoints(jsPath)) {
-      bw.write(line + "\n")
-    }
-    bw.close()
-  }
-
-  /** Add the callgraph to semantic graph
-    * @param jsPath Path to the analyzed JS file
-    * @return The constructed call-graph (for later use in other analysis)
+  /**
+    * Each instruction is mapped to at most one unique node
     */
-  def getCallGraph(jsPath: String): CallGraph = {
-    val path = Paths.get(jsPath)
-    JSCallGraphUtil.setTranslatorFactory(new PatchedCAstRhinoTranslatorFactory)
-    val builder = PatchedNodejsCallGraphBuilderUtil.makeCGBuilder(path.toFile)
-    val cg = builder.makeCallGraph(builder.getOptions)
-    if (Constants.debug.nonEmpty) {
-      println(Constants.getIRofCG(cg))
+  private def getFromOpNode(g: GraphWriter, instruction: SSAInstruction, apiName: String, attrs: Constants.NodeAttrs): NodeId = {
+    if (!instructionOpNodeCacheMap.contains(instruction)) {
+      instructionOpNodeCacheMap.addOne(instruction, g.createNode(apiName, attrs))
     }
-    cg
+    instructionOpNodeCacheMap(instruction)
   }
 
-  def getModuleFieldNames(symTable: SymbolTable, instruction: SSAInstruction, dataDeps: Map[AbsPath, Set[AbsVal]]): Set[String] = {
+  /**
+    * See UnitTest.testGetModuleFieldNames for its explanation
+    */
+  def getModuleFieldNames(symTable: SymbolTable, instruction: SSAInstruction,
+                          dataDeps: Map[AbsPath, Set[AbsVal]]): Set[String] = {
     instruction match {
       case propertyWrite: JavaScriptPropertyWrite =>
-        // Case 3: Write to an API instance's property
         if (symTable.isConstant(propertyWrite.getMemberRef)) {
           val fieldName = symTable.getConstantValue(propertyWrite.getMemberRef).toString
           if (Constants.moduleFieldNames.contains(fieldName)) {
@@ -100,22 +53,27 @@ object JSFlowGraph {
     Set()
   }
 
-  def getFromIntermediateOpNode(dataFlow: IFDSDataFlow, g: GW, instruction: SSAInstruction): Option[NodeId] = {
+  /**
+    * Each instruction is mapped by dataFlow analysis to its expected node label and attributes, and then used for
+    * creating a new node if not already existing.
+    */
+  private def getFromIntermediateOpNode(dataFlow: IFDSDataFlow, g: GraphWriter, instruction: SSAInstruction): Option[NodeId] = {
     dataFlow.getOpNodeNameAndAttrs(instruction) match {
       case Some((name, attrs)) => Some(getFromOpNode(g, instruction, name, attrs))
       case None                => None
     }
   }
 
-  /** Get possible opNodes for a [[SSAInstruction]]
+  /** Get sink opNodes for a [[SSAInstruction]]. Note that the return "sink" opNode might be used as source to some
+    * other node as well, that is, some opNode can be both a sink and a source (i.e. intermediate node).
     *
     * FIXME: defUse and symTable should be an attribute of some processor class
     */
-  def getPossibleOpNodes(dataFlow: IFDSDataFlow,
-                         g: GW,
-                         symTable: SymbolTable,
-                         instruction: SSAInstruction,
-                         dataDeps: Map[AbsPath, Set[AbsVal]]): Set[NodeId] = {
+  def getSinkOpNodes(dataFlow: IFDSDataFlow,
+                     g: GraphWriter,
+                     symTable: SymbolTable,
+                     instruction: SSAInstruction,
+                     dataDeps: Map[AbsPath, Set[AbsVal]]): Set[NodeId] = {
     instruction match {
       case invokeInstruction: JavaScriptInvoke =>
         // Case 1: Data-flow analysis has defined some intermediate API name already (as well as tag), use this directly
@@ -214,7 +172,7 @@ object JSFlowGraph {
     * @param g Semantic graph writer
     * @param cg Call graph
     */
-  def addDataFlowGraph(g: GW, cg: CallGraph): Unit = {
+  def addDataFlowGraph(g: GraphWriter, cg: CallGraph): Unit = {
     val icfg = ExplodedInterproceduralCFG.make(cg)
     val dataflow = new IFDSDataFlow(icfg)
     val results = dataflow.solve
@@ -250,7 +208,7 @@ object JSFlowGraph {
         if (instruction != null) {
           val dataFlowDeps = dataflow.getFacts(results, block)
 
-          for (opNode <- getPossibleOpNodes(dataflow, g, symTable, instruction, dataFlowDeps)) {
+          for (sinkOpNode <- getSinkOpNodes(dataflow, g, symTable, instruction, dataFlowDeps)) {
             // Build semantic graph of opNode and depEdge
             val firstUseIdx = instruction match {
               case _: JavaScriptInvoke        => 1 // from base
@@ -266,7 +224,7 @@ object JSFlowGraph {
                 try {
                   g.addEdge(
                     g.createNode(v, Map(JsNodeAttr.TYPE -> NodeType.Constant.toString)),
-                    opNode,
+                    sinkOpNode,
                     Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
                 } catch {
                   case e: IllegalArgumentException =>
@@ -280,19 +238,19 @@ object JSFlowGraph {
                       if (Constants.isLibraryGlobalName(name) && !isInvokeBase) {
                         g.addEdge(
                           g.createNode(name, Map(JsNodeAttr.TAG -> Tag.Singleton.toString)),
-                          opNode,
+                          sinkOpNode,
                           Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
                       }
                     case AbsVal.Constant(v) =>
                       g.addEdge(
                         g.createNode(v, Map(JsNodeAttr.TYPE -> NodeType.Constant.toString)),
-                        opNode,
+                        sinkOpNode,
                         Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
                     case AbsVal.Instance(_, sourceInstruction) =>
                       getFromIntermediateOpNode(dataflow, g, sourceInstruction) match {
                         case Some(fromOpNode) =>
-                          if (!g.getEdges.contains(fromOpNode, opNode)) {
-                            g.addEdge(fromOpNode, opNode, Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
+                          if (!g.getEdges.contains(fromOpNode, sinkOpNode)) {
+                            g.addEdge(fromOpNode, sinkOpNode, Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
                           }
                         case None =>
                       }
