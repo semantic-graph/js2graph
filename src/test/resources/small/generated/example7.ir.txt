@@ -8,11 +8,11 @@ BB2[-1..-2]
 Instructions:
 BB0
 BB1
-0   v1 = new <JavaScriptLoader,LArray>@0     example7.js [0->331] (line 1) [1=[arguments]]
-1   v6 = global:global Function              example7.js [1->330] (line 12)
-2   v3 = construct v6@2 v5:#Lexample7/nodejsModule exception:v4example7.js [1->330] (line 12)
-3   v11 = global:global __WALA__int3rnal__globalexample7.js [1->330] (line 12)
-4   v2 = invoke v3@4 v11 exception:v12       example7.js [1->330] (line 12)
+0   v1 = new <JavaScriptLoader,LArray>@0     example7.js [0->355] (line 1) [1=[arguments]]
+1   v6 = global:global Function              example7.js [1->354] (line 16)
+2   v3 = construct v6@2 v5:#Lexample7/nodejsModule exception:v4example7.js [1->354] (line 16)
+3   v11 = global:global __WALA__int3rnal__globalexample7.js [1->354] (line 16)
+4   v2 = invoke v3@4 v11 exception:v12       example7.js [1->354] (line 16)
 BB2
 
 
@@ -95,7 +95,7 @@ BB12[-1..-2]
 Instructions:
 BB0
 BB1
-0   v3 = new <JavaScriptLoader,LArray>@0     example7.js [1->327] (line 1) [3=[arguments]]
+0   v3 = new <JavaScriptLoader,LArray>@0     example7.js [1->351] (line 1) [3=[arguments]]
 1   v5 = global:global $$undefined           example7.js [28->104] (line 2) [5=[module]]
 3   v9 = global:global Object                example7.js [41->103] (line 2)
 4   check v9                                 example7.js [41->103] (line 2)
@@ -113,21 +113,21 @@ BB5
 BB6
 12   fieldref v7.v16:#exports = v17 = v17    example7.js [41->103] (line 2) [7=[module]]
 BB7
-14   v24 = global:global Function            example7.js [109->298] (line 9)
-15   v21 = construct v24@15 v23:#Lexample7/nodejsModule/moduleSource exception:v22example7.js [109->298] (line 9)
-16   v27 = global:global __WALA__int3rnal__globalexample7.js [109->298] (line 9)
-18   v6 = prototype_values(v7)               example7.js [216->230] (line 9) [7=[module]]
-19   v28 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v6example7.js [216->230] (line 9)
+14   v24 = global:global Function            example7.js [109->322] (line 13)
+15   v21 = construct v24@15 v23:#Lexample7/nodejsModule/moduleSource exception:v22example7.js [109->322] (line 13)
+16   v27 = global:global __WALA__int3rnal__globalexample7.js [109->322] (line 13)
+18   v6 = prototype_values(v7)               example7.js [240->254] (line 13) [7=[module]]
+19   v28 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v6example7.js [240->254] (line 13)
 BB8
-21   v29 = prototype_values(v7)              example7.js [232->246] (line 9) [7=[module]]
-22   v30 = getfield < JavaScriptLoader, LRoot, require, <JavaScriptLoader,LRoot> > v29example7.js [232->246] (line 9)
+21   v29 = prototype_values(v7)              example7.js [256->270] (line 13) [7=[module]]
+22   v30 = getfield < JavaScriptLoader, LRoot, require, <JavaScriptLoader,LRoot> > v29example7.js [256->270] (line 13)
 BB9
-23   v20 = invoke v21@23 v27,v28,v30,v7,v32:#example7.js,v33:#src/test/resources/small exception:v34example7.js [109->298] (line 9) [7=[module]]
+23   v20 = invoke v21@23 v27,v28,v30,v7,v32:#example7.js,v33:#src/test/resources/small exception:v34example7.js [109->322] (line 13) [7=[module]]
 BB10
-25   v31 = prototype_values(v7)              example7.js [310->324] (line 11) [7=[module]]
-26   v35 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v31example7.js [310->324] (line 11)
+25   v31 = prototype_values(v7)              example7.js [334->348] (line 15) [7=[module]]
+26   v35 = getfield < JavaScriptLoader, LRoot, exports, <JavaScriptLoader,LRoot> > v31example7.js [334->348] (line 15)
 BB11
-27   return v35                              example7.js [303->325] (line 11)
+27   return v35                              example7.js [327->349] (line 15)
 BB12
 
 
@@ -213,10 +213,10 @@ BB7
 CFG:
 BB0[-1..-2]
     -> BB1
-BB1[0..4]
+BB1[0..6]
     -> BB2
     -> BB4
-BB2[5..10]
+BB2[7..10]
     -> BB3
     -> BB4
 BB3[11..11]
@@ -225,20 +225,20 @@ BB4[-1..-2]
 Instructions:
 BB0
 BB1
-0   v8 = new <JavaScriptLoader,LArray>@0     example7.js [109->214] (line 7) [8=[arguments]]
-3   v13 = global:global console              example7.js [184->191] (line 8) [13=[$$destructure$rcvr3]]
-4   check v13                                example7.js [184->191] (line 8) [13=[$$destructure$rcvr3]]
+0   v8 = new <JavaScriptLoader,LArray>@0     example7.js [109->238] (line 7) [8=[arguments]]
+1   v12 = global:global Function             example7.js [109->238] (line 7)
+2   v9 = construct v12@2 v11:#Lexample7/nodejsModule/moduleSource/f exception:v10example7.js [109->238] (line 7) [9=[f]]
+5   v17 = global:global console              example7.js [218->225] (line 12) [17=[$$destructure$rcvr3]]
+6   check v17                                example7.js [218->225] (line 12) [17=[$$destructure$rcvr3]]
 BB2
-7   v20 = global:global Function             example7.js [197->209] (line 8)
-8   v17 = construct v20@8 v19:#Lexample7/nodejsModule/moduleSource/example7@197 exception:v18example7.js [197->209] (line 8)
-9   v22 = global:global __WALA__int3rnal__globalexample7.js [197->209] (line 8)
-10   v16 = invoke v17@10 v22 exception:v23   example7.js [197->209] (line 8)
+9   v22 = global:global __WALA__int3rnal__globalexample7.js [230->233] (line 12)
+10   v20 = invoke v9@10 v22 exception:v23    example7.js [230->233] (line 12) [9=[f]]
 BB3
-11   v15 = dispatch v14:#log@11 v13,v16 exception:v24example7.js [184->210] (line 8) [14=[$$destructure$elt3]13=[$$destructure$rcvr3]]
+11   v19 = dispatch v18:#log@11 v17,v20 exception:v24example7.js [218->234] (line 12) [18=[$$destructure$elt3]17=[$$destructure$rcvr3]]
 BB4
 
 
-<ctor for <JavaScriptLoader,LFunction>(Lexample7/nodejsModule/moduleSource/example7@197)>
+<ctor for <JavaScriptLoader,LFunction>(Lexample7/nodejsModule/moduleSource/f)>
 CFG:
 BB0[0..0]
     -> BB1
@@ -264,7 +264,7 @@ BB0
 BB1
 1   v4 = getfield < JavaScriptLoader, LRoot, prototype, <JavaScriptLoader,LRoot> > v1
 BB2
-2   v5 = new <JavaScriptLoader,Lexample7/nodejsModule/moduleSource/example7@197>@2
+2   v5 = new <JavaScriptLoader,Lexample7/nodejsModule/moduleSource/f>@2
 BB3
 3   v7 = new <JavaScriptLoader,LObject>@3    
 BB4
@@ -277,7 +277,7 @@ BB6
 BB7
 
 
-<Code body of function Lexample7/nodejsModule/moduleSource/example7@197>
+<Code body of function Lexample7/nodejsModule/moduleSource/f>
 CFG:
 BB0[-1..-2]
     -> BB1
@@ -287,8 +287,8 @@ BB2[-1..-2]
 Instructions:
 BB0
 BB1
-0   v3 = new <JavaScriptLoader,LArray>@0     example7.js [197->207] (line 8) [3=[arguments]]
-1   return v4:#1.0                           example7.js [203->206] (line 8)
+0   v3 = new <JavaScriptLoader,LArray>@0     example7.js [184->216] (line 8) [3=[arguments]]
+1   return v4:#1.0                           example7.js [203->214] (line 9)
 BB2
 
 

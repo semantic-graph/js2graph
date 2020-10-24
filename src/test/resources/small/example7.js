@@ -1,1 +1,5 @@
-console.log((() => 1.0)());
+function f() {
+    return 1.0;
+}
+
+console.log(f());

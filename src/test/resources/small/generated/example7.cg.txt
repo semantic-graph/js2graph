@@ -463,12 +463,12 @@ Node: <ctor for <JavaScriptLoader,LObject>> Context: CallStringContextPair: [ ex
 Node: <ctor for <JavaScriptLoader,LFunction>(Lexample7/nodejsModule/moduleSource)> Context: CallStringContextPair: [ example7.nodejsModule.do()LRoot;@15 ]:CallStringContext: [ example7.nodejsModule.do()LRoot;@15 ]
 
 Node: <Code body of function Lexample7/nodejsModule/moduleSource> Context: CallStringContext: [ example7.nodejsModule.do()LRoot;@23 ]
- - JSCall@8
-     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lexample7/nodejsModule/moduleSource/example7@197)> Context: CallStringContextPair: [ example7.nodejsModule.moduleSource.do()LRoot;@8 ]:CallStringContext: [ example7.nodejsModule.moduleSource.do()LRoot;@8 ]
+ - JSCall@2
+     -> Node: <ctor for <JavaScriptLoader,LFunction>(Lexample7/nodejsModule/moduleSource/f)> Context: CallStringContextPair: [ example7.nodejsModule.moduleSource.do()LRoot;@2 ]:CallStringContext: [ example7.nodejsModule.moduleSource.do()LRoot;@2 ]
  - JSCall@10
-     -> Node: <Code body of function Lexample7/nodejsModule/moduleSource/example7@197> Context: CallStringContext: [ example7.nodejsModule.moduleSource.do()LRoot;@10 ]
+     -> Node: <Code body of function Lexample7/nodejsModule/moduleSource/f> Context: CallStringContext: [ example7.nodejsModule.moduleSource.do()LRoot;@10 ]
 
-Node: <ctor for <JavaScriptLoader,LFunction>(Lexample7/nodejsModule/moduleSource/example7@197)> Context: CallStringContextPair: [ example7.nodejsModule.moduleSource.do()LRoot;@8 ]:CallStringContext: [ example7.nodejsModule.moduleSource.do()LRoot;@8 ]
+Node: <ctor for <JavaScriptLoader,LFunction>(Lexample7/nodejsModule/moduleSource/f)> Context: CallStringContextPair: [ example7.nodejsModule.moduleSource.do()LRoot;@2 ]:CallStringContext: [ example7.nodejsModule.moduleSource.do()LRoot;@2 ]
 
-Node: <Code body of function Lexample7/nodejsModule/moduleSource/example7@197> Context: CallStringContext: [ example7.nodejsModule.moduleSource.do()LRoot;@10 ]
+Node: <Code body of function Lexample7/nodejsModule/moduleSource/f> Context: CallStringContext: [ example7.nodejsModule.moduleSource.do()LRoot;@10 ]
 
