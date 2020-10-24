@@ -122,6 +122,9 @@ public class PatchedNodejsRequireTargetSelector implements MethodTargetSelector 
                                     .getClassHierarchy()
                                     .lookupClass(TypeReference.findOrCreate(jsLoader.getReference(), className));
 
+                    if (script == null) {
+                        continue;
+                    }
                     IMethod method = script.getMethod(AstMethodReference.fnSelector);
                     previouslyRequired.put(sourceModule.getClassName(), method);
 
