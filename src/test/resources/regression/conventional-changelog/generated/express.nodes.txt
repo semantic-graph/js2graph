@@ -1,3 +1,5 @@
+RegExp:Construct
+RegExp:Construct
 gi:Constant
 github|bitbucket|gitlab:Constant
 i:Constant

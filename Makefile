@@ -46,6 +46,8 @@ javadoc:
 
 check-format:
 	scalafmt --check src/main/scala
+	scalafmt --check src/test/scala
 
 format:
 	scalafmt src/main/scala
+	scalafmt src/test/scala

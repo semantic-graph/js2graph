@@ -1,0 +1,4 @@
+gi:Constant -[DATAFLOW]-> RegExp:Construct
+github|bitbucket|gitlab:Constant -[DATAFLOW]-> RegExp:Construct
+i:Constant -[DATAFLOW]-> RegExp:Construct
+tag:\s*[v=]?(.+?)[,\)]:Constant -[DATAFLOW]-> RegExp:Construct

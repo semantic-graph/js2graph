@@ -159,5 +159,5 @@ object Constants {
   }
 
   type NodeAttrs = Map[JsNodeAttr.Value, String]
-  type GW = GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]
+  type GraphWriter = GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]
 }

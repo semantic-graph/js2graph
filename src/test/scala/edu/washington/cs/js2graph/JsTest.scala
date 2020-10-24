@@ -8,7 +8,7 @@ import better.files._ // Provides syntactic sugar etc.
 import com.semantic_graph.writer.GexfWriter
 import org.junit.Test
 import com.semantic_graph.NodeId
-import edu.washington.cs.js2graph.Constants.GW
+import edu.washington.cs.js2graph.Constants.GraphWriter
 import io.github.izgzhen.msbase.IOUtil
 import org.junit.Assert._
 
@@ -29,8 +29,12 @@ class JsTest {
       return
     }
     val expected: List[String] = IOUtil.readLines(expectedFile)
-    val msg = String.format("===== Expected: %s =====\n\n===== Actual =====\n%s\n\n===== Diff =====\n%s\n\n",
-      expectedFile, actualSorted.mkString("\n"), expected.toSet.diff(actualSorted.toSet).mkString("\n"))
+    val msg = String.format(
+      "===== Expected: %s =====\n\n===== Actual =====\n%s\n\n===== Diff =====\n%s\n\n",
+      expectedFile,
+      actualSorted.mkString("\n"),
+      expected.toSet.diff(actualSorted.toSet).mkString("\n")
+    )
     assertEquals(msg, expected, actualSorted)
   }
 
@@ -59,22 +63,22 @@ class JsTest {
     }
   }
 
-  private def getNodeStr(g: GW, node: NodeId): String = {
+  private def getNodeStr(g: GraphWriter, node: NodeId): String = {
     var nodeStr = g.getNodeLabel(node)
     val nodeAttrs = g.getNodeAttrs(node)
     // Tag is hidden in this representation
     nodeAttrs.get(JsNodeAttr.TYPE) match {
       case Some(typeName) => nodeStr = nodeStr + ":" + typeName
-      case _ =>
+      case _              =>
     }
     nodeStr
   }
 
-  private def getNodeStrings(g: GW): List[String] = {
+  private def getNodeStrings(g: GraphWriter): List[String] = {
     g.getNodes.toList.map(getNodeStr(g, _))
   }
 
-  private def getEdgeStrings(g: GW): List[String] = {
+  private def getEdgeStrings(g: GraphWriter): List[String] = {
     g.getEdges.toList.map { case (u, v) =>
       val lu = getNodeStr(g, u)
       val lv = getNodeStr(g, v)
@@ -84,9 +88,9 @@ class JsTest {
 
   private def testJS(jsPath: String, isJsGenerated: Boolean = false): Unit = {
     val g = new GexfWriter[JsNodeAttr.Value, JsEdgeAttr.Value]()
-    val cg = JSFlowGraph.getCallGraph(jsPath)
-
-    JSFlowGraph.addDataFlowGraph(g, cg)
+    val cg = CallGraphAnalysis.getCallGraph(jsPath)
+    val jsFlowGraph = new JSFlowGraph(g, cg)
+    jsFlowGraph.addDataFlowGraph()
     val jsPathFile = new File(jsPath)
     val jsDir = jsPathFile.getParentFile
     val jsName = jsPathFile.getName
@@ -112,106 +116,89 @@ class JsTest {
     val jsName = jsPathFile.getName
     val jsGeneratedDir = jsDir + "/generated"
     val entrypointsJsPath = jsGeneratedDir + "/" + jsName.replace(".js", ".entrypoints.js")
-    val entrypoints = JSFlowGraph.getAllModuleEntrypoints(jsPath)
-    compareSortedStrings(entrypointsJsPath, entrypoints)
+    val entrypointsAnalysis = new EntrypointAnalysis(CallGraphAnalysis.getCallGraph(jsPath))
+    compareSortedStrings(entrypointsJsPath, entrypointsAnalysis.getAllModuleEntrypoints)
     val newJsPath = jsGeneratedDir + "/" + jsName
-    mergeFiles(
-      new File(newJsPath),
-      new File(jsPath),
-      new File(entrypointsJsPath))
+    mergeFiles(new File(newJsPath), new File(jsPath), new File(entrypointsJsPath))
     testJS(newJsPath, isJsGenerated = true)
   }
 
-  /**
-   * Type: small e2e test
-   * Source: a snippet that test inter-procedural data-flow
-   */
+  /** Type: small e2e test
+    * Source: a snippet that test inter-procedural data-flow
+    */
   @Test def testExampleJS1(): Unit = {
     testJS("src/test/resources/small/example.js")
   }
 
-  /**
-   * Type: large e2e test
-   * Source: a vulnerable snippet from event-stream package
-   *
-   * See https://github.com/semantic-graph/seguard-java/issues/2 for some related issue
-   * FIXME: The current edges list is not perfect since the new object-access-path based node is not connected to other
-   *        nodes. It should be able to find their replacements.
-   *
-   */
+  /** Type: large e2e test
+    * Source: a vulnerable snippet from event-stream package
+    *
+    * See https://github.com/semantic-graph/seguard-java/issues/2 for some related issue
+    * FIXME: The current edges list is not perfect since the new object-access-path based node is not connected to other
+    *        nodes. It should be able to find their replacements.
+    */
   @Test
   def testEventStreamJS(): Unit = {
     testJS("src/test/resources/large/eventstream.js")
   }
 
-  /**
-   * Type: large e2e test
-   * Source: a vulnerable snippet from angular-location-update package
-   *
-   */
+  /** Type: large e2e test
+    * Source: a vulnerable snippet from angular-location-update package
+    */
   @Test
   def testAngularLocationUpdateJS(): Unit = {
     testJS("src/test/resources/large/angular-location-update.js")
   }
 
-  /**
-   * Type: large e2e test
-   * Source: a vulnerable snippet from conventional-changelog package
-   *
-   */
+  /** Type: large e2e test
+    * Source: a vulnerable snippet from conventional-changelog package
+    */
   @Test
   def testConventionalChangelogIndexJS(): Unit = {
     testJSWithEntrypoints("src/test/resources/large/conventional-changelog-index.js")
   }
 
-  /**
-   * Type: large e2e test
-   * Source: a vulnerable snippet from eslint-config-airbnb-standard package
-   *
-   */
+  /** Type: large e2e test
+    * Source: a vulnerable snippet from eslint-config-airbnb-standard package
+    */
   @Test
   def testEslintConfigAirbnbStandard(): Unit = {
     testJS("src/test/resources/large/eslint-config-build.js")
   }
 
-  /**
-   * Type: small e2e test
-   * Source: a snippet that uses binary arithmetic op for testing data-flow deps
-   */
+  /** Type: small e2e test
+    * Source: a snippet that uses binary arithmetic op for testing data-flow deps
+    */
   @Test
   def testExampleJS2(): Unit = {
     testJS("src/test/resources/small/example2.js")
   }
 
-  /**
-   * Type: large e2e test
-   * Source: a snippet that uses execSync
-   */
+  /** Type: large e2e test
+    * Source: a snippet that uses execSync
+    */
   @Test
   def testExampleJS3(): Unit = {
     testJSWithEntrypoints("src/test/resources/large/example3.js")
   }
 
-  /**
-   * Type: small e2e test
-   * Source: a snippet that uses callback
-   */
+  /** Type: small e2e test
+    * Source: a snippet that uses callback
+    */
   @Test
   def testExampleJS4(): Unit = {
     testJS("src/test/resources/small/example4.js")
   }
 
-  /**
-   * Type: small e2e test
-   * Source: a snippet that uses eval
-   */
+  /** Type: small e2e test
+    * Source: a snippet that uses eval
+    */
   @Test
   def testExampleJS5(): Unit = {
     testJS("src/test/resources/small/example5.js")
   }
 
-  /**
-    * Type: small e2e test
+  /** Type: small e2e test
     * Source: a snippet that imports user modules
     */
   @Test
@@ -219,8 +206,7 @@ class JsTest {
     testJS("src/test/resources/small/example6.js")
   }
 
-  /**
-    * Type: small e2e test
+  /** Type: small e2e test
     * Source: a snippet for inter-proc data-flow
     */
   @Test
@@ -228,8 +214,7 @@ class JsTest {
     testJS("src/test/resources/small/example7.js")
   }
 
-  /**
-    * Type: small e2e test
+  /** Type: small e2e test
     * Source: a snippet that exposes an API using node JS module system
     */
   @Test
@@ -237,16 +222,16 @@ class JsTest {
     testJSWithEntrypoints("src/test/resources/small/example8.js")
   }
 
-// FIXME: flaky
-  /**
-   * Type: Regression test
-   * Source: conventional-changelog package from NPM
-   */
+  /** Type: Regression test
+    * Source: conventional-changelog package from NPM
+    *
+    * FIXME: Flaky tests
+    */
   @Test
   def testConventionalExamples(): Unit = {
-    val dir = "src"/"test"/"resources"/"regression"/"conventional-changelog"
+    val dir = "src" / "test" / "resources" / "regression" / "conventional-changelog"
     for (jsFile <- dir.glob("*.js")) {
-      //testJSWithEntrypoints(jsFile.toString)
+      // testJSWithEntrypoints(jsFile.toString)
     }
   }
 }
