@@ -90,3 +90,12 @@ cp com.ibm.wala.shrike/build/libs/*.jar local_lib
 ```
 
 And then execute script `install.sh` inside `local_lib`
+
+## Node modules
+
+When analyzing a node.js package, the user needs to make sure the corresponding `node_modules` directory exists
+alongside analyzed JavaScript files. Our script `js2graph` doesn't enforce that. If any required package is missing,
+the use of required module will not be analyzed.
+
+However, note that providing `node_module` might drastically slow down the analysis since there will be much more code
+to work on.
