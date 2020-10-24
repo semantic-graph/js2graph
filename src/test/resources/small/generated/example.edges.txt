@@ -1,3 +1,4 @@
++:PrimOp -[DATAFLOW]-> +:PrimOp
 +:PrimOp -[DATAFLOW]-> console.log:Call
 1.0:Constant -[DATAFLOW]-> +:PrimOp
 2.0:Constant -[DATAFLOW]-> +:PrimOp

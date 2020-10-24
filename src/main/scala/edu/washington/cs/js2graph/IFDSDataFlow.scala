@@ -126,9 +126,10 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
               }
             }
             fact.fst match {
-              case _: AbsPath.Global  => result.add(inputDomain)
-              case _: AbsPath.Lexical => result.add(inputDomain)
-              case _                  =>
+              case _: AbsPath.Global             => result.add(inputDomain)
+              case _: AbsPath.Lexical            => result.add(inputDomain)
+              case local if local == zeroTainted => result.add(inputDomain)
+              case _                             =>
             }
             result
           }
@@ -341,7 +342,7 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
       result
     }
 
-    /** flow function for normal intraprocedural edges
+    /** Flow function for normal intra-procedural edges
       */
     override def getNormalFlowFunction(src: Block, dest: Block): IUnaryFlowFunction = {
       val symTable = src.getNode.getIR.getSymbolTable
@@ -479,7 +480,11 @@ class IFDSDataFlow(val icfg: ExplodedInterproceduralCFG) {
       }
     }
 
-    /** @param call supergraph node of the call instruction for this return edge.
+    /** Flow from exit block to call-site
+      *
+      * Used by `com.ibm.wala.dataflow.IFDS.TabulationSolver#propagateToReturnSites`
+      *
+      * @param call supergraph node of the call instruction for this return edge.
       * @param src exit node of the callee
       * @return the flow function for a "return" edge in the supergraph from src to dest
       */
