@@ -1,6 +1,4 @@
 +:PrimOp -[DATAFLOW]-> module._compile:Call
-0.0:Constant -[DATAFLOW]-> CryptoDecipher.update:Call
-1.0:Constant -[DATAFLOW]-> module.exports:Call
 :Constant -[DATAFLOW]-> module._compile:Call
 __unknownModule(./test/data) -[DATAFLOW]-> CryptoDecipher.update:Call
 __unknownModule(./test/data) -[DATAFLOW]-> module.exports:Call

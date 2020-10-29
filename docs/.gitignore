@@ -1,0 +1,58 @@
+*.pdf
+# TeX Stuff
+*.ps
+*.aux
+*.make
+*.make.temp
+*.bbl
+*.blg
+*.d
+*.dvi
+*.fls
+*.log
+*.toc
+*.out
+*.fdb_latexmk
+*.o1
+*.o2
+*.d1
+*.d2
+onefile.tex
+onefile.zip
+/followup/abstract.txt
+/followup/acmart.cls
+/followup/claims.sty
+/followup/comment.cut
+/followup/latex-process-inputs
+/followup/paper.clm
+/inccmp/abstract.txt
+/inccmp/latex-process-inputs
+
+# Built files
+*.o
+*.hi
+*.pyc
+__pycache__
+*.class
+
+# IDE junk
+*.sublime-*
+.classpath
+.project
+.gradle
+.idea
+.settings
+.classpath
+
+# Mac junk
+.DS_Store
+# NFS junk
+.nfs0000*
+
+# vim
+.*.swp
+
+*.synctex.gz
+.vscode
+
+paper.pdf
