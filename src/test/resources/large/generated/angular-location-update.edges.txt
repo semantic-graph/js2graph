@@ -10,7 +10,6 @@
 +:PrimOp -[DATAFLOW]-> +:PrimOp
 +:PrimOp -[DATAFLOW]-> +:PrimOp
 +:PrimOp -[DATAFLOW]-> RegExp:Construct
-0.0:Constant -[DATAFLOW]-> +:PrimOp
 1.0:Constant -[DATAFLOW]-> +:PrimOp
 1000.0:Constant -[DATAFLOW]-> *:PrimOp
 86400.0:Constant -[DATAFLOW]-> *:PrimOp

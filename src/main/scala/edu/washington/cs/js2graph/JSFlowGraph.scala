@@ -35,11 +35,8 @@ class JSFlowGraph(g: GraphWriter, cg: CallGraph) {
   /** Each instruction is mapped by dataFlow analysis to its expected node label and attributes, and then used for
     * creating a new node if not already existing.
     */
-  private def getFromIntermediateOpNode(instruction: SSAInstruction): Option[NodeId] = {
-    dataflow.getOpNodeNameAndAttrs(instruction) match {
-      case Some((name, attrs)) => Some(getFromOpNode(instruction, name, attrs))
-      case None                => None
-    }
+  private def getFromIntermediateOpNode(instruction: SSAInstruction): Set[NodeId] = {
+    dataflow.getOpNodeNameAndAttrs(instruction).map { case (name, attrs) => getFromOpNode(instruction, name, attrs) }
   }
 
   /** Get sink opNodes for a [[SSAInstruction]]. Note that the return "sink" opNode might be used as source to some
@@ -51,10 +48,9 @@ class JSFlowGraph(g: GraphWriter, cg: CallGraph) {
     instruction match {
       case invokeInstruction: JavaScriptInvoke =>
         // Case 1: Data-flow analysis has defined some intermediate API name already (as well as tag), use this directly
-        dataflow.getOpNodeNameAndAttrs(invokeInstruction) match {
-          case Some((name, attrs)) =>
-            return Set(getFromOpNode(invokeInstruction, name, attrs))
-          case None =>
+        val opNodes = getFromIntermediateOpNode(invokeInstruction)
+        if (opNodes.nonEmpty) {
+          return opNodes
         }
         // Otherwise -- Case 2: Post-analyze used API here
         if (invokeInstruction.getNumberOfUses >= 2) {
@@ -190,13 +186,10 @@ class JSFlowGraph(g: GraphWriter, cg: CallGraph) {
                         sinkOpNode,
                         Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
                     case AbsVal.Instance(_, sourceInstruction) =>
-                      getFromIntermediateOpNode(sourceInstruction) match {
-                        case Some(fromOpNode) =>
-                          if (!g.getEdges.contains(fromOpNode, sinkOpNode)) {
-                            g.addEdge(fromOpNode, sinkOpNode, Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
-                          }
-                        case None =>
-                      }
+                      getFromIntermediateOpNode(sourceInstruction).map(fromOpNode =>
+                        if (!g.getEdges.contains(fromOpNode, sinkOpNode)) {
+                          g.addEdge(fromOpNode, sinkOpNode, Map(JsEdgeAttr.TYPE -> EdgeType.DATAFLOW.toString))
+                        })
                     case _ =>
                   }
                 }
