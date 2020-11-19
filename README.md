@@ -6,7 +6,7 @@ Extract semantic graph from JavaScript.
 
 ## Usage
 
-    ./seguardjs-cli path/to/filename.js path/to/output.js.gexf
+    ./js2graph path/to/filename.js path/to/output.js2graph.gexf
 
 ## Test
 

@@ -35,7 +35,7 @@ junit:
 test: junit test-js-e2e
 
 test-js-e2e: jar
-	timeout 300 ./js2graph tests/tmpoc4jukbq.js tests/tmpoc4jukbq.js.gexf
+	timeout 300 ./js2graph tests/tmpoc4jukbq.js tests/tmpoc4jukbq.js2graph.gexf
 
 clean:
 	rm -r target
