@@ -88,21 +88,21 @@ Data flow analysis: The abstract domain of each variable is an access path (see 
 
 - **Global API access path**
     - Definition: An access path starting from global built-in or standard library objects
-    - A variable $$x$$ has a global namespace $$N$$ if
-        - $$x$$ is a built-in object called $$N$$, e.g. `console`
-        - $$x$$ is an imported standard library object called $$N$$, e.g. return value of `require(``"``fs``"``)`
-        - $$x$$ is a field access of a variable with global namespace (e.g. `console.log`)
-            - If $$x = x_0.f_1$$ and $$x_0$$ has namespace $$N_0$$, then $$x$$ has namespace $$N_0.f_1$$
+    - A variable $x$ has a global namespace $N$ if
+        - $x$ is a built-in object called $N$, e.g. `console`
+        - $x$ is an imported standard library object called $N$, e.g. return value of `require(``"``fs``"``)`
+        - $x$ is a field access of a variable with global namespace (e.g. `console.log`)
+            - If $x = x_0.f_1$ and $x_0$ has namespace $N_0$, then $x$ has namespace $N_0.f_1$
     - Intuitively, global namespace refers to a global object or some object reachable from global ones
-    - $$x$$s that have the same Global API access path refers the same runtime object
+    - $x$s that have the same Global API access path refers the same runtime object
 - **Instance API access path (AP)**
     - Definition: An access path starting from instances constructed by built-in or standard library class/function objects
-    - A variable $$x$$ has an instance namespace $$M$$ if
-        - $$x$$ is constructed by an API call in which the receiver $$f$$ has global namespace $$N_f$$ that correspond to a return type of $$M$$
-        - $$x$$ is a field access of a variable with instance namespace
-            - If $$x = x_0.f_1$$ and $$x_0$$ has namespace $$M_0$$, then $$x$$ has namespace $$M_0.f_1$$
+    - A variable $x$ has an instance namespace $M$ if
+        - $x$ is constructed by an API call in which the receiver $f$ has global namespace $N_f$ that correspond to a return type of $M$
+        - $x$ is a field access of a variable with instance namespace
+            - If $x = x_0.f_1$ and $x_0$ has namespace $M_0$, then $x$ has namespace $M_0.f_1$
     - Intuitively, instance namespace is the instance’s class which is a global object
-    - $$x$$s that have the same Instance API access path refers different runtime object
+    - $x$s that have the same Instance API access path refers different runtime object
 - **Constant value**
     - Degenerated form of access path
 
@@ -117,9 +117,9 @@ To generate JS DFG, the algorithm will iterate through each invocation instructi
 NOTE: **“resolution”** means the process for generating part of the graph from scanned invocation based on the output of DFA, which involves determining label and other attributes of the node as well as what edges to add. There are two main resolution steps to do:
  
 - **Downstream node resolution**: For the current invocation, is it an API call? How to represent it?
-    - First, the `f` variable must map to a constant string $$f$$ in the current abstract domain
-    - Second, the `base` variable must map to a global namespace $$N$$ or an instance namespace $$M$$ in the current abstract domain
-    - Concatenating the namespace and $$f$$ will give us the string representation of this API, which is used as the label of the constructed DFG node
+    - First, the `f` variable must map to a constant string $f$ in the current abstract domain
+    - Second, the `base` variable must map to a global namespace $N$ or an instance namespace $M$ in the current abstract domain
+    - Concatenating the namespace and $f$ will give us the string representation of this API, which is used as the label of the constructed DFG node
     - The constructed DFG node will be bound to this def site
 - **Upstream nodes resolution**: where are the nodes for all the uses of arguments?
     - For a given argument `a_i`
