@@ -51,3 +51,28 @@ check-format:
 format:
 	scalafmt src/main/scala
 	scalafmt src/test/scala
+
+docs/case-studies/example2.png: src/test/resources/small/example2.js
+	scripts/viz $< docs/case-studies/
+
+docs/case-studies/example3.png: src/test/resources/large/example3.js
+	scripts/viz $< docs/case-studies/
+
+docs/case-studies/eventstream.png: src/test/resources/large/eventstream.js
+	scripts/viz $< docs/case-studies/
+
+docs/case-studies/angular-location-update.png: src/test/resources/large/angular-location-update.js
+	scripts/viz $< docs/case-studies/
+
+docs/case-studies/conventional-changelog-index.png: src/test/resources/large/conventional-changelog-index.js
+	scripts/viz $< docs/case-studies/
+
+docs/case-studies/eslint-config-build.png: src/test/resources/large/eslint-config-build.js
+	scripts/viz $< docs/case-studies/
+
+case-studies: docs/case-studies/example2.png \
+			  docs/case-studies/example3.png \
+			  docs/case-studies/eventstream.png \
+			  docs/case-studies/angular-location-update.png \
+			  docs/case-studies/conventional-changelog-index.png \
+			  docs/case-studies/eslint-config-build.png

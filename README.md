@@ -39,7 +39,7 @@ make check-format
 
 ## Visualize the output
 
-Transform the output to dot graph first ():
+Transform the output to dot graph first:
 
 ```
 # https://github.com/semantic-graph/semantic-graph.py/blob/master/render-gexf.py
@@ -54,6 +54,10 @@ Then use `dot` or https://dreampuf.github.io/GraphvizOnline for visualize.
 ```
 scripts/viz path/to/js
 ```
+
+NOTE: this requires cloning a copy of
+https://github.com/semantic-graph/semantic-graph.py in the parent directory and
+`pip install networkx pygraphviz`.
 
 ## Useful WALA resources
 

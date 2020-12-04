@@ -70,7 +70,69 @@ The corresponding JS DFG graph:
 
 ## Case Studies
 
-TODO
+### Simple data-flow
+
+[Code](src/test/resources/small/example2.js)
+
+![](./case-studies/example2.png)
+
+### Binary code injection risk
+
+![Code](src/test/resources/small/example3.js)
+
+![](./case-studies/example3.png)
+
+⚠️ Key nodes:
+
+- `child_process.execSync`: run code from user input
+
+TODO: a "parameter node" is not implemented yet -- we might want to specify in the dependency graph that the analyzed JS is actually a method that can take an unknown parameter which is used in execSync (which is even risker).
+
+
+### `event-stream`
+
+[Code](src/test/resources/large/eventstream.js)
+
+![](./case-studies/eventstream.png)
+
+⚠️ Key nodes:
+
+- `module._compile`: Constructing module programmatically
+- `__unknownModule(./test/data)`: unknown module loaded from file system
+- `CryptoDecipher.update`: decypting files
+
+### `angular-location-update`
+
+Attacker tries to hide the intention by not using the most common operation for communicating with a server, but by using a rare HTML-based approach
+
+[Code](src/test/resources/large/angular-location-update.js)
+
+![](./case-studies/angular-location-update.png)
+
+⚠️ Key nodes:
+
+- `document.cookie.match`: Read browser's cookie by pattern matching
+- `prefetch`: Set up HTML element for communication with a host
+
+### `conventional-changelog-index`
+
+[Code](src/test/resources/large/conventional-changelog-index.js)
+
+![](./case-studies/conventional-changelog-index.png)
+
+⚠️ Key nodes:
+
+- `child_process.spawn`: Spawn a process of dangerous commands
+
+### `eslint-config-build`
+
+[Code](src/test/resources/large/eslint-config-build.js)
+
+![](./case-studies/eslint-config-build.png)
+
+⚠️ Key nodes:
+
+- `eval`: [eval](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) data from `__SOURCE_INTERNET` (a special token in our JS API model)
 
 ## Algorithm
 
