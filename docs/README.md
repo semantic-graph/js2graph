@@ -78,7 +78,7 @@ The corresponding JS DFG graph:
 
 ### Binary code injection risk
 
-![Code](src/test/resources/small/example3.js)
+[Code](src/test/resources/small/example3.js)
 
 ![](./case-studies/example3.png)
 
