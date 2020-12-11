@@ -249,8 +249,13 @@ The example (figure 4) contains many nodes that are not part of the representati
 
 ## CodeQL
 
-https://help.semmle.com/QL/learn-ql/javascript/dataflow.html
-
+- https://help.semmle.com/QL/learn-ql/javascript/dataflow.html
+- https://github.com/izgzhen/CodeQL-Labs
+- Limitations
+  - Unable to specify entrypoints
+  - Flexibility of domain modeling (maybe okay)
+  - Create DB phase might be too slow (less scalable)
+ 
 NOTE: it has some technical limitations, such as less control over what code is analyzed and what is not.
 
 ## Closure Compiler
