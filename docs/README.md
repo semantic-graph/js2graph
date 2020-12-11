@@ -4,6 +4,8 @@ title: Encode semantics information in JavaScript malicious snippets in Flow Gra
 tags: [js, semantic, static analysis, security]
 ---
 
+[HTML version](https://dochost.me/github/semantic-graph/js2graph/blob/master/docs/README.md)
+
 ## Definition of JS DataFlow Graph
 
 - Node has three attributes:
@@ -191,12 +193,15 @@ NOTE: **“resolution”** means the process for generating part of the graph fr
 
 As we can see, the use-def map is used to facilitate the generation of graph, but the major heavy-lifting work is done by the custom DFA.
 
-## Compare with Def-Use Chain Analysis
+## Literature Review
 
-What if we use use-def information verbatim instead of doing inter-procedural data analysis? Essentially, we need to compute the global or instance namespace on-the-fly by backtracking with the use-def map.
+## Def-Use Chain Analysis
+
+Can we use use-def information directly instead of doing inter-procedural data analysis?
+The answer is probably no, since the information we need to compute (global/instance API access path)
+requires _propagating_ some data along a control-path with the help of the use-def map.
 
 For example:
-
 
 ```javascript
 console.log("x");
@@ -210,8 +215,57 @@ v2 = v1.log; // Field access
 v3 = v2("x"); // invocation
 ```
 
-For generating JS DFG, it needs to know what does `v2` represents at line 3. To do it with def-use analysis, we need to backtrack from use of “v2” to its definition at line 2, and similarly until line 1, which will eventually tell us it is the field access of a global object, which can be written as `console.log`. As far as I see, this is not computing the closure of use-def chain, but more of reconstructing a particular type of path along the use-def chain.
+For generating JS DFG, it needs to know what does `v2` represents at line 3. To do it with def-use analysis, we need to backtrack from use of “v2” to its definition at line 2, and similarly until line 1, which will eventually tell us it is the field access of a global object, which can be written as `console.log`. 
 
-## Literature Review
+To recap, what we need to do is more than just computing the closure of use-def chain.
 
-TODO
+### JSAI: a static analysis platform for JavaScript
+
+- Paper: https://sites.cs.ucsb.edu/~benh/research/papers/kashyap14jsai.pdf
+- Non official clone: https://github.com/nystrom/jsai
+
+The tool is an “abstract interpreter”. The input is the program, and the output includes (1) type inference (2) pointer analysis (3) CFA (4) string analysis (5) constant propagation.
+
+It doesn’t say that it support inter-procedural/module propagation, or say that it might output that an API depends on another at the data-flow level.
+
+### Practical blended taint analysis for JavaScript
+
+Paper: http://prolangs.cs.vt.edu/refs/docs/weiryder-issta13.pdf
+
+Taint analysis. Not fine-grained DFG.
+
+### Type Analysis for JavaScript
+
+Focus on type analysis. No DFG.
+
+### JStap: a static pre-filter for malicious JavaScript detection
+
+https://swag.cispa.saarland/papers/fass2019jstap.pdf
+
+DDG → rather than DFG.
+
+### Mining interprocedural, data-oriented usage patterns in JavaScript web applications
+
+https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.965.9873&rep=rep1&type=pdf
+
+The example (figure 4) contains many nodes that are not part of the representation that we want (like variables, assignment, and control edges). No available artifact or description of the algorithm (no keyword like propagation, framework etc.).
+
+## CodeQL
+
+- https://help.semmle.com/QL/learn-ql/javascript/dataflow.html
+- https://github.com/izgzhen/CodeQL-Labs
+- Limitations
+  - Unable to specify entrypoints
+  - Flexibility of domain modeling (maybe okay)
+  - Create DB phase might be too slow (less scalable)
+ 
+NOTE: it has some technical limitations, such as less control over what code is analyzed and what is not.
+
+## Closure Compiler
+
+Only intra-procedural analysis.
+
+### Misc
+
+1. R.-Y. Chang, A. Podgurski, and J. Yang, “Discovering neglected conditions in software by mining dependence graphs”,IEEE Trans. Softw. Eng., vol. 34, no. 5, pp.579–596, 2008
+2. A. Wasylkowski, A. Zeller, and C. Lindig, “Detecting object usage anomalies”,Proceedings of the 6th joint meeting of the European software engineering conference and the ACM SIGSOFT symposium on the foundations of software engineering, ESEC/FSE’07
