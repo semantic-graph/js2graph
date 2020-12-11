@@ -197,10 +197,11 @@ As we can see, the use-def map is used to facilitate the generation of graph, bu
 
 ## Def-Use Chain Analysis
 
-What if we use use-def information verbatim instead of doing inter-procedural data analysis? Essentially, we need to compute the global or instance namespace on-the-fly by backtracking with the use-def map.
+Can we use use-def information directly instead of doing inter-procedural data analysis?
+The answer is probably no, since the information we need to compute (global/instance API access path)
+requires _propagating_ some data along a control-path with the help of the use-def map.
 
 For example:
-
 
 ```javascript
 console.log("x");
@@ -214,8 +215,9 @@ v2 = v1.log; // Field access
 v3 = v2("x"); // invocation
 ```
 
-For generating JS DFG, it needs to know what does `v2` represents at line 3. To do it with def-use analysis, we need to backtrack from use of “v2” to its definition at line 2, and similarly until line 1, which will eventually tell us it is the field access of a global object, which can be written as `console.log`. As far as I see, this is not computing the closure of use-def chain, but more of reconstructing a particular type of path along the use-def chain.
+For generating JS DFG, it needs to know what does `v2` represents at line 3. To do it with def-use analysis, we need to backtrack from use of “v2” to its definition at line 2, and similarly until line 1, which will eventually tell us it is the field access of a global object, which can be written as `console.log`. 
 
+To recap, what we need to do is more than just computing the closure of use-def chain.
 
 ### JSAI: a static analysis platform for JavaScript
 
