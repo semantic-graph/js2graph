@@ -4,6 +4,8 @@ title: Encode semantics information in JavaScript malicious snippets in Flow Gra
 tags: [js, semantic, static analysis, security]
 ---
 
+[HTML version](https://dochost.me/github/semantic-graph/js2graph/blob/master/docs/README.md)
+
 ## Definition of JS DataFlow Graph
 
 - Node has three attributes:
@@ -214,4 +216,48 @@ For generating JS DFG, it needs to know what does `v2` represents at line 3. To 
 
 ## Literature Review
 
-TODO
+### JSAI: a static analysis platform for JavaScript
+
+- Paper: https://sites.cs.ucsb.edu/~benh/research/papers/kashyap14jsai.pdf
+- Non official clone: https://github.com/nystrom/jsai
+
+The tool is an “abstract interpreter”. The input is the program, and the output includes (1) type inference (2) pointer analysis (3) CFA (4) string analysis (5) constant propagation.
+
+It doesn’t say that it support inter-procedural/module propagation, or say that it might output that an API depends on another at the data-flow level.
+
+### Practical blended taint analysis for JavaScript
+
+Paper: http://prolangs.cs.vt.edu/refs/docs/weiryder-issta13.pdf
+
+Taint analysis. Not fine-grained DFG.
+
+### Type Analysis for JavaScript
+
+Focus on type analysis. No DFG.
+
+### JStap: a static pre-filter for malicious JavaScript detection
+
+https://swag.cispa.saarland/papers/fass2019jstap.pdf
+
+DDG → rather than DFG.
+
+### Mining interprocedural, data-oriented usage patterns in JavaScript web applications
+
+https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.965.9873&rep=rep1&type=pdf
+
+The example (figure 4) contains many nodes that are not part of the representation that we want (like variables, assignment, and control edges). No available artifact or description of the algorithm (no keyword like propagation, framework etc.).
+
+## CodeQL
+
+https://help.semmle.com/QL/learn-ql/javascript/dataflow.html
+
+NOTE: it has some technical limitations, such as less control over what code is analyzed and what is not.
+
+## Closure Compiler
+
+Only intra-procedural analysis.
+
+### Misc
+
+1. R.-Y. Chang, A. Podgurski, and J. Yang, “Discovering neglected conditions in software by mining dependence graphs”,IEEE Trans. Softw. Eng., vol. 34, no. 5, pp.579–596, 2008
+2. A. Wasylkowski, A. Zeller, and C. Lindig, “Detecting object usage anomalies”,Proceedings of the 6th joint meeting of the European software engineering conference and the ACM SIGSOFT symposium on the foundations of software engineering, ESEC/FSE’07
